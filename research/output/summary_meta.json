@@ -1,0 +1,1164 @@
+{
+  "dataset": "META (deployed s00 dataset, live from 2026-07-30)",
+  "asset_type": "stock",
+  "news_profile": "stock:META",
+  "rows": 3558,
+  "origins": 3498,
+  "first_origin": "2012-10-02",
+  "last_origin": "2026-09-01",
+  "rules": {
+    "z_shock": 2.5,
+    "news_ratio": 2.0,
+    "big3_pct": 10.0
+  },
+  "calibration_all": [
+    {
+      "horizon": 1,
+      "n": 3498,
+      "hit_rate": 0.5071,
+      "wilson95": [
+        0.4906,
+        0.5237
+      ],
+      "binomial_p_vs_0.5": 0.407398,
+      "always_up_rate": 0.5246,
+      "brier": 0.2531,
+      "p10_p90_coverage": 0.7882,
+      "session_hit_rate": 0.5071,
+      "vote_hit_rate": 0.5104,
+      "vote_count": 1832,
+      "mean_abs_surprise_z": 0.8609
+    },
+    {
+      "horizon": 2,
+      "n": 3497,
+      "hit_rate": 0.503,
+      "wilson95": [
+        0.4864,
+        0.5196
+      ],
+      "binomial_p_vs_0.5": 0.735213,
+      "always_up_rate": 0.5379,
+      "brier": 0.2561,
+      "p10_p90_coverage": 0.7835,
+      "session_hit_rate": 0.5127,
+      "vote_hit_rate": 0.5118,
+      "vote_count": 1913,
+      "mean_abs_surprise_z": 0.9177
+    },
+    {
+      "horizon": 3,
+      "n": 3496,
+      "hit_rate": 0.5157,
+      "wilson95": [
+        0.4992,
+        0.5323
+      ],
+      "binomial_p_vs_0.5": 0.065242,
+      "always_up_rate": 0.5469,
+      "brier": 0.2559,
+      "p10_p90_coverage": 0.7797,
+      "session_hit_rate": 0.5134,
+      "vote_hit_rate": 0.5185,
+      "vote_count": 2031,
+      "mean_abs_surprise_z": 0.908
+    },
+    {
+      "horizon": 4,
+      "n": 3495,
+      "hit_rate": 0.5216,
+      "wilson95": [
+        0.505,
+        0.5381
+      ],
+      "binomial_p_vs_0.5": 0.011161,
+      "always_up_rate": 0.5554,
+      "brier": 0.2567,
+      "p10_p90_coverage": 0.7748,
+      "session_hit_rate": 0.5236,
+      "vote_hit_rate": 0.5184,
+      "vote_count": 1852,
+      "mean_abs_surprise_z": 0.9102
+    },
+    {
+      "horizon": 5,
+      "n": 3494,
+      "hit_rate": 0.5272,
+      "wilson95": [
+        0.5106,
+        0.5437
+      ],
+      "binomial_p_vs_0.5": 0.001383,
+      "always_up_rate": 0.5607,
+      "brier": 0.2559,
+      "p10_p90_coverage": 0.7759,
+      "session_hit_rate": 0.5086,
+      "vote_hit_rate": 0.5057,
+      "vote_count": 1758,
+      "mean_abs_surprise_z": 0.8949
+    },
+    {
+      "horizon": 6,
+      "n": 3493,
+      "hit_rate": 0.5233,
+      "wilson95": [
+        0.5068,
+        0.5399
+      ],
+      "binomial_p_vs_0.5": 0.006117,
+      "always_up_rate": 0.5611,
+      "brier": 0.2578,
+      "p10_p90_coverage": 0.7698,
+      "session_hit_rate": 0.5116,
+      "vote_hit_rate": 0.4944,
+      "vote_count": 1778,
+      "mean_abs_surprise_z": 0.8977
+    },
+    {
+      "horizon": 7,
+      "n": 3492,
+      "hit_rate": 0.5286,
+      "wilson95": [
+        0.5121,
+        0.5452
+      ],
+      "binomial_p_vs_0.5": 0.000756,
+      "always_up_rate": 0.5682,
+      "brier": 0.2578,
+      "p10_p90_coverage": 0.7686,
+      "session_hit_rate": 0.504,
+      "vote_hit_rate": 0.512,
+      "vote_count": 1785,
+      "mean_abs_surprise_z": 0.9057
+    }
+  ],
+  "calibration_2026": [
+    {
+      "horizon": 1,
+      "n": 167,
+      "hit_rate": 0.497,
+      "wilson95": [
+        0.4221,
+        0.572
+      ],
+      "binomial_p_vs_0.5": 1.0,
+      "always_up_rate": 0.509,
+      "brier": 0.2526,
+      "p10_p90_coverage": 0.7365,
+      "session_hit_rate": 0.497,
+      "vote_hit_rate": 0.5109,
+      "vote_count": 92,
+      "mean_abs_surprise_z": 0.9577
+    },
+    {
+      "horizon": 2,
+      "n": 166,
+      "hit_rate": 0.5542,
+      "wilson95": [
+        0.4782,
+        0.6278
+      ],
+      "binomial_p_vs_0.5": 0.186854,
+      "always_up_rate": 0.4699,
+      "brier": 0.2521,
+      "p10_p90_coverage": 0.7048,
+      "session_hit_rate": 0.5542,
+      "vote_hit_rate": 0.5904,
+      "vote_count": 83,
+      "mean_abs_surprise_z": 1.0554
+    },
+    {
+      "horizon": 3,
+      "n": 165,
+      "hit_rate": 0.5455,
+      "wilson95": [
+        0.4693,
+        0.6195
+      ],
+      "binomial_p_vs_0.5": 0.275714,
+      "always_up_rate": 0.4727,
+      "brier": 0.2518,
+      "p10_p90_coverage": 0.697,
+      "session_hit_rate": 0.4848,
+      "vote_hit_rate": 0.5543,
+      "vote_count": 92,
+      "mean_abs_surprise_z": 1.0028
+    },
+    {
+      "horizon": 4,
+      "n": 164,
+      "hit_rate": 0.5488,
+      "wilson95": [
+        0.4724,
+        0.623
+      ],
+      "binomial_p_vs_0.5": 0.24139,
+      "always_up_rate": 0.439,
+      "brier": 0.2585,
+      "p10_p90_coverage": 0.6951,
+      "session_hit_rate": 0.5061,
+      "vote_hit_rate": 0.5238,
+      "vote_count": 105,
+      "mean_abs_surprise_z": 0.9531
+    },
+    {
+      "horizon": 5,
+      "n": 163,
+      "hit_rate": 0.546,
+      "wilson95": [
+        0.4694,
+        0.6205
+      ],
+      "binomial_p_vs_0.5": 0.272784,
+      "always_up_rate": 0.4479,
+      "brier": 0.2544,
+      "p10_p90_coverage": 0.681,
+      "session_hit_rate": 0.5153,
+      "vote_hit_rate": 0.557,
+      "vote_count": 79,
+      "mean_abs_surprise_z": 0.9588
+    },
+    {
+      "horizon": 6,
+      "n": 162,
+      "hit_rate": 0.5864,
+      "wilson95": [
+        0.5094,
+        0.6594
+      ],
+      "binomial_p_vs_0.5": 0.033572,
+      "always_up_rate": 0.4198,
+      "brier": 0.252,
+      "p10_p90_coverage": 0.642,
+      "session_hit_rate": 0.5926,
+      "vote_hit_rate": 0.6441,
+      "vote_count": 59,
+      "mean_abs_surprise_z": 0.9906
+    },
+    {
+      "horizon": 7,
+      "n": 161,
+      "hit_rate": 0.5714,
+      "wilson95": [
+        0.4942,
+        0.6453
+      ],
+      "binomial_p_vs_0.5": 0.082626,
+      "always_up_rate": 0.4099,
+      "brier": 0.2508,
+      "p10_p90_coverage": 0.6957,
+      "session_hit_rate": 0.5466,
+      "vote_hit_rate": 0.557,
+      "vote_count": 79,
+      "mean_abs_surprise_z": 0.9672
+    }
+  ],
+  "calibration_since_news_coverage": [
+    {
+      "horizon": 1,
+      "n": 648,
+      "hit_rate": 0.5139,
+      "wilson95": [
+        0.4754,
+        0.5522
+      ],
+      "binomial_p_vs_0.5": 0.504277,
+      "always_up_rate": 0.517,
+      "brier": 0.2515,
+      "p10_p90_coverage": 0.787,
+      "session_hit_rate": 0.5139,
+      "vote_hit_rate": 0.5288,
+      "vote_count": 382,
+      "mean_abs_surprise_z": 0.8628
+    },
+    {
+      "horizon": 2,
+      "n": 647,
+      "hit_rate": 0.5301,
+      "wilson95": [
+        0.4916,
+        0.5683
+      ],
+      "binomial_p_vs_0.5": 0.135131,
+      "always_up_rate": 0.527,
+      "brier": 0.2541,
+      "p10_p90_coverage": 0.7867,
+      "session_hit_rate": 0.5178,
+      "vote_hit_rate": 0.5249,
+      "vote_count": 341,
+      "mean_abs_surprise_z": 0.8873
+    },
+    {
+      "horizon": 3,
+      "n": 646,
+      "hit_rate": 0.5263,
+      "wilson95": [
+        0.4878,
+        0.5646
+      ],
+      "binomial_p_vs_0.5": 0.194122,
+      "always_up_rate": 0.517,
+      "brier": 0.2554,
+      "p10_p90_coverage": 0.7802,
+      "session_hit_rate": 0.5124,
+      "vote_hit_rate": 0.5302,
+      "vote_count": 381,
+      "mean_abs_surprise_z": 0.8745
+    },
+    {
+      "horizon": 4,
+      "n": 645,
+      "hit_rate": 0.5333,
+      "wilson95": [
+        0.4947,
+        0.5715
+      ],
+      "binomial_p_vs_0.5": 0.098103,
+      "always_up_rate": 0.524,
+      "brier": 0.2582,
+      "p10_p90_coverage": 0.7752,
+      "session_hit_rate": 0.5225,
+      "vote_hit_rate": 0.5296,
+      "vote_count": 372,
+      "mean_abs_surprise_z": 0.8611
+    },
+    {
+      "horizon": 5,
+      "n": 644,
+      "hit_rate": 0.5466,
+      "wilson95": [
+        0.508,
+        0.5846
+      ],
+      "binomial_p_vs_0.5": 0.020005,
+      "always_up_rate": 0.5388,
+      "brier": 0.2543,
+      "p10_p90_coverage": 0.7624,
+      "session_hit_rate": 0.5124,
+      "vote_hit_rate": 0.5074,
+      "vote_count": 337,
+      "mean_abs_surprise_z": 0.8586
+    },
+    {
+      "horizon": 6,
+      "n": 643,
+      "hit_rate": 0.5661,
+      "wilson95": [
+        0.5275,
+        0.6039
+      ],
+      "binomial_p_vs_0.5": 0.00091,
+      "always_up_rate": 0.5288,
+      "brier": 0.2568,
+      "p10_p90_coverage": 0.7403,
+      "session_hit_rate": 0.5319,
+      "vote_hit_rate": 0.5015,
+      "vote_count": 341,
+      "mean_abs_surprise_z": 0.8693
+    },
+    {
+      "horizon": 7,
+      "n": 642,
+      "hit_rate": 0.5545,
+      "wilson95": [
+        0.5159,
+        0.5925
+      ],
+      "binomial_p_vs_0.5": 0.006421,
+      "always_up_rate": 0.5187,
+      "brier": 0.2589,
+      "p10_p90_coverage": 0.7632,
+      "session_hit_rate": 0.5156,
+      "vote_hit_rate": 0.503,
+      "vote_count": 336,
+      "mean_abs_surprise_z": 0.8674
+    }
+  ],
+  "window_split": {
+    "shock_windows": {
+      "n": 3273,
+      "hit_rate": 0.4614,
+      "wilson95": [
+        0.4443,
+        0.4785
+      ],
+      "binomial_p_vs_0.5": 1e-05,
+      "coverage": 0.3944,
+      "brier": 0.2743,
+      "mean_abs_surprise_z": 2.0416
+    },
+    "calm_windows": {
+      "n": 21192,
+      "hit_rate": 0.5268,
+      "wilson95": [
+        0.5201,
+        0.5336
+      ],
+      "binomial_p_vs_0.5": 0.0,
+      "coverage": 0.8364,
+      "brier": 0.2534,
+      "mean_abs_surprise_z": 0.7229
+    },
+    "hit_rate_difference_shock_minus_calm": {
+      "difference": -0.0655,
+      "ci95": [
+        -0.1037,
+        -0.0295
+      ],
+      "p_two_sided": 0.0005
+    },
+    "coverage_difference_shock_minus_calm": {
+      "difference": -0.4419,
+      "ci95": [
+        -0.4736,
+        -0.4083
+      ],
+      "p_two_sided": 0.0
+    }
+  },
+  "h1_hit_by_target_abs_z": [
+    {
+      "bin": "0-0.5",
+      "n": 1559,
+      "hit_rate": 0.4772,
+      "wilson95": [
+        0.4525,
+        0.502
+      ],
+      "binomial_p_vs_0.5": 0.076218,
+      "coverage": 1.0
+    },
+    {
+      "bin": "0.5-1",
+      "n": 930,
+      "hit_rate": 0.5419,
+      "wilson95": [
+        0.5098,
+        0.5737
+      ],
+      "binomial_p_vs_0.5": 0.011532,
+      "coverage": 0.9409
+    },
+    {
+      "bin": "1-1.5",
+      "n": 504,
+      "hit_rate": 0.5556,
+      "wilson95": [
+        0.5119,
+        0.5984
+      ],
+      "binomial_p_vs_0.5": 0.014209,
+      "coverage": 0.5972
+    },
+    {
+      "bin": "1.5-2.5",
+      "n": 380,
+      "hit_rate": 0.5053,
+      "wilson95": [
+        0.4552,
+        0.5552
+      ],
+      "binomial_p_vs_0.5": 0.877717,
+      "coverage": 0.0579
+    },
+    {
+      "bin": ">=2.5",
+      "n": 125,
+      "hit_rate": 0.432,
+      "wilson95": [
+        0.3485,
+        0.5196
+      ],
+      "binomial_p_vs_0.5": 0.152121,
+      "coverage": 0.0
+    }
+  ],
+  "h1_hit_by_target_news_ratio": [
+    {
+      "bin": "<0.75",
+      "n": 177,
+      "hit_rate": 0.5198,
+      "wilson95": [
+        0.4465,
+        0.5922
+      ],
+      "binomial_p_vs_0.5": 0.652122,
+      "coverage": 0.8418,
+      "mean_abs_ret_pct": 1.271
+    },
+    {
+      "bin": "0.75-1.25",
+      "n": 254,
+      "hit_rate": 0.4882,
+      "wilson95": [
+        0.4274,
+        0.5494
+      ],
+      "binomial_p_vs_0.5": 0.753799,
+      "coverage": 0.811,
+      "mean_abs_ret_pct": 1.402
+    },
+    {
+      "bin": "1.25-2",
+      "n": 179,
+      "hit_rate": 0.5307,
+      "wilson95": [
+        0.4577,
+        0.6024
+      ],
+      "binomial_p_vs_0.5": 0.454895,
+      "coverage": 0.7095,
+      "mean_abs_ret_pct": 2.083
+    },
+    {
+      "bin": ">=2",
+      "n": 39,
+      "hit_rate": 0.5897,
+      "wilson95": [
+        0.4342,
+        0.7292
+      ],
+      "binomial_p_vs_0.5": 0.336784,
+      "coverage": 0.7436,
+      "mean_abs_ret_pct": 2.736
+    }
+  ],
+  "h1_news_intensity_correlations": {
+    "spearman_news_ratio_vs_hit": [
+      0.0257,
+      0.5129
+    ],
+    "spearman_news_ratio_vs_covered": [
+      -0.1116,
+      0.0044
+    ],
+    "spearman_news_ratio_vs_abs_surprise": [
+      0.1353,
+      0.0005
+    ]
+  },
+  "events": {
+    "count": 125,
+    "up": 60,
+    "down": 65,
+    "pre_event_h1_direction": {
+      "n": 125,
+      "hit_rate": 0.432,
+      "wilson95": [
+        0.3485,
+        0.5196
+      ],
+      "binomial_p_vs_0.5": 0.152121
+    },
+    "pre_event_h1_coverage": 0.0,
+    "pre_event_mean_abs_surprise_z": 4.231,
+    "pre_event_path_coverage_1to7": 0.3452,
+    "pre_event_path_hits_1to7_mean": 3.328,
+    "signal_aligned_before_shock": 0.464,
+    "consensus_aligned_before_shock": 0.096,
+    "signal_latency_sessions_median": 2.0,
+    "signal_never_aligned_within_15": 57,
+    "consensus_latency_sessions_median": 5.0
+  },
+  "post_shock_continuation_sign_adjusted": {
+    "1d": {
+      "n": 125,
+      "mean_pct": -0.403,
+      "median_pct": -0.263,
+      "share_positive": 0.464,
+      "t_stat": -1.68,
+      "p_value": 0.0953
+    },
+    "2d": {
+      "n": 125,
+      "mean_pct": -0.036,
+      "median_pct": 0.017,
+      "share_positive": 0.504,
+      "t_stat": -0.13,
+      "p_value": 0.899
+    },
+    "3d": {
+      "n": 125,
+      "mean_pct": -0.228,
+      "median_pct": -0.351,
+      "share_positive": 0.456,
+      "t_stat": -0.66,
+      "p_value": 0.5131
+    },
+    "5d": {
+      "n": 125,
+      "mean_pct": -0.378,
+      "median_pct": -0.667,
+      "share_positive": 0.4,
+      "t_stat": -0.86,
+      "p_value": 0.3895
+    },
+    "7d": {
+      "n": 125,
+      "mean_pct": -0.407,
+      "median_pct": -0.896,
+      "share_positive": 0.448,
+      "t_stat": -0.8,
+      "p_value": 0.4246
+    }
+  },
+  "post_shock_raw_up": {
+    "1d": {
+      "n": 60,
+      "mean_pct": -0.518
+    },
+    "3d": {
+      "n": 60,
+      "mean_pct": -0.555
+    },
+    "5d": {
+      "n": 60,
+      "mean_pct": -0.477
+    },
+    "7d": {
+      "n": 60,
+      "mean_pct": -0.385
+    }
+  },
+  "post_shock_raw_down": {
+    "1d": {
+      "n": 65,
+      "mean_pct": 0.297
+    },
+    "3d": {
+      "n": 65,
+      "mean_pct": -0.075
+    },
+    "5d": {
+      "n": 65,
+      "mean_pct": 0.286
+    },
+    "7d": {
+      "n": 65,
+      "mean_pct": 0.428
+    }
+  },
+  "august_2026_event": [
+    {
+      "as_of": "2026-08-18",
+      "close": 543.67,
+      "signal_3day": 1,
+      "consensus": "Hold/none",
+      "votes_buy_sell": [
+        4,
+        0
+      ],
+      "next_target_pct": 75.0,
+      "rows": [
+        {
+          "h": 1,
+          "target_date": "2026-08-19",
+          "prob_up": 0.533,
+          "p10_pct": -4.9,
+          "p50_pct": 0.2,
+          "p90_pct": 3.09,
+          "realized_pct": 0.43,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.08,
+          "vote": "Hold"
+        },
+        {
+          "h": 2,
+          "target_date": "2026-08-20",
+          "prob_up": 0.567,
+          "p10_pct": -4.05,
+          "p50_pct": 1.04,
+          "p90_pct": 5.58,
+          "realized_pct": 0.4,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": -0.17,
+          "vote": "Buy"
+        },
+        {
+          "h": 3,
+          "target_date": "2026-08-21",
+          "prob_up": 0.55,
+          "p10_pct": -3.89,
+          "p50_pct": 0.84,
+          "p90_pct": 6.8,
+          "realized_pct": 1.15,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.07,
+          "vote": "Buy"
+        },
+        {
+          "h": 4,
+          "target_date": "2026-08-24",
+          "prob_up": 0.55,
+          "p10_pct": -8.71,
+          "p50_pct": 0.58,
+          "p90_pct": 8.44,
+          "realized_pct": 2.82,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.33,
+          "vote": "Hold"
+        },
+        {
+          "h": 5,
+          "target_date": "2026-08-25",
+          "prob_up": 0.6,
+          "p10_pct": -6.61,
+          "p50_pct": 1.64,
+          "p90_pct": 9.41,
+          "realized_pct": 4.85,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.51,
+          "vote": "Buy"
+        },
+        {
+          "h": 6,
+          "target_date": "2026-08-26",
+          "prob_up": 0.583,
+          "p10_pct": -8.57,
+          "p50_pct": 1.76,
+          "p90_pct": 10.14,
+          "realized_pct": 5.97,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.58,
+          "vote": "Hold"
+        },
+        {
+          "h": 7,
+          "target_date": "2026-08-27",
+          "prob_up": 0.617,
+          "p10_pct": -8.18,
+          "p50_pct": 3.48,
+          "p90_pct": 10.74,
+          "realized_pct": 5.05,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.21,
+          "vote": "Buy"
+        }
+      ]
+    },
+    {
+      "as_of": "2026-08-19",
+      "close": 546.03,
+      "signal_3day": 1,
+      "consensus": "Buy/warning",
+      "votes_buy_sell": [
+        5,
+        0
+      ],
+      "next_target_pct": 75.0,
+      "rows": [
+        {
+          "h": 1,
+          "target_date": "2026-08-20",
+          "prob_up": 0.55,
+          "p10_pct": -3.59,
+          "p50_pct": 0.15,
+          "p90_pct": 3.01,
+          "realized_pct": -0.04,
+          "covered": 1,
+          "hit": 0,
+          "surprise_z": -0.07,
+          "vote": "Buy"
+        },
+        {
+          "h": 2,
+          "target_date": "2026-08-21",
+          "prob_up": 0.483,
+          "p10_pct": -4.48,
+          "p50_pct": -0.45,
+          "p90_pct": 5.54,
+          "realized_pct": 0.71,
+          "covered": 1,
+          "hit": 0,
+          "surprise_z": 0.3,
+          "vote": "Hold"
+        },
+        {
+          "h": 3,
+          "target_date": "2026-08-24",
+          "prob_up": 0.5,
+          "p10_pct": -3.98,
+          "p50_pct": -0.31,
+          "p90_pct": 6.3,
+          "realized_pct": 2.38,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.67,
+          "vote": "Buy"
+        },
+        {
+          "h": 4,
+          "target_date": "2026-08-25",
+          "prob_up": 0.5,
+          "p10_pct": -6.37,
+          "p50_pct": 0.0,
+          "p90_pct": 7.11,
+          "realized_pct": 4.4,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.84,
+          "vote": "Hold"
+        },
+        {
+          "h": 5,
+          "target_date": "2026-08-26",
+          "prob_up": 0.517,
+          "p10_pct": -6.29,
+          "p50_pct": 0.22,
+          "p90_pct": 8.47,
+          "realized_pct": 5.51,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.92,
+          "vote": "Buy"
+        },
+        {
+          "h": 6,
+          "target_date": "2026-08-27",
+          "prob_up": 0.55,
+          "p10_pct": -7.44,
+          "p50_pct": 0.83,
+          "p90_pct": 9.48,
+          "realized_pct": 4.59,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.57,
+          "vote": "Buy"
+        },
+        {
+          "h": 7,
+          "target_date": "2026-08-28",
+          "prob_up": 0.617,
+          "p10_pct": -7.5,
+          "p50_pct": 2.37,
+          "p90_pct": 9.67,
+          "realized_pct": 5.86,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.52,
+          "vote": "Buy"
+        }
+      ]
+    },
+    {
+      "as_of": "2026-08-20",
+      "close": 545.83,
+      "signal_3day": 1,
+      "consensus": "Hold/none",
+      "votes_buy_sell": [
+        3,
+        0
+      ],
+      "next_target_pct": 75.0,
+      "rows": [
+        {
+          "h": 1,
+          "target_date": "2026-08-21",
+          "prob_up": 0.517,
+          "p10_pct": -4.69,
+          "p50_pct": 0.06,
+          "p90_pct": 3.44,
+          "realized_pct": 0.75,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.22,
+          "vote": "Hold"
+        },
+        {
+          "h": 2,
+          "target_date": "2026-08-24",
+          "prob_up": 0.567,
+          "p10_pct": -6.19,
+          "p50_pct": 1.1,
+          "p90_pct": 5.66,
+          "realized_pct": 2.42,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.28,
+          "vote": "Hold"
+        },
+        {
+          "h": 3,
+          "target_date": "2026-08-25",
+          "prob_up": 0.567,
+          "p10_pct": -8.58,
+          "p50_pct": 0.95,
+          "p90_pct": 6.16,
+          "realized_pct": 4.44,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.61,
+          "vote": "Buy"
+        },
+        {
+          "h": 4,
+          "target_date": "2026-08-26",
+          "prob_up": 0.617,
+          "p10_pct": -8.12,
+          "p50_pct": 1.23,
+          "p90_pct": 7.12,
+          "realized_pct": 5.55,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.73,
+          "vote": "Buy"
+        },
+        {
+          "h": 5,
+          "target_date": "2026-08-27",
+          "prob_up": 0.65,
+          "p10_pct": -5.89,
+          "p50_pct": 1.93,
+          "p90_pct": 8.28,
+          "realized_pct": 4.63,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.49,
+          "vote": "Buy"
+        },
+        {
+          "h": 6,
+          "target_date": "2026-08-28",
+          "prob_up": 0.55,
+          "p10_pct": -7.18,
+          "p50_pct": 0.77,
+          "p90_pct": 9.3,
+          "realized_pct": 5.9,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.8,
+          "vote": "Hold"
+        },
+        {
+          "h": 7,
+          "target_date": "2026-08-31",
+          "prob_up": 0.533,
+          "p10_pct": -7.9,
+          "p50_pct": 1.4,
+          "p90_pct": 9.46,
+          "realized_pct": 4.86,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.51,
+          "vote": "Hold"
+        }
+      ]
+    },
+    {
+      "as_of": "2026-08-21",
+      "close": 549.9,
+      "signal_3day": 1,
+      "consensus": "Buy/confirmed",
+      "votes_buy_sell": [
+        6,
+        0
+      ],
+      "next_target_pct": 75.0,
+      "rows": [
+        {
+          "h": 1,
+          "target_date": "2026-08-24",
+          "prob_up": 0.6,
+          "p10_pct": -6.33,
+          "p50_pct": 0.43,
+          "p90_pct": 3.38,
+          "realized_pct": 1.66,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.32,
+          "vote": "Buy"
+        },
+        {
+          "h": 2,
+          "target_date": "2026-08-25",
+          "prob_up": 0.617,
+          "p10_pct": -7.84,
+          "p50_pct": 1.35,
+          "p90_pct": 5.65,
+          "realized_pct": 3.66,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.44,
+          "vote": "Buy"
+        },
+        {
+          "h": 3,
+          "target_date": "2026-08-26",
+          "prob_up": 0.6,
+          "p10_pct": -8.84,
+          "p50_pct": 1.45,
+          "p90_pct": 6.99,
+          "realized_pct": 4.77,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.54,
+          "vote": "Buy"
+        },
+        {
+          "h": 4,
+          "target_date": "2026-08-27",
+          "prob_up": 0.633,
+          "p10_pct": -9.24,
+          "p50_pct": 1.26,
+          "p90_pct": 7.74,
+          "realized_pct": 3.86,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.39,
+          "vote": "Buy"
+        },
+        {
+          "h": 5,
+          "target_date": "2026-08-28",
+          "prob_up": 0.617,
+          "p10_pct": -6.07,
+          "p50_pct": 2.06,
+          "p90_pct": 8.79,
+          "realized_pct": 5.11,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.53,
+          "vote": "Buy"
+        },
+        {
+          "h": 6,
+          "target_date": "2026-08-31",
+          "prob_up": 0.6,
+          "p10_pct": -7.17,
+          "p50_pct": 2.18,
+          "p90_pct": 9.25,
+          "realized_pct": 4.08,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.3,
+          "vote": "Hold"
+        },
+        {
+          "h": 7,
+          "target_date": "2026-09-01",
+          "prob_up": 0.617,
+          "p10_pct": -7.32,
+          "p50_pct": 2.61,
+          "p90_pct": 9.84,
+          "realized_pct": 5.21,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.39,
+          "vote": "Buy"
+        }
+      ]
+    },
+    {
+      "as_of": "2026-08-24",
+      "close": 559.02,
+      "signal_3day": 1,
+      "consensus": "Buy/confirmed",
+      "votes_buy_sell": [
+        6,
+        0
+      ],
+      "next_target_pct": 75.0,
+      "rows": [
+        {
+          "h": 1,
+          "target_date": "2026-08-25",
+          "prob_up": 0.6,
+          "p10_pct": -1.85,
+          "p50_pct": 0.39,
+          "p90_pct": 4.44,
+          "realized_pct": 1.97,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.65,
+          "vote": "Buy"
+        },
+        {
+          "h": 2,
+          "target_date": "2026-08-26",
+          "prob_up": 0.633,
+          "p10_pct": -5.14,
+          "p50_pct": 1.13,
+          "p90_pct": 5.72,
+          "realized_pct": 3.06,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.46,
+          "vote": "Hold"
+        },
+        {
+          "h": 3,
+          "target_date": "2026-08-27",
+          "prob_up": 0.567,
+          "p10_pct": -8.94,
+          "p50_pct": 0.92,
+          "p90_pct": 6.23,
+          "realized_pct": 2.16,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.21,
+          "vote": "Buy"
+        },
+        {
+          "h": 4,
+          "target_date": "2026-08-28",
+          "prob_up": 0.633,
+          "p10_pct": -13.0,
+          "p50_pct": 1.27,
+          "p90_pct": 7.02,
+          "realized_pct": 3.4,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.27,
+          "vote": "Buy"
+        },
+        {
+          "h": 5,
+          "target_date": "2026-08-31",
+          "prob_up": 0.6,
+          "p10_pct": -7.82,
+          "p50_pct": 0.72,
+          "p90_pct": 8.05,
+          "realized_pct": 2.38,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.27,
+          "vote": "Buy"
+        },
+        {
+          "h": 6,
+          "target_date": "2026-09-01",
+          "prob_up": 0.6,
+          "p10_pct": -6.0,
+          "p50_pct": 1.97,
+          "p90_pct": 8.56,
+          "realized_pct": 3.49,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.27,
+          "vote": "Buy"
+        },
+        {
+          "h": 7,
+          "target_date": "2026-09-02",
+          "prob_up": 0.633,
+          "p10_pct": -6.31,
+          "p50_pct": 2.64,
+          "p90_pct": 9.95,
+          "realized_pct": 6.05,
+          "covered": 1,
+          "hit": 1,
+          "surprise_z": 0.54,
+          "vote": "Buy"
+        }
+      ]
+    }
+  ],
+  "august_2026_event_rows": []
+}

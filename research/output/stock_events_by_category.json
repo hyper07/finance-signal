@@ -1,0 +1,160 @@
+{
+  "up_shocks": {
+    "earnings": {
+      "n": 78,
+      "share_pct": 22.5,
+      "mean_abs_ret_pct": 8.7,
+      "pre_h1_hit": 0.667,
+      "pre_h1_coverage": 0.0,
+      "pre_h1_mean_abs_surprise": 5.42,
+      "pre_path_coverage": 0.235,
+      "consensus_aligned_pct": 15.4,
+      "consensus_latency_median": 5.0,
+      "continuation_1d_pct": 0.719,
+      "continuation_3d_pct": 1.937,
+      "continuation_7d_pct": 2.256,
+      "continuation_7d_t": 2.68,
+      "continuation_7d_p": 0.0089
+    },
+    "earnings+1": {
+      "n": 3,
+      "share_pct": 0.9,
+      "mean_abs_ret_pct": 5.73,
+      "pre_h1_hit": 1.0,
+      "pre_h1_coverage": 0.0,
+      "pre_h1_mean_abs_surprise": 3.25,
+      "pre_path_coverage": 0.19,
+      "consensus_aligned_pct": 33.3,
+      "consensus_latency_median": 0.0,
+      "continuation_1d_pct": 1.482,
+      "continuation_3d_pct": 1.594,
+      "continuation_7d_pct": 2.743,
+      "continuation_7d_t": null,
+      "continuation_7d_p": null
+    },
+    "idiosyncratic": {
+      "n": 166,
+      "share_pct": 48.0,
+      "mean_abs_ret_pct": 6.03,
+      "pre_h1_hit": 0.663,
+      "pre_h1_coverage": 0.0,
+      "pre_h1_mean_abs_surprise": 3.36,
+      "pre_path_coverage": 0.384,
+      "consensus_aligned_pct": 24.1,
+      "consensus_latency_median": 4.5,
+      "continuation_1d_pct": 0.242,
+      "continuation_3d_pct": 0.151,
+      "continuation_7d_pct": 1.1,
+      "continuation_7d_t": 1.56,
+      "continuation_7d_p": 0.1202
+    },
+    "market-wide": {
+      "n": 99,
+      "share_pct": 28.6,
+      "mean_abs_ret_pct": 6.19,
+      "pre_h1_hit": 0.677,
+      "pre_h1_coverage": 0.0,
+      "pre_h1_mean_abs_surprise": 3.02,
+      "pre_path_coverage": 0.378,
+      "consensus_aligned_pct": 24.2,
+      "consensus_latency_median": 4.5,
+      "continuation_1d_pct": -0.646,
+      "continuation_3d_pct": 0.054,
+      "continuation_7d_pct": 0.577,
+      "continuation_7d_t": 0.83,
+      "continuation_7d_p": 0.4077
+    }
+  },
+  "all_shocks": {
+    "earnings": {
+      "n": 132,
+      "share_pct": 20.5,
+      "mean_abs_ret_pct": 8.18,
+      "pre_h1_hit": 0.515,
+      "pre_h1_coverage": 0.0,
+      "pre_h1_mean_abs_surprise": 4.99,
+      "pre_path_coverage": 0.239,
+      "consensus_aligned_pct": 10.6,
+      "consensus_latency_median": 5.0,
+      "continuation_1d_pct": 0.57,
+      "continuation_3d_pct": 0.968,
+      "continuation_7d_pct": 1.234,
+      "continuation_7d_t": 2.1,
+      "continuation_7d_p": 0.0381
+    },
+    "earnings+1": {
+      "n": 7,
+      "share_pct": 1.1,
+      "mean_abs_ret_pct": 5.65,
+      "pre_h1_hit": 0.571,
+      "pre_h1_coverage": 0.0,
+      "pre_h1_mean_abs_surprise": 3.32,
+      "pre_path_coverage": 0.306,
+      "consensus_aligned_pct": 14.3,
+      "consensus_latency_median": 0.0,
+      "continuation_1d_pct": 1.041,
+      "continuation_3d_pct": 1.135,
+      "continuation_7d_pct": 2.317,
+      "continuation_7d_t": 0.72,
+      "continuation_7d_p": 0.4987
+    },
+    "idiosyncratic": {
+      "n": 271,
+      "share_pct": 42.0,
+      "mean_abs_ret_pct": 6.09,
+      "pre_h1_hit": 0.568,
+      "pre_h1_coverage": 0.0,
+      "pre_h1_mean_abs_surprise": 3.38,
+      "pre_path_coverage": 0.365,
+      "consensus_aligned_pct": 17.7,
+      "consensus_latency_median": 5.0,
+      "continuation_1d_pct": -0.05,
+      "continuation_3d_pct": -0.151,
+      "continuation_7d_pct": -0.028,
+      "continuation_7d_t": -0.05,
+      "continuation_7d_p": 0.9572
+    },
+    "market-wide": {
+      "n": 235,
+      "share_pct": 36.4,
+      "mean_abs_ret_pct": 5.78,
+      "pre_h1_hit": 0.451,
+      "pre_h1_coverage": 0.0,
+      "pre_h1_mean_abs_surprise": 3.16,
+      "pre_path_coverage": 0.395,
+      "consensus_aligned_pct": 12.3,
+      "consensus_latency_median": 5.0,
+      "continuation_1d_pct": -0.734,
+      "continuation_3d_pct": -0.418,
+      "continuation_7d_pct": -0.799,
+      "continuation_7d_t": -1.76,
+      "continuation_7d_p": 0.0793
+    }
+  },
+  "up_shocks_by_symbol": {
+    "AAPL": {
+      "idiosyncratic": 33,
+      "market-wide": 31,
+      "earnings": 18,
+      "earnings+1": 1
+    },
+    "MSFT": {
+      "idiosyncratic": 37,
+      "market-wide": 32,
+      "earnings": 20
+    },
+    "NVDA": {
+      "idiosyncratic": 30,
+      "earnings": 24,
+      "market-wide": 23,
+      "earnings+1": 2
+    },
+    "TSLA": {
+      "idiosyncratic": 66,
+      "earnings": 16,
+      "market-wide": 13
+    }
+  },
+  "news_covered_up_shocks": 52,
+  "idiosyncratic_up_shocks_without_attribution": 119
+}

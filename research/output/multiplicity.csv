@@ -1,0 +1,229 @@
+family,instrument,test,p,direction,q_within_family,q_all_tests
+A_direction_vs_half,bito,h=1 hit=0.5058,0.720532,above,0.7613168301886791,0.8828141686747029
+A_direction_vs_half,bito,h=2 hit=0.4715,0.060178,below,0.0842492,0.15770786206896553
+A_direction_vs_half,bito,h=3 hit=0.4595,0.007212,below,0.011878588235294118,0.024181411764705882
+A_direction_vs_half,bito,h=4 hit=0.4795,0.179106,below,0.22288746666666664,0.34797372371321866
+A_direction_vs_half,bito,h=5 hit=0.4808,0.209666,below,0.25524556521739133,0.379395619047619
+A_direction_vs_half,bito,h=6 hit=0.4955,0.788001,below,0.8171862222222223,0.9078939008746857
+A_direction_vs_half,bito,h=7 hit=0.479,0.169064,below,0.2151723636363636,0.338128
+B_pesaran_timmermann_skill,bito,h=1 PT=0.132,0.44749214587440367,skill,0.9488332187218765,0.6756835050289008
+C_brier_worse_than_coin,bito,h=1 t=1.717,0.086,worse,0.172,0.20639999999999997
+B_pesaran_timmermann_skill,bito,h=2 PT=-1.417,0.921758536263457,skill,0.9513412668142535,0.9729673438336491
+C_brier_worse_than_coin,bito,h=2 t=3.807,0.0001,worse,0.00056,0.0005302325581395349
+B_pesaran_timmermann_skill,bito,h=3 PT=-1.538,0.9379756926084984,skill,0.9513412668142535,0.9814742481160624
+C_brier_worse_than_coin,bito,h=3 t=4.497,1e-06,worse,9.333333333333333e-06,6.3333333333333326e-06
+B_pesaran_timmermann_skill,bito,h=4 PT=-0.619,0.7320418205570149,skill,0.9488332187218765,0.8828141686747029
+C_brier_worse_than_coin,bito,h=4 t=2.985,0.0028,worse,0.0098,0.01064
+B_pesaran_timmermann_skill,bito,h=5 PT=-0.467,0.6797500609641915,skill,0.9488332187218765,0.8573802197802198
+C_brier_worse_than_coin,bito,h=5 t=3.414,0.0006,worse,0.0025846153846153844,0.0026823529411764704
+B_pesaran_timmermann_skill,bito,h=6 PT=-0.04,0.5159534368528307,skill,0.9488332187218765,0.7189635679300443
+C_brier_worse_than_coin,bito,h=6 t=2.557,0.0106,worse,0.02826666666666667,0.03356666666666666
+B_pesaran_timmermann_skill,bito,h=7 PT=-0.452,0.6743655087796795,skill,0.9488332187218765,0.8573802197802198
+C_brier_worse_than_coin,bito,h=7 t=3.234,0.0012,worse,0.00448,0.004974545454545454
+D_shock_vs_calm_hit,bito,diff=-0.1426,0.00025,shock worse,0.0005,0.00114
+E_pre_event_direction,bito,hit=0.375 n=48,0.111403,below,0.258586,0.251484
+F_continuation_7d,bito,mean=1.606% n=46,0.3602,continuation,0.4116571428571429,0.569088
+G_headline_spike_direction,bito,hit=0.5294 n=34,0.864166,above,0.864166,0.9290614647887324
+H_headline_spike_surprise,bito,MWU |s| spike > quiet,0.00486,larger surprise,0.00972,0.017047384615384614
+A_direction_vs_half,btc,h=1 hit=0.4881,0.300385,below,0.35790553191489366,0.5012395031831575
+A_direction_vs_half,btc,h=2 hit=0.5,1.0,above,1.0,1.0
+A_direction_vs_half,btc,h=3 hit=0.4886,0.321646,below,0.37525366666666665,0.527592
+A_direction_vs_half,btc,h=4 hit=0.4888,0.332645,below,0.38016571428571433,0.5378940425531915
+A_direction_vs_half,btc,h=5 hit=0.4759,0.034116,below,0.051635027027027026,0.0984613670886076
+A_direction_vs_half,btc,h=6 hit=0.4827,0.130947,below,0.17053562790697674,0.2808448598130841
+A_direction_vs_half,btc,h=7 hit=0.4672,0.00389,below,0.006807499999999999,0.014305161290322579
+B_pesaran_timmermann_skill,btc,h=1 PT=-1.093,0.8628031001259011,skill,0.9488332187218765,0.9290614647887324
+C_brier_worse_than_coin,btc,h=1 t=3.268,0.0011,worse,0.0044,0.004686666666666667
+B_pesaran_timmermann_skill,btc,h=2 PT=-0.005,0.5019947030907408,skill,0.9488332187218765,0.7189635679300443
+C_brier_worse_than_coin,btc,h=2 t=3.665,0.0002,worse,0.0009333333333333333,0.000991304347826087
+B_pesaran_timmermann_skill,btc,h=3 PT=-0.634,0.7369595889434408,skill,0.9488332187218765,0.8828141686747029
+C_brier_worse_than_coin,btc,h=3 t=3.927,0.0001,worse,0.00056,0.0005302325581395349
+B_pesaran_timmermann_skill,btc,h=4 PT=-0.476,0.6829628110484707,skill,0.9488332187218765,0.8573802197802198
+C_brier_worse_than_coin,btc,h=4 t=3.981,0.0001,worse,0.00056,0.0005302325581395349
+B_pesaran_timmermann_skill,btc,h=5 PT=-0.975,0.8352198700196897,skill,0.9488332187218765,0.9288521739130435
+C_brier_worse_than_coin,btc,h=5 t=4.238,1e-06,worse,9.333333333333333e-06,6.3333333333333326e-06
+B_pesaran_timmermann_skill,btc,h=6 PT=-0.666,0.7472944497992002,skill,0.9488332187218765,0.8828141686747029
+C_brier_worse_than_coin,btc,h=6 t=4.459,1e-06,worse,9.333333333333333e-06,6.3333333333333326e-06
+B_pesaran_timmermann_skill,btc,h=7 PT=-1.099,0.8641159670502805,skill,0.9488332187218765,0.9290614647887324
+C_brier_worse_than_coin,btc,h=7 t=4.921,1e-06,worse,9.333333333333333e-06,6.3333333333333326e-06
+D_shock_vs_calm_hit,btc,diff=-0.0294,0.1855,shock worse,0.24733333333333332,0.34797372371321866
+E_pre_event_direction,btc,hit=0.3673 n=98,0.011175,below,0.0894,0.03490273972602739
+F_continuation_7d,btc,mean=2.981% n=98,0.0029,continuation,0.0232,0.010839344262295082
+G_headline_spike_direction,btc,hit=0.3895 n=95,0.039608,below,0.079216,0.11148918518518518
+H_headline_spike_surprise,btc,MWU |s| spike > quiet,0.02256,larger surprise,0.02256,0.06768
+A_direction_vs_half,spxl,h=1 hit=0.5275,0.005531,above,0.009385939393939394,0.01910709090909091
+A_direction_vs_half,spxl,h=2 hit=0.5621,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,spxl,h=3 hit=0.5581,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,spxl,h=4 hit=0.5738,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,spxl,h=5 hit=0.5764,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,spxl,h=6 hit=0.5739,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,spxl,h=7 hit=0.5935,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+B_pesaran_timmermann_skill,spxl,h=1 PT=-0.898,0.8154072252677511,skill,0.9488332187218765,0.920360630500234
+C_brier_worse_than_coin,spxl,h=1 t=1.487,0.1371,worse,0.23265454545454545,0.28677798165137613
+B_pesaran_timmermann_skill,spxl,h=2 PT=-0.96,0.8314723925331622,skill,0.9488332187218765,0.9288521739130435
+C_brier_worse_than_coin,spxl,h=2 t=-0.341,0.7329,better,0.7874867924528302,0.8828141686747029
+B_pesaran_timmermann_skill,spxl,h=3 PT=-1.658,0.9513412668142535,skill,0.9513412668142535,0.9814742481160624
+C_brier_worse_than_coin,spxl,h=3 t=-0.198,0.8433,better,0.8745333333333334,0.9288521739130435
+B_pesaran_timmermann_skill,spxl,h=4 PT=-1.645,0.9500150944608786,skill,0.9513412668142535,0.9814742481160624
+C_brier_worse_than_coin,spxl,h=4 t=-0.718,0.4726,better,0.6199454545454546,0.6985715384615384
+B_pesaran_timmermann_skill,spxl,h=5 PT=-0.413,0.6601966931311954,skill,0.9488332187218765,0.8552548070108668
+C_brier_worse_than_coin,spxl,h=5 t=0.155,0.8765,worse,0.8924363636363636,0.933841121495327
+B_pesaran_timmermann_skill,spxl,h=6 PT=-0.839,0.7992653451980882,skill,0.9488332187218765,0.91348884
+C_brier_worse_than_coin,spxl,h=6 t=0.495,0.6205,worse,0.7239166666666668,0.8130689655172415
+B_pesaran_timmermann_skill,spxl,h=7 PT=0.046,0.4816551249555021,skill,0.9488332187218765,0.6994736846487547
+C_brier_worse_than_coin,spxl,h=7 t=0.069,0.9448,worse,0.9448,0.9814742481160624
+D_shock_vs_calm_hit,spxl,diff=-0.2624,0.00025,shock worse,0.0005,0.00114
+E_pre_event_direction,spxl,hit=0.3854 n=96,0.031548,below,0.126192,0.09221723076923076
+F_continuation_7d,spxl,mean=-1.385% n=96,0.1817,reversal,0.24226666666666666,0.34797372371321866
+A_direction_vs_half,spy,h=1 hit=0.5255,0.009951,above,0.015921599999999998,0.032411828571428575
+A_direction_vs_half,spy,h=2 hit=0.5842,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,spy,h=3 hit=0.5837,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,spy,h=4 hit=0.6029,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,spy,h=5 hit=0.6019,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,spy,h=6 hit=0.5983,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,spy,h=7 hit=0.6117,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+B_pesaran_timmermann_skill,spy,h=1 PT=-1.227,0.8900887045407648,skill,0.9513412668142535,0.9439080215595088
+C_brier_worse_than_coin,spy,h=1 t=1.4,0.1615,worse,0.266,0.3279926413344065
+B_pesaran_timmermann_skill,spy,h=2 PT=-0.296,0.6163849593019013,skill,0.9488332187218765,0.8130689655172415
+C_brier_worse_than_coin,spy,h=2 t=-1.581,0.1139,better,0.202125,0.2546
+B_pesaran_timmermann_skill,spy,h=3 PT=-1.037,0.850132071421072,skill,0.9488332187218765,0.9290614647887324
+C_brier_worse_than_coin,spy,h=3 t=-0.711,0.477,better,0.6199454545454546,0.6985715384615384
+B_pesaran_timmermann_skill,spy,h=4 PT=-0.648,0.7415075248597813,skill,0.9488332187218765,0.8828141686747029
+C_brier_worse_than_coin,spy,h=4 t=-1.813,0.0699,better,0.15055384615384615,0.17436052173913041
+B_pesaran_timmermann_skill,spy,h=5 PT=-0.542,0.7060907470583833,skill,0.9488332187218765,0.8702091369151967
+C_brier_worse_than_coin,spy,h=5 t=-1.574,0.1155,better,0.202125,0.25566990291262137
+B_pesaran_timmermann_skill,spy,h=6 PT=-0.895,0.8146064560116055,skill,0.9488332187218765,0.920360630500234
+C_brier_worse_than_coin,spy,h=6 t=-1.219,0.223,better,0.34688888888888886,0.39721875
+B_pesaran_timmermann_skill,spy,h=7 PT=-0.801,0.7884341770753849,skill,0.9488332187218765,0.9078939008746857
+C_brier_worse_than_coin,spy,h=7 t=-1.028,0.3037,better,0.44755789473684215,0.5017652173913043
+D_shock_vs_calm_hit,spy,diff=-0.2653,0.00025,shock worse,0.0005,0.00114
+E_pre_event_direction,spy,hit=0.4184 n=98,0.129293,below,0.258586,0.28075051428571424
+F_continuation_7d,spy,mean=-0.517% n=98,0.1318,reversal,0.24226666666666666,0.2808448598130841
+A_direction_vs_half,aapl,h=1 hit=0.5133,0.091535,above,0.12204666666666666,0.21515443298969075
+A_direction_vs_half,aapl,h=2 hit=0.5386,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,aapl,h=3 hit=0.5473,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,aapl,h=4 hit=0.5574,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,aapl,h=5 hit=0.5551,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,aapl,h=6 hit=0.566,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,aapl,h=7 hit=0.5654,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+B_pesaran_timmermann_skill,aapl,h=1 PT=-0.102,0.5406216624575756,skill,0.9488332187218765,0.7274326588235294
+C_brier_worse_than_coin,aapl,h=1 t=2.105,0.0353,worse,0.08594782608695652,0.10060499999999999
+B_pesaran_timmermann_skill,aapl,h=2 PT=0.775,0.2191698297933774,skill,0.9488332187218765,0.39347024561330746
+C_brier_worse_than_coin,aapl,h=2 t=0.648,0.5167,worse,0.6290260869565217,0.7189635679300443
+B_pesaran_timmermann_skill,aapl,h=3 PT=0.436,0.3314183647853287,skill,0.9488332187218765,0.5378940425531915
+C_brier_worse_than_coin,aapl,h=3 t=0.662,0.5082,worse,0.6290260869565217,0.7189635679300443
+B_pesaran_timmermann_skill,aapl,h=4 PT=1.501,0.06667778078440001,skill,0.9488332187218765,0.17275606839594548
+C_brier_worse_than_coin,aapl,h=4 t=0.407,0.6844,worse,0.7514980392156863,0.8573802197802198
+B_pesaran_timmermann_skill,aapl,h=5 PT=0.838,0.2010153517493265,skill,0.9488332187218765,0.36665200159077155
+C_brier_worse_than_coin,aapl,h=5 t=0.325,0.7453,worse,0.7874867924528302,0.8828141686747029
+B_pesaran_timmermann_skill,aapl,h=6 PT=0.892,0.18619646619742403,skill,0.9488332187218765,0.34797372371321866
+C_brier_worse_than_coin,aapl,h=6 t=0.612,0.5408,worse,0.6443574468085106,0.7274326588235294
+B_pesaran_timmermann_skill,aapl,h=7 PT=0.521,0.30118338568461656,skill,0.9488332187218765,0.5012395031831575
+C_brier_worse_than_coin,aapl,h=7 t=0.721,0.4712,worse,0.6199454545454546,0.6985715384615384
+D_shock_vs_calm_hit,aapl,diff=-0.049,0.0015,shock worse,0.0024000000000000002,0.005896551724137932
+E_pre_event_direction,aapl,hit=0.4941 n=170,0.938895,below,1.0,0.9814742481160624
+F_continuation_7d,aapl,mean=-0.733% n=170,0.0429,reversal,0.1144,0.11644285714285714
+A_direction_vs_half,msft,h=1 hit=0.5177,0.024455,above,0.03804111111111111,0.0724122077922078
+A_direction_vs_half,msft,h=2 hit=0.5151,0.054608,above,0.07841148717948718,0.1447746976744186
+A_direction_vs_half,msft,h=3 hit=0.5394,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,msft,h=4 hit=0.5423,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,msft,h=5 hit=0.5563,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,msft,h=6 hit=0.553,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,msft,h=7 hit=0.537,2e-06,above,4.1481481481481485e-06,1.2324324324324323e-05
+B_pesaran_timmermann_skill,msft,h=1 PT=1.475,0.07010627171122308,skill,0.9488332187218765,0.17436052173913041
+C_brier_worse_than_coin,msft,h=1 t=2.353,0.0186,worse,0.04734545454545454,0.057308108108108095
+B_pesaran_timmermann_skill,msft,h=2 PT=-0.697,0.7570986030954108,skill,0.9488332187218765,0.885222982080788
+C_brier_worse_than_coin,msft,h=2 t=1.931,0.0535,worse,0.12483333333333334,0.14350588235294118
+B_pesaran_timmermann_skill,msft,h=3 PT=0.984,0.16255775645082426,skill,0.9488332187218765,0.3279926413344065
+C_brier_worse_than_coin,msft,h=3 t=0.421,0.6735,worse,0.7514980392156863,0.8573802197802198
+B_pesaran_timmermann_skill,msft,h=4 PT=0.534,0.29667076703441875,skill,0.9488332187218765,0.5012395031831575
+C_brier_worse_than_coin,msft,h=4 t=0.695,0.4871,worse,0.6199454545454546,0.7029037974683544
+B_pesaran_timmermann_skill,msft,h=5 PT=1.152,0.1246605366643112,skill,0.9488332187218765,0.2732942534563746
+C_brier_worse_than_coin,msft,h=5 t=0.448,0.6544,worse,0.7478857142857143,0.8525897142857144
+B_pesaran_timmermann_skill,msft,h=6 PT=0.744,0.2284382375524876,skill,0.9488332187218765,0.4037513035811409
+C_brier_worse_than_coin,msft,h=6 t=0.943,0.3457,worse,0.49638974358974364,0.5511860139860141
+B_pesaran_timmermann_skill,msft,h=7 PT=-0.074,0.529494807368903,skill,0.9488332187218765,0.7274326588235294
+C_brier_worse_than_coin,msft,h=7 t=1.696,0.0898,worse,0.17340689655172414,0.21327500000000002
+D_shock_vs_calm_hit,msft,diff=-0.0601,0.00025,shock worse,0.0005,0.00114
+E_pre_event_direction,msft,hit=0.5153 n=163,0.75416,above,1.0,0.885222982080788
+F_continuation_7d,msft,mean=-0.713% n=163,0.0404,reversal,0.1144,0.1118298795180723
+A_direction_vs_half,tsla,h=1 hit=0.4956,0.589703,below,0.6475170196078431,0.7862706666666667
+A_direction_vs_half,tsla,h=2 hit=0.5164,0.04071,above,0.05999368421052632,0.1118298795180723
+A_direction_vs_half,tsla,h=3 hit=0.5034,0.679985,above,0.7322915384615384,0.8573802197802198
+A_direction_vs_half,tsla,h=4 hit=0.5,1.0,above,1.0,1.0
+A_direction_vs_half,tsla,h=5 hit=0.5303,0.000139,above,0.00025946666666666667,0.0007202727272727273
+A_direction_vs_half,tsla,h=6 hit=0.5239,0.002699,above,0.004875612903225806,0.010430033898305085
+A_direction_vs_half,tsla,h=7 hit=0.5145,0.070356,above,0.09609600000000001,0.17436052173913041
+B_pesaran_timmermann_skill,tsla,h=1 PT=-0.8,0.7881446014166034,skill,0.9488332187218765,0.9078939008746857
+C_brier_worse_than_coin,tsla,h=1 t=4.379,1e-06,worse,9.333333333333333e-06,6.3333333333333326e-06
+B_pesaran_timmermann_skill,tsla,h=2 PT=0.873,0.1913315388601431,skill,0.9488332187218765,0.3545032258064516
+C_brier_worse_than_coin,tsla,h=2 t=2.82,0.0048,worse,0.014933333333333333,0.017047384615384614
+B_pesaran_timmermann_skill,tsla,h=3 PT=-0.043,0.5171492330724881,skill,0.9488332187218765,0.7189635679300443
+C_brier_worse_than_coin,tsla,h=3 t=3.879,0.0001,worse,0.00056,0.0005302325581395349
+B_pesaran_timmermann_skill,tsla,h=4 PT=-0.533,0.7029832098465032,skill,0.9488332187218765,0.8702091369151967
+C_brier_worse_than_coin,tsla,h=4 t=4.484,1e-06,worse,9.333333333333333e-06,6.3333333333333326e-06
+B_pesaran_timmermann_skill,tsla,h=5 PT=1.28,0.10027256795444206,skill,0.9488332187218765,0.2286214549361279
+C_brier_worse_than_coin,tsla,h=5 t=2.755,0.0059,worse,0.017389473684210524,0.020077611940298508
+B_pesaran_timmermann_skill,tsla,h=6 PT=0.714,0.2376135897273044,skill,0.9488332187218765,0.4167376804448108
+C_brier_worse_than_coin,tsla,h=6 t=2.622,0.0087,worse,0.02436,0.02874782608695652
+B_pesaran_timmermann_skill,tsla,h=7 PT=0.172,0.4317187644991729,skill,0.9488332187218765,0.6606166329249089
+C_brier_worse_than_coin,tsla,h=7 t=2.843,0.0045,worse,0.014823529411764706,0.016285714285714285
+D_shock_vs_calm_hit,tsla,diff=-0.0052,0.736,shock worse,0.736,0.8828141686747029
+E_pre_event_direction,tsla,hit=0.4971 n=171,1.0,below,1.0,1.0
+F_continuation_7d,tsla,mean=0.518% n=171,0.5365,continuation,0.5365,0.7274326588235294
+A_direction_vs_half,nvda,h=1 hit=0.5062,0.434715,above,0.4868808,0.6607668
+A_direction_vs_half,nvda,h=2 hit=0.531,7.7e-05,above,0.0001486896551724138,0.0004501538461538461
+A_direction_vs_half,nvda,h=3 hit=0.5346,1e-05,above,2e-05,6.000000000000001e-05
+A_direction_vs_half,nvda,h=4 hit=0.542,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,nvda,h=5 hit=0.5399,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,nvda,h=6 hit=0.5379,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+A_direction_vs_half,nvda,h=7 hit=0.5417,1e-06,above,2.1538461538461538e-06,6.3333333333333326e-06
+B_pesaran_timmermann_skill,nvda,h=1 PT=-1.002,0.8418282035764547,skill,0.9488332187218765,0.9288521739130435
+C_brier_worse_than_coin,nvda,h=1 t=3.741,0.0002,worse,0.0009333333333333333,0.000991304347826087
+B_pesaran_timmermann_skill,nvda,h=2 PT=0.55,0.29115968678834636,skill,0.9488332187218765,0.4991308916371652
+C_brier_worse_than_coin,nvda,h=2 t=1.673,0.0943,worse,0.17602666666666664,0.21939183673469387
+B_pesaran_timmermann_skill,nvda,h=3 PT=0.404,0.34310635958814295,skill,0.9488332187218765,0.5509031689161732
+C_brier_worse_than_coin,nvda,h=3 t=1.039,0.2989,worse,0.44755789473684215,0.5012395031831575
+B_pesaran_timmermann_skill,nvda,h=4 PT=0.606,0.27225737660740534,skill,0.9488332187218765,0.47385253333197264
+C_brier_worse_than_coin,nvda,h=4 t=0.883,0.3775,worse,0.5285,0.5895205479452055
+B_pesaran_timmermann_skill,nvda,h=5 PT=0.253,0.40013410659859483,skill,0.9488332187218765,0.6206161653365961
+C_brier_worse_than_coin,nvda,h=5 t=1.302,0.1928,worse,0.30848,0.3545032258064516
+B_pesaran_timmermann_skill,nvda,h=6 PT=0.087,0.46533575605428545,skill,0.9488332187218765,0.6980036340814282
+C_brier_worse_than_coin,nvda,h=6 t=1.727,0.0842,worse,0.172,0.20422978723404253
+B_pesaran_timmermann_skill,nvda,h=7 PT=0.221,0.41254621648911394,skill,0.9488332187218765,0.6355441713480945
+C_brier_worse_than_coin,nvda,h=7 t=1.822,0.0685,worse,0.15055384615384615,0.17436052173913041
+D_shock_vs_calm_hit,nvda,diff=0.0198,0.2845,shock better,0.3251428571428571,0.4914090909090909
+E_pre_event_direction,nvda,hit=0.5603 n=141,0.17763,above,0.284208,0.34797372371321866
+F_continuation_7d,nvda,mean=0.962% n=140,0.1817,continuation,0.24226666666666666,0.34797372371321866
+I_scheduled_event_direction,spxl,fomc hit=0.4578 n=83,0.51041,below,1.0,0.7189635679300443
+J_scheduled_event_surprise,spxl,fomc MWU |s|,0.18607,larger surprise,0.2290092307692308,0.34797372371321866
+I_scheduled_event_direction,spxl,payrolls hit=0.5691 n=123,0.148816,above,0.595264,0.3056761081081081
+J_scheduled_event_surprise,spxl,payrolls MWU |s|,0.00111,larger surprise,0.00282,0.004686666666666667
+I_scheduled_event_direction,spxl,fomc_or_payrolls hit=0.5243 n=206,0.530722,above,1.0,0.7274326588235294
+J_scheduled_event_surprise,spxl,fomc_or_payrolls MWU |s|,0.00141,larger surprise,0.00282,0.00564
+I_scheduled_event_direction,spy,fomc hit=0.3976 n=83,0.07842,below,0.595264,0.19225548387096775
+J_scheduled_event_surprise,spy,fomc MWU |s|,0.09619,larger surprise,0.13991272727272727,0.22152848484848484
+I_scheduled_event_direction,spy,payrolls hit=0.5691 n=123,0.148816,above,0.595264,0.3056761081081081
+J_scheduled_event_surprise,spy,payrolls MWU |s|,0.00126,larger surprise,0.00282,0.005130000000000001
+I_scheduled_event_direction,spy,fomc_or_payrolls hit=0.5 n=206,1.0,above,1.0,1.0
+J_scheduled_event_surprise,spy,fomc_or_payrolls MWU |s|,0.00063,larger surprise,0.002016,0.002762307692307693
+I_scheduled_event_direction,bito,fomc hit=0.4722 n=36,0.867939,below,1.0,0.9290614647887324
+J_scheduled_event_surprise,bito,fomc MWU |s|,0.85536,larger surprise,0.85536,0.9290614647887324
+I_scheduled_event_direction,bito,payrolls hit=0.4906 n=53,1.0,below,1.0,1.0
+J_scheduled_event_surprise,bito,payrolls MWU |s|,0.17095,larger surprise,0.22793333333333332,0.3389269565217391
+I_scheduled_event_direction,bito,fomc_or_payrolls hit=0.4831 n=89,0.832258,below,1.0,0.9288521739130435
+J_scheduled_event_surprise,bito,fomc_or_payrolls MWU |s|,0.47797,larger surprise,0.5098346666666667,0.6985715384615384
+I_scheduled_event_direction,btc,fomc hit=0.5581 n=43,0.542384,above,1.0,0.7274326588235294
+J_scheduled_event_surprise,btc,fomc MWU |s|,0.36192,larger surprise,0.4136228571428572,0.569088
+I_scheduled_event_direction,btc,payrolls hit=0.5 n=64,1.0,above,1.0,1.0
+J_scheduled_event_surprise,btc,payrolls MWU |s|,0.01053,larger surprise,0.01872,0.03356666666666666
+I_scheduled_event_direction,btc,fomc_or_payrolls hit=0.5234 n=107,0.699175,above,1.0,0.8702091369151967
+J_scheduled_event_surprise,btc,fomc_or_payrolls MWU |s|,0.02106,larger surprise,0.033696,0.06402240000000001
+I_scheduled_event_direction,aapl,earnings hit=0.4923 n=65,1.0,below,1.0,1.0
+J_scheduled_event_surprise,aapl,earnings MWU |s|,1e-06,larger surprise,4e-06,6.3333333333333326e-06
+I_scheduled_event_direction,msft,earnings hit=0.4615 n=65,0.620145,below,1.0,0.8130689655172415
+J_scheduled_event_surprise,msft,earnings MWU |s|,1e-06,larger surprise,4e-06,6.3333333333333326e-06
+I_scheduled_event_direction,tsla,earnings hit=0.5238 n=63,0.801306,above,1.0,0.91348884
+J_scheduled_event_surprise,tsla,earnings MWU |s|,1e-06,larger surprise,4e-06,6.3333333333333326e-06
+I_scheduled_event_direction,nvda,earnings hit=0.6 n=65,0.136032,above,0.595264,0.28677798165137613
+J_scheduled_event_surprise,nvda,earnings MWU |s|,1e-06,larger surprise,4e-06,6.3333333333333326e-06

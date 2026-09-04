@@ -1,0 +1,94 @@
+{
+ "TSLA:2011-03-31": {
+  "what": "Morgan Stanley (Adam Jonas) upgraded Tesla to Overweight with a $70 target, calling it 'America's fourth automaker'",
+  "source": "Morgan Stanley note 31 Mar 2011; confirmed via contemporaneous coverage (web check 2026-09-04)"
+ },
+ "TSLA:2012-01-17": {
+  "what": "Rebound after the 13 Jan record 19% plunge on two Model S engineering departures; Tesla held an analyst/media call with senior staff before the open",
+  "source": "Bloomberg/Forbes 2012-01-13 (plunge); AOL DailyFinance 2012-01-17 'Tesla Motors' Big Crisis: Overblown?'"
+ },
+ "TSLA:2013-04-01": {
+  "what": "Tesla announced it expected its first-ever quarterly profit for Q1 2013; Model S sales beat the 4,500 target",
+  "source": "CNN Money 2013-04-01 'Tesla expects its first-ever profit'"
+ },
+ "TSLA:2014-01-14": {
+  "what": "Q4 2013 Model S deliveries of 6,900, ~20% above guidance",
+  "source": "TechCrunch 2014-01-14; Bloomberg 2014-01-14"
+ },
+ "TSLA:2014-02-25": {
+  "what": "Morgan Stanley more than doubled its target to $320 from $153 (Tesla may disrupt autos and utilities)",
+  "source": "Forbes 2014-02-25; Proactive Investors 2014-02-25"
+ },
+ "TSLA:2014-06-16": {
+  "what": "Reports of BMW and Nissan joining talks on charging standards, four days after Tesla opened its patents",
+  "source": "Green Car Reports 2014-06-16; Benzinga 'Why Tesla Is Up Over 8%'; Forbes 2014-06-16"
+ },
+ "TSLA:2018-06-06": {
+  "what": "Annual meeting: Musk said 5,000 Model 3/week 'extremely likely' by end of June; shareholders backed Musk as chairman/CEO",
+  "source": "CNBC 2018-06-06 (best day since Nov 2015)"
+ },
+ "TSLA:2018-10-01": {
+  "what": "SEC settlement over the 'funding secured' tweet (Sat 29 Sep): Musk stays CEO, steps down as chairman, $20M penalty",
+  "source": "CNBC 2018-10-01; CNN Business 2018-10-01; Bloomberg 2018-10-01"
+ },
+ "TSLA:2020-01-13": {
+  "what": "Oppenheimer raised target to $612 from $385 (Street high); shares crossed $500 for the first time",
+  "source": "CNBC 2020-01-13; Bloomberg 2020-01-13; S&P Global MI 2020-01-13"
+ },
+ "TSLA:2020-02-03": {
+  "what": "Argus raised target to $808 from $556; Panasonic reported first quarterly profit at the Tesla battery JV",
+  "source": "CNBC 2020-02-03; Forbes 2020-02-03"
+ },
+ "TSLA:2021-03-09": {
+  "what": "Tech rebound day (Nasdaq +3.7% after entering correction) plus reports of improved China demand",
+  "source": "CNN Business 2021-03-09"
+ },
+ "TSLA:2021-10-25": {
+  "what": "Hertz ordered 100,000 Teslas (~$4bn); market value passed $1 trillion",
+  "source": "CNBC 2021-10-25; NPR 2021-10-25; Forbes 2021-10-25"
+ },
+ "MSFT:2010-09-13": {
+  "what": "Reports (WSJ) that Microsoft planned a debt sale to fund dividends and buybacks; $4.75bn notes priced 22 Sep",
+  "source": "Taipei Times 2010-09-15 (wire report); Bloomberg 2010-09-22 (pricing). Reaction date not independently confirmed — verify"
+ },
+ "MSFT:2011-01-06": {
+  "what": "CES keynote (evening 5 Jan): next Windows to run on ARM system-on-chips from Nvidia, Qualcomm, TI",
+  "source": "The Register 2011-01-06; Engadget 2011-01-05. Event confirmed; attribution of the move inferred — verify"
+ },
+ "MSFT:2013-04-09": {
+  "what": "No single catalyst: minor items (XP anniversary, Lumia usage, earnings-date notice) in a multi-day rally",
+  "source": "TechCrunch 2013-11-14 'Parsing Microsoft's 42% gain in 2013'"
+ },
+ "MSFT:2013-08-23": {
+  "what": "Steve Ballmer announced he would retire as CEO within twelve months; shares closed +7.3%",
+  "source": "GeekWire 2013-08-23; CNN Money 2013-08-23; CNBC 2013-08-23"
+ },
+ "MSFT:2014-03-18": {
+  "what": "Microsoft announced a 27 March press event widely expected to unveil Office for iPad (Nadella's first); 14-year high",
+  "source": "CNN Money 2014-03-18 'Microsoft stock up 4%, hits 14-year high'; Neowin 2014-03-18"
+ },
+ "MSFT:2014-07-16": {
+  "what": "Reports (confirmed 17 Jul) of the largest layoffs in company history, 18,000 jobs, after the Nokia acquisition",
+  "source": "NPR 2014-07-18; Motley Fool 2014-07-15/17"
+ },
+ "NVDA:2011-01-05": {
+  "what": "CES 2011: 'Project Denver' ARM-based CPU announced; Microsoft showed Windows on ARM/Nvidia silicon",
+  "source": "Engadget 2011-01-05; NVIDIA newsroom 2011-01-05; Motley Fool 2011-01-10 (stock +29% on the week)"
+ },
+ "NVDA:2011-01-06": {
+  "what": "CES 2011 follow-through: Project Denver and Tegra 2 design wins; Windows on ARM",
+  "source": "Engadget 2011-01-05; Digitimes 2011-01-06; Motley Fool 2011-01-10"
+ },
+ "NVDA:2017-09-15": {
+  "what": "Evercore ISI (C.J. Muse) raised target to $250 from $180: 'Nvidia is creating THE AI computing industry standard'",
+  "source": "Fortune 2017-09-15"
+ },
+ "NVDA:2018-09-28": {
+  "what": "Evercore ISI (C.J. Muse) raised target to $400 from $300, a Street high, citing AI platform leadership",
+  "source": "CNBC 2018-09-28"
+ },
+ "NVDA:2021-11-04": {
+  "what": "Wells Fargo (Aaron Rakers) raised target to $320 from $245 ahead of Omniverse Enterprise general availability at GTC",
+  "source": "Investing.com 'Bull of the Day'; TheStreet 2021-11"
+ }
+}

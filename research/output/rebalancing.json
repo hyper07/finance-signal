@@ -1,0 +1,230 @@
+{
+ "SPY/TLT": {
+  "period": "2016-01-04 \u2192 2026-08-28",
+  "sessions": 2679,
+  "strategies": {
+   "100% SPY": {
+    "cagr_pct": 15.16,
+    "vol_pct": 17.51,
+    "sharpe": 0.896,
+    "max_drawdown_pct": -33.8,
+    "worst_year": "2022: -18.2%",
+    "rebalances": 0,
+    "turnover_total": 0.0,
+    "final_nav": 4.496
+   },
+   "100% TLT": {
+    "cagr_pct": -0.82,
+    "vol_pct": 14.71,
+    "sharpe": 0.018,
+    "max_drawdown_pct": -48.4,
+    "worst_year": "2022: -31.2%",
+    "rebalances": 0,
+    "turnover_total": 0.0,
+    "final_nav": 0.916
+   },
+   "60/40 buy-and-hold (drift)": {
+    "cagr_pct": 11.09,
+    "vol_pct": 12.39,
+    "sharpe": 0.913,
+    "max_drawdown_pct": -26.4,
+    "worst_year": "2022: -21.6%",
+    "rebalances": 0,
+    "turnover_total": 0.0,
+    "final_nav": 3.064
+   },
+   "60/40 monthly rebalance": {
+    "cagr_pct": 9.05,
+    "vol_pct": 11.16,
+    "sharpe": 0.834,
+    "max_drawdown_pct": -27.5,
+    "worst_year": "2022: -23.2%",
+    "rebalances": 127,
+    "turnover_total": 1.35,
+    "final_nav": 2.516
+   },
+   "60/40 quarterly rebalance": {
+    "cagr_pct": 9.29,
+    "vol_pct": 11.13,
+    "sharpe": 0.855,
+    "max_drawdown_pct": -27.7,
+    "worst_year": "2022: -23.5%",
+    "rebalances": 42,
+    "turnover_total": 0.93,
+    "final_nav": 2.574
+   },
+   "60/40 band \u00b15pp (sell bonds after falls / stocks after rises)": {
+    "cagr_pct": 9.06,
+    "vol_pct": 11.3,
+    "sharpe": 0.826,
+    "max_drawdown_pct": -27.6,
+    "worst_year": "2022: -23.2%",
+    "rebalances": 9,
+    "turnover_total": 0.48,
+    "final_nav": 2.518
+   },
+   "60/40 band + shock tilt (70/30 for 7 sessions after a |z|\u22652.5 down day)": {
+    "cagr_pct": 9.31,
+    "vol_pct": 11.87,
+    "sharpe": 0.811,
+    "max_drawdown_pct": -27.9,
+    "worst_year": "2022: -23.5%",
+    "rebalances": 470,
+    "turnover_total": 11.89,
+    "final_nav": 2.579
+   }
+  }
+ },
+ "SPXL/TLT": {
+  "period": "2016-01-04 \u2192 2026-08-28",
+  "sessions": 2679,
+  "strategies": {
+   "100% SPXL": {
+    "cagr_pct": 29.87,
+    "vol_pct": 51.9,
+    "sharpe": 0.768,
+    "max_drawdown_pct": -76.9,
+    "worst_year": "2022: -56.6%",
+    "rebalances": 0,
+    "turnover_total": 0.0,
+    "final_nav": 16.165
+   },
+   "100% TLT": {
+    "cagr_pct": -0.82,
+    "vol_pct": 14.71,
+    "sharpe": 0.018,
+    "max_drawdown_pct": -48.4,
+    "worst_year": "2022: -31.2%",
+    "rebalances": 0,
+    "turnover_total": 0.0,
+    "final_nav": 0.916
+   },
+   "60/40 buy-and-hold (drift)": {
+    "cagr_pct": 24.22,
+    "vol_pct": 40.3,
+    "sharpe": 0.743,
+    "max_drawdown_pct": -60.6,
+    "worst_year": "2022: -53.8%",
+    "rebalances": 0,
+    "turnover_total": 0.0,
+    "final_nav": 10.066
+   },
+   "60/40 monthly rebalance": {
+    "cagr_pct": 20.75,
+    "vol_pct": 29.33,
+    "sharpe": 0.792,
+    "max_drawdown_pct": -51.9,
+    "worst_year": "2022: -45.7%",
+    "rebalances": 127,
+    "turnover_total": 3.36,
+    "final_nav": 7.447
+   },
+   "60/40 quarterly rebalance": {
+    "cagr_pct": 22.06,
+    "vol_pct": 29.3,
+    "sharpe": 0.829,
+    "max_drawdown_pct": -52.1,
+    "worst_year": "2022: -46.2%",
+    "rebalances": 42,
+    "turnover_total": 2.15,
+    "final_nav": 8.351
+   },
+   "60/40 band \u00b15pp (sell bonds after falls / stocks after rises)": {
+    "cagr_pct": 21.14,
+    "vol_pct": 30.96,
+    "sharpe": 0.776,
+    "max_drawdown_pct": -53.4,
+    "worst_year": "2022: -45.0%",
+    "rebalances": 59,
+    "turnover_total": 3.34,
+    "final_nav": 7.704
+   },
+   "60/40 band + shock tilt (70/30 for 7 sessions after a |z|\u22652.5 down day)": {
+    "cagr_pct": 20.65,
+    "vol_pct": 32.98,
+    "sharpe": 0.737,
+    "max_drawdown_pct": -59.8,
+    "worst_year": "2022: -47.0%",
+    "rebalances": 1021,
+    "turnover_total": 19.25,
+    "final_nav": 7.383
+   }
+  }
+ },
+ "BTC/TLT": {
+  "period": "2021-01-04 \u2192 2026-08-28",
+  "sessions": 1420,
+  "strategies": {
+   "100% BTC": {
+    "cagr_pct": 17.04,
+    "vol_pct": 57.6,
+    "sharpe": 0.562,
+    "max_drawdown_pct": -76.7,
+    "worst_year": "2022: -64.1%",
+    "rebalances": 0,
+    "turnover_total": 0.0,
+    "final_nav": 2.43
+   },
+   "100% TLT": {
+    "cagr_pct": -7.82,
+    "vol_pct": 15.46,
+    "sharpe": -0.45,
+    "max_drawdown_pct": -44.0,
+    "worst_year": "2022: -31.2%",
+    "rebalances": 0,
+    "turnover_total": 0.0,
+    "final_nav": 0.632
+   },
+   "60/40 buy-and-hold (drift)": {
+    "cagr_pct": 9.98,
+    "vol_pct": 42.08,
+    "sharpe": 0.437,
+    "max_drawdown_pct": -66.9,
+    "worst_year": "2022: -54.0%",
+    "rebalances": 0,
+    "turnover_total": 0.0,
+    "final_nav": 1.711
+   },
+   "60/40 monthly rebalance": {
+    "cagr_pct": 10.94,
+    "vol_pct": 35.13,
+    "sharpe": 0.472,
+    "max_drawdown_pct": -62.8,
+    "worst_year": "2022: -51.0%",
+    "rebalances": 67,
+    "turnover_total": 2.13,
+    "final_nav": 1.797
+   },
+   "60/40 quarterly rebalance": {
+    "cagr_pct": 13.11,
+    "vol_pct": 35.47,
+    "sharpe": 0.525,
+    "max_drawdown_pct": -62.5,
+    "worst_year": "2022: -49.9%",
+    "rebalances": 22,
+    "turnover_total": 1.47,
+    "final_nav": 2.005
+   },
+   "60/40 band \u00b15pp (sell bonds after falls / stocks after rises)": {
+    "cagr_pct": 11.13,
+    "vol_pct": 35.33,
+    "sharpe": 0.476,
+    "max_drawdown_pct": -63.2,
+    "worst_year": "2022: -51.8%",
+    "rebalances": 34,
+    "turnover_total": 1.99,
+    "final_nav": 1.814
+   },
+   "60/40 band + shock tilt (70/30 for 7 sessions after a |z|\u22652.5 down day)": {
+    "cagr_pct": 8.82,
+    "vol_pct": 36.11,
+    "sharpe": 0.415,
+    "max_drawdown_pct": -64.3,
+    "worst_year": "2022: -53.4%",
+    "rebalances": 636,
+    "turnover_total": 11.0,
+    "final_nav": 1.611
+   }
+  }
+ }
+}

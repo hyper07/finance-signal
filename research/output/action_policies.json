@@ -1,0 +1,1442 @@
+{
+  "bito": {
+    "dataset": "BITO / BITI (deployed b04 dataset, published 2026 signals frozen)",
+    "asset_type": "crypto",
+    "short_mode": "inverse_etf",
+    "period": "2022-03-07 \u2192 2026-08-28",
+    "cost_bps_one_way": 5.0,
+    "policies": {
+      "hold": {
+        "sessions": 1125,
+        "total_return_pct": 57.18,
+        "annualised_return_pct": 15.81,
+        "annualised_vol_pct": 64.54,
+        "sharpe": 0.55,
+        "max_drawdown_pct": -68.16,
+        "turnover_per_year": 0.32,
+        "fee_drag_pct_total": 0.08,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 1125,
+        "total_return_pct": 18.03,
+        "annualised_return_pct": 5.53,
+        "annualised_vol_pct": 59.79,
+        "sharpe": 0.371,
+        "max_drawdown_pct": -49.36,
+        "turnover_per_year": 108.15,
+        "fee_drag_pct_total": 21.39,
+        "mean_exposure": -0.009
+      },
+      "act_weekly": {
+        "sessions": 1125,
+        "total_return_pct": -3.26,
+        "annualised_return_pct": -1.07,
+        "annualised_vol_pct": 39.09,
+        "sharpe": 0.171,
+        "max_drawdown_pct": -53.44,
+        "turnover_per_year": 58.89,
+        "fee_drag_pct_total": 9.2,
+        "mean_exposure": 0.004
+      },
+      "act_once_hold": {
+        "sessions": 1125,
+        "total_return_pct": -56.0,
+        "annualised_return_pct": -23.4,
+        "annualised_vol_pct": 47.5,
+        "sharpe": -0.32,
+        "max_drawdown_pct": -67.17,
+        "turnover_per_year": 36.43,
+        "fee_drag_pct_total": 2.55,
+        "mean_exposure": 0.005
+      },
+      "signal_3day": {
+        "sessions": 1125,
+        "total_return_pct": 15.11,
+        "annualised_return_pct": 4.68,
+        "annualised_vol_pct": 63.32,
+        "sharpe": 0.372,
+        "max_drawdown_pct": -56.17,
+        "turnover_per_year": 102.27,
+        "fee_drag_pct_total": 19.62,
+        "mean_exposure": -0.016
+      }
+    },
+    "policies_2026": {
+      "hold": {
+        "sessions": 165,
+        "total_return_pct": -13.32,
+        "annualised_return_pct": -27.13,
+        "annualised_vol_pct": 55.69,
+        "sharpe": -0.29,
+        "max_drawdown_pct": -40.8,
+        "turnover_per_year": 2.21,
+        "fee_drag_pct_total": 0.04,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 165,
+        "total_return_pct": 63.69,
+        "annualised_return_pct": 197.71,
+        "annualised_vol_pct": 48.96,
+        "sharpe": 2.473,
+        "max_drawdown_pct": -21.09,
+        "turnover_per_year": 137.25,
+        "fee_drag_pct_total": 5.14,
+        "mean_exposure": -0.063
+      },
+      "act_weekly": {
+        "sessions": 165,
+        "total_return_pct": 38.89,
+        "annualised_return_pct": 106.93,
+        "annualised_vol_pct": 42.47,
+        "sharpe": 1.922,
+        "max_drawdown_pct": -13.15,
+        "turnover_per_year": 55.34,
+        "fee_drag_pct_total": 1.73,
+        "mean_exposure": 0.085
+      },
+      "act_once_hold": {
+        "sessions": 165,
+        "total_return_pct": 20.53,
+        "annualised_return_pct": 51.2,
+        "annualised_vol_pct": 49.51,
+        "sharpe": 1.08,
+        "max_drawdown_pct": -21.44,
+        "turnover_per_year": 40.73,
+        "fee_drag_pct_total": 1.1,
+        "mean_exposure": 0.092
+      },
+      "signal_3day": {
+        "sessions": 165,
+        "total_return_pct": 75.33,
+        "annualised_return_pct": 246.6,
+        "annualised_vol_pct": 51.78,
+        "sharpe": 2.66,
+        "max_drawdown_pct": -21.39,
+        "turnover_per_year": 130.6,
+        "fee_drag_pct_total": 5.23,
+        "mean_exposure": -0.085
+      }
+    },
+    "policies_shock_windows": {
+      "hold": {
+        "sessions": 305,
+        "total_return_pct": 8.95,
+        "annualised_return_pct": 10.81,
+        "annualised_vol_pct": 89.62,
+        "sharpe": 0.564,
+        "max_drawdown_pct": -65.01,
+        "turnover_per_year": 1.2,
+        "fee_drag_pct_total": 0.05,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 305,
+        "total_return_pct": 166.75,
+        "annualised_return_pct": 223.8,
+        "annualised_vol_pct": 92.9,
+        "sharpe": 1.689,
+        "max_drawdown_pct": -25.82,
+        "turnover_per_year": 130.65,
+        "fee_drag_pct_total": 14.91,
+        "mean_exposure": -0.197
+      },
+      "act_weekly": {
+        "sessions": 305,
+        "total_return_pct": 32.01,
+        "annualised_return_pct": 39.46,
+        "annualised_vol_pct": 56.09,
+        "sharpe": 0.883,
+        "max_drawdown_pct": -28.78,
+        "turnover_per_year": 67.06,
+        "fee_drag_pct_total": 3.77,
+        "mean_exposure": -0.159
+      },
+      "act_once_hold": {
+        "sessions": 305,
+        "total_return_pct": 10.76,
+        "annualised_return_pct": 13.02,
+        "annualised_vol_pct": 65.82,
+        "sharpe": 0.523,
+        "max_drawdown_pct": -30.95,
+        "turnover_per_year": 54.85,
+        "fee_drag_pct_total": 2.58,
+        "mean_exposure": -0.191
+      },
+      "signal_3day": {
+        "sessions": 305,
+        "total_return_pct": 157.85,
+        "annualised_return_pct": 210.9,
+        "annualised_vol_pct": 97.19,
+        "sharpe": 1.614,
+        "max_drawdown_pct": -26.86,
+        "turnover_per_year": 123.35,
+        "fee_drag_pct_total": 13.58,
+        "mean_exposure": -0.213
+      }
+    },
+    "daily_vs_weekly_mean_abs_exposure_gap": 0.5,
+    "daily_vs_weekly_share_sessions_differ_ge_25pts": 0.659
+  },
+  "btc": {
+    "dataset": "BTC/USD spot (Alpaca, 24/7 calendar days)",
+    "asset_type": "crypto",
+    "short_mode": "cash",
+    "period": "2021-04-06 \u2192 2026-08-30",
+    "cost_bps_one_way": 5.0,
+    "policies": {
+      "hold": {
+        "sessions": 1973,
+        "total_return_pct": 33.43,
+        "annualised_return_pct": 5.48,
+        "annualised_vol_pct": 55.31,
+        "sharpe": 0.373,
+        "max_drawdown_pct": -76.68,
+        "turnover_per_year": 0.19,
+        "fee_drag_pct_total": 0.07,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 1973,
+        "total_return_pct": -2.1,
+        "annualised_return_pct": -0.39,
+        "annualised_vol_pct": 37.97,
+        "sharpe": 0.179,
+        "max_drawdown_pct": -75.03,
+        "turnover_per_year": 58.92,
+        "fee_drag_pct_total": 16.92,
+        "mean_exposure": 0.666
+      },
+      "act_weekly": {
+        "sessions": 1973,
+        "total_return_pct": 49.67,
+        "annualised_return_pct": 7.75,
+        "annualised_vol_pct": 30.06,
+        "sharpe": 0.399,
+        "max_drawdown_pct": -47.04,
+        "turnover_per_year": 48.08,
+        "fee_drag_pct_total": 20.75,
+        "mean_exposure": 0.42
+      },
+      "act_once_hold": {
+        "sessions": 1973,
+        "total_return_pct": 137.86,
+        "annualised_return_pct": 17.4,
+        "annualised_vol_pct": 39.5,
+        "sharpe": 0.604,
+        "max_drawdown_pct": -57.39,
+        "turnover_per_year": 13.28,
+        "fee_drag_pct_total": 8.7,
+        "mean_exposure": 0.67
+      },
+      "signal_3day": {
+        "sessions": 1973,
+        "total_return_pct": 19.27,
+        "annualised_return_pct": 3.32,
+        "annualised_vol_pct": 45.0,
+        "sharpe": 0.297,
+        "max_drawdown_pct": -74.35,
+        "turnover_per_year": 51.28,
+        "fee_drag_pct_total": 17.75,
+        "mean_exposure": 0.781
+      }
+    },
+    "policies_2026": {
+      "hold": {
+        "sessions": 242,
+        "total_return_pct": -9.82,
+        "annualised_return_pct": -14.45,
+        "annualised_vol_pct": 46.8,
+        "sharpe": -0.1,
+        "max_drawdown_pct": -39.64,
+        "turnover_per_year": 1.51,
+        "fee_drag_pct_total": 0.04,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 242,
+        "total_return_pct": -4.5,
+        "annualised_return_pct": -6.71,
+        "annualised_vol_pct": 31.18,
+        "sharpe": -0.067,
+        "max_drawdown_pct": -26.54,
+        "turnover_per_year": 72.22,
+        "fee_drag_pct_total": 2.31,
+        "mean_exposure": 0.566
+      },
+      "act_weekly": {
+        "sessions": 242,
+        "total_return_pct": 3.58,
+        "annualised_return_pct": 5.45,
+        "annualised_vol_pct": 33.52,
+        "sharpe": 0.326,
+        "max_drawdown_pct": -28.77,
+        "turnover_per_year": 36.98,
+        "fee_drag_pct_total": 1.28,
+        "mean_exposure": 0.464
+      },
+      "act_once_hold": {
+        "sessions": 242,
+        "total_return_pct": -4.66,
+        "annualised_return_pct": -6.95,
+        "annualised_vol_pct": 38.0,
+        "sharpe": 0.0,
+        "max_drawdown_pct": -33.19,
+        "turnover_per_year": 23.77,
+        "fee_drag_pct_total": 0.76,
+        "mean_exposure": 0.642
+      },
+      "signal_3day": {
+        "sessions": 242,
+        "total_return_pct": -5.49,
+        "annualised_return_pct": -8.16,
+        "annualised_vol_pct": 37.72,
+        "sharpe": -0.035,
+        "max_drawdown_pct": -29.25,
+        "turnover_per_year": 79.99,
+        "fee_drag_pct_total": 2.54,
+        "mean_exposure": 0.661
+      }
+    },
+    "policies_shock_windows": {
+      "hold": {
+        "sessions": 665,
+        "total_return_pct": -26.7,
+        "annualised_return_pct": -15.69,
+        "annualised_vol_pct": 72.07,
+        "sharpe": 0.125,
+        "max_drawdown_pct": -70.86,
+        "turnover_per_year": 0.55,
+        "fee_drag_pct_total": 0.04,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 665,
+        "total_return_pct": 26.6,
+        "annualised_return_pct": 13.83,
+        "annualised_vol_pct": 48.82,
+        "sharpe": 0.508,
+        "max_drawdown_pct": -55.3,
+        "turnover_per_year": 64.89,
+        "fee_drag_pct_total": 7.73,
+        "mean_exposure": 0.657
+      },
+      "act_weekly": {
+        "sessions": 665,
+        "total_return_pct": 11.01,
+        "annualised_return_pct": 5.91,
+        "annualised_vol_pct": 41.42,
+        "sharpe": 0.347,
+        "max_drawdown_pct": -39.95,
+        "turnover_per_year": 56.19,
+        "fee_drag_pct_total": 5.83,
+        "mean_exposure": 0.449
+      },
+      "act_once_hold": {
+        "sessions": 665,
+        "total_return_pct": 53.83,
+        "annualised_return_pct": 26.69,
+        "annualised_vol_pct": 51.45,
+        "sharpe": 0.717,
+        "max_drawdown_pct": -45.66,
+        "turnover_per_year": 19.2,
+        "fee_drag_pct_total": 2.72,
+        "mean_exposure": 0.686
+      },
+      "signal_3day": {
+        "sessions": 665,
+        "total_return_pct": 19.71,
+        "annualised_return_pct": 10.39,
+        "annualised_vol_pct": 56.88,
+        "sharpe": 0.457,
+        "max_drawdown_pct": -55.69,
+        "turnover_per_year": 54.38,
+        "fee_drag_pct_total": 6.11,
+        "mean_exposure": 0.767
+      }
+    },
+    "daily_vs_weekly_mean_abs_exposure_gap": 0.353,
+    "daily_vs_weekly_share_sessions_differ_ge_25pts": 0.664
+  },
+  "spxl": {
+    "dataset": "SPXL / SPXS (deployed b01 dataset, published 2026 signals frozen)",
+    "asset_type": "index",
+    "short_mode": "inverse_etf",
+    "period": "2016-05-19 \u2192 2026-08-28",
+    "cost_bps_one_way": 5.0,
+    "policies": {
+      "hold": {
+        "sessions": 2584,
+        "total_return_pct": 1456.78,
+        "annualised_return_pct": 30.7,
+        "annualised_vol_pct": 52.06,
+        "sharpe": 0.779,
+        "max_drawdown_pct": -76.86,
+        "turnover_per_year": 0.1,
+        "fee_drag_pct_total": 0.79,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 2584,
+        "total_return_pct": -59.0,
+        "annualised_return_pct": -8.33,
+        "annualised_vol_pct": 41.75,
+        "sharpe": 0.004,
+        "max_drawdown_pct": -78.15,
+        "turnover_per_year": 62.17,
+        "fee_drag_pct_total": 15.41,
+        "mean_exposure": 0.232
+      },
+      "act_weekly": {
+        "sessions": 2584,
+        "total_return_pct": -72.97,
+        "annualised_return_pct": -11.98,
+        "annualised_vol_pct": 30.76,
+        "sharpe": -0.256,
+        "max_drawdown_pct": -76.73,
+        "turnover_per_year": 38.16,
+        "fee_drag_pct_total": 5.84,
+        "mean_exposure": 0.157
+      },
+      "act_once_hold": {
+        "sessions": 2584,
+        "total_return_pct": -82.7,
+        "annualised_return_pct": -15.73,
+        "annualised_vol_pct": 39.84,
+        "sharpe": -0.225,
+        "max_drawdown_pct": -87.37,
+        "turnover_per_year": 20.24,
+        "fee_drag_pct_total": 1.89,
+        "mean_exposure": 0.25
+      },
+      "signal_3day": {
+        "sessions": 2584,
+        "total_return_pct": -61.35,
+        "annualised_return_pct": -8.85,
+        "annualised_vol_pct": 46.39,
+        "sharpe": 0.035,
+        "max_drawdown_pct": -79.5,
+        "turnover_per_year": 64.46,
+        "fee_drag_pct_total": 15.16,
+        "mean_exposure": 0.295
+      }
+    },
+    "policies_2026": {
+      "hold": {
+        "sessions": 165,
+        "total_return_pct": 32.11,
+        "annualised_return_pct": 53.0,
+        "annualised_vol_pct": 40.48,
+        "sharpe": 1.253,
+        "max_drawdown_pct": -26.77,
+        "turnover_per_year": 1.53,
+        "fee_drag_pct_total": 0.07,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 165,
+        "total_return_pct": 44.85,
+        "annualised_return_pct": 76.11,
+        "annualised_vol_pct": 30.32,
+        "sharpe": 2.018,
+        "max_drawdown_pct": -15.76,
+        "turnover_per_year": 74.84,
+        "fee_drag_pct_total": 3.59,
+        "mean_exposure": 0.04
+      },
+      "act_weekly": {
+        "sessions": 165,
+        "total_return_pct": -14.45,
+        "annualised_return_pct": -21.21,
+        "annualised_vol_pct": 19.92,
+        "sharpe": -1.096,
+        "max_drawdown_pct": -19.14,
+        "turnover_per_year": 36.2,
+        "fee_drag_pct_total": 1.02,
+        "mean_exposure": 0.153
+      },
+      "act_once_hold": {
+        "sessions": 165,
+        "total_return_pct": -15.81,
+        "annualised_return_pct": -23.11,
+        "annualised_vol_pct": 30.16,
+        "sharpe": -0.718,
+        "max_drawdown_pct": -31.41,
+        "turnover_per_year": 23.67,
+        "fee_drag_pct_total": 0.66,
+        "mean_exposure": 0.206
+      },
+      "signal_3day": {
+        "sessions": 165,
+        "total_return_pct": 45.25,
+        "annualised_return_pct": 76.84,
+        "annualised_vol_pct": 35.04,
+        "sharpe": 1.803,
+        "max_drawdown_pct": -18.72,
+        "turnover_per_year": 68.73,
+        "fee_drag_pct_total": 3.29,
+        "mean_exposure": 0.067
+      }
+    },
+    "policies_shock_windows": {
+      "hold": {
+        "sessions": 646,
+        "total_return_pct": -90.36,
+        "annualised_return_pct": -59.85,
+        "annualised_vol_pct": 76.56,
+        "sharpe": -0.796,
+        "max_drawdown_pct": -95.54,
+        "turnover_per_year": 0.39,
+        "fee_drag_pct_total": 0.0,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 646,
+        "total_return_pct": -73.61,
+        "annualised_return_pct": -40.53,
+        "annualised_vol_pct": 63.78,
+        "sharpe": -0.489,
+        "max_drawdown_pct": -75.31,
+        "turnover_per_year": 82.5,
+        "fee_drag_pct_total": 2.95,
+        "mean_exposure": -0.02
+      },
+      "act_weekly": {
+        "sessions": 646,
+        "total_return_pct": -69.56,
+        "annualised_return_pct": -37.12,
+        "annualised_vol_pct": 45.43,
+        "sharpe": -0.781,
+        "max_drawdown_pct": -69.55,
+        "turnover_per_year": 48.1,
+        "fee_drag_pct_total": 1.93,
+        "mean_exposure": 0.097
+      },
+      "act_once_hold": {
+        "sessions": 646,
+        "total_return_pct": -87.93,
+        "annualised_return_pct": -56.17,
+        "annualised_vol_pct": 58.79,
+        "sharpe": -1.097,
+        "max_drawdown_pct": -87.93,
+        "turnover_per_year": 38.5,
+        "fee_drag_pct_total": 0.61,
+        "mean_exposure": 0.097
+      },
+      "signal_3day": {
+        "sessions": 646,
+        "total_return_pct": -78.84,
+        "annualised_return_pct": -45.44,
+        "annualised_vol_pct": 69.18,
+        "sharpe": -0.525,
+        "max_drawdown_pct": -79.59,
+        "turnover_per_year": 86.99,
+        "fee_drag_pct_total": 2.5,
+        "mean_exposure": -0.011
+      }
+    },
+    "daily_vs_weekly_mean_abs_exposure_gap": 0.428,
+    "daily_vs_weekly_share_sessions_differ_ge_25pts": 0.678
+  },
+  "spy": {
+    "dataset": "SPY spot (S&P 500 ETF, cash mode)",
+    "asset_type": "index",
+    "short_mode": "cash",
+    "period": "2016-05-19 \u2192 2026-08-28",
+    "cost_bps_one_way": 5.0,
+    "policies": {
+      "hold": {
+        "sessions": 2584,
+        "total_return_pct": 340.85,
+        "annualised_return_pct": 15.57,
+        "annualised_vol_pct": 17.56,
+        "sharpe": 0.912,
+        "max_drawdown_pct": -33.79,
+        "turnover_per_year": 0.1,
+        "fee_drag_pct_total": 0.22,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 2584,
+        "total_return_pct": 172.2,
+        "annualised_return_pct": 10.26,
+        "annualised_vol_pct": 11.99,
+        "sharpe": 0.875,
+        "max_drawdown_pct": -23.22,
+        "turnover_per_year": 13.01,
+        "fee_drag_pct_total": 18.77,
+        "mean_exposure": 0.729
+      },
+      "act_weekly": {
+        "sessions": 2584,
+        "total_return_pct": 36.3,
+        "annualised_return_pct": 3.07,
+        "annualised_vol_pct": 7.78,
+        "sharpe": 0.427,
+        "max_drawdown_pct": -14.34,
+        "turnover_per_year": 32.08,
+        "fee_drag_pct_total": 24.36,
+        "mean_exposure": 0.445
+      },
+      "act_once_hold": {
+        "sessions": 2584,
+        "total_return_pct": 185.23,
+        "annualised_return_pct": 10.76,
+        "annualised_vol_pct": 12.56,
+        "sharpe": 0.877,
+        "max_drawdown_pct": -24.8,
+        "turnover_per_year": 1.44,
+        "fee_drag_pct_total": 2.11,
+        "mean_exposure": 0.736
+      },
+      "signal_3day": {
+        "sessions": 2584,
+        "total_return_pct": 267.45,
+        "annualised_return_pct": 13.53,
+        "annualised_vol_pct": 15.67,
+        "sharpe": 0.889,
+        "max_drawdown_pct": -29.24,
+        "turnover_per_year": 13.56,
+        "fee_drag_pct_total": 26.42,
+        "mean_exposure": 0.947
+      }
+    },
+    "policies_2026": {
+      "hold": {
+        "sessions": 165,
+        "total_return_pct": 13.36,
+        "annualised_return_pct": 21.11,
+        "annualised_vol_pct": 13.49,
+        "sharpe": 1.487,
+        "max_drawdown_pct": -8.88,
+        "turnover_per_year": 1.53,
+        "fee_drag_pct_total": 0.06,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 165,
+        "total_return_pct": 9.49,
+        "annualised_return_pct": 14.85,
+        "annualised_vol_pct": 10.19,
+        "sharpe": 1.409,
+        "max_drawdown_pct": -7.1,
+        "turnover_per_year": 4.2,
+        "fee_drag_pct_total": 0.15,
+        "mean_exposure": 0.75
+      },
+      "act_weekly": {
+        "sessions": 165,
+        "total_return_pct": 7.22,
+        "annualised_return_pct": 11.23,
+        "annualised_vol_pct": 5.77,
+        "sharpe": 1.875,
+        "max_drawdown_pct": -3.88,
+        "turnover_per_year": 36.12,
+        "fee_drag_pct_total": 1.27,
+        "mean_exposure": 0.421
+      },
+      "act_once_hold": {
+        "sessions": 165,
+        "total_return_pct": 9.98,
+        "annualised_return_pct": 15.64,
+        "annualised_vol_pct": 10.12,
+        "sharpe": 1.487,
+        "max_drawdown_pct": -6.71,
+        "turnover_per_year": 1.15,
+        "fee_drag_pct_total": 0.04,
+        "mean_exposure": 0.75
+      },
+      "signal_3day": {
+        "sessions": 165,
+        "total_return_pct": 13.2,
+        "annualised_return_pct": 20.84,
+        "annualised_vol_pct": 13.47,
+        "sharpe": 1.473,
+        "max_drawdown_pct": -8.88,
+        "turnover_per_year": 4.58,
+        "fee_drag_pct_total": 0.17,
+        "mean_exposure": 0.994
+      }
+    },
+    "policies_shock_windows": {
+      "hold": {
+        "sessions": 650,
+        "total_return_pct": -40.68,
+        "annualised_return_pct": -18.33,
+        "annualised_vol_pct": 26.09,
+        "sharpe": -0.645,
+        "max_drawdown_pct": -56.19,
+        "turnover_per_year": 0.39,
+        "fee_drag_pct_total": 0.03,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 650,
+        "total_return_pct": -32.46,
+        "annualised_return_pct": -14.11,
+        "annualised_vol_pct": 17.33,
+        "sharpe": -0.791,
+        "max_drawdown_pct": -45.9,
+        "turnover_per_year": 14.25,
+        "fee_drag_pct_total": 1.25,
+        "mean_exposure": 0.724
+      },
+      "act_weekly": {
+        "sessions": 650,
+        "total_return_pct": -31.08,
+        "annualised_return_pct": -13.44,
+        "annualised_vol_pct": 11.57,
+        "sharpe": -1.189,
+        "max_drawdown_pct": -37.39,
+        "turnover_per_year": 34.37,
+        "fee_drag_pct_total": 3.13,
+        "mean_exposure": 0.448
+      },
+      "act_once_hold": {
+        "sessions": 650,
+        "total_return_pct": -33.64,
+        "annualised_return_pct": -14.7,
+        "annualised_vol_pct": 19.09,
+        "sharpe": -0.736,
+        "max_drawdown_pct": -46.26,
+        "turnover_per_year": 3.2,
+        "fee_drag_pct_total": 0.27,
+        "mean_exposure": 0.74
+      },
+      "signal_3day": {
+        "sessions": 650,
+        "total_return_pct": -39.36,
+        "annualised_return_pct": -17.63,
+        "annualised_vol_pct": 22.82,
+        "sharpe": -0.735,
+        "max_drawdown_pct": -55.05,
+        "turnover_per_year": 14.34,
+        "fee_drag_pct_total": 1.13,
+        "mean_exposure": 0.938
+      }
+    },
+    "daily_vs_weekly_mean_abs_exposure_gap": 0.301,
+    "daily_vs_weekly_share_sessions_differ_ge_25pts": 0.749
+  },
+  "aapl": {
+    "dataset": "AAPL (deployed s01 dataset, live signals frozen from 2026-07-30)",
+    "asset_type": "stock",
+    "short_mode": "cash",
+    "period": "2010-05-20 \u2192 2026-09-02",
+    "cost_bps_one_way": 5.0,
+    "policies": {
+      "hold": {
+        "sessions": 4097,
+        "total_return_pct": 4272.65,
+        "annualised_return_pct": 26.16,
+        "annualised_vol_pct": 28.04,
+        "sharpe": 0.969,
+        "max_drawdown_pct": -43.8,
+        "turnover_per_year": 0.06,
+        "fee_drag_pct_total": 2.28,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 4097,
+        "total_return_pct": 1413.51,
+        "annualised_return_pct": 18.19,
+        "annualised_vol_pct": 20.98,
+        "sharpe": 0.902,
+        "max_drawdown_pct": -35.12,
+        "turnover_per_year": 18.3,
+        "fee_drag_pct_total": 242.74,
+        "mean_exposure": 0.741
+      },
+      "act_weekly": {
+        "sessions": 4097,
+        "total_return_pct": 353.32,
+        "annualised_return_pct": 9.74,
+        "annualised_vol_pct": 14.2,
+        "sharpe": 0.726,
+        "max_drawdown_pct": -23.44,
+        "turnover_per_year": 33.44,
+        "fee_drag_pct_total": 141.6,
+        "mean_exposure": 0.459
+      },
+      "act_once_hold": {
+        "sessions": 4097,
+        "total_return_pct": 1713.4,
+        "annualised_return_pct": 19.51,
+        "annualised_vol_pct": 21.4,
+        "sharpe": 0.94,
+        "max_drawdown_pct": -34.92,
+        "turnover_per_year": 3.74,
+        "fee_drag_pct_total": 56.05,
+        "mean_exposure": 0.745
+      },
+      "signal_3day": {
+        "sessions": 4097,
+        "total_return_pct": 3129.85,
+        "annualised_return_pct": 23.83,
+        "annualised_vol_pct": 26.37,
+        "sharpe": 0.943,
+        "max_drawdown_pct": -41.55,
+        "turnover_per_year": 14.09,
+        "fee_drag_pct_total": 392.03,
+        "mean_exposure": 0.943
+      }
+    },
+    "policies_2026": {
+      "hold": {
+        "sessions": 168,
+        "total_return_pct": 19.8,
+        "annualised_return_pct": 31.12,
+        "annualised_vol_pct": 27.15,
+        "sharpe": 1.134,
+        "max_drawdown_pct": -12.71,
+        "turnover_per_year": 1.5,
+        "fee_drag_pct_total": 0.06,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 168,
+        "total_return_pct": 15.19,
+        "annualised_return_pct": 23.62,
+        "annualised_vol_pct": 20.96,
+        "sharpe": 1.117,
+        "max_drawdown_pct": -9.63,
+        "turnover_per_year": 5.62,
+        "fee_drag_pct_total": 0.22,
+        "mean_exposure": 0.76
+      },
+      "act_weekly": {
+        "sessions": 168,
+        "total_return_pct": 11.37,
+        "annualised_return_pct": 17.53,
+        "annualised_vol_pct": 12.27,
+        "sharpe": 1.378,
+        "max_drawdown_pct": -5.74,
+        "turnover_per_year": 36.75,
+        "fee_drag_pct_total": 1.37,
+        "mean_exposure": 0.409
+      },
+      "act_once_hold": {
+        "sessions": 168,
+        "total_return_pct": 15.04,
+        "annualised_return_pct": 23.39,
+        "annualised_vol_pct": 20.36,
+        "sharpe": 1.134,
+        "max_drawdown_pct": -9.63,
+        "turnover_per_year": 1.12,
+        "fee_drag_pct_total": 0.04,
+        "mean_exposure": 0.75
+      },
+      "signal_3day": {
+        "sessions": 168,
+        "total_return_pct": 19.8,
+        "annualised_return_pct": 31.12,
+        "annualised_vol_pct": 27.15,
+        "sharpe": 1.134,
+        "max_drawdown_pct": -12.71,
+        "turnover_per_year": 1.5,
+        "fee_drag_pct_total": 0.06,
+        "mean_exposure": 1.0
+      }
+    },
+    "policies_shock_windows": {
+      "hold": {
+        "sessions": 1275,
+        "total_return_pct": 38.6,
+        "annualised_return_pct": 6.66,
+        "annualised_vol_pct": 37.79,
+        "sharpe": 0.36,
+        "max_drawdown_pct": -44.09,
+        "turnover_per_year": 0.2,
+        "fee_drag_pct_total": 0.07,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 1275,
+        "total_return_pct": 25.1,
+        "annualised_return_pct": 4.53,
+        "annualised_vol_pct": 27.95,
+        "sharpe": 0.299,
+        "max_drawdown_pct": -32.57,
+        "turnover_per_year": 17.58,
+        "fee_drag_pct_total": 5.69,
+        "mean_exposure": 0.739
+      },
+      "act_weekly": {
+        "sessions": 1275,
+        "total_return_pct": 9.24,
+        "annualised_return_pct": 1.76,
+        "annualised_vol_pct": 18.66,
+        "sharpe": 0.188,
+        "max_drawdown_pct": -38.76,
+        "turnover_per_year": 34.55,
+        "fee_drag_pct_total": 9.98,
+        "mean_exposure": 0.452
+      },
+      "act_once_hold": {
+        "sessions": 1275,
+        "total_return_pct": 59.77,
+        "annualised_return_pct": 9.7,
+        "annualised_vol_pct": 28.8,
+        "sharpe": 0.466,
+        "max_drawdown_pct": -31.13,
+        "turnover_per_year": 5.88,
+        "fee_drag_pct_total": 2.4,
+        "mean_exposure": 0.737
+      },
+      "signal_3day": {
+        "sessions": 1275,
+        "total_return_pct": 36.96,
+        "annualised_return_pct": 6.41,
+        "annualised_vol_pct": 35.19,
+        "sharpe": 0.353,
+        "max_drawdown_pct": -37.57,
+        "turnover_per_year": 13.24,
+        "fee_drag_pct_total": 4.67,
+        "mean_exposure": 0.944
+      }
+    },
+    "daily_vs_weekly_mean_abs_exposure_gap": 0.312,
+    "daily_vs_weekly_share_sessions_differ_ge_25pts": 0.712
+  },
+  "msft": {
+    "dataset": "MSFT (deployed s02 dataset)",
+    "asset_type": "stock",
+    "short_mode": "cash",
+    "period": "2010-05-20 \u2192 2026-09-02",
+    "cost_bps_one_way": 5.0,
+    "policies": {
+      "hold": {
+        "sessions": 4097,
+        "total_return_pct": 2246.16,
+        "annualised_return_pct": 21.42,
+        "annualised_vol_pct": 26.21,
+        "sharpe": 0.872,
+        "max_drawdown_pct": -37.15,
+        "turnover_per_year": 0.06,
+        "fee_drag_pct_total": 1.22,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 4097,
+        "total_return_pct": 838.62,
+        "annualised_return_pct": 14.77,
+        "annualised_vol_pct": 19.38,
+        "sharpe": 0.808,
+        "max_drawdown_pct": -33.25,
+        "turnover_per_year": 22.72,
+        "fee_drag_pct_total": 190.44,
+        "mean_exposure": 0.724
+      },
+      "act_weekly": {
+        "sessions": 4097,
+        "total_return_pct": 248.27,
+        "annualised_return_pct": 7.98,
+        "annualised_vol_pct": 13.16,
+        "sharpe": 0.649,
+        "max_drawdown_pct": -19.6,
+        "turnover_per_year": 34.09,
+        "fee_drag_pct_total": 111.16,
+        "mean_exposure": 0.446
+      },
+      "act_once_hold": {
+        "sessions": 4097,
+        "total_return_pct": 1388.63,
+        "annualised_return_pct": 18.07,
+        "annualised_vol_pct": 19.66,
+        "sharpe": 0.943,
+        "max_drawdown_pct": -22.79,
+        "turnover_per_year": 5.18,
+        "fee_drag_pct_total": 63.99,
+        "mean_exposure": 0.728
+      },
+      "signal_3day": {
+        "sessions": 4097,
+        "total_return_pct": 1462.61,
+        "annualised_return_pct": 18.42,
+        "annualised_vol_pct": 24.3,
+        "sharpe": 0.818,
+        "max_drawdown_pct": -40.96,
+        "turnover_per_year": 18.02,
+        "fee_drag_pct_total": 246.76,
+        "mean_exposure": 0.908
+      }
+    },
+    "policies_2026": {
+      "hold": {
+        "sessions": 168,
+        "total_return_pct": 3.33,
+        "annualised_return_pct": 5.03,
+        "annualised_vol_pct": 37.49,
+        "sharpe": 0.314,
+        "max_drawdown_pct": -26.7,
+        "turnover_per_year": 1.5,
+        "fee_drag_pct_total": 0.05,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 168,
+        "total_return_pct": -5.6,
+        "annualised_return_pct": -8.28,
+        "annualised_vol_pct": 19.56,
+        "sharpe": -0.345,
+        "max_drawdown_pct": -14.13,
+        "turnover_per_year": 62.62,
+        "fee_drag_pct_total": 2.0,
+        "mean_exposure": 0.532
+      },
+      "act_weekly": {
+        "sessions": 168,
+        "total_return_pct": 6.96,
+        "annualised_return_pct": 10.62,
+        "annualised_vol_pct": 15.49,
+        "sharpe": 0.728,
+        "max_drawdown_pct": -8.61,
+        "turnover_per_year": 28.8,
+        "fee_drag_pct_total": 1.03,
+        "mean_exposure": 0.364
+      },
+      "act_once_hold": {
+        "sessions": 168,
+        "total_return_pct": 7.9,
+        "annualised_return_pct": 12.08,
+        "annualised_vol_pct": 25.62,
+        "sharpe": 0.57,
+        "max_drawdown_pct": -14.5,
+        "turnover_per_year": 13.42,
+        "fee_drag_pct_total": 0.48,
+        "mean_exposure": 0.554
+      },
+      "signal_3day": {
+        "sessions": 168,
+        "total_return_pct": -5.22,
+        "annualised_return_pct": -7.73,
+        "annualised_vol_pct": 23.74,
+        "sharpe": -0.221,
+        "max_drawdown_pct": -15.25,
+        "turnover_per_year": 73.5,
+        "fee_drag_pct_total": 2.36,
+        "mean_exposure": 0.637
+      }
+    },
+    "policies_shock_windows": {
+      "hold": {
+        "sessions": 1195,
+        "total_return_pct": 161.04,
+        "annualised_return_pct": 22.43,
+        "annualised_vol_pct": 36.76,
+        "sharpe": 0.734,
+        "max_drawdown_pct": -32.08,
+        "turnover_per_year": 0.21,
+        "fee_drag_pct_total": 0.14,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 1195,
+        "total_return_pct": 91.67,
+        "annualised_return_pct": 14.71,
+        "annualised_vol_pct": 27.05,
+        "sharpe": 0.642,
+        "max_drawdown_pct": -19.45,
+        "turnover_per_year": 25.02,
+        "fee_drag_pct_total": 11.72,
+        "mean_exposure": 0.729
+      },
+      "act_weekly": {
+        "sessions": 1195,
+        "total_return_pct": 46.52,
+        "annualised_return_pct": 8.39,
+        "annualised_vol_pct": 19.13,
+        "sharpe": 0.517,
+        "max_drawdown_pct": -18.92,
+        "turnover_per_year": 36.45,
+        "fee_drag_pct_total": 13.23,
+        "mean_exposure": 0.457
+      },
+      "act_once_hold": {
+        "sessions": 1195,
+        "total_return_pct": 91.21,
+        "annualised_return_pct": 14.65,
+        "annualised_vol_pct": 28.09,
+        "sharpe": 0.627,
+        "max_drawdown_pct": -29.83,
+        "turnover_per_year": 7.43,
+        "fee_drag_pct_total": 3.4,
+        "mean_exposure": 0.736
+      },
+      "signal_3day": {
+        "sessions": 1195,
+        "total_return_pct": 122.01,
+        "annualised_return_pct": 18.32,
+        "annualised_vol_pct": 33.93,
+        "sharpe": 0.665,
+        "max_drawdown_pct": -24.65,
+        "turnover_per_year": 20.88,
+        "fee_drag_pct_total": 11.28,
+        "mean_exposure": 0.913
+      }
+    },
+    "daily_vs_weekly_mean_abs_exposure_gap": 0.322,
+    "daily_vs_weekly_share_sessions_differ_ge_25pts": 0.71
+  },
+  "tsla": {
+    "dataset": "TSLA (deployed s03 dataset)",
+    "asset_type": "stock",
+    "short_mode": "cash",
+    "period": "2010-11-11 \u2192 2026-09-02",
+    "cost_bps_one_way": 5.0,
+    "policies": {
+      "hold": {
+        "sessions": 3975,
+        "total_return_pct": 18130.07,
+        "annualised_return_pct": 39.1,
+        "annualised_vol_pct": 56.94,
+        "sharpe": 0.863,
+        "max_drawdown_pct": -73.63,
+        "turnover_per_year": 0.06,
+        "fee_drag_pct_total": 9.55,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 3975,
+        "total_return_pct": 6451.84,
+        "annualised_return_pct": 30.36,
+        "annualised_vol_pct": 43.64,
+        "sharpe": 0.825,
+        "max_drawdown_pct": -52.38,
+        "turnover_per_year": 32.74,
+        "fee_drag_pct_total": 1929.65,
+        "mean_exposure": 0.712
+      },
+      "act_weekly": {
+        "sessions": 3975,
+        "total_return_pct": 1989.7,
+        "annualised_return_pct": 21.25,
+        "annualised_vol_pct": 30.06,
+        "sharpe": 0.791,
+        "max_drawdown_pct": -47.19,
+        "turnover_per_year": 32.78,
+        "fee_drag_pct_total": 615.3,
+        "mean_exposure": 0.449
+      },
+      "act_once_hold": {
+        "sessions": 3975,
+        "total_return_pct": 14111.1,
+        "annualised_return_pct": 36.92,
+        "annualised_vol_pct": 43.57,
+        "sharpe": 0.938,
+        "max_drawdown_pct": -49.7,
+        "turnover_per_year": 7.79,
+        "fee_drag_pct_total": 896.93,
+        "mean_exposure": 0.704
+      },
+      "signal_3day": {
+        "sessions": 3975,
+        "total_return_pct": 13739.12,
+        "annualised_return_pct": 36.69,
+        "annualised_vol_pct": 53.39,
+        "sharpe": 0.851,
+        "max_drawdown_pct": -60.63,
+        "turnover_per_year": 26.56,
+        "fee_drag_pct_total": 3226.88,
+        "mean_exposure": 0.868
+      }
+    },
+    "policies_2026": {
+      "hold": {
+        "sessions": 168,
+        "total_return_pct": -20.66,
+        "annualised_return_pct": -29.32,
+        "annualised_vol_pct": 46.36,
+        "sharpe": -0.515,
+        "max_drawdown_pct": -33.95,
+        "turnover_per_year": 1.5,
+        "fee_drag_pct_total": 0.04,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 168,
+        "total_return_pct": -25.44,
+        "annualised_return_pct": -35.62,
+        "annualised_vol_pct": 37.91,
+        "sharpe": -0.968,
+        "max_drawdown_pct": -36.4,
+        "turnover_per_year": 49.8,
+        "fee_drag_pct_total": 1.25,
+        "mean_exposure": 0.747
+      },
+      "act_weekly": {
+        "sessions": 168,
+        "total_return_pct": -17.22,
+        "annualised_return_pct": -24.68,
+        "annualised_vol_pct": 23.89,
+        "sharpe": -1.066,
+        "max_drawdown_pct": -23.31,
+        "turnover_per_year": 30.53,
+        "fee_drag_pct_total": 0.85,
+        "mean_exposure": 0.515
+      },
+      "act_once_hold": {
+        "sessions": 168,
+        "total_return_pct": -17.75,
+        "annualised_return_pct": -25.4,
+        "annualised_vol_pct": 38.17,
+        "sharpe": -0.574,
+        "max_drawdown_pct": -29.96,
+        "turnover_per_year": 7.5,
+        "fee_drag_pct_total": 0.21,
+        "mean_exposure": 0.757
+      },
+      "signal_3day": {
+        "sessions": 168,
+        "total_return_pct": -31.59,
+        "annualised_return_pct": -43.41,
+        "annualised_vol_pct": 42.93,
+        "sharpe": -1.108,
+        "max_drawdown_pct": -43.57,
+        "turnover_per_year": 49.5,
+        "fee_drag_pct_total": 1.14,
+        "mean_exposure": 0.845
+      }
+    },
+    "policies_shock_windows": {
+      "hold": {
+        "sessions": 1290,
+        "total_return_pct": 1074.72,
+        "annualised_return_pct": 61.81,
+        "annualised_vol_pct": 75.44,
+        "sharpe": 1.013,
+        "max_drawdown_pct": -60.69,
+        "turnover_per_year": 0.2,
+        "fee_drag_pct_total": 0.62,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 1290,
+        "total_return_pct": 596.25,
+        "annualised_return_pct": 46.09,
+        "annualised_vol_pct": 57.39,
+        "sharpe": 0.945,
+        "max_drawdown_pct": -49.23,
+        "turnover_per_year": 31.87,
+        "fee_drag_pct_total": 59.11,
+        "mean_exposure": 0.708
+      },
+      "act_weekly": {
+        "sessions": 1290,
+        "total_return_pct": 255.36,
+        "annualised_return_pct": 28.11,
+        "annualised_vol_pct": 37.98,
+        "sharpe": 0.84,
+        "max_drawdown_pct": -41.86,
+        "turnover_per_year": 35.77,
+        "fee_drag_pct_total": 34.02,
+        "mean_exposure": 0.431
+      },
+      "act_once_hold": {
+        "sessions": 1290,
+        "total_return_pct": 956.25,
+        "annualised_return_pct": 58.49,
+        "annualised_vol_pct": 57.12,
+        "sharpe": 1.09,
+        "max_drawdown_pct": -49.22,
+        "turnover_per_year": 11.34,
+        "fee_drag_pct_total": 30.99,
+        "mean_exposure": 0.698
+      },
+      "signal_3day": {
+        "sessions": 1290,
+        "total_return_pct": 849.86,
+        "annualised_return_pct": 55.23,
+        "annualised_vol_pct": 70.33,
+        "sharpe": 0.974,
+        "max_drawdown_pct": -57.69,
+        "turnover_per_year": 25.2,
+        "fee_drag_pct_total": 63.35,
+        "mean_exposure": 0.866
+      }
+    },
+    "daily_vs_weekly_mean_abs_exposure_gap": 0.329,
+    "daily_vs_weekly_share_sessions_differ_ge_25pts": 0.696
+  },
+  "nvda": {
+    "dataset": "NVDA (deployed s04 dataset)",
+    "asset_type": "stock",
+    "short_mode": "cash",
+    "period": "2010-05-20 \u2192 2026-09-02",
+    "cost_bps_one_way": 5.0,
+    "policies": {
+      "hold": {
+        "sessions": 4097,
+        "total_return_pct": 76683.45,
+        "annualised_return_pct": 50.48,
+        "annualised_vol_pct": 45.5,
+        "sharpe": 1.124,
+        "max_drawdown_pct": -66.34,
+        "turnover_per_year": 0.06,
+        "fee_drag_pct_total": 39.34,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 4097,
+        "total_return_pct": 20356.99,
+        "annualised_return_pct": 38.72,
+        "annualised_vol_pct": 34.26,
+        "sharpe": 1.126,
+        "max_drawdown_pct": -48.86,
+        "turnover_per_year": 18.19,
+        "fee_drag_pct_total": 3255.76,
+        "mean_exposure": 0.723
+      },
+      "act_weekly": {
+        "sessions": 4097,
+        "total_return_pct": 1591.37,
+        "annualised_return_pct": 19.0,
+        "annualised_vol_pct": 22.64,
+        "sharpe": 0.881,
+        "max_drawdown_pct": -34.23,
+        "turnover_per_year": 32.64,
+        "fee_drag_pct_total": 513.67,
+        "mean_exposure": 0.439
+      },
+      "act_once_hold": {
+        "sessions": 4097,
+        "total_return_pct": 15839.58,
+        "annualised_return_pct": 36.61,
+        "annualised_vol_pct": 34.17,
+        "sharpe": 1.083,
+        "max_drawdown_pct": -48.36,
+        "turnover_per_year": 3.86,
+        "fee_drag_pct_total": 507.84,
+        "mean_exposure": 0.724
+      },
+      "signal_3day": {
+        "sessions": 4097,
+        "total_return_pct": 86501.62,
+        "annualised_return_pct": 51.59,
+        "annualised_vol_pct": 43.37,
+        "sharpe": 1.175,
+        "max_drawdown_pct": -58.94,
+        "turnover_per_year": 15.68,
+        "fee_drag_pct_total": 11762.15,
+        "mean_exposure": 0.918
+      }
+    },
+    "policies_2026": {
+      "hold": {
+        "sessions": 168,
+        "total_return_pct": 20.41,
+        "annualised_return_pct": 32.13,
+        "annualised_vol_pct": 39.42,
+        "sharpe": 0.902,
+        "max_drawdown_pct": -19.3,
+        "turnover_per_year": 1.5,
+        "fee_drag_pct_total": 0.06,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 168,
+        "total_return_pct": 19.71,
+        "annualised_return_pct": 30.98,
+        "annualised_vol_pct": 30.68,
+        "sharpe": 1.032,
+        "max_drawdown_pct": -13.22,
+        "turnover_per_year": 11.62,
+        "fee_drag_pct_total": 0.46,
+        "mean_exposure": 0.78
+      },
+      "act_weekly": {
+        "sessions": 168,
+        "total_return_pct": 3.46,
+        "annualised_return_pct": 5.23,
+        "annualised_vol_pct": 16.38,
+        "sharpe": 0.392,
+        "max_drawdown_pct": -11.07,
+        "turnover_per_year": 35.7,
+        "fee_drag_pct_total": 1.24,
+        "mean_exposure": 0.437
+      },
+      "act_once_hold": {
+        "sessions": 168,
+        "total_return_pct": 16.71,
+        "annualised_return_pct": 26.09,
+        "annualised_vol_pct": 30.24,
+        "sharpe": 0.917,
+        "max_drawdown_pct": -14.01,
+        "turnover_per_year": 2.62,
+        "fee_drag_pct_total": 0.1,
+        "mean_exposure": 0.771
+      },
+      "signal_3day": {
+        "sessions": 168,
+        "total_return_pct": 20.41,
+        "annualised_return_pct": 32.13,
+        "annualised_vol_pct": 39.42,
+        "sharpe": 0.902,
+        "max_drawdown_pct": -19.3,
+        "turnover_per_year": 1.5,
+        "fee_drag_pct_total": 0.06,
+        "mean_exposure": 1.0
+      }
+    },
+    "policies_shock_windows": {
+      "hold": {
+        "sessions": 1139,
+        "total_return_pct": 1648.09,
+        "annualised_return_pct": 88.33,
+        "annualised_vol_pct": 61.34,
+        "sharpe": 1.335,
+        "max_drawdown_pct": -52.67,
+        "turnover_per_year": 0.22,
+        "fee_drag_pct_total": 0.9,
+        "mean_exposure": 1.0
+      },
+      "act_daily": {
+        "sessions": 1139,
+        "total_return_pct": 872.33,
+        "annualised_return_pct": 65.41,
+        "annualised_vol_pct": 46.59,
+        "sharpe": 1.312,
+        "max_drawdown_pct": -43.48,
+        "turnover_per_year": 16.91,
+        "fee_drag_pct_total": 37.86,
+        "mean_exposure": 0.717
+      },
+      "act_weekly": {
+        "sessions": 1139,
+        "total_return_pct": 241.4,
+        "annualised_return_pct": 31.21,
+        "annualised_vol_pct": 30.91,
+        "sharpe": 1.033,
+        "max_drawdown_pct": -39.28,
+        "turnover_per_year": 35.05,
+        "fee_drag_pct_total": 28.13,
+        "mean_exposure": 0.429
+      },
+      "act_once_hold": {
+        "sessions": 1139,
+        "total_return_pct": 755.93,
+        "annualised_return_pct": 60.8,
+        "annualised_vol_pct": 45.96,
+        "sharpe": 1.261,
+        "max_drawdown_pct": -37.27,
+        "turnover_per_year": 6.05,
+        "fee_drag_pct_total": 11.82,
+        "mean_exposure": 0.714
+      },
+      "signal_3day": {
+        "sessions": 1139,
+        "total_return_pct": 1867.85,
+        "annualised_return_pct": 93.33,
+        "annualised_vol_pct": 59.3,
+        "sharpe": 1.404,
+        "max_drawdown_pct": -50.88,
+        "turnover_per_year": 16.59,
+        "fee_drag_pct_total": 75.28,
+        "mean_exposure": 0.917
+      }
+    },
+    "daily_vs_weekly_mean_abs_exposure_gap": 0.322,
+    "daily_vs_weekly_share_sessions_differ_ge_25pts": 0.731
+  }
+}

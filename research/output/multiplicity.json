@@ -1,0 +1,652 @@
+{
+  "total_tests": 228,
+  "families": {
+    "A_direction_vs_half": {
+      "tests": 56,
+      "survive_q05_within": 36,
+      "survive_q10_within": 41,
+      "survive_q05_all": 35
+    },
+    "B_pesaran_timmermann_skill": {
+      "tests": 56,
+      "survive_q05_within": 0,
+      "survive_q10_within": 0,
+      "survive_q05_all": 0
+    },
+    "C_brier_worse_than_coin": {
+      "tests": 56,
+      "survive_q05_within": 22,
+      "survive_q10_within": 23,
+      "survive_q05_all": 21
+    },
+    "D_shock_vs_calm_hit": {
+      "tests": 8,
+      "survive_q05_within": 5,
+      "survive_q10_within": 5,
+      "survive_q05_all": 5
+    },
+    "E_pre_event_direction": {
+      "tests": 8,
+      "survive_q05_within": 0,
+      "survive_q10_within": 1,
+      "survive_q05_all": 1
+    },
+    "F_continuation_7d": {
+      "tests": 8,
+      "survive_q05_within": 1,
+      "survive_q10_within": 1,
+      "survive_q05_all": 1
+    },
+    "G_headline_spike_direction": {
+      "tests": 2,
+      "survive_q05_within": 0,
+      "survive_q10_within": 1,
+      "survive_q05_all": 0
+    },
+    "H_headline_spike_surprise": {
+      "tests": 2,
+      "survive_q05_within": 2,
+      "survive_q10_within": 2,
+      "survive_q05_all": 1
+    },
+    "I_scheduled_event_direction": {
+      "tests": 16,
+      "survive_q05_within": 0,
+      "survive_q10_within": 0,
+      "survive_q05_all": 0
+    },
+    "J_scheduled_event_surprise": {
+      "tests": 16,
+      "survive_q05_within": 10,
+      "survive_q10_within": 10,
+      "survive_q05_all": 9
+    }
+  },
+  "survivors_q05_all_tests": [
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "aapl",
+      "test": "h=3 hit=0.5473",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "spy",
+      "test": "h=4 hit=0.6029",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "spy",
+      "test": "h=5 hit=0.6019",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "spy",
+      "test": "h=6 hit=0.5983",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "spy",
+      "test": "h=7 hit=0.6117",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "aapl",
+      "test": "h=2 hit=0.5386",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "J_scheduled_event_surprise",
+      "instrument": "tsla",
+      "test": "earnings MWU |s|",
+      "direction": "larger surprise",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "aapl",
+      "test": "h=4 hit=0.5574",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "aapl",
+      "test": "h=5 hit=0.5551",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "aapl",
+      "test": "h=6 hit=0.566",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "aapl",
+      "test": "h=7 hit=0.5654",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "spy",
+      "test": "h=3 hit=0.5837",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "msft",
+      "test": "h=3 hit=0.5394",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "msft",
+      "test": "h=5 hit=0.5563",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "msft",
+      "test": "h=6 hit=0.553",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "tsla",
+      "test": "h=1 t=4.379",
+      "direction": "worse",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "tsla",
+      "test": "h=4 t=4.484",
+      "direction": "worse",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "nvda",
+      "test": "h=4 hit=0.542",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "nvda",
+      "test": "h=5 hit=0.5399",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "nvda",
+      "test": "h=6 hit=0.5379",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "nvda",
+      "test": "h=7 hit=0.5417",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "J_scheduled_event_surprise",
+      "instrument": "aapl",
+      "test": "earnings MWU |s|",
+      "direction": "larger surprise",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "J_scheduled_event_surprise",
+      "instrument": "msft",
+      "test": "earnings MWU |s|",
+      "direction": "larger surprise",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "msft",
+      "test": "h=4 hit=0.5423",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "spy",
+      "test": "h=2 hit=0.5842",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "J_scheduled_event_surprise",
+      "instrument": "nvda",
+      "test": "earnings MWU |s|",
+      "direction": "larger surprise",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "spxl",
+      "test": "h=7 hit=0.5935",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "spxl",
+      "test": "h=6 hit=0.5739",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "spxl",
+      "test": "h=5 hit=0.5764",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "spxl",
+      "test": "h=4 hit=0.5738",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "spxl",
+      "test": "h=3 hit=0.5581",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "spxl",
+      "test": "h=2 hit=0.5621",
+      "direction": "above",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "bito",
+      "test": "h=3 t=4.497",
+      "direction": "worse",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "btc",
+      "test": "h=5 t=4.238",
+      "direction": "worse",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "btc",
+      "test": "h=6 t=4.459",
+      "direction": "worse",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "btc",
+      "test": "h=7 t=4.921",
+      "direction": "worse",
+      "p": 1e-06,
+      "q_all_tests": 6.3333333333333326e-06
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "msft",
+      "test": "h=7 hit=0.537",
+      "direction": "above",
+      "p": 2e-06,
+      "q_all_tests": 1.2324324324324323e-05
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "nvda",
+      "test": "h=3 hit=0.5346",
+      "direction": "above",
+      "p": 1e-05,
+      "q_all_tests": 6.000000000000001e-05
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "nvda",
+      "test": "h=2 hit=0.531",
+      "direction": "above",
+      "p": 7.7e-05,
+      "q_all_tests": 0.0004501538461538461
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "tsla",
+      "test": "h=3 t=3.879",
+      "direction": "worse",
+      "p": 0.0001,
+      "q_all_tests": 0.0005302325581395349
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "btc",
+      "test": "h=4 t=3.981",
+      "direction": "worse",
+      "p": 0.0001,
+      "q_all_tests": 0.0005302325581395349
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "btc",
+      "test": "h=3 t=3.927",
+      "direction": "worse",
+      "p": 0.0001,
+      "q_all_tests": 0.0005302325581395349
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "bito",
+      "test": "h=2 t=3.807",
+      "direction": "worse",
+      "p": 0.0001,
+      "q_all_tests": 0.0005302325581395349
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "tsla",
+      "test": "h=5 hit=0.5303",
+      "direction": "above",
+      "p": 0.000139,
+      "q_all_tests": 0.0007202727272727273
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "btc",
+      "test": "h=2 t=3.665",
+      "direction": "worse",
+      "p": 0.0002,
+      "q_all_tests": 0.000991304347826087
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "nvda",
+      "test": "h=1 t=3.741",
+      "direction": "worse",
+      "p": 0.0002,
+      "q_all_tests": 0.000991304347826087
+    },
+    {
+      "family": "D_shock_vs_calm_hit",
+      "instrument": "bito",
+      "test": "diff=-0.1426",
+      "direction": "shock worse",
+      "p": 0.00025,
+      "q_all_tests": 0.00114
+    },
+    {
+      "family": "D_shock_vs_calm_hit",
+      "instrument": "spxl",
+      "test": "diff=-0.2624",
+      "direction": "shock worse",
+      "p": 0.00025,
+      "q_all_tests": 0.00114
+    },
+    {
+      "family": "D_shock_vs_calm_hit",
+      "instrument": "spy",
+      "test": "diff=-0.2653",
+      "direction": "shock worse",
+      "p": 0.00025,
+      "q_all_tests": 0.00114
+    },
+    {
+      "family": "D_shock_vs_calm_hit",
+      "instrument": "msft",
+      "test": "diff=-0.0601",
+      "direction": "shock worse",
+      "p": 0.00025,
+      "q_all_tests": 0.00114
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "bito",
+      "test": "h=5 t=3.414",
+      "direction": "worse",
+      "p": 0.0006,
+      "q_all_tests": 0.0026823529411764704
+    },
+    {
+      "family": "J_scheduled_event_surprise",
+      "instrument": "spy",
+      "test": "fomc_or_payrolls MWU |s|",
+      "direction": "larger surprise",
+      "p": 0.00063,
+      "q_all_tests": 0.002762307692307693
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "btc",
+      "test": "h=1 t=3.268",
+      "direction": "worse",
+      "p": 0.0011,
+      "q_all_tests": 0.004686666666666667
+    },
+    {
+      "family": "J_scheduled_event_surprise",
+      "instrument": "spxl",
+      "test": "payrolls MWU |s|",
+      "direction": "larger surprise",
+      "p": 0.00111,
+      "q_all_tests": 0.004686666666666667
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "bito",
+      "test": "h=7 t=3.234",
+      "direction": "worse",
+      "p": 0.0012,
+      "q_all_tests": 0.004974545454545454
+    },
+    {
+      "family": "J_scheduled_event_surprise",
+      "instrument": "spy",
+      "test": "payrolls MWU |s|",
+      "direction": "larger surprise",
+      "p": 0.00126,
+      "q_all_tests": 0.005130000000000001
+    },
+    {
+      "family": "J_scheduled_event_surprise",
+      "instrument": "spxl",
+      "test": "fomc_or_payrolls MWU |s|",
+      "direction": "larger surprise",
+      "p": 0.00141,
+      "q_all_tests": 0.00564
+    },
+    {
+      "family": "D_shock_vs_calm_hit",
+      "instrument": "aapl",
+      "test": "diff=-0.049",
+      "direction": "shock worse",
+      "p": 0.0015,
+      "q_all_tests": 0.005896551724137932
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "tsla",
+      "test": "h=6 hit=0.5239",
+      "direction": "above",
+      "p": 0.002699,
+      "q_all_tests": 0.010430033898305085
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "bito",
+      "test": "h=4 t=2.985",
+      "direction": "worse",
+      "p": 0.0028,
+      "q_all_tests": 0.01064
+    },
+    {
+      "family": "F_continuation_7d",
+      "instrument": "btc",
+      "test": "mean=2.981% n=98",
+      "direction": "continuation",
+      "p": 0.0029,
+      "q_all_tests": 0.010839344262295082
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "btc",
+      "test": "h=7 hit=0.4672",
+      "direction": "below",
+      "p": 0.00389,
+      "q_all_tests": 0.014305161290322579
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "tsla",
+      "test": "h=7 t=2.843",
+      "direction": "worse",
+      "p": 0.0045,
+      "q_all_tests": 0.016285714285714285
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "tsla",
+      "test": "h=2 t=2.82",
+      "direction": "worse",
+      "p": 0.0048,
+      "q_all_tests": 0.017047384615384614
+    },
+    {
+      "family": "H_headline_spike_surprise",
+      "instrument": "bito",
+      "test": "MWU |s| spike > quiet",
+      "direction": "larger surprise",
+      "p": 0.00486,
+      "q_all_tests": 0.017047384615384614
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "spxl",
+      "test": "h=1 hit=0.5275",
+      "direction": "above",
+      "p": 0.005531,
+      "q_all_tests": 0.01910709090909091
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "tsla",
+      "test": "h=5 t=2.755",
+      "direction": "worse",
+      "p": 0.0059,
+      "q_all_tests": 0.020077611940298508
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "bito",
+      "test": "h=3 hit=0.4595",
+      "direction": "below",
+      "p": 0.007212,
+      "q_all_tests": 0.024181411764705882
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "tsla",
+      "test": "h=6 t=2.622",
+      "direction": "worse",
+      "p": 0.0087,
+      "q_all_tests": 0.02874782608695652
+    },
+    {
+      "family": "A_direction_vs_half",
+      "instrument": "spy",
+      "test": "h=1 hit=0.5255",
+      "direction": "above",
+      "p": 0.009951,
+      "q_all_tests": 0.032411828571428575
+    },
+    {
+      "family": "C_brier_worse_than_coin",
+      "instrument": "bito",
+      "test": "h=6 t=2.557",
+      "direction": "worse",
+      "p": 0.0106,
+      "q_all_tests": 0.03356666666666666
+    },
+    {
+      "family": "J_scheduled_event_surprise",
+      "instrument": "btc",
+      "test": "payrolls MWU |s|",
+      "direction": "larger surprise",
+      "p": 0.01053,
+      "q_all_tests": 0.03356666666666666
+    },
+    {
+      "family": "E_pre_event_direction",
+      "instrument": "btc",
+      "test": "hit=0.3673 n=98",
+      "direction": "below",
+      "p": 0.011175,
+      "q_all_tests": 0.03490273972602739
+    }
+  ],
+  "survivors_q10_all_tests_count": 79
+}

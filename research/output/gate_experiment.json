@@ -1,0 +1,3842 @@
+{
+ "bito": {
+  "dataset": "BITO / BITI (deployed b04 dataset, published 2026 signals frozen)",
+  "asset_type": "crypto",
+  "windows": {
+   "holdout_2025_2026": {
+    "n_forecasts": 2877,
+    "share_gated_pct": 5.8,
+    "share_calendar_pct": 0.0,
+    "share_headline_pct": 2.9,
+    "share_shock_pct": 3.3,
+    "variants": {
+     "model": {
+      "brier": 0.25704,
+      "coverage": 0.80918,
+      "winkler": 0.20327,
+      "pinball": 0.01344,
+      "n": 2877
+     },
+     "climatology": {
+      "brier": 0.25483,
+      "coverage": 0.81752,
+      "winkler": 0.18932,
+      "pinball": 0.01293,
+      "n": 2877
+     },
+     "gated_event_conditional": {
+      "brier": 0.25694,
+      "coverage": 0.81821,
+      "winkler": 0.20267,
+      "pinball": 0.01342,
+      "n": 2877
+     },
+     "gated": {
+      "brier": 0.25761,
+      "coverage": 0.81057,
+      "winkler": 0.20348,
+      "pinball": 0.01346,
+      "n": 2877
+     },
+     "gated_calendar_only": {
+      "brier": 0.25704,
+      "coverage": 0.80918,
+      "winkler": 0.20327,
+      "pinball": 0.01344,
+      "n": 2877
+     },
+     "gated_headline_only": {
+      "brier": 0.25794,
+      "coverage": 0.81126,
+      "winkler": 0.2034,
+      "pinball": 0.01346,
+      "n": 2877
+     },
+     "gated_shock_only": {
+      "brier": 0.257,
+      "coverage": 0.80848,
+      "winkler": 0.20352,
+      "pinball": 0.01345,
+      "n": 2877
+     },
+     "gated_drift": {
+      "brier": 0.25704,
+      "coverage": 0.81057,
+      "winkler": 0.20311,
+      "pinball": 0.01344,
+      "n": 2877
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.25632,
+      "coverage": 0.69643,
+      "winkler": 0.23162,
+      "pinball": 0.01553,
+      "n": 168
+     },
+     "climatology": {
+      "brier": 0.26613,
+      "coverage": 0.72024,
+      "winkler": 0.23511,
+      "pinball": 0.0159,
+      "n": 168
+     },
+     "gated_drift": {
+      "brier": 0.25632,
+      "coverage": 0.72024,
+      "winkler": 0.22894,
+      "pinball": 0.01556,
+      "n": 168
+     },
+     "gated_event_conditional": {
+      "brier": 0.25471,
+      "coverage": 0.85119,
+      "winkler": 0.22135,
+      "pinball": 0.01526,
+      "n": 168
+     }
+    },
+    "by_gate_type": {
+     "headline": {
+      "model": {
+       "brier": 0.24503,
+       "coverage": 0.72619,
+       "winkler": 0.19741,
+       "pinball": 0.01285,
+       "n": 84
+      },
+      "climatology": {
+       "brier": 0.27598,
+       "coverage": 0.79762,
+       "winkler": 0.20186,
+       "pinball": 0.01354,
+       "n": 84
+      },
+      "gated_event_conditional": {
+       "brier": 0.26146,
+       "coverage": 0.83333,
+       "winkler": 0.19152,
+       "pinball": 0.01293,
+       "n": 84
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0059,
+       "ci95": [
+        -0.0905,
+        0.0797
+       ],
+       "p_two_sided": 0.919
+      },
+      "winkler_improvement_pct": 2.98
+     },
+     "shock": {
+      "model": {
+       "brier": 0.26186,
+       "coverage": 0.65263,
+       "winkler": 0.26134,
+       "pinball": 0.01795,
+       "n": 95
+      },
+      "climatology": {
+       "brier": 0.26075,
+       "coverage": 0.63158,
+       "winkler": 0.26879,
+       "pinball": 0.01827,
+       "n": 95
+      },
+      "gated_event_conditional": {
+       "brier": 0.24054,
+       "coverage": 0.86316,
+       "winkler": 0.24446,
+       "pinball": 0.01713,
+       "n": 95
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0169,
+       "ci95": [
+        -0.137,
+        0.0776
+       ],
+       "p_two_sided": 0.7255
+      },
+      "winkler_improvement_pct": 6.46
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": 0.0002,
+     "ci95": [
+      -0.0232,
+      0.0239
+     ],
+     "p_two_sided": 0.9945
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": -0.0006,
+     "ci95": [
+      -0.0237,
+      0.0228
+     ],
+     "p_two_sided": 0.962
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": -0.0103,
+     "ci95": [
+      -0.0943,
+      0.0624
+     ],
+     "p_two_sided": 0.8075
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": -0.0016,
+     "ci95": [
+      -0.0295,
+      0.0324
+     ],
+     "p_two_sided": 0.872
+    },
+    "winkler_event_conditional_improvement_pct": 0.3,
+    "winkler_gated_drift_minus_model": {
+     "difference": -0.0002,
+     "ci95": [
+      -0.0233,
+      0.0236
+     ],
+     "p_two_sided": 0.983
+    },
+    "brier_gated_minus_model": {
+     "difference": 0.0006,
+     "ci95": [
+      -0.0063,
+      0.0073
+     ],
+     "p_two_sided": 0.893
+    },
+    "winkler_improvement_pct": -0.1,
+    "winkler_drift_improvement_pct": 0.08,
+    "brier_improvement_pct": -0.22
+   },
+   "full": {
+    "n_forecasts": 7826,
+    "share_gated_pct": 6.9,
+    "share_calendar_pct": 0.0,
+    "share_headline_pct": 3.0,
+    "share_shock_pct": 4.3,
+    "variants": {
+     "model": {
+      "brier": 0.26182,
+      "coverage": 0.79875,
+      "winkler": 0.25546,
+      "pinball": 0.01645,
+      "n": 7826
+     },
+     "climatology": {
+      "brier": 0.25294,
+      "coverage": 0.80629,
+      "winkler": 0.23262,
+      "pinball": 0.01551,
+      "n": 7826
+     },
+     "gated_event_conditional": {
+      "brier": 0.26052,
+      "coverage": 0.80565,
+      "winkler": 0.25299,
+      "pinball": 0.01635,
+      "n": 7826
+     },
+     "gated": {
+      "brier": 0.2602,
+      "coverage": 0.80066,
+      "winkler": 0.25279,
+      "pinball": 0.01633,
+      "n": 7826
+     },
+     "gated_calendar_only": {
+      "brier": 0.26182,
+      "coverage": 0.79875,
+      "winkler": 0.25546,
+      "pinball": 0.01645,
+      "n": 7826
+     },
+     "gated_headline_only": {
+      "brier": 0.26101,
+      "coverage": 0.80079,
+      "winkler": 0.25379,
+      "pinball": 0.01638,
+      "n": 7826
+     },
+     "gated_shock_only": {
+      "brier": 0.26105,
+      "coverage": 0.79862,
+      "winkler": 0.25418,
+      "pinball": 0.01639,
+      "n": 7826
+     },
+     "gated_drift": {
+      "brier": 0.26009,
+      "coverage": 0.80066,
+      "winkler": 0.25289,
+      "pinball": 0.01633,
+      "n": 7826
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.2643,
+      "coverage": 0.62338,
+      "winkler": 0.36513,
+      "pinball": 0.0239,
+      "n": 539
+     },
+     "climatology": {
+      "brier": 0.24076,
+      "coverage": 0.65121,
+      "winkler": 0.32633,
+      "pinball": 0.02212,
+      "n": 539
+     },
+     "gated_drift": {
+      "brier": 0.23912,
+      "coverage": 0.65121,
+      "winkler": 0.32776,
+      "pinball": 0.0222,
+      "n": 539
+     },
+     "gated_event_conditional": {
+      "brier": 0.24544,
+      "coverage": 0.72356,
+      "winkler": 0.32926,
+      "pinball": 0.02242,
+      "n": 539
+     }
+    },
+    "by_gate_type": {
+     "headline": {
+      "model": {
+       "brier": 0.27094,
+       "coverage": 0.56277,
+       "winkler": 0.3768,
+       "pinball": 0.02479,
+       "n": 231
+      },
+      "climatology": {
+       "brier": 0.2434,
+       "coverage": 0.63203,
+       "winkler": 0.31996,
+       "pinball": 0.02236,
+       "n": 231
+      },
+      "gated_event_conditional": {
+       "brier": 0.23769,
+       "coverage": 0.65368,
+       "winkler": 0.31433,
+       "pinball": 0.02202,
+       "n": 231
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0625,
+       "ci95": [
+        -0.2108,
+        0.0732
+       ],
+       "p_two_sided": 0.3925
+      },
+      "winkler_improvement_pct": 16.58
+     },
+     "shock": {
+      "model": {
+       "brier": 0.25793,
+       "coverage": 0.65465,
+       "winkler": 0.36483,
+       "pinball": 0.02361,
+       "n": 333
+      },
+      "climatology": {
+       "brier": 0.23986,
+       "coverage": 0.65165,
+       "winkler": 0.33471,
+       "pinball": 0.02219,
+       "n": 333
+      },
+      "gated_event_conditional": {
+       "brier": 0.24745,
+       "coverage": 0.76877,
+       "winkler": 0.33946,
+       "pinball": 0.02267,
+       "n": 333
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0254,
+       "ci95": [
+        -0.1349,
+        0.084
+       ],
+       "p_two_sided": 0.613
+      },
+      "winkler_improvement_pct": 6.95
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": -0.0027,
+     "ci95": [
+      -0.0211,
+      0.0162
+     ],
+     "p_two_sided": 0.797
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": -0.0025,
+     "ci95": [
+      -0.0209,
+      0.0165
+     ],
+     "p_two_sided": 0.812
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": -0.0359,
+     "ci95": [
+      -0.1303,
+      0.0532
+     ],
+     "p_two_sided": 0.4425
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": -0.0189,
+     "ci95": [
+      -0.0347,
+      -0.0019
+     ],
+     "p_two_sided": 0.0275
+    },
+    "winkler_event_conditional_improvement_pct": 0.97,
+    "winkler_gated_drift_minus_model": {
+     "difference": -0.0026,
+     "ci95": [
+      -0.0211,
+      0.0161
+     ],
+     "p_two_sided": 0.8035
+    },
+    "brier_gated_minus_model": {
+     "difference": -0.0016,
+     "ci95": [
+      -0.0066,
+      0.0033
+     ],
+     "p_two_sided": 0.5165
+    },
+    "winkler_improvement_pct": 1.05,
+    "winkler_drift_improvement_pct": 1.01,
+    "brier_improvement_pct": 0.62
+   }
+  }
+ },
+ "btc": {
+  "dataset": "BTC/USD spot (Alpaca, 24/7 calendar days)",
+  "asset_type": "crypto",
+  "windows": {
+   "holdout_2025_2026": {
+    "n_forecasts": 4221,
+    "share_gated_pct": 14.9,
+    "share_calendar_pct": 0.0,
+    "share_headline_pct": 10.7,
+    "share_shock_pct": 5.0,
+    "variants": {
+     "model": {
+      "brier": 0.26523,
+      "coverage": 0.79815,
+      "winkler": 0.16691,
+      "pinball": 0.01098,
+      "n": 4221
+     },
+     "climatology": {
+      "brier": 0.25264,
+      "coverage": 0.8081,
+      "winkler": 0.15709,
+      "pinball": 0.01043,
+      "n": 4221
+     },
+     "gated_event_conditional": {
+      "brier": 0.26476,
+      "coverage": 0.8055,
+      "winkler": 0.16385,
+      "pinball": 0.01086,
+      "n": 4221
+     },
+     "gated": {
+      "brier": 0.26437,
+      "coverage": 0.80005,
+      "winkler": 0.16486,
+      "pinball": 0.01089,
+      "n": 4221
+     },
+     "gated_calendar_only": {
+      "brier": 0.26523,
+      "coverage": 0.79815,
+      "winkler": 0.16691,
+      "pinball": 0.01098,
+      "n": 4221
+     },
+     "gated_headline_only": {
+      "brier": 0.26446,
+      "coverage": 0.80052,
+      "winkler": 0.16491,
+      "pinball": 0.01089,
+      "n": 4221
+     },
+     "gated_shock_only": {
+      "brier": 0.26484,
+      "coverage": 0.79768,
+      "winkler": 0.16665,
+      "pinball": 0.01097,
+      "n": 4221
+     },
+     "gated_drift": {
+      "brier": 0.26443,
+      "coverage": 0.79768,
+      "winkler": 0.16477,
+      "pinball": 0.0109,
+      "n": 4221
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.25813,
+      "coverage": 0.74841,
+      "winkler": 0.20163,
+      "pinball": 0.01273,
+      "n": 628
+     },
+     "climatology": {
+      "brier": 0.25236,
+      "coverage": 0.76115,
+      "winkler": 0.18783,
+      "pinball": 0.01214,
+      "n": 628
+     },
+     "gated_drift": {
+      "brier": 0.25276,
+      "coverage": 0.74522,
+      "winkler": 0.18727,
+      "pinball": 0.01219,
+      "n": 628
+     },
+     "gated_event_conditional": {
+      "brier": 0.25498,
+      "coverage": 0.79777,
+      "winkler": 0.18105,
+      "pinball": 0.01194,
+      "n": 628
+     }
+    },
+    "by_gate_type": {
+     "headline": {
+      "model": {
+       "brier": 0.26216,
+       "coverage": 0.76821,
+       "winkler": 0.17462,
+       "pinball": 0.01112,
+       "n": 453
+      },
+      "climatology": {
+       "brier": 0.25497,
+       "coverage": 0.79029,
+       "winkler": 0.15601,
+       "pinball": 0.01031,
+       "n": 453
+      },
+      "gated_event_conditional": {
+       "brier": 0.25526,
+       "coverage": 0.80574,
+       "winkler": 0.15596,
+       "pinball": 0.0103,
+       "n": 453
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0187,
+       "ci95": [
+        -0.0592,
+        0.0172
+       ],
+       "p_two_sided": 0.3285
+      },
+      "winkler_improvement_pct": 10.69
+     },
+     "shock": {
+      "model": {
+       "brier": 0.25224,
+       "coverage": 0.69524,
+       "winkler": 0.26087,
+       "pinball": 0.0163,
+       "n": 210
+      },
+      "climatology": {
+       "brier": 0.24434,
+       "coverage": 0.68571,
+       "winkler": 0.25568,
+       "pinball": 0.01606,
+       "n": 210
+      },
+      "gated_event_conditional": {
+       "brier": 0.25216,
+       "coverage": 0.79524,
+       "winkler": 0.23541,
+       "pinball": 0.01547,
+       "n": 210
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0255,
+       "ci95": [
+        -0.1402,
+        0.0717
+       ],
+       "p_two_sided": 0.6635
+      },
+      "winkler_improvement_pct": 9.76
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": -0.0021,
+     "ci95": [
+      -0.0176,
+      0.014
+     ],
+     "p_two_sided": 0.793
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": -0.0031,
+     "ci95": [
+      -0.018,
+      0.0121
+     ],
+     "p_two_sided": 0.693
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": -0.0206,
+     "ci95": [
+      -0.0675,
+      0.0215
+     ],
+     "p_two_sided": 0.351
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": -0.0032,
+     "ci95": [
+      -0.0168,
+      0.0105
+     ],
+     "p_two_sided": 0.6555
+    },
+    "winkler_event_conditional_improvement_pct": 1.83,
+    "winkler_gated_drift_minus_model": {
+     "difference": -0.0021,
+     "ci95": [
+      -0.0176,
+      0.0139
+     ],
+     "p_two_sided": 0.7925
+    },
+    "brier_gated_minus_model": {
+     "difference": -0.0009,
+     "ci95": [
+      -0.0076,
+      0.006
+     ],
+     "p_two_sided": 0.8085
+    },
+    "winkler_improvement_pct": 1.23,
+    "winkler_drift_improvement_pct": 1.28,
+    "brier_improvement_pct": 0.32
+   },
+   "full": {
+    "n_forecasts": 13762,
+    "share_gated_pct": 9.4,
+    "share_calendar_pct": 0.0,
+    "share_headline_pct": 4.8,
+    "share_shock_pct": 5.0,
+    "variants": {
+     "model": {
+      "brier": 0.26171,
+      "coverage": 0.79196,
+      "winkler": 0.21564,
+      "pinball": 0.01402,
+      "n": 13762
+     },
+     "climatology": {
+      "brier": 0.25411,
+      "coverage": 0.80446,
+      "winkler": 0.20088,
+      "pinball": 0.01336,
+      "n": 13762
+     },
+     "gated_event_conditional": {
+      "brier": 0.26084,
+      "coverage": 0.7948,
+      "winkler": 0.21301,
+      "pinball": 0.01392,
+      "n": 13762
+     },
+     "gated": {
+      "brier": 0.26073,
+      "coverage": 0.79218,
+      "winkler": 0.21381,
+      "pinball": 0.01394,
+      "n": 13762
+     },
+     "gated_calendar_only": {
+      "brier": 0.26171,
+      "coverage": 0.79196,
+      "winkler": 0.21564,
+      "pinball": 0.01402,
+      "n": 13762
+     },
+     "gated_headline_only": {
+      "brier": 0.26094,
+      "coverage": 0.79225,
+      "winkler": 0.2146,
+      "pinball": 0.01397,
+      "n": 13762
+     },
+     "gated_shock_only": {
+      "brier": 0.26139,
+      "coverage": 0.79189,
+      "winkler": 0.21482,
+      "pinball": 0.01399,
+      "n": 13762
+     },
+     "gated_drift": {
+      "brier": 0.2606,
+      "coverage": 0.79022,
+      "winkler": 0.21381,
+      "pinball": 0.01395,
+      "n": 13762
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.26048,
+      "coverage": 0.72312,
+      "winkler": 0.25578,
+      "pinball": 0.01605,
+      "n": 1293
+     },
+     "climatology": {
+      "brier": 0.25008,
+      "coverage": 0.72544,
+      "winkler": 0.23635,
+      "pinball": 0.01525,
+      "n": 1293
+     },
+     "gated_drift": {
+      "brier": 0.24864,
+      "coverage": 0.70456,
+      "winkler": 0.23633,
+      "pinball": 0.01536,
+      "n": 1293
+     },
+     "gated_event_conditional": {
+      "brier": 0.25118,
+      "coverage": 0.75329,
+      "winkler": 0.22784,
+      "pinball": 0.01502,
+      "n": 1293
+     }
+    },
+    "by_gate_type": {
+     "headline": {
+      "model": {
+       "brier": 0.26413,
+       "coverage": 0.73002,
+       "winkler": 0.21163,
+       "pinball": 0.0136,
+       "n": 663
+      },
+      "climatology": {
+       "brier": 0.24809,
+       "coverage": 0.73605,
+       "winkler": 0.19018,
+       "pinball": 0.01264,
+       "n": 663
+      },
+      "gated_event_conditional": {
+       "brier": 0.24699,
+       "coverage": 0.75415,
+       "winkler": 0.18882,
+       "pinball": 0.01254,
+       "n": 663
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0228,
+       "ci95": [
+        -0.0744,
+        0.0244
+       ],
+       "p_two_sided": 0.364
+      },
+      "winkler_improvement_pct": 10.78
+     },
+     "shock": {
+      "model": {
+       "brier": 0.25747,
+       "coverage": 0.70991,
+       "winkler": 0.29538,
+       "pinball": 0.01831,
+       "n": 686
+      },
+      "climatology": {
+       "brier": 0.25107,
+       "coverage": 0.70845,
+       "winkler": 0.27901,
+       "pinball": 0.0177,
+       "n": 686
+      },
+      "gated_event_conditional": {
+       "brier": 0.25313,
+       "coverage": 0.76093,
+       "winkler": 0.26297,
+       "pinball": 0.01726,
+       "n": 686
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0324,
+       "ci95": [
+        -0.0985,
+        0.0274
+       ],
+       "p_two_sided": 0.3035
+      },
+      "winkler_improvement_pct": 10.97
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": -0.0018,
+     "ci95": [
+      -0.0131,
+      0.0094
+     ],
+     "p_two_sided": 0.78
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": -0.0026,
+     "ci95": [
+      -0.0138,
+      0.0085
+     ],
+     "p_two_sided": 0.663
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": -0.0279,
+     "ci95": [
+      -0.071,
+      0.0131
+     ],
+     "p_two_sided": 0.188
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": -0.0093,
+     "ci95": [
+      -0.0214,
+      0.0021
+     ],
+     "p_two_sided": 0.1175
+    },
+    "winkler_event_conditional_improvement_pct": 1.22,
+    "winkler_gated_drift_minus_model": {
+     "difference": -0.0018,
+     "ci95": [
+      -0.0131,
+      0.0093
+     ],
+     "p_two_sided": 0.775
+    },
+    "brier_gated_minus_model": {
+     "difference": -0.001,
+     "ci95": [
+      -0.0046,
+      0.0027
+     ],
+     "p_two_sided": 0.605
+    },
+    "winkler_improvement_pct": 0.85,
+    "winkler_drift_improvement_pct": 0.85,
+    "brier_improvement_pct": 0.37
+   }
+  }
+ },
+ "spxl": {
+  "dataset": "SPXL / SPXS (deployed b01 dataset, published 2026 signals frozen)",
+  "asset_type": "index",
+  "windows": {
+   "holdout_2025_2026": {
+    "n_forecasts": 2877,
+    "share_gated_pct": 13.2,
+    "share_calendar_pct": 7.8,
+    "share_headline_pct": 1.9,
+    "share_shock_pct": 3.6,
+    "variants": {
+     "model": {
+      "brier": 0.24497,
+      "coverage": 0.80709,
+      "winkler": 0.19056,
+      "pinball": 0.01302,
+      "n": 2877
+     },
+     "climatology": {
+      "brier": 0.24584,
+      "coverage": 0.78102,
+      "winkler": 0.20748,
+      "pinball": 0.0136,
+      "n": 2877
+     },
+     "gated_event_conditional": {
+      "brier": 0.24506,
+      "coverage": 0.8064,
+      "winkler": 0.19212,
+      "pinball": 0.01306,
+      "n": 2877
+     },
+     "gated": {
+      "brier": 0.24432,
+      "coverage": 0.79979,
+      "winkler": 0.19369,
+      "pinball": 0.0131,
+      "n": 2877
+     },
+     "gated_calendar_only": {
+      "brier": 0.24487,
+      "coverage": 0.80605,
+      "winkler": 0.19104,
+      "pinball": 0.01303,
+      "n": 2877
+     },
+     "gated_headline_only": {
+      "brier": 0.24461,
+      "coverage": 0.8064,
+      "winkler": 0.19184,
+      "pinball": 0.01305,
+      "n": 2877
+     },
+     "gated_shock_only": {
+      "brier": 0.24478,
+      "coverage": 0.80153,
+      "winkler": 0.19188,
+      "pinball": 0.01305,
+      "n": 2877
+     },
+     "gated_drift": {
+      "brier": 0.24478,
+      "coverage": 0.80118,
+      "winkler": 0.19367,
+      "pinball": 0.0131,
+      "n": 2877
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.24774,
+      "coverage": 0.76253,
+      "winkler": 0.25802,
+      "pinball": 0.01718,
+      "n": 379
+     },
+     "climatology": {
+      "brier": 0.24282,
+      "coverage": 0.70712,
+      "winkler": 0.28183,
+      "pinball": 0.01781,
+      "n": 379
+     },
+     "gated_drift": {
+      "brier": 0.24633,
+      "coverage": 0.71768,
+      "winkler": 0.28164,
+      "pinball": 0.01779,
+      "n": 379
+     },
+     "gated_event_conditional": {
+      "brier": 0.24839,
+      "coverage": 0.75726,
+      "winkler": 0.26987,
+      "pinball": 0.01752,
+      "n": 379
+     }
+    },
+    "by_gate_type": {
+     "calendar": {
+      "model": {
+       "brier": 0.25497,
+       "coverage": 0.77778,
+       "winkler": 0.23256,
+       "pinball": 0.01527,
+       "n": 225
+      },
+      "climatology": {
+       "brier": 0.25367,
+       "coverage": 0.76444,
+       "winkler": 0.23876,
+       "pinball": 0.0154,
+       "n": 225
+      },
+      "gated_event_conditional": {
+       "brier": 0.25376,
+       "coverage": 0.79111,
+       "winkler": 0.23087,
+       "pinball": 0.01513,
+       "n": 225
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0017,
+       "ci95": [
+        -0.1382,
+        0.1502
+       ],
+       "p_two_sided": 0.93
+      },
+      "winkler_improvement_pct": 0.73
+     },
+     "headline": {
+      "model": {
+       "brier": 0.23872,
+       "coverage": 0.69643,
+       "winkler": 0.32884,
+       "pinball": 0.02075,
+       "n": 56
+      },
+      "climatology": {
+       "brier": 0.22004,
+       "coverage": 0.66071,
+       "winkler": 0.39489,
+       "pinball": 0.02245,
+       "n": 56
+      },
+      "gated_event_conditional": {
+       "brier": 0.22052,
+       "coverage": 0.66071,
+       "winkler": 0.39307,
+       "pinball": 0.0224,
+       "n": 56
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0642,
+       "ci95": [
+        -0.2519,
+        0.3493
+       ],
+       "p_two_sided": 0.8805
+      },
+      "winkler_improvement_pct": -19.53
+     },
+     "shock": {
+      "model": {
+       "brier": 0.23485,
+       "coverage": 0.74286,
+       "winkler": 0.29653,
+       "pinball": 0.02055,
+       "n": 105
+      },
+      "climatology": {
+       "brier": 0.22977,
+       "coverage": 0.59048,
+       "winkler": 0.33273,
+       "pinball": 0.02157,
+       "n": 105
+      },
+      "gated_event_conditional": {
+       "brier": 0.24783,
+       "coverage": 0.71429,
+       "winkler": 0.30427,
+       "pinball": 0.02098,
+       "n": 105
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0077,
+       "ci95": [
+        -0.1305,
+        0.1492
+       ],
+       "p_two_sided": 0.8875
+      },
+      "winkler_improvement_pct": -2.61
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": 0.0031,
+     "ci95": [
+      -0.0184,
+      0.0253
+     ],
+     "p_two_sided": 0.7765
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": 0.0016,
+     "ci95": [
+      -0.0199,
+      0.0232
+     ],
+     "p_two_sided": 0.898
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": 0.0118,
+     "ci95": [
+      -0.0995,
+      0.127
+     ],
+     "p_two_sided": 0.8695
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": 0.0006,
+     "ci95": [
+      -0.0213,
+      0.0227
+     ],
+     "p_two_sided": 0.945
+    },
+    "winkler_event_conditional_improvement_pct": -0.82,
+    "winkler_gated_drift_minus_model": {
+     "difference": 0.0031,
+     "ci95": [
+      -0.0184,
+      0.0253
+     ],
+     "p_two_sided": 0.7785
+    },
+    "brier_gated_minus_model": {
+     "difference": -0.0006,
+     "ci95": [
+      -0.0087,
+      0.0078
+     ],
+     "p_two_sided": 0.8685
+    },
+    "winkler_improvement_pct": -1.64,
+    "winkler_drift_improvement_pct": -1.63,
+    "brier_improvement_pct": 0.27
+   },
+   "full": {
+    "n_forecasts": 18039,
+    "share_gated_pct": 12.3,
+    "share_calendar_pct": 8.0,
+    "share_headline_pct": 0.9,
+    "share_shock_pct": 3.7,
+    "variants": {
+     "model": {
+      "brier": 0.25016,
+      "coverage": 0.76196,
+      "winkler": 0.19832,
+      "pinball": 0.01357,
+      "n": 18039
+     },
+     "climatology": {
+      "brier": 0.24326,
+      "coverage": 0.78352,
+      "winkler": 0.21477,
+      "pinball": 0.01399,
+      "n": 18039
+     },
+     "gated_event_conditional": {
+      "brier": 0.24927,
+      "coverage": 0.76312,
+      "winkler": 0.20058,
+      "pinball": 0.01362,
+      "n": 18039
+     },
+     "gated": {
+      "brier": 0.2491,
+      "coverage": 0.76407,
+      "winkler": 0.20062,
+      "pinball": 0.01361,
+      "n": 18039
+     },
+     "gated_calendar_only": {
+      "brier": 0.24966,
+      "coverage": 0.76534,
+      "winkler": 0.19945,
+      "pinball": 0.01359,
+      "n": 18039
+     },
+     "gated_headline_only": {
+      "brier": 0.25008,
+      "coverage": 0.76196,
+      "winkler": 0.19863,
+      "pinball": 0.01358,
+      "n": 18039
+     },
+     "gated_shock_only": {
+      "brier": 0.2496,
+      "coverage": 0.76069,
+      "winkler": 0.19932,
+      "pinball": 0.01358,
+      "n": 18039
+     },
+     "gated_drift": {
+      "brier": 0.24934,
+      "coverage": 0.76385,
+      "winkler": 0.20061,
+      "pinball": 0.01362,
+      "n": 18039
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.25193,
+      "coverage": 0.71222,
+      "winkler": 0.2294,
+      "pinball": 0.01568,
+      "n": 2210
+     },
+     "climatology": {
+      "brier": 0.2433,
+      "coverage": 0.72941,
+      "winkler": 0.24825,
+      "pinball": 0.01603,
+      "n": 2210
+     },
+     "gated_drift": {
+      "brier": 0.24525,
+      "coverage": 0.7276,
+      "winkler": 0.2481,
+      "pinball": 0.01605,
+      "n": 2210
+     },
+     "gated_event_conditional": {
+      "brier": 0.24467,
+      "coverage": 0.72172,
+      "winkler": 0.24787,
+      "pinball": 0.01607,
+      "n": 2210
+     }
+    },
+    "by_gate_type": {
+     "calendar": {
+      "model": {
+       "brier": 0.25056,
+       "coverage": 0.71528,
+       "winkler": 0.21801,
+       "pinball": 0.01485,
+       "n": 1440
+      },
+      "climatology": {
+       "brier": 0.24432,
+       "coverage": 0.75764,
+       "winkler": 0.23218,
+       "pinball": 0.01515,
+       "n": 1440
+      },
+      "gated_event_conditional": {
+       "brier": 0.24454,
+       "coverage": 0.71319,
+       "winkler": 0.23803,
+       "pinball": 0.01535,
+       "n": 1440
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.02,
+       "ci95": [
+        -0.0307,
+        0.0743
+       ],
+       "p_two_sided": 0.405
+      },
+      "winkler_improvement_pct": -9.18
+     },
+     "headline": {
+      "model": {
+       "brier": 0.2297,
+       "coverage": 0.81548,
+       "winkler": 0.19379,
+       "pinball": 0.0128,
+       "n": 168
+      },
+      "climatology": {
+       "brier": 0.22169,
+       "coverage": 0.81548,
+       "winkler": 0.22713,
+       "pinball": 0.01373,
+       "n": 168
+      },
+      "gated_event_conditional": {
+       "brier": 0.22245,
+       "coverage": 0.81548,
+       "winkler": 0.22824,
+       "pinball": 0.01378,
+       "n": 168
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0345,
+       "ci95": [
+        -0.0948,
+        0.1878
+       ],
+       "p_two_sided": 0.653
+      },
+      "winkler_improvement_pct": -17.78
+     },
+     "shock": {
+      "model": {
+       "brier": 0.26101,
+       "coverage": 0.67708,
+       "winkler": 0.27349,
+       "pinball": 0.01881,
+       "n": 672
+      },
+      "climatology": {
+       "brier": 0.24614,
+       "coverage": 0.64286,
+       "winkler": 0.30035,
+       "pinball": 0.01916,
+       "n": 672
+      },
+      "gated_event_conditional": {
+       "brier": 0.2505,
+       "coverage": 0.70387,
+       "winkler": 0.28853,
+       "pinball": 0.01895,
+       "n": 672
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.015,
+       "ci95": [
+        -0.0539,
+        0.092
+       ],
+       "p_two_sided": 0.6625
+      },
+      "winkler_improvement_pct": -5.5
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": 0.0023,
+     "ci95": [
+      -0.0085,
+      0.0137
+     ],
+     "p_two_sided": 0.6845
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": 0.0023,
+     "ci95": [
+      -0.0086,
+      0.0136
+     ],
+     "p_two_sided": 0.6925
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": 0.0185,
+     "ci95": [
+      -0.0211,
+      0.0591
+     ],
+     "p_two_sided": 0.3635
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": -0.0073,
+     "ci95": [
+      -0.0197,
+      0.0045
+     ],
+     "p_two_sided": 0.2395
+    },
+    "winkler_event_conditional_improvement_pct": -1.14,
+    "winkler_gated_drift_minus_model": {
+     "difference": 0.0023,
+     "ci95": [
+      -0.0086,
+      0.0137
+     ],
+     "p_two_sided": 0.689
+    },
+    "brier_gated_minus_model": {
+     "difference": -0.0011,
+     "ci95": [
+      -0.0053,
+      0.0034
+     ],
+     "p_two_sided": 0.629
+    },
+    "winkler_improvement_pct": -1.16,
+    "winkler_drift_improvement_pct": -1.15,
+    "brier_improvement_pct": 0.42
+   }
+  }
+ },
+ "spy": {
+  "dataset": "SPY spot (S&P 500 ETF, cash mode)",
+  "asset_type": "index",
+  "windows": {
+   "holdout_2025_2026": {
+    "n_forecasts": 2877,
+    "share_gated_pct": 13.4,
+    "share_calendar_pct": 7.8,
+    "share_headline_pct": 1.9,
+    "share_shock_pct": 3.9,
+    "variants": {
+     "model": {
+      "brier": 0.24541,
+      "coverage": 0.80918,
+      "winkler": 0.06422,
+      "pinball": 0.00439,
+      "n": 2877
+     },
+     "climatology": {
+      "brier": 0.24313,
+      "coverage": 0.78067,
+      "winkler": 0.06952,
+      "pinball": 0.00454,
+      "n": 2877
+     },
+     "gated_event_conditional": {
+      "brier": 0.2451,
+      "coverage": 0.81022,
+      "winkler": 0.06487,
+      "pinball": 0.0044,
+      "n": 2877
+     },
+     "gated": {
+      "brier": 0.24429,
+      "coverage": 0.80257,
+      "winkler": 0.0654,
+      "pinball": 0.00441,
+      "n": 2877
+     },
+     "gated_calendar_only": {
+      "brier": 0.24477,
+      "coverage": 0.80674,
+      "winkler": 0.06423,
+      "pinball": 0.00438,
+      "n": 2877
+     },
+     "gated_headline_only": {
+      "brier": 0.24543,
+      "coverage": 0.80848,
+      "winkler": 0.06479,
+      "pinball": 0.0044,
+      "n": 2877
+     },
+     "gated_shock_only": {
+      "brier": 0.24486,
+      "coverage": 0.8057,
+      "winkler": 0.06478,
+      "pinball": 0.0044,
+      "n": 2877
+     },
+     "gated_drift": {
+      "brier": 0.24475,
+      "coverage": 0.80222,
+      "winkler": 0.06543,
+      "pinball": 0.00441,
+      "n": 2877
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.24793,
+      "coverage": 0.75065,
+      "winkler": 0.08865,
+      "pinball": 0.00594,
+      "n": 385
+     },
+     "climatology": {
+      "brier": 0.2396,
+      "coverage": 0.7013,
+      "winkler": 0.09753,
+      "pinball": 0.00612,
+      "n": 385
+     },
+     "gated_drift": {
+      "brier": 0.24304,
+      "coverage": 0.6987,
+      "winkler": 0.09774,
+      "pinball": 0.00612,
+      "n": 385
+     },
+     "gated_event_conditional": {
+      "brier": 0.2456,
+      "coverage": 0.75844,
+      "winkler": 0.09356,
+      "pinball": 0.00602,
+      "n": 385
+     }
+    },
+    "by_gate_type": {
+     "calendar": {
+      "model": {
+       "brier": 0.25961,
+       "coverage": 0.78667,
+       "winkler": 0.08034,
+       "pinball": 0.00526,
+       "n": 225
+      },
+      "climatology": {
+       "brier": 0.25147,
+       "coverage": 0.75556,
+       "winkler": 0.08053,
+       "pinball": 0.00518,
+       "n": 225
+      },
+      "gated_event_conditional": {
+       "brier": 0.25158,
+       "coverage": 0.80444,
+       "winkler": 0.07802,
+       "pinball": 0.00508,
+       "n": 225
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0023,
+       "ci95": [
+        -0.0543,
+        0.0527
+       ],
+       "p_two_sided": 0.894
+      },
+      "winkler_improvement_pct": 2.89
+     },
+     "headline": {
+      "model": {
+       "brier": 0.20896,
+       "coverage": 0.69643,
+       "winkler": 0.11069,
+       "pinball": 0.00696,
+       "n": 56
+      },
+      "climatology": {
+       "brier": 0.21034,
+       "coverage": 0.66071,
+       "winkler": 0.14022,
+       "pinball": 0.00791,
+       "n": 56
+      },
+      "gated_event_conditional": {
+       "brier": 0.21084,
+       "coverage": 0.67857,
+       "winkler": 0.13943,
+       "pinball": 0.00788,
+       "n": 56
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0287,
+       "ci95": [
+        -0.0783,
+        0.1323
+       ],
+       "p_two_sided": 0.7795
+      },
+      "winkler_improvement_pct": -25.96
+     },
+     "shock": {
+      "model": {
+       "brier": 0.243,
+       "coverage": 0.6875,
+       "winkler": 0.10061,
+       "pinball": 0.00714,
+       "n": 112
+      },
+      "climatology": {
+       "brier": 0.2291,
+       "coverage": 0.59821,
+       "winkler": 0.11518,
+       "pinball": 0.00741,
+       "n": 112
+      },
+      "gated_event_conditional": {
+       "brier": 0.24852,
+       "coverage": 0.69643,
+       "winkler": 0.10579,
+       "pinball": 0.00722,
+       "n": 112
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0052,
+       "ci95": [
+        -0.0394,
+        0.0511
+       ],
+       "p_two_sided": 0.7985
+      },
+      "winkler_improvement_pct": -5.15
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": 0.0012,
+     "ci95": [
+      -0.0071,
+      0.0095
+     ],
+     "p_two_sided": 0.7735
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": 0.0007,
+     "ci95": [
+      -0.0075,
+      0.0088
+     ],
+     "p_two_sided": 0.875
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": 0.0049,
+     "ci95": [
+      -0.0354,
+      0.0454
+     ],
+     "p_two_sided": 0.8525
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": -0.0023,
+     "ci95": [
+      -0.028,
+      0.0253
+     ],
+     "p_two_sided": 0.909
+    },
+    "winkler_event_conditional_improvement_pct": -1.01,
+    "winkler_gated_drift_minus_model": {
+     "difference": 0.0012,
+     "ci95": [
+      -0.0071,
+      0.0095
+     ],
+     "p_two_sided": 0.7685
+    },
+    "brier_gated_minus_model": {
+     "difference": -0.0011,
+     "ci95": [
+      -0.0116,
+      0.0096
+     ],
+     "p_two_sided": 0.85
+    },
+    "winkler_improvement_pct": -1.84,
+    "winkler_drift_improvement_pct": -1.88,
+    "brier_improvement_pct": 0.46
+   },
+   "full": {
+    "n_forecasts": 18039,
+    "share_gated_pct": 12.3,
+    "share_calendar_pct": 8.0,
+    "share_headline_pct": 0.9,
+    "share_shock_pct": 3.8,
+    "variants": {
+     "model": {
+      "brier": 0.2458,
+      "coverage": 0.76224,
+      "winkler": 0.06556,
+      "pinball": 0.00449,
+      "n": 18039
+     },
+     "climatology": {
+      "brier": 0.24018,
+      "coverage": 0.78197,
+      "winkler": 0.0715,
+      "pinball": 0.00465,
+      "n": 18039
+     },
+     "gated_event_conditional": {
+      "brier": 0.24518,
+      "coverage": 0.76279,
+      "winkler": 0.06634,
+      "pinball": 0.00451,
+      "n": 18039
+     },
+     "gated": {
+      "brier": 0.24506,
+      "coverage": 0.76279,
+      "winkler": 0.06638,
+      "pinball": 0.00451,
+      "n": 18039
+     },
+     "gated_calendar_only": {
+      "brier": 0.24557,
+      "coverage": 0.76512,
+      "winkler": 0.06592,
+      "pinball": 0.0045,
+      "n": 18039
+     },
+     "gated_headline_only": {
+      "brier": 0.24579,
+      "coverage": 0.76196,
+      "winkler": 0.06569,
+      "pinball": 0.00449,
+      "n": 18039
+     },
+     "gated_shock_only": {
+      "brier": 0.24527,
+      "coverage": 0.76008,
+      "winkler": 0.06594,
+      "pinball": 0.0045,
+      "n": 18039
+     },
+     "gated_drift": {
+      "brier": 0.2453,
+      "coverage": 0.7629,
+      "winkler": 0.06637,
+      "pinball": 0.00451,
+      "n": 18039
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.24591,
+      "coverage": 0.71885,
+      "winkler": 0.07622,
+      "pinball": 0.00519,
+      "n": 2223
+     },
+     "climatology": {
+      "brier": 0.2399,
+      "coverage": 0.72335,
+      "winkler": 0.08288,
+      "pinball": 0.00534,
+      "n": 2223
+     },
+     "gated_drift": {
+      "brier": 0.24189,
+      "coverage": 0.72425,
+      "winkler": 0.08278,
+      "pinball": 0.00535,
+      "n": 2223
+     },
+     "gated_event_conditional": {
+      "brier": 0.24091,
+      "coverage": 0.72335,
+      "winkler": 0.08259,
+      "pinball": 0.00535,
+      "n": 2223
+     }
+    },
+    "by_gate_type": {
+     "calendar": {
+      "model": {
+       "brier": 0.24337,
+       "coverage": 0.71667,
+       "winkler": 0.07284,
+       "pinball": 0.00493,
+       "n": 1440
+      },
+      "climatology": {
+       "brier": 0.24049,
+       "coverage": 0.75278,
+       "winkler": 0.07736,
+       "pinball": 0.00504,
+       "n": 1440
+      },
+      "gated_event_conditional": {
+       "brier": 0.24019,
+       "coverage": 0.71806,
+       "winkler": 0.07932,
+       "pinball": 0.00511,
+       "n": 1440
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0065,
+       "ci95": [
+        -0.0111,
+        0.0246
+       ],
+       "p_two_sided": 0.4265
+      },
+      "winkler_improvement_pct": -8.9
+     },
+     "headline": {
+      "model": {
+       "brier": 0.21054,
+       "coverage": 0.83929,
+       "winkler": 0.06405,
+       "pinball": 0.00423,
+       "n": 168
+      },
+      "climatology": {
+       "brier": 0.20959,
+       "coverage": 0.80952,
+       "winkler": 0.07857,
+       "pinball": 0.00471,
+       "n": 168
+      },
+      "gated_event_conditional": {
+       "brier": 0.21001,
+       "coverage": 0.81548,
+       "winkler": 0.07887,
+       "pinball": 0.00473,
+       "n": 168
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0148,
+       "ci95": [
+        -0.0315,
+        0.071
+       ],
+       "p_two_sided": 0.5825
+      },
+      "winkler_improvement_pct": -23.14
+     },
+     "shock": {
+      "model": {
+       "brier": 0.26039,
+       "coverage": 0.69096,
+       "winkler": 0.08948,
+       "pinball": 0.00618,
+       "n": 686
+      },
+      "climatology": {
+       "brier": 0.24651,
+       "coverage": 0.63411,
+       "winkler": 0.0994,
+       "pinball": 0.00636,
+       "n": 686
+      },
+      "gated_event_conditional": {
+       "brier": 0.25066,
+       "coverage": 0.70262,
+       "winkler": 0.09494,
+       "pinball": 0.00626,
+       "n": 686
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0055,
+       "ci95": [
+        -0.0173,
+        0.0288
+       ],
+       "p_two_sided": 0.617
+      },
+      "winkler_improvement_pct": -6.1
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": 0.0008,
+     "ci95": [
+      -0.0028,
+      0.0047
+     ],
+     "p_two_sided": 0.673
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": 0.0008,
+     "ci95": [
+      -0.0029,
+      0.0047
+     ],
+     "p_two_sided": 0.687
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": 0.0064,
+     "ci95": [
+      -0.0068,
+      0.0199
+     ],
+     "p_two_sided": 0.355
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": -0.005,
+     "ci95": [
+      -0.0191,
+      0.0081
+     ],
+     "p_two_sided": 0.4675
+    },
+    "winkler_event_conditional_improvement_pct": -1.19,
+    "winkler_gated_drift_minus_model": {
+     "difference": 0.0008,
+     "ci95": [
+      -0.0028,
+      0.0047
+     ],
+     "p_two_sided": 0.6785
+    },
+    "brier_gated_minus_model": {
+     "difference": -0.0007,
+     "ci95": [
+      -0.0053,
+      0.0042
+     ],
+     "p_two_sided": 0.758
+    },
+    "winkler_improvement_pct": -1.25,
+    "winkler_drift_improvement_pct": -1.24,
+    "brier_improvement_pct": 0.3
+   }
+  }
+ },
+ "aapl": {
+  "dataset": "AAPL (deployed s01 dataset, live signals frozen from 2026-07-30)",
+  "asset_type": "stock",
+  "windows": {
+   "holdout_2025_2026": {
+    "n_forecasts": 2898,
+    "share_gated_pct": 16.8,
+    "share_calendar_pct": 1.7,
+    "share_headline_pct": 10.9,
+    "share_shock_pct": 5.8,
+    "variants": {
+     "model": {
+      "brier": 0.25446,
+      "coverage": 0.74189,
+      "winkler": 0.13769,
+      "pinball": 0.00925,
+      "n": 2898
+     },
+     "climatology": {
+      "brier": 0.25052,
+      "coverage": 0.77122,
+      "winkler": 0.13681,
+      "pinball": 0.00916,
+      "n": 2898
+     },
+     "gated_event_conditional": {
+      "brier": 0.25467,
+      "coverage": 0.74396,
+      "winkler": 0.13806,
+      "pinball": 0.00928,
+      "n": 2898
+     },
+     "gated": {
+      "brier": 0.2545,
+      "coverage": 0.73602,
+      "winkler": 0.13844,
+      "pinball": 0.00929,
+      "n": 2898
+     },
+     "gated_calendar_only": {
+      "brier": 0.25448,
+      "coverage": 0.74086,
+      "winkler": 0.13723,
+      "pinball": 0.00923,
+      "n": 2898
+     },
+     "gated_headline_only": {
+      "brier": 0.25419,
+      "coverage": 0.73775,
+      "winkler": 0.13852,
+      "pinball": 0.00928,
+      "n": 2898
+     },
+     "gated_shock_only": {
+      "brier": 0.25504,
+      "coverage": 0.73948,
+      "winkler": 0.13784,
+      "pinball": 0.00926,
+      "n": 2898
+     },
+     "gated_drift": {
+      "brier": 0.25547,
+      "coverage": 0.73637,
+      "winkler": 0.13835,
+      "pinball": 0.00928,
+      "n": 2898
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.25088,
+      "coverage": 0.72016,
+      "winkler": 0.16143,
+      "pinball": 0.01067,
+      "n": 486
+     },
+     "climatology": {
+      "brier": 0.2511,
+      "coverage": 0.68519,
+      "winkler": 0.16588,
+      "pinball": 0.0109,
+      "n": 486
+     },
+     "gated_drift": {
+      "brier": 0.25691,
+      "coverage": 0.68724,
+      "winkler": 0.16538,
+      "pinball": 0.01089,
+      "n": 486
+     },
+     "gated_event_conditional": {
+      "brier": 0.2521,
+      "coverage": 0.73251,
+      "winkler": 0.16365,
+      "pinball": 0.01088,
+      "n": 486
+     }
+    },
+    "by_gate_type": {
+     "calendar": {
+      "model": {
+       "brier": 0.26497,
+       "coverage": 0.65306,
+       "winkler": 0.18396,
+       "pinball": 0.01219,
+       "n": 49
+      },
+      "climatology": {
+       "brier": 0.26573,
+       "coverage": 0.59184,
+       "winkler": 0.15686,
+       "pinball": 0.01127,
+       "n": 49
+      },
+      "gated_event_conditional": {
+       "brier": 0.25936,
+       "coverage": 0.85714,
+       "winkler": 0.15594,
+       "pinball": 0.01153,
+       "n": 49
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.028,
+       "ci95": [
+        -0.1077,
+        0.0541
+       ],
+       "p_two_sided": 0.6165
+      },
+      "winkler_improvement_pct": 15.23
+     },
+     "headline": {
+      "model": {
+       "brier": 0.25213,
+       "coverage": 0.74603,
+       "winkler": 0.1494,
+       "pinball": 0.01011,
+       "n": 315
+      },
+      "climatology": {
+       "brier": 0.24965,
+       "coverage": 0.70794,
+       "winkler": 0.15699,
+       "pinball": 0.01043,
+       "n": 315
+      },
+      "gated_event_conditional": {
+       "brier": 0.25034,
+       "coverage": 0.71111,
+       "winkler": 0.15877,
+       "pinball": 0.01051,
+       "n": 315
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0094,
+       "ci95": [
+        -0.0439,
+        0.0713
+       ],
+       "p_two_sided": 0.7435
+      },
+      "winkler_improvement_pct": -6.27
+     },
+     "shock": {
+      "model": {
+       "brier": 0.23659,
+       "coverage": 0.72024,
+       "winkler": 0.17364,
+       "pinball": 0.01092,
+       "n": 168
+      },
+      "climatology": {
+       "brier": 0.24651,
+       "coverage": 0.67857,
+       "winkler": 0.17626,
+       "pinball": 0.01121,
+       "n": 168
+      },
+      "gated_event_conditional": {
+       "brier": 0.2507,
+       "coverage": 0.7381,
+       "winkler": 0.17025,
+       "pinball": 0.01109,
+       "n": 168
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0034,
+       "ci95": [
+        -0.0828,
+        0.0758
+       ],
+       "p_two_sided": 0.9395
+      },
+      "winkler_improvement_pct": 1.95
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": 0.0007,
+     "ci95": [
+      -0.0179,
+      0.019
+     ],
+     "p_two_sided": 0.968
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": 0.0004,
+     "ci95": [
+      -0.0183,
+      0.0185
+     ],
+     "p_two_sided": 0.9985
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": 0.0022,
+     "ci95": [
+      -0.0444,
+      0.0513
+     ],
+     "p_two_sided": 0.9165
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": 0.0012,
+     "ci95": [
+      -0.0168,
+      0.0181
+     ],
+     "p_two_sided": 0.924
+    },
+    "winkler_event_conditional_improvement_pct": -0.27,
+    "winkler_gated_drift_minus_model": {
+     "difference": 0.0007,
+     "ci95": [
+      -0.0181,
+      0.019
+     ],
+     "p_two_sided": 0.974
+    },
+    "brier_gated_minus_model": {
+     "difference": 0.0,
+     "ci95": [
+      -0.0081,
+      0.0077
+     ],
+     "p_two_sided": 0.9895
+    },
+    "winkler_improvement_pct": -0.54,
+    "winkler_drift_improvement_pct": -0.48,
+    "brier_improvement_pct": -0.02
+   },
+   "full": {
+    "n_forecasts": 28630,
+    "share_gated_pct": 7.3,
+    "share_calendar_pct": 1.6,
+    "share_headline_pct": 1.8,
+    "share_shock_pct": 4.2,
+    "variants": {
+     "model": {
+      "brier": 0.25185,
+      "coverage": 0.7672,
+      "winkler": 0.12193,
+      "pinball": 0.00832,
+      "n": 28630
+     },
+     "climatology": {
+      "brier": 0.24902,
+      "coverage": 0.78655,
+      "winkler": 0.12096,
+      "pinball": 0.00824,
+      "n": 28630
+     },
+     "gated_event_conditional": {
+      "brier": 0.25214,
+      "coverage": 0.77031,
+      "winkler": 0.12153,
+      "pinball": 0.00831,
+      "n": 28630
+     },
+     "gated": {
+      "brier": 0.25158,
+      "coverage": 0.76696,
+      "winkler": 0.12193,
+      "pinball": 0.00832,
+      "n": 28630
+     },
+     "gated_calendar_only": {
+      "brier": 0.25172,
+      "coverage": 0.76776,
+      "winkler": 0.1217,
+      "pinball": 0.00831,
+      "n": 28630
+     },
+     "gated_headline_only": {
+      "brier": 0.25178,
+      "coverage": 0.76657,
+      "winkler": 0.12198,
+      "pinball": 0.00832,
+      "n": 28630
+     },
+     "gated_shock_only": {
+      "brier": 0.25181,
+      "coverage": 0.76699,
+      "winkler": 0.12205,
+      "pinball": 0.00833,
+      "n": 28630
+     },
+     "gated_drift": {
+      "brier": 0.25198,
+      "coverage": 0.76661,
+      "winkler": 0.12194,
+      "pinball": 0.00832,
+      "n": 28630
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.25113,
+      "coverage": 0.69164,
+      "winkler": 0.14927,
+      "pinball": 0.01008,
+      "n": 2082
+     },
+     "climatology": {
+      "brier": 0.24742,
+      "coverage": 0.68828,
+      "winkler": 0.14931,
+      "pinball": 0.01006,
+      "n": 2082
+     },
+     "gated_drift": {
+      "brier": 0.25284,
+      "coverage": 0.68348,
+      "winkler": 0.14946,
+      "pinball": 0.01009,
+      "n": 2082
+     },
+     "gated_event_conditional": {
+      "brier": 0.25512,
+      "coverage": 0.73439,
+      "winkler": 0.14383,
+      "pinball": 0.00996,
+      "n": 2082
+     }
+    },
+    "by_gate_type": {
+     "calendar": {
+      "model": {
+       "brier": 0.24852,
+       "coverage": 0.47253,
+       "winkler": 0.22296,
+       "pinball": 0.01433,
+       "n": 455
+      },
+      "climatology": {
+       "brier": 0.23989,
+       "coverage": 0.50769,
+       "winkler": 0.20875,
+       "pinball": 0.01377,
+       "n": 455
+      },
+      "gated_event_conditional": {
+       "brier": 0.24416,
+       "coverage": 0.72308,
+       "winkler": 0.18174,
+       "pinball": 0.01293,
+       "n": 455
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0412,
+       "ci95": [
+        -0.0824,
+        0.0019
+       ],
+       "p_two_sided": 0.064
+      },
+      "winkler_improvement_pct": 18.49
+     },
+     "headline": {
+      "model": {
+       "brier": 0.2641,
+       "coverage": 0.76834,
+       "winkler": 0.13417,
+       "pinball": 0.00923,
+       "n": 518
+      },
+      "climatology": {
+       "brier": 0.2602,
+       "coverage": 0.73359,
+       "winkler": 0.13746,
+       "pinball": 0.00938,
+       "n": 518
+      },
+      "gated_event_conditional": {
+       "brier": 0.25968,
+       "coverage": 0.73552,
+       "winkler": 0.13805,
+       "pinball": 0.0094,
+       "n": 518
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0039,
+       "ci95": [
+        -0.0316,
+        0.0443
+       ],
+       "p_two_sided": 0.876
+      },
+      "winkler_improvement_pct": -2.89
+     },
+     "shock": {
+      "model": {
+       "brier": 0.24526,
+       "coverage": 0.74202,
+       "winkler": 0.12869,
+       "pinball": 0.00883,
+       "n": 1190
+      },
+      "climatology": {
+       "brier": 0.24426,
+       "coverage": 0.73697,
+       "winkler": 0.13171,
+       "pinball": 0.00892,
+       "n": 1190
+      },
+      "gated_event_conditional": {
+       "brier": 0.256,
+       "coverage": 0.7395,
+       "winkler": 0.13164,
+       "pinball": 0.00904,
+       "n": 1190
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.003,
+       "ci95": [
+        -0.0166,
+        0.0237
+       ],
+       "p_two_sided": 0.7635
+      },
+      "winkler_improvement_pct": -2.29
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": 0.0,
+     "ci95": [
+      -0.0042,
+      0.0043
+     ],
+     "p_two_sided": 0.978
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": -0.0004,
+     "ci95": [
+      -0.0046,
+      0.0039
+     ],
+     "p_two_sided": 0.8615
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": -0.0054,
+     "ci95": [
+      -0.023,
+      0.0124
+     ],
+     "p_two_sided": 0.552
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": 0.004,
+     "ci95": [
+      -0.0063,
+      0.015
+     ],
+     "p_two_sided": 0.4745
+    },
+    "winkler_event_conditional_improvement_pct": 0.33,
+    "winkler_gated_drift_minus_model": {
+     "difference": 0.0,
+     "ci95": [
+      -0.0042,
+      0.0044
+     ],
+     "p_two_sided": 0.973
+    },
+    "brier_gated_minus_model": {
+     "difference": -0.0003,
+     "ci95": [
+      -0.0039,
+      0.0032
+     ],
+     "p_two_sided": 0.897
+    },
+    "winkler_improvement_pct": 0.0,
+    "winkler_drift_improvement_pct": -0.01,
+    "brier_improvement_pct": 0.11
+   }
+  }
+ },
+ "msft": {
+  "dataset": "MSFT (deployed s02 dataset)",
+  "asset_type": "stock",
+  "windows": {
+   "holdout_2025_2026": {
+    "n_forecasts": 2898,
+    "share_gated_pct": 19.6,
+    "share_calendar_pct": 1.7,
+    "share_headline_pct": 15.5,
+    "share_shock_pct": 4.3,
+    "variants": {
+     "model": {
+      "brier": 0.26174,
+      "coverage": 0.76294,
+      "winkler": 0.14729,
+      "pinball": 0.0095,
+      "n": 2898
+     },
+     "climatology": {
+      "brier": 0.25476,
+      "coverage": 0.73188,
+      "winkler": 0.14516,
+      "pinball": 0.00934,
+      "n": 2898
+     },
+     "gated_event_conditional": {
+      "brier": 0.26009,
+      "coverage": 0.76259,
+      "winkler": 0.1461,
+      "pinball": 0.00945,
+      "n": 2898
+     },
+     "gated": {
+      "brier": 0.2605,
+      "coverage": 0.75535,
+      "winkler": 0.1478,
+      "pinball": 0.00952,
+      "n": 2898
+     },
+     "gated_calendar_only": {
+      "brier": 0.26144,
+      "coverage": 0.76363,
+      "winkler": 0.1474,
+      "pinball": 0.00951,
+      "n": 2898
+     },
+     "gated_headline_only": {
+      "brier": 0.26143,
+      "coverage": 0.75811,
+      "winkler": 0.14676,
+      "pinball": 0.00949,
+      "n": 2898
+     },
+     "gated_shock_only": {
+      "brier": 0.26096,
+      "coverage": 0.75845,
+      "winkler": 0.14799,
+      "pinball": 0.00952,
+      "n": 2898
+     },
+     "gated_drift": {
+      "brier": 0.26102,
+      "coverage": 0.75535,
+      "winkler": 0.14803,
+      "pinball": 0.00953,
+      "n": 2898
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.2661,
+      "coverage": 0.64374,
+      "winkler": 0.21874,
+      "pinball": 0.01351,
+      "n": 567
+     },
+     "climatology": {
+      "brier": 0.25975,
+      "coverage": 0.60494,
+      "winkler": 0.22131,
+      "pinball": 0.01357,
+      "n": 567
+     },
+     "gated_drift": {
+      "brier": 0.26239,
+      "coverage": 0.60494,
+      "winkler": 0.2225,
+      "pinball": 0.01362,
+      "n": 567
+     },
+     "gated_event_conditional": {
+      "brier": 0.25767,
+      "coverage": 0.64198,
+      "winkler": 0.21263,
+      "pinball": 0.01326,
+      "n": 567
+     }
+    },
+    "by_gate_type": {
+     "calendar": {
+      "model": {
+       "brier": 0.28427,
+       "coverage": 0.16327,
+       "winkler": 0.47303,
+       "pinball": 0.0276,
+       "n": 49
+      },
+      "climatology": {
+       "brier": 0.2665,
+       "coverage": 0.20408,
+       "winkler": 0.47934,
+       "pinball": 0.02774,
+       "n": 49
+      },
+      "gated_event_conditional": {
+       "brier": 0.26801,
+       "coverage": 0.46939,
+       "winkler": 0.38642,
+       "pinball": 0.02464,
+       "n": 49
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0866,
+       "ci95": [
+        -0.3472,
+        0.1882
+       ],
+       "p_two_sided": 0.558
+      },
+      "winkler_improvement_pct": 18.31
+     },
+     "headline": {
+      "model": {
+       "brier": 0.26203,
+       "coverage": 0.65848,
+       "winkler": 0.21514,
+       "pinball": 0.0131,
+       "n": 448
+      },
+      "climatology": {
+       "brier": 0.26002,
+       "coverage": 0.62723,
+       "winkler": 0.21171,
+       "pinball": 0.01298,
+       "n": 448
+      },
+      "gated_event_conditional": {
+       "brier": 0.26169,
+       "coverage": 0.64509,
+       "winkler": 0.20778,
+       "pinball": 0.01287,
+       "n": 448
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0074,
+       "ci95": [
+        -0.1008,
+        0.0916
+       ],
+       "p_two_sided": 0.898
+      },
+      "winkler_improvement_pct": 3.42
+     },
+     "shock": {
+      "model": {
+       "brier": 0.28306,
+       "coverage": 0.6746,
+       "winkler": 0.17019,
+       "pinball": 0.01179,
+       "n": 126
+      },
+      "climatology": {
+       "brier": 0.26498,
+       "coverage": 0.57143,
+       "winkler": 0.1863,
+       "pinball": 0.01215,
+       "n": 126
+      },
+      "gated_event_conditional": {
+       "brier": 0.25672,
+       "coverage": 0.63492,
+       "winkler": 0.18361,
+       "pinball": 0.01199,
+       "n": 126
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0134,
+       "ci95": [
+        -0.0858,
+        0.0869
+       ],
+       "p_two_sided": 0.9845
+      },
+      "winkler_improvement_pct": -7.89
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": 0.0005,
+     "ci95": [
+      -0.0256,
+      0.0287
+     ],
+     "p_two_sided": 0.9945
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": -0.0012,
+     "ci95": [
+      -0.027,
+      0.0264
+     ],
+     "p_two_sided": 0.9085
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": -0.0061,
+     "ci95": [
+      -0.0871,
+      0.0801
+     ],
+     "p_two_sided": 0.8795
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": -0.0084,
+     "ci95": [
+      -0.0275,
+      0.0102
+     ],
+     "p_two_sided": 0.3775
+    },
+    "winkler_event_conditional_improvement_pct": 0.81,
+    "winkler_gated_drift_minus_model": {
+     "difference": 0.0007,
+     "ci95": [
+      -0.0255,
+      0.0289
+     ],
+     "p_two_sided": 0.9965
+    },
+    "brier_gated_minus_model": {
+     "difference": -0.0012,
+     "ci95": [
+      -0.0102,
+      0.0078
+     ],
+     "p_two_sided": 0.784
+    },
+    "winkler_improvement_pct": -0.35,
+    "winkler_drift_improvement_pct": -0.5,
+    "brier_improvement_pct": 0.47
+   },
+   "full": {
+    "n_forecasts": 28630,
+    "share_gated_pct": 7.5,
+    "share_calendar_pct": 1.6,
+    "share_headline_pct": 2.2,
+    "share_shock_pct": 4.0,
+    "variants": {
+     "model": {
+      "brier": 0.25267,
+      "coverage": 0.78128,
+      "winkler": 0.1076,
+      "pinball": 0.00726,
+      "n": 28630
+     },
+     "climatology": {
+      "brier": 0.24862,
+      "coverage": 0.78355,
+      "winkler": 0.10737,
+      "pinball": 0.0072,
+      "n": 28630
+     },
+     "gated_event_conditional": {
+      "brier": 0.2524,
+      "coverage": 0.7854,
+      "winkler": 0.1071,
+      "pinball": 0.00724,
+      "n": 28630
+     },
+     "gated": {
+      "brier": 0.2522,
+      "coverage": 0.78117,
+      "winkler": 0.10771,
+      "pinball": 0.00726,
+      "n": 28630
+     },
+     "gated_calendar_only": {
+      "brier": 0.25226,
+      "coverage": 0.78163,
+      "winkler": 0.1074,
+      "pinball": 0.00725,
+      "n": 28630
+     },
+     "gated_headline_only": {
+      "brier": 0.25267,
+      "coverage": 0.78072,
+      "winkler": 0.10751,
+      "pinball": 0.00726,
+      "n": 28630
+     },
+     "gated_shock_only": {
+      "brier": 0.25258,
+      "coverage": 0.78138,
+      "winkler": 0.10797,
+      "pinball": 0.00727,
+      "n": 28630
+     },
+     "gated_drift": {
+      "brier": 0.25245,
+      "coverage": 0.78061,
+      "winkler": 0.10769,
+      "pinball": 0.00726,
+      "n": 28630
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.25742,
+      "coverage": 0.66543,
+      "winkler": 0.15708,
+      "pinball": 0.01018,
+      "n": 2149
+     },
+     "climatology": {
+      "brier": 0.25112,
+      "coverage": 0.66403,
+      "winkler": 0.15861,
+      "pinball": 0.01016,
+      "n": 2149
+     },
+     "gated_drift": {
+      "brier": 0.25444,
+      "coverage": 0.65658,
+      "winkler": 0.15833,
+      "pinball": 0.01018,
+      "n": 2149
+     },
+     "gated_event_conditional": {
+      "brier": 0.25376,
+      "coverage": 0.72034,
+      "winkler": 0.15046,
+      "pinball": 0.0099,
+      "n": 2149
+     }
+    },
+    "by_gate_type": {
+     "calendar": {
+      "model": {
+       "brier": 0.27306,
+       "coverage": 0.47692,
+       "winkler": 0.23546,
+       "pinball": 0.01462,
+       "n": 455
+      },
+      "climatology": {
+       "brier": 0.24747,
+       "coverage": 0.4989,
+       "winkler": 0.223,
+       "pinball": 0.01396,
+       "n": 455
+      },
+      "gated_event_conditional": {
+       "brier": 0.25108,
+       "coverage": 0.67473,
+       "winkler": 0.19742,
+       "pinball": 0.01305,
+       "n": 455
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.038,
+       "ci95": [
+        -0.1084,
+        0.029
+       ],
+       "p_two_sided": 0.274
+      },
+      "winkler_improvement_pct": 16.16
+     },
+     "headline": {
+      "model": {
+       "brier": 0.2568,
+       "coverage": 0.69859,
+       "winkler": 0.17574,
+       "pinball": 0.01086,
+       "n": 637
+      },
+      "climatology": {
+       "brier": 0.25658,
+       "coverage": 0.67347,
+       "winkler": 0.17198,
+       "pinball": 0.01076,
+       "n": 637
+      },
+      "gated_event_conditional": {
+       "brier": 0.25783,
+       "coverage": 0.68603,
+       "winkler": 0.16926,
+       "pinball": 0.01069,
+       "n": 637
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0065,
+       "ci95": [
+        -0.0754,
+        0.0628
+       ],
+       "p_two_sided": 0.854
+      },
+      "winkler_improvement_pct": 3.69
+     },
+     "shock": {
+      "model": {
+       "brier": 0.25344,
+       "coverage": 0.70697,
+       "winkler": 0.12244,
+       "pinball": 0.00845,
+       "n": 1133
+      },
+      "climatology": {
+       "brier": 0.25108,
+       "coverage": 0.70962,
+       "winkler": 0.13188,
+       "pinball": 0.0087,
+       "n": 1133
+      },
+      "gated_event_conditional": {
+       "brier": 0.25515,
+       "coverage": 0.74581,
+       "winkler": 0.12673,
+       "pinball": 0.00857,
+       "n": 1133
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0043,
+       "ci95": [
+        -0.0169,
+        0.0225
+       ],
+       "p_two_sided": 0.802
+      },
+      "winkler_improvement_pct": -3.5
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": 0.0001,
+     "ci95": [
+      -0.0044,
+      0.0046
+     ],
+     "p_two_sided": 0.97
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": -0.0005,
+     "ci95": [
+      -0.005,
+      0.0039
+     ],
+     "p_two_sided": 0.823
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": -0.0066,
+     "ci95": [
+      -0.0352,
+      0.0213
+     ],
+     "p_two_sided": 0.6635
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": -0.0037,
+     "ci95": [
+      -0.0146,
+      0.0072
+     ],
+     "p_two_sided": 0.5185
+    },
+    "winkler_event_conditional_improvement_pct": 0.46,
+    "winkler_gated_drift_minus_model": {
+     "difference": 0.0001,
+     "ci95": [
+      -0.0045,
+      0.0046
+     ],
+     "p_two_sided": 0.9745
+    },
+    "brier_gated_minus_model": {
+     "difference": -0.0005,
+     "ci95": [
+      -0.0037,
+      0.0028
+     ],
+     "p_two_sided": 0.7725
+    },
+    "winkler_improvement_pct": -0.1,
+    "winkler_drift_improvement_pct": -0.08,
+    "brier_improvement_pct": 0.19
+   }
+  }
+ },
+ "tsla": {
+  "dataset": "TSLA (deployed s03 dataset)",
+  "asset_type": "stock",
+  "windows": {
+   "holdout_2025_2026": {
+    "n_forecasts": 2898,
+    "share_gated_pct": 14.9,
+    "share_calendar_pct": 1.7,
+    "share_headline_pct": 10.9,
+    "share_shock_pct": 2.9,
+    "variants": {
+     "model": {
+      "brier": 0.25122,
+      "coverage": 0.81781,
+      "winkler": 0.23923,
+      "pinball": 0.01613,
+      "n": 2898
+     },
+     "climatology": {
+      "brier": 0.25311,
+      "coverage": 0.83575,
+      "winkler": 0.24206,
+      "pinball": 0.01626,
+      "n": 2898
+     },
+     "gated_event_conditional": {
+      "brier": 0.25023,
+      "coverage": 0.82229,
+      "winkler": 0.23969,
+      "pinball": 0.01611,
+      "n": 2898
+     },
+     "gated": {
+      "brier": 0.25012,
+      "coverage": 0.8216,
+      "winkler": 0.23869,
+      "pinball": 0.01607,
+      "n": 2898
+     },
+     "gated_calendar_only": {
+      "brier": 0.25121,
+      "coverage": 0.81781,
+      "winkler": 0.2395,
+      "pinball": 0.01614,
+      "n": 2898
+     },
+     "gated_headline_only": {
+      "brier": 0.2504,
+      "coverage": 0.82022,
+      "winkler": 0.23876,
+      "pinball": 0.01608,
+      "n": 2898
+     },
+     "gated_shock_only": {
+      "brier": 0.2509,
+      "coverage": 0.81884,
+      "winkler": 0.23857,
+      "pinball": 0.01609,
+      "n": 2898
+     },
+     "gated_drift": {
+      "brier": 0.25104,
+      "coverage": 0.82091,
+      "winkler": 0.2387,
+      "pinball": 0.01608,
+      "n": 2898
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.25674,
+      "coverage": 0.79167,
+      "winkler": 0.25687,
+      "pinball": 0.01781,
+      "n": 432
+     },
+     "climatology": {
+      "brier": 0.24933,
+      "coverage": 0.81713,
+      "winkler": 0.25328,
+      "pinball": 0.01742,
+      "n": 432
+     },
+     "gated_drift": {
+      "brier": 0.25548,
+      "coverage": 0.8125,
+      "winkler": 0.25335,
+      "pinball": 0.01746,
+      "n": 432
+     },
+     "gated_event_conditional": {
+      "brier": 0.25008,
+      "coverage": 0.82176,
+      "winkler": 0.26,
+      "pinball": 0.01765,
+      "n": 432
+     }
+    },
+    "by_gate_type": {
+     "calendar": {
+      "model": {
+       "brier": 0.24908,
+       "coverage": 0.73469,
+       "winkler": 0.33346,
+       "pinball": 0.02047,
+       "n": 49
+      },
+      "climatology": {
+       "brier": 0.24802,
+       "coverage": 0.73469,
+       "winkler": 0.34958,
+       "pinball": 0.02107,
+       "n": 49
+      },
+      "gated_event_conditional": {
+       "brier": 0.24532,
+       "coverage": 0.85714,
+       "winkler": 0.33871,
+       "pinball": 0.02053,
+       "n": 49
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0053,
+       "ci95": [
+        -0.1773,
+        0.1875
+       ],
+       "p_two_sided": 0.716
+      },
+      "winkler_improvement_pct": -1.57
+     },
+     "headline": {
+      "model": {
+       "brier": 0.25712,
+       "coverage": 0.8127,
+       "winkler": 0.24886,
+       "pinball": 0.0171,
+       "n": 315
+      },
+      "climatology": {
+       "brier": 0.24959,
+       "coverage": 0.83492,
+       "winkler": 0.24454,
+       "pinball": 0.01667,
+       "n": 315
+      },
+      "gated_event_conditional": {
+       "brier": 0.25025,
+       "coverage": 0.84444,
+       "winkler": 0.246,
+       "pinball": 0.01673,
+       "n": 315
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0029,
+       "ci95": [
+        -0.0625,
+        0.0636
+       ],
+       "p_two_sided": 0.962
+      },
+      "winkler_improvement_pct": 1.15
+     },
+     "shock": {
+      "model": {
+       "brier": 0.25987,
+       "coverage": 0.75,
+       "winkler": 0.24711,
+       "pinball": 0.0189,
+       "n": 84
+      },
+      "climatology": {
+       "brier": 0.24888,
+       "coverage": 0.78571,
+       "winkler": 0.22436,
+       "pinball": 0.01765,
+       "n": 84
+      },
+      "gated_event_conditional": {
+       "brier": 0.25384,
+       "coverage": 0.7381,
+       "winkler": 0.26666,
+       "pinball": 0.01917,
+       "n": 84
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0195,
+       "ci95": [
+        -0.0644,
+        0.1085
+       ],
+       "p_two_sided": 0.6375
+      },
+      "winkler_improvement_pct": -7.91
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": -0.0005,
+     "ci95": [
+      -0.0231,
+      0.022
+     ],
+     "p_two_sided": 0.9595
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": 0.0005,
+     "ci95": [
+      -0.0222,
+      0.0228
+     ],
+     "p_two_sided": 0.97
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": 0.0031,
+     "ci95": [
+      -0.0524,
+      0.0629
+     ],
+     "p_two_sided": 0.8625
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": -0.0067,
+     "ci95": [
+      -0.0171,
+      0.0021
+     ],
+     "p_two_sided": 0.128
+    },
+    "winkler_event_conditional_improvement_pct": -0.19,
+    "winkler_gated_drift_minus_model": {
+     "difference": -0.0005,
+     "ci95": [
+      -0.0231,
+      0.0221
+     ],
+     "p_two_sided": 0.9595
+    },
+    "brier_gated_minus_model": {
+     "difference": -0.0011,
+     "ci95": [
+      -0.0082,
+      0.0059
+     ],
+     "p_two_sided": 0.759
+    },
+    "winkler_improvement_pct": 0.23,
+    "winkler_drift_improvement_pct": 0.22,
+    "brier_improvement_pct": 0.44
+   },
+   "full": {
+    "n_forecasts": 27776,
+    "share_gated_pct": 7.5,
+    "share_calendar_pct": 1.6,
+    "share_headline_pct": 1.7,
+    "share_shock_pct": 4.3,
+    "variants": {
+     "model": {
+      "brier": 0.25697,
+      "coverage": 0.77502,
+      "winkler": 0.258,
+      "pinball": 0.01733,
+      "n": 27776
+     },
+     "climatology": {
+      "brier": 0.25264,
+      "coverage": 0.78651,
+      "winkler": 0.2518,
+      "pinball": 0.01697,
+      "n": 27776
+     },
+     "gated_event_conditional": {
+      "brier": 0.25679,
+      "coverage": 0.78082,
+      "winkler": 0.25685,
+      "pinball": 0.01729,
+      "n": 27776
+     },
+     "gated": {
+      "brier": 0.25671,
+      "coverage": 0.77517,
+      "winkler": 0.25755,
+      "pinball": 0.01731,
+      "n": 27776
+     },
+     "gated_calendar_only": {
+      "brier": 0.25704,
+      "coverage": 0.77481,
+      "winkler": 0.25796,
+      "pinball": 0.01733,
+      "n": 27776
+     },
+     "gated_headline_only": {
+      "brier": 0.25691,
+      "coverage": 0.77506,
+      "winkler": 0.25772,
+      "pinball": 0.01732,
+      "n": 27776
+     },
+     "gated_shock_only": {
+      "brier": 0.25672,
+      "coverage": 0.77517,
+      "winkler": 0.25787,
+      "pinball": 0.01732,
+      "n": 27776
+     },
+     "gated_drift": {
+      "brier": 0.25714,
+      "coverage": 0.77499,
+      "winkler": 0.25769,
+      "pinball": 0.01731,
+      "n": 27776
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.25635,
+      "coverage": 0.69634,
+      "winkler": 0.32578,
+      "pinball": 0.02146,
+      "n": 2078
+     },
+     "climatology": {
+      "brier": 0.25289,
+      "coverage": 0.69827,
+      "winkler": 0.31973,
+      "pinball": 0.02118,
+      "n": 2078
+     },
+     "gated_drift": {
+      "brier": 0.2587,
+      "coverage": 0.69586,
+      "winkler": 0.3217,
+      "pinball": 0.02127,
+      "n": 2078
+     },
+     "gated_event_conditional": {
+      "brier": 0.254,
+      "coverage": 0.77382,
+      "winkler": 0.31038,
+      "pinball": 0.021,
+      "n": 2078
+     }
+    },
+    "by_gate_type": {
+     "calendar": {
+      "model": {
+       "brier": 0.25644,
+       "coverage": 0.48073,
+       "winkler": 0.44874,
+       "pinball": 0.02861,
+       "n": 441
+      },
+      "climatology": {
+       "brier": 0.26116,
+       "coverage": 0.46712,
+       "winkler": 0.44636,
+       "pinball": 0.02878,
+       "n": 441
+      },
+      "gated_event_conditional": {
+       "brier": 0.25895,
+       "coverage": 0.70295,
+       "winkler": 0.36314,
+       "pinball": 0.02617,
+       "n": 441
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0856,
+       "ci95": [
+        -0.1704,
+        0.0004
+       ],
+       "p_two_sided": 0.0515
+      },
+      "winkler_improvement_pct": 19.08
+     },
+     "headline": {
+      "model": {
+       "brier": 0.25421,
+       "coverage": 0.83437,
+       "winkler": 0.261,
+       "pinball": 0.01713,
+       "n": 483
+      },
+      "climatology": {
+       "brier": 0.25096,
+       "coverage": 0.83644,
+       "winkler": 0.24514,
+       "pinball": 0.0165,
+       "n": 483
+      },
+      "gated_event_conditional": {
+       "brier": 0.25103,
+       "coverage": 0.84472,
+       "winkler": 0.24379,
+       "pinball": 0.01644,
+       "n": 483
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0172,
+       "ci95": [
+        -0.0809,
+        0.0481
+       ],
+       "p_two_sided": 0.6315
+      },
+      "winkler_improvement_pct": 6.59
+     },
+     "shock": {
+      "model": {
+       "brier": 0.25687,
+       "coverage": 0.72013,
+       "winkler": 0.30707,
+       "pinball": 0.02058,
+       "n": 1197
+      },
+      "climatology": {
+       "brier": 0.25108,
+       "coverage": 0.72348,
+       "winkler": 0.3042,
+       "pinball": 0.02031,
+       "n": 1197
+      },
+      "gated_event_conditional": {
+       "brier": 0.25388,
+       "coverage": 0.76942,
+       "winkler": 0.31802,
+       "pinball": 0.02097,
+       "n": 1197
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0109,
+       "ci95": [
+        -0.0505,
+        0.0721
+       ],
+       "p_two_sided": 0.7105
+      },
+      "winkler_improvement_pct": -3.57
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": -0.0005,
+     "ci95": [
+      -0.011,
+      0.0103
+     ],
+     "p_two_sided": 0.913
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": -0.0012,
+     "ci95": [
+      -0.0116,
+      0.0094
+     ],
+     "p_two_sided": 0.8115
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": -0.0154,
+     "ci95": [
+      -0.0597,
+      0.028
+     ],
+     "p_two_sided": 0.4865
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": -0.0024,
+     "ci95": [
+      -0.0093,
+      0.0045
+     ],
+     "p_two_sided": 0.4845
+    },
+    "winkler_event_conditional_improvement_pct": 0.45,
+    "winkler_gated_drift_minus_model": {
+     "difference": -0.0003,
+     "ci95": [
+      -0.0109,
+      0.0104
+     ],
+     "p_two_sided": 0.934
+    },
+    "brier_gated_minus_model": {
+     "difference": -0.0003,
+     "ci95": [
+      -0.0031,
+      0.0025
+     ],
+     "p_two_sided": 0.8285
+    },
+    "winkler_improvement_pct": 0.17,
+    "winkler_drift_improvement_pct": 0.12,
+    "brier_improvement_pct": 0.1
+   }
+  }
+ },
+ "nvda": {
+  "dataset": "NVDA (deployed s04 dataset)",
+  "asset_type": "stock",
+  "windows": {
+   "holdout_2025_2026": {
+    "n_forecasts": 2898,
+    "share_gated_pct": 10.4,
+    "share_calendar_pct": 1.7,
+    "share_headline_pct": 5.7,
+    "share_shock_pct": 3.5,
+    "variants": {
+     "model": {
+      "brier": 0.25117,
+      "coverage": 0.81332,
+      "winkler": 0.18121,
+      "pinball": 0.01264,
+      "n": 2898
+     },
+     "climatology": {
+      "brier": 0.25133,
+      "coverage": 0.80124,
+      "winkler": 0.18604,
+      "pinball": 0.01272,
+      "n": 2898
+     },
+     "gated_event_conditional": {
+      "brier": 0.25158,
+      "coverage": 0.81366,
+      "winkler": 0.1811,
+      "pinball": 0.01265,
+      "n": 2898
+     },
+     "gated": {
+      "brier": 0.25153,
+      "coverage": 0.81159,
+      "winkler": 0.18055,
+      "pinball": 0.01262,
+      "n": 2898
+     },
+     "gated_calendar_only": {
+      "brier": 0.25147,
+      "coverage": 0.81228,
+      "winkler": 0.18166,
+      "pinball": 0.01265,
+      "n": 2898
+     },
+     "gated_headline_only": {
+      "brier": 0.25161,
+      "coverage": 0.81573,
+      "winkler": 0.17974,
+      "pinball": 0.0126,
+      "n": 2898
+     },
+     "gated_shock_only": {
+      "brier": 0.25095,
+      "coverage": 0.80987,
+      "winkler": 0.18155,
+      "pinball": 0.01265,
+      "n": 2898
+     },
+     "gated_drift": {
+      "brier": 0.2517,
+      "coverage": 0.81159,
+      "winkler": 0.18081,
+      "pinball": 0.01263,
+      "n": 2898
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.27092,
+      "coverage": 0.8245,
+      "winkler": 0.18442,
+      "pinball": 0.01314,
+      "n": 302
+     },
+     "climatology": {
+      "brier": 0.27435,
+      "coverage": 0.80795,
+      "winkler": 0.17807,
+      "pinball": 0.01299,
+      "n": 302
+     },
+     "gated_drift": {
+      "brier": 0.27599,
+      "coverage": 0.80795,
+      "winkler": 0.18054,
+      "pinball": 0.01306,
+      "n": 302
+     },
+     "gated_event_conditional": {
+      "brier": 0.27482,
+      "coverage": 0.82781,
+      "winkler": 0.18332,
+      "pinball": 0.01325,
+      "n": 302
+     }
+    },
+    "by_gate_type": {
+     "calendar": {
+      "model": {
+       "brier": 0.26497,
+       "coverage": 0.7551,
+       "winkler": 0.20007,
+       "pinball": 0.01488,
+       "n": 49
+      },
+      "climatology": {
+       "brier": 0.28232,
+       "coverage": 0.69388,
+       "winkler": 0.22676,
+       "pinball": 0.01557,
+       "n": 49
+      },
+      "gated_event_conditional": {
+       "brier": 0.29821,
+       "coverage": 0.85714,
+       "winkler": 0.26479,
+       "pinball": 0.01811,
+       "n": 49
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0647,
+       "ci95": [
+        -0.0187,
+        0.1445
+       ],
+       "p_two_sided": 0.1405
+      },
+      "winkler_improvement_pct": -32.35
+     },
+     "headline": {
+      "model": {
+       "brier": 0.28026,
+       "coverage": 0.81707,
+       "winkler": 0.18955,
+       "pinball": 0.01297,
+       "n": 164
+      },
+      "climatology": {
+       "brier": 0.28793,
+       "coverage": 0.85976,
+       "winkler": 0.16351,
+       "pinball": 0.01228,
+       "n": 164
+      },
+      "gated_event_conditional": {
+       "brier": 0.28347,
+       "coverage": 0.86585,
+       "winkler": 0.16659,
+       "pinball": 0.01235,
+       "n": 164
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.023,
+       "ci95": [
+        -0.0604,
+        0.0155
+       ],
+       "p_two_sided": 0.221
+      },
+      "winkler_improvement_pct": 12.11
+     },
+     "shock": {
+      "model": {
+       "brier": 0.26379,
+       "coverage": 0.89216,
+       "winkler": 0.1609,
+       "pinball": 0.01209,
+       "n": 102
+      },
+      "climatology": {
+       "brier": 0.25749,
+       "coverage": 0.79412,
+       "winkler": 0.17052,
+       "pinball": 0.01252,
+       "n": 102
+      },
+      "gated_event_conditional": {
+       "brier": 0.25126,
+       "coverage": 0.77451,
+       "winkler": 0.16781,
+       "pinball": 0.01206,
+       "n": 102
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0069,
+       "ci95": [
+        -0.0288,
+        0.0498
+       ],
+       "p_two_sided": 0.715
+      },
+      "winkler_improvement_pct": -4.29
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": -0.0007,
+     "ci95": [
+      -0.0154,
+      0.0138
+     ],
+     "p_two_sided": 0.9265
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": -0.0001,
+     "ci95": [
+      -0.015,
+      0.0144
+     ],
+     "p_two_sided": 0.976
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": -0.0011,
+     "ci95": [
+      -0.0318,
+      0.0313
+     ],
+     "p_two_sided": 0.942
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": 0.0039,
+     "ci95": [
+      -0.0212,
+      0.0313
+     ],
+     "p_two_sided": 0.7025
+    },
+    "winkler_event_conditional_improvement_pct": 0.06,
+    "winkler_gated_drift_minus_model": {
+     "difference": -0.0004,
+     "ci95": [
+      -0.0151,
+      0.0142
+     ],
+     "p_two_sided": 0.953
+    },
+    "brier_gated_minus_model": {
+     "difference": 0.0004,
+     "ci95": [
+      -0.0082,
+      0.0093
+     ],
+     "p_two_sided": 0.921
+    },
+    "winkler_improvement_pct": 0.36,
+    "winkler_drift_improvement_pct": 0.22,
+    "brier_improvement_pct": -0.14
+   },
+   "full": {
+    "n_forecasts": 28630,
+    "share_gated_pct": 6.0,
+    "share_calendar_pct": 1.6,
+    "share_headline_pct": 1.2,
+    "share_shock_pct": 3.4,
+    "variants": {
+     "model": {
+      "brier": 0.25393,
+      "coverage": 0.77457,
+      "winkler": 0.19423,
+      "pinball": 0.01324,
+      "n": 28630
+     },
+     "climatology": {
+      "brier": 0.24861,
+      "coverage": 0.78585,
+      "winkler": 0.19025,
+      "pinball": 0.01296,
+      "n": 28630
+     },
+     "gated_event_conditional": {
+      "brier": 0.25413,
+      "coverage": 0.77709,
+      "winkler": 0.19324,
+      "pinball": 0.01321,
+      "n": 28630
+     },
+     "gated": {
+      "brier": 0.2538,
+      "coverage": 0.77485,
+      "winkler": 0.19378,
+      "pinball": 0.01322,
+      "n": 28630
+     },
+     "gated_calendar_only": {
+      "brier": 0.25397,
+      "coverage": 0.77496,
+      "winkler": 0.19394,
+      "pinball": 0.01323,
+      "n": 28630
+     },
+     "gated_headline_only": {
+      "brier": 0.25389,
+      "coverage": 0.77527,
+      "winkler": 0.19392,
+      "pinball": 0.01323,
+      "n": 28630
+     },
+     "gated_shock_only": {
+      "brier": 0.25382,
+      "coverage": 0.77384,
+      "winkler": 0.19435,
+      "pinball": 0.01324,
+      "n": 28630
+     },
+     "gated_drift": {
+      "brier": 0.25391,
+      "coverage": 0.77394,
+      "winkler": 0.19394,
+      "pinball": 0.01323,
+      "n": 28630
+     }
+    },
+    "gated_forecasts_only": {
+     "model": {
+      "brier": 0.24848,
+      "coverage": 0.70785,
+      "winkler": 0.25455,
+      "pinball": 0.0167,
+      "n": 1732
+     },
+     "climatology": {
+      "brier": 0.24625,
+      "coverage": 0.71247,
+      "winkler": 0.24712,
+      "pinball": 0.01631,
+      "n": 1732
+     },
+     "gated_drift": {
+      "brier": 0.24803,
+      "coverage": 0.69746,
+      "winkler": 0.24975,
+      "pinball": 0.01653,
+      "n": 1732
+     },
+     "gated_event_conditional": {
+      "brier": 0.25179,
+      "coverage": 0.74942,
+      "winkler": 0.2382,
+      "pinball": 0.01608,
+      "n": 1732
+     }
+    },
+    "by_gate_type": {
+     "calendar": {
+      "model": {
+       "brier": 0.24519,
+       "coverage": 0.51209,
+       "winkler": 0.39046,
+       "pinball": 0.02415,
+       "n": 455
+      },
+      "climatology": {
+       "brier": 0.24773,
+       "coverage": 0.53626,
+       "winkler": 0.37219,
+       "pinball": 0.02348,
+       "n": 455
+      },
+      "gated_event_conditional": {
+       "brier": 0.24598,
+       "coverage": 0.6989,
+       "winkler": 0.3161,
+       "pinball": 0.02138,
+       "n": 455
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0744,
+       "ci95": [
+        -0.1794,
+        0.0312
+       ],
+       "p_two_sided": 0.1615
+      },
+      "winkler_improvement_pct": 19.04
+     },
+     "headline": {
+      "model": {
+       "brier": 0.24553,
+       "coverage": 0.73988,
+       "winkler": 0.22698,
+       "pinball": 0.01552,
+       "n": 346
+      },
+      "climatology": {
+       "brier": 0.24193,
+       "coverage": 0.79769,
+       "winkler": 0.20131,
+       "pinball": 0.01444,
+       "n": 346
+      },
+      "gated_event_conditional": {
+       "brier": 0.24259,
+       "coverage": 0.7948,
+       "winkler": 0.20119,
+       "pinball": 0.01446,
+       "n": 346
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": -0.0258,
+       "ci95": [
+        -0.0816,
+        0.028
+       ],
+       "p_two_sided": 0.3685
+      },
+      "winkler_improvement_pct": 11.36
+     },
+     "shock": {
+      "model": {
+       "brier": 0.24867,
+       "coverage": 0.78862,
+       "winkler": 0.20096,
+       "pinball": 0.01362,
+       "n": 984
+      },
+      "climatology": {
+       "brier": 0.24538,
+       "coverage": 0.76728,
+       "winkler": 0.20439,
+       "pinball": 0.01362,
+       "n": 984
+      },
+      "gated_event_conditional": {
+       "brier": 0.25601,
+       "coverage": 0.76016,
+       "winkler": 0.21423,
+       "pinball": 0.01416,
+       "n": 984
+      },
+      "winkler_event_conditional_minus_model": {
+       "difference": 0.0133,
+       "ci95": [
+        -0.032,
+        0.0602
+       ],
+       "p_two_sided": 0.537
+      },
+      "winkler_improvement_pct": -6.6
+     }
+    },
+    "winkler_gated_minus_model": {
+     "difference": -0.0004,
+     "ci95": [
+      -0.0083,
+      0.0076
+     ],
+     "p_two_sided": 0.9175
+    },
+    "winkler_event_conditional_minus_model": {
+     "difference": -0.001,
+     "ci95": [
+      -0.0087,
+      0.0068
+     ],
+     "p_two_sided": 0.802
+    },
+    "winkler_event_conditional_minus_model_gated_only": {
+     "difference": -0.0163,
+     "ci95": [
+      -0.0569,
+      0.0224
+     ],
+     "p_two_sided": 0.4365
+    },
+    "brier_event_conditional_minus_model_gated_only": {
+     "difference": 0.0033,
+     "ci95": [
+      -0.0087,
+      0.015
+     ],
+     "p_two_sided": 0.574
+    },
+    "winkler_event_conditional_improvement_pct": 0.51,
+    "winkler_gated_drift_minus_model": {
+     "difference": -0.0003,
+     "ci95": [
+      -0.0081,
+      0.0077
+     ],
+     "p_two_sided": 0.951
+    },
+    "brier_gated_minus_model": {
+     "difference": -0.0001,
+     "ci95": [
+      -0.0036,
+      0.0033
+     ],
+     "p_two_sided": 0.931
+    },
+    "winkler_improvement_pct": 0.23,
+    "winkler_drift_improvement_pct": 0.15,
+    "brier_improvement_pct": 0.05
+   }
+  }
+ }
+}

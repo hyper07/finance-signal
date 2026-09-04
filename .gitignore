@@ -216,3 +216,24 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---- project-specific ----
+# Licensed inputs — never redistributed (see research/DATA_DEPOSIT.md)
+data/
+research/output/*.pkl
+research/output/cache/
+research/output/public_*.json
+research/output/*_yf_snapshot.csv
+research/output/forecasts_*.csv
+research/output/origins_*.csv
+research/output/days_*.csv
+research/output/events_*.csv
+research/output/policy_nav_*.csv
+research/output/dashboard_as_displayed_2026.csv
+research/deposit/*.zip
+
+# Build products
+research/paper.tex
+research/papers/*/paper.tex
+
+.DS_Store

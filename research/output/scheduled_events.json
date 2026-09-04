@@ -1,0 +1,1394 @@
+{
+  "spxl": {
+    "dataset": "SPXL / SPXS (deployed b01 dataset, published 2026 signals frozen)",
+    "asset_type": "index",
+    "event_sets": {
+      "fomc": {
+        "event_days": {
+          "n": 83,
+          "hit_rate": 0.4578,
+          "wilson95": [
+            0.3549,
+            0.5645
+          ],
+          "binomial_p_vs_0.5": 0.51041,
+          "coverage": 0.6867,
+          "brier": 0.259,
+          "mean_abs_surprise_z": 1.083,
+          "median_abs_surprise_z": 0.774,
+          "mean_abs_ret_pct": 2.776,
+          "shock_share_pct": 8.4,
+          "always_up_rate": 0.434
+        },
+        "other_days": {
+          "n": 2501,
+          "hit_rate": 0.5298,
+          "wilson95": [
+            0.5102,
+            0.5493
+          ],
+          "binomial_p_vs_0.5": 0.003075,
+          "coverage": 0.7721,
+          "brier": 0.2518,
+          "mean_abs_surprise_z": 0.867,
+          "median_abs_surprise_z": 0.667,
+          "mean_abs_ret_pct": 2.13,
+          "shock_share_pct": 3.6,
+          "always_up_rate": 0.552
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 0.51041,
+          "hit_diff_event_minus_other": {
+            "difference": -0.072,
+            "ci95": [
+              -0.1692,
+              0.0381
+            ],
+            "p_two_sided": 0.219
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": -0.0853,
+            "ci95": [
+              -0.1825,
+              0.0234
+            ],
+            "p_two_sided": 0.142
+          },
+          "abs_surprise_mannwhitney_p": 0.18607,
+          "abs_return_mannwhitney_p": 0.24014
+        },
+        "path_1to7_issued_day_before": {
+          "n": 581,
+          "hit_rate": 0.4991,
+          "coverage": 0.6592
+        },
+        "consensus_aligned_with_event_move_pct": 18.3,
+        "post_event_continuation": {
+          "1d": {
+            "n": 82,
+            "mean_pct": 0.012,
+            "share_positive": 0.524,
+            "t": 0.03,
+            "p": 0.9782
+          },
+          "3d": {
+            "n": 82,
+            "mean_pct": 0.064,
+            "share_positive": 0.488,
+            "t": 0.09,
+            "p": 0.9312
+          },
+          "7d": {
+            "n": 82,
+            "mean_pct": 0.095,
+            "share_positive": 0.463,
+            "t": 0.09,
+            "p": 0.9276
+          }
+        }
+      },
+      "payrolls": {
+        "event_days": {
+          "n": 123,
+          "hit_rate": 0.5691,
+          "wilson95": [
+            0.4808,
+            0.6532
+          ],
+          "binomial_p_vs_0.5": 0.148816,
+          "coverage": 0.6829,
+          "brier": 0.2479,
+          "mean_abs_surprise_z": 1.09,
+          "median_abs_surprise_z": 0.907,
+          "mean_abs_ret_pct": 2.613,
+          "shock_share_pct": 4.9,
+          "always_up_rate": 0.634
+        },
+        "other_days": {
+          "n": 2461,
+          "hit_rate": 0.5254,
+          "wilson95": [
+            0.5056,
+            0.5451
+          ],
+          "binomial_p_vs_0.5": 0.012419,
+          "coverage": 0.7737,
+          "brier": 0.2522,
+          "mean_abs_surprise_z": 0.863,
+          "median_abs_surprise_z": 0.657,
+          "mean_abs_ret_pct": 2.128,
+          "shock_share_pct": 3.7,
+          "always_up_rate": 0.544
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 0.148816,
+          "hit_diff_event_minus_other": {
+            "difference": 0.0437,
+            "ci95": [
+              -0.0502,
+              0.1514
+            ],
+            "p_two_sided": 0.3345
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": -0.0907,
+            "ci95": [
+              -0.1798,
+              -0.0005
+            ],
+            "p_two_sided": 0.048
+          },
+          "abs_surprise_mannwhitney_p": 0.00111,
+          "abs_return_mannwhitney_p": 0.00132
+        },
+        "path_1to7_issued_day_before": {
+          "n": 861,
+          "hit_rate": 0.5993,
+          "coverage": 0.7445
+        },
+        "consensus_aligned_with_event_move_pct": 18.7,
+        "post_event_continuation": {
+          "1d": {
+            "n": 123,
+            "mean_pct": 0.211,
+            "share_positive": 0.472,
+            "t": 0.57,
+            "p": 0.5675
+          },
+          "3d": {
+            "n": 123,
+            "mean_pct": 0.015,
+            "share_positive": 0.48,
+            "t": 0.03,
+            "p": 0.979
+          },
+          "7d": {
+            "n": 123,
+            "mean_pct": 0.667,
+            "share_positive": 0.561,
+            "t": 0.85,
+            "p": 0.3988
+          }
+        }
+      },
+      "fomc_or_payrolls": {
+        "event_days": {
+          "n": 206,
+          "hit_rate": 0.5243,
+          "wilson95": [
+            0.4563,
+            0.5914
+          ],
+          "binomial_p_vs_0.5": 0.530722,
+          "coverage": 0.6845,
+          "brier": 0.2524,
+          "mean_abs_surprise_z": 1.087,
+          "median_abs_surprise_z": 0.881,
+          "mean_abs_ret_pct": 2.679,
+          "shock_share_pct": 6.3,
+          "always_up_rate": 0.553
+        },
+        "other_days": {
+          "n": 2378,
+          "hit_rate": 0.5278,
+          "wilson95": [
+            0.5077,
+            0.5478
+          ],
+          "binomial_p_vs_0.5": 0.007211,
+          "coverage": 0.7767,
+          "brier": 0.252,
+          "mean_abs_surprise_z": 0.856,
+          "median_abs_surprise_z": 0.656,
+          "mean_abs_ret_pct": 2.105,
+          "shock_share_pct": 3.5,
+          "always_up_rate": 0.548
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 0.530722,
+          "hit_diff_event_minus_other": {
+            "difference": -0.0035,
+            "ci95": [
+              -0.0817,
+              0.075
+            ],
+            "p_two_sided": 0.955
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": -0.0922,
+            "ci95": [
+              -0.1568,
+              -0.0266
+            ],
+            "p_two_sided": 0.0065
+          },
+          "abs_surprise_mannwhitney_p": 0.00141,
+          "abs_return_mannwhitney_p": 0.00238
+        },
+        "path_1to7_issued_day_before": {
+          "n": 1442,
+          "hit_rate": 0.5589,
+          "coverage": 0.7101
+        },
+        "consensus_aligned_with_event_move_pct": 18.5,
+        "post_event_continuation": {
+          "1d": {
+            "n": 205,
+            "mean_pct": 0.131,
+            "share_positive": 0.493,
+            "t": 0.46,
+            "p": 0.6449
+          },
+          "3d": {
+            "n": 205,
+            "mean_pct": 0.034,
+            "share_positive": 0.483,
+            "t": 0.08,
+            "p": 0.9384
+          },
+          "7d": {
+            "n": 205,
+            "mean_pct": 0.438,
+            "share_positive": 0.522,
+            "t": 0.7,
+            "p": 0.4868
+          }
+        }
+      }
+    }
+  },
+  "spy": {
+    "dataset": "SPY spot (S&P 500 ETF, cash mode)",
+    "asset_type": "index",
+    "event_sets": {
+      "fomc": {
+        "event_days": {
+          "n": 83,
+          "hit_rate": 0.3976,
+          "wilson95": [
+            0.2991,
+            0.5052
+          ],
+          "binomial_p_vs_0.5": 0.07842,
+          "coverage": 0.6747,
+          "brier": 0.2646,
+          "mean_abs_surprise_z": 1.09,
+          "median_abs_surprise_z": 0.773,
+          "mean_abs_ret_pct": 0.927,
+          "shock_share_pct": 8.4,
+          "always_up_rate": 0.446
+        },
+        "other_days": {
+          "n": 2501,
+          "hit_rate": 0.5298,
+          "wilson95": [
+            0.5102,
+            0.5493
+          ],
+          "binomial_p_vs_0.5": 0.003075,
+          "coverage": 0.7713,
+          "brier": 0.2515,
+          "mean_abs_surprise_z": 0.873,
+          "median_abs_surprise_z": 0.667,
+          "mean_abs_ret_pct": 0.716,
+          "shock_share_pct": 3.6,
+          "always_up_rate": 0.555
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 0.07842,
+          "hit_diff_event_minus_other": {
+            "difference": -0.1322,
+            "ci95": [
+              -0.1984,
+              -0.0233
+            ],
+            "p_two_sided": 0.0155
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": -0.0966,
+            "ci95": [
+              -0.2143,
+              0.0326
+            ],
+            "p_two_sided": 0.1475
+          },
+          "abs_surprise_mannwhitney_p": 0.09619,
+          "abs_return_mannwhitney_p": 0.26205
+        },
+        "path_1to7_issued_day_before": {
+          "n": 581,
+          "hit_rate": 0.4888,
+          "coverage": 0.6558
+        },
+        "consensus_aligned_with_event_move_pct": 16.9,
+        "post_event_continuation": {
+          "1d": {
+            "n": 83,
+            "mean_pct": -0.015,
+            "share_positive": 0.518,
+            "t": -0.1,
+            "p": 0.9216
+          },
+          "3d": {
+            "n": 83,
+            "mean_pct": -0.014,
+            "share_positive": 0.482,
+            "t": -0.06,
+            "p": 0.9548
+          },
+          "7d": {
+            "n": 83,
+            "mean_pct": -0.001,
+            "share_positive": 0.446,
+            "t": -0.0,
+            "p": 0.9967
+          }
+        }
+      },
+      "payrolls": {
+        "event_days": {
+          "n": 123,
+          "hit_rate": 0.5691,
+          "wilson95": [
+            0.4808,
+            0.6532
+          ],
+          "binomial_p_vs_0.5": 0.148816,
+          "coverage": 0.6748,
+          "brier": 0.2469,
+          "mean_abs_surprise_z": 1.082,
+          "median_abs_surprise_z": 0.896,
+          "mean_abs_ret_pct": 0.878,
+          "shock_share_pct": 4.9,
+          "always_up_rate": 0.634
+        },
+        "other_days": {
+          "n": 2461,
+          "hit_rate": 0.5234,
+          "wilson95": [
+            0.5036,
+            0.543
+          ],
+          "binomial_p_vs_0.5": 0.021543,
+          "coverage": 0.7729,
+          "brier": 0.2522,
+          "mean_abs_surprise_z": 0.87,
+          "median_abs_surprise_z": 0.657,
+          "mean_abs_ret_pct": 0.715,
+          "shock_share_pct": 3.7,
+          "always_up_rate": 0.547
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 0.148816,
+          "hit_diff_event_minus_other": {
+            "difference": 0.0457,
+            "ci95": [
+              -0.0335,
+              0.1348
+            ],
+            "p_two_sided": 0.2375
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": -0.0981,
+            "ci95": [
+              -0.1973,
+              -0.0143
+            ],
+            "p_two_sided": 0.022
+          },
+          "abs_surprise_mannwhitney_p": 0.00126,
+          "abs_return_mannwhitney_p": 0.00106
+        },
+        "path_1to7_issued_day_before": {
+          "n": 861,
+          "hit_rate": 0.6249,
+          "coverage": 0.7445
+        },
+        "consensus_aligned_with_event_move_pct": 26.8,
+        "post_event_continuation": {
+          "1d": {
+            "n": 123,
+            "mean_pct": 0.061,
+            "share_positive": 0.472,
+            "t": 0.51,
+            "p": 0.6089
+          },
+          "3d": {
+            "n": 123,
+            "mean_pct": -0.01,
+            "share_positive": 0.488,
+            "t": -0.05,
+            "p": 0.9567
+          },
+          "7d": {
+            "n": 123,
+            "mean_pct": 0.215,
+            "share_positive": 0.553,
+            "t": 0.84,
+            "p": 0.4053
+          }
+        }
+      },
+      "fomc_or_payrolls": {
+        "event_days": {
+          "n": 206,
+          "hit_rate": 0.5,
+          "wilson95": [
+            0.4323,
+            0.5677
+          ],
+          "binomial_p_vs_0.5": 1.0,
+          "coverage": 0.6748,
+          "brier": 0.2541,
+          "mean_abs_surprise_z": 1.085,
+          "median_abs_surprise_z": 0.89,
+          "mean_abs_ret_pct": 0.898,
+          "shock_share_pct": 6.3,
+          "always_up_rate": 0.558
+        },
+        "other_days": {
+          "n": 2378,
+          "hit_rate": 0.5278,
+          "wilson95": [
+            0.5077,
+            0.5478
+          ],
+          "binomial_p_vs_0.5": 0.007211,
+          "coverage": 0.7763,
+          "brier": 0.2517,
+          "mean_abs_surprise_z": 0.863,
+          "median_abs_surprise_z": 0.652,
+          "mean_abs_ret_pct": 0.708,
+          "shock_share_pct": 3.6,
+          "always_up_rate": 0.551
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 1.0,
+          "hit_diff_event_minus_other": {
+            "difference": -0.0278,
+            "ci95": [
+              -0.0877,
+              0.0417
+            ],
+            "p_two_sided": 0.5085
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": -0.1015,
+            "ci95": [
+              -0.1718,
+              -0.0355
+            ],
+            "p_two_sided": 0.002
+          },
+          "abs_surprise_mannwhitney_p": 0.00063,
+          "abs_return_mannwhitney_p": 0.00232
+        },
+        "path_1to7_issued_day_before": {
+          "n": 1442,
+          "hit_rate": 0.57,
+          "coverage": 0.7087
+        },
+        "consensus_aligned_with_event_move_pct": 22.8,
+        "post_event_continuation": {
+          "1d": {
+            "n": 206,
+            "mean_pct": 0.03,
+            "share_positive": 0.49,
+            "t": 0.32,
+            "p": 0.7494
+          },
+          "3d": {
+            "n": 206,
+            "mean_pct": -0.012,
+            "share_positive": 0.485,
+            "t": -0.08,
+            "p": 0.9373
+          },
+          "7d": {
+            "n": 206,
+            "mean_pct": 0.128,
+            "share_positive": 0.51,
+            "t": 0.61,
+            "p": 0.5396
+          }
+        }
+      }
+    }
+  },
+  "bito": {
+    "dataset": "BITO / BITI (deployed b04 dataset, published 2026 signals frozen)",
+    "asset_type": "crypto",
+    "event_sets": {
+      "fomc": {
+        "event_days": {
+          "n": 36,
+          "hit_rate": 0.4722,
+          "wilson95": [
+            0.3199,
+            0.6299
+          ],
+          "binomial_p_vs_0.5": 0.867939,
+          "coverage": 0.8056,
+          "brier": 0.2628,
+          "mean_abs_surprise_z": 0.71,
+          "median_abs_surprise_z": 0.625,
+          "mean_abs_ret_pct": 2.153,
+          "shock_share_pct": 0.0,
+          "always_up_rate": 0.444
+        },
+        "other_days": {
+          "n": 1089,
+          "hit_rate": 0.5069,
+          "wilson95": [
+            0.4772,
+            0.5365
+          ],
+          "binomial_p_vs_0.5": 0.671408,
+          "coverage": 0.7759,
+          "brier": 0.2537,
+          "mean_abs_surprise_z": 0.895,
+          "median_abs_surprise_z": 0.667,
+          "mean_abs_ret_pct": 2.47,
+          "shock_share_pct": 4.4,
+          "always_up_rate": 0.489
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 0.867939,
+          "hit_diff_event_minus_other": {
+            "difference": -0.0347,
+            "ci95": [
+              -0.1504,
+              0.0569
+            ],
+            "p_two_sided": 0.3335
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": 0.0296,
+            "ci95": [
+              -0.0388,
+              0.124
+            ],
+            "p_two_sided": 0.3375
+          },
+          "abs_surprise_mannwhitney_p": 0.85536,
+          "abs_return_mannwhitney_p": 0.87177
+        },
+        "path_1to7_issued_day_before": {
+          "n": 252,
+          "hit_rate": 0.496,
+          "coverage": 0.746
+        },
+        "consensus_aligned_with_event_move_pct": 17.1,
+        "post_event_continuation": {
+          "1d": {
+            "n": 35,
+            "mean_pct": 0.247,
+            "share_positive": 0.543,
+            "t": 0.45,
+            "p": 0.6536
+          },
+          "3d": {
+            "n": 35,
+            "mean_pct": 1.31,
+            "share_positive": 0.629,
+            "t": 1.07,
+            "p": 0.2943
+          },
+          "7d": {
+            "n": 35,
+            "mean_pct": 1.729,
+            "share_positive": 0.629,
+            "t": 1.07,
+            "p": 0.2925
+          }
+        }
+      },
+      "payrolls": {
+        "event_days": {
+          "n": 53,
+          "hit_rate": 0.4906,
+          "wilson95": [
+            0.3612,
+            0.6212
+          ],
+          "binomial_p_vs_0.5": 1.0,
+          "coverage": 0.8302,
+          "brier": 0.2544,
+          "mean_abs_surprise_z": 0.865,
+          "median_abs_surprise_z": 0.728,
+          "mean_abs_ret_pct": 2.483,
+          "shock_share_pct": 5.7,
+          "always_up_rate": 0.547
+        },
+        "other_days": {
+          "n": 1072,
+          "hit_rate": 0.5065,
+          "wilson95": [
+            0.4766,
+            0.5364
+          ],
+          "binomial_p_vs_0.5": 0.691349,
+          "coverage": 0.7743,
+          "brier": 0.254,
+          "mean_abs_surprise_z": 0.89,
+          "median_abs_surprise_z": 0.656,
+          "mean_abs_ret_pct": 2.459,
+          "shock_share_pct": 4.2,
+          "always_up_rate": 0.484
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 1.0,
+          "hit_diff_event_minus_other": {
+            "difference": -0.016,
+            "ci95": [
+              -0.0914,
+              0.0998
+            ],
+            "p_two_sided": 0.9195
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": 0.0559,
+            "ci95": [
+              -0.045,
+              0.1643
+            ],
+            "p_two_sided": 0.216
+          },
+          "abs_surprise_mannwhitney_p": 0.17095,
+          "abs_return_mannwhitney_p": 0.14885
+        },
+        "path_1to7_issued_day_before": {
+          "n": 371,
+          "hit_rate": 0.5013,
+          "coverage": 0.7844
+        },
+        "consensus_aligned_with_event_move_pct": 11.3,
+        "post_event_continuation": {
+          "1d": {
+            "n": 53,
+            "mean_pct": 0.261,
+            "share_positive": 0.472,
+            "t": 0.39,
+            "p": 0.6977
+          },
+          "3d": {
+            "n": 53,
+            "mean_pct": -0.407,
+            "share_positive": 0.358,
+            "t": -0.46,
+            "p": 0.646
+          },
+          "7d": {
+            "n": 53,
+            "mean_pct": -0.426,
+            "share_positive": 0.547,
+            "t": -0.31,
+            "p": 0.755
+          }
+        }
+      },
+      "fomc_or_payrolls": {
+        "event_days": {
+          "n": 89,
+          "hit_rate": 0.4831,
+          "wilson95": [
+            0.3822,
+            0.5855
+          ],
+          "binomial_p_vs_0.5": 0.832258,
+          "coverage": 0.8202,
+          "brier": 0.2578,
+          "mean_abs_surprise_z": 0.803,
+          "median_abs_surprise_z": 0.673,
+          "mean_abs_ret_pct": 2.349,
+          "shock_share_pct": 3.4,
+          "always_up_rate": 0.506
+        },
+        "other_days": {
+          "n": 1036,
+          "hit_rate": 0.5077,
+          "wilson95": [
+            0.4773,
+            0.5381
+          ],
+          "binomial_p_vs_0.5": 0.641217,
+          "coverage": 0.7732,
+          "brier": 0.2537,
+          "mean_abs_surprise_z": 0.897,
+          "median_abs_surprise_z": 0.66,
+          "mean_abs_ret_pct": 2.469,
+          "shock_share_pct": 4.3,
+          "always_up_rate": 0.486
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 0.832258,
+          "hit_diff_event_minus_other": {
+            "difference": -0.0246,
+            "ci95": [
+              -0.0814,
+              0.0702
+            ],
+            "p_two_sided": 0.8255
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": 0.0471,
+            "ci95": [
+              -0.0358,
+              0.1293
+            ],
+            "p_two_sided": 0.245
+          },
+          "abs_surprise_mannwhitney_p": 0.47797,
+          "abs_return_mannwhitney_p": 0.46904
+        },
+        "path_1to7_issued_day_before": {
+          "n": 623,
+          "hit_rate": 0.4992,
+          "coverage": 0.7689
+        },
+        "consensus_aligned_with_event_move_pct": 13.6,
+        "post_event_continuation": {
+          "1d": {
+            "n": 88,
+            "mean_pct": 0.255,
+            "share_positive": 0.5,
+            "t": 0.56,
+            "p": 0.5758
+          },
+          "3d": {
+            "n": 88,
+            "mean_pct": 0.276,
+            "share_positive": 0.466,
+            "t": 0.38,
+            "p": 0.7036
+          },
+          "7d": {
+            "n": 88,
+            "mean_pct": 0.431,
+            "share_positive": 0.58,
+            "t": 0.41,
+            "p": 0.6798
+          }
+        }
+      }
+    }
+  },
+  "btc": {
+    "dataset": "BTC/USD spot (Alpaca, 24/7 calendar days)",
+    "asset_type": "crypto",
+    "event_sets": {
+      "fomc": {
+        "event_days": {
+          "n": 43,
+          "hit_rate": 0.5581,
+          "wilson95": [
+            0.4111,
+            0.6957
+          ],
+          "binomial_p_vs_0.5": 0.542384,
+          "coverage": 0.7674,
+          "brier": 0.2438,
+          "mean_abs_surprise_z": 0.863,
+          "median_abs_surprise_z": 0.638,
+          "mean_abs_ret_pct": 2.335,
+          "shock_share_pct": 2.3,
+          "always_up_rate": 0.535
+        },
+        "other_days": {
+          "n": 1930,
+          "hit_rate": 0.4865,
+          "wilson95": [
+            0.4643,
+            0.5088
+          ],
+          "binomial_p_vs_0.5": 0.245679,
+          "coverage": 0.7839,
+          "brier": 0.2553,
+          "mean_abs_surprise_z": 0.852,
+          "median_abs_surprise_z": 0.589,
+          "mean_abs_ret_pct": 1.985,
+          "shock_share_pct": 5.0,
+          "always_up_rate": 0.494
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 0.542384,
+          "hit_diff_event_minus_other": {
+            "difference": 0.0716,
+            "ci95": [
+              -0.0596,
+              0.2375
+            ],
+            "p_two_sided": 0.2665
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": -0.0165,
+            "ci95": [
+              -0.123,
+              0.0574
+            ],
+            "p_two_sided": 0.5025
+          },
+          "abs_surprise_mannwhitney_p": 0.36192,
+          "abs_return_mannwhitney_p": 0.21204
+        },
+        "path_1to7_issued_day_before": {
+          "n": 301,
+          "hit_rate": 0.4884,
+          "coverage": 0.8106
+        },
+        "consensus_aligned_with_event_move_pct": 2.3,
+        "post_event_continuation": {
+          "1d": {
+            "n": 43,
+            "mean_pct": -0.505,
+            "share_positive": 0.395,
+            "t": -1.11,
+            "p": 0.2754
+          },
+          "3d": {
+            "n": 43,
+            "mean_pct": -1.262,
+            "share_positive": 0.419,
+            "t": -1.64,
+            "p": 0.1094
+          },
+          "7d": {
+            "n": 43,
+            "mean_pct": -0.733,
+            "share_positive": 0.465,
+            "t": -0.56,
+            "p": 0.58
+          }
+        }
+      },
+      "payrolls": {
+        "event_days": {
+          "n": 64,
+          "hit_rate": 0.5,
+          "wilson95": [
+            0.381,
+            0.619
+          ],
+          "binomial_p_vs_0.5": 1.0,
+          "coverage": 0.6562,
+          "brier": 0.2544,
+          "mean_abs_surprise_z": 1.028,
+          "median_abs_surprise_z": 0.822,
+          "mean_abs_ret_pct": 2.588,
+          "shock_share_pct": 7.8,
+          "always_up_rate": 0.547
+        },
+        "other_days": {
+          "n": 1909,
+          "hit_rate": 0.4877,
+          "wilson95": [
+            0.4653,
+            0.5101
+          ],
+          "binomial_p_vs_0.5": 0.29242,
+          "coverage": 0.7878,
+          "brier": 0.255,
+          "mean_abs_surprise_z": 0.846,
+          "median_abs_surprise_z": 0.588,
+          "mean_abs_ret_pct": 1.973,
+          "shock_share_pct": 4.9,
+          "always_up_rate": 0.493
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 1.0,
+          "hit_diff_event_minus_other": {
+            "difference": 0.0123,
+            "ci95": [
+              -0.0851,
+              0.142
+            ],
+            "p_two_sided": 0.6475
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": -0.1316,
+            "ci95": [
+              -0.2624,
+              -0.0264
+            ],
+            "p_two_sided": 0.0175
+          },
+          "abs_surprise_mannwhitney_p": 0.01053,
+          "abs_return_mannwhitney_p": 0.01667
+        },
+        "path_1to7_issued_day_before": {
+          "n": 448,
+          "hit_rate": 0.4955,
+          "coverage": 0.7589
+        },
+        "consensus_aligned_with_event_move_pct": 6.2,
+        "post_event_continuation": {
+          "1d": {
+            "n": 64,
+            "mean_pct": 0.228,
+            "share_positive": 0.531,
+            "t": 1.15,
+            "p": 0.2528
+          },
+          "3d": {
+            "n": 64,
+            "mean_pct": 0.752,
+            "share_positive": 0.484,
+            "t": 1.25,
+            "p": 0.2146
+          },
+          "7d": {
+            "n": 64,
+            "mean_pct": 0.002,
+            "share_positive": 0.5,
+            "t": 0.0,
+            "p": 0.9984
+          }
+        }
+      },
+      "fomc_or_payrolls": {
+        "event_days": {
+          "n": 107,
+          "hit_rate": 0.5234,
+          "wilson95": [
+            0.4296,
+            0.6155
+          ],
+          "binomial_p_vs_0.5": 0.699175,
+          "coverage": 0.7009,
+          "brier": 0.2501,
+          "mean_abs_surprise_z": 0.962,
+          "median_abs_surprise_z": 0.764,
+          "mean_abs_ret_pct": 2.486,
+          "shock_share_pct": 5.6,
+          "always_up_rate": 0.542
+        },
+        "other_days": {
+          "n": 1866,
+          "hit_rate": 0.4861,
+          "wilson95": [
+            0.4634,
+            0.5087
+          ],
+          "binomial_p_vs_0.5": 0.237741,
+          "coverage": 0.7883,
+          "brier": 0.2553,
+          "mean_abs_surprise_z": 0.846,
+          "median_abs_surprise_z": 0.587,
+          "mean_abs_ret_pct": 1.964,
+          "shock_share_pct": 4.9,
+          "always_up_rate": 0.492
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 0.699175,
+          "hit_diff_event_minus_other": {
+            "difference": 0.0373,
+            "ci95": [
+              -0.0471,
+              0.1473
+            ],
+            "p_two_sided": 0.3495
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": -0.0874,
+            "ci95": [
+              -0.1779,
+              -0.0255
+            ],
+            "p_two_sided": 0.0105
+          },
+          "abs_surprise_mannwhitney_p": 0.02106,
+          "abs_return_mannwhitney_p": 0.01463
+        },
+        "path_1to7_issued_day_before": {
+          "n": 749,
+          "hit_rate": 0.4927,
+          "coverage": 0.7797
+        },
+        "consensus_aligned_with_event_move_pct": 4.7,
+        "post_event_continuation": {
+          "1d": {
+            "n": 107,
+            "mean_pct": -0.067,
+            "share_positive": 0.477,
+            "t": -0.3,
+            "p": 0.7617
+          },
+          "3d": {
+            "n": 107,
+            "mean_pct": -0.057,
+            "share_positive": 0.458,
+            "t": -0.12,
+            "p": 0.9057
+          },
+          "7d": {
+            "n": 107,
+            "mean_pct": -0.293,
+            "share_positive": 0.486,
+            "t": -0.38,
+            "p": 0.7039
+          }
+        }
+      }
+    }
+  },
+  "aapl": {
+    "dataset": "AAPL (deployed s01 dataset, live signals frozen from 2026-07-30)",
+    "asset_type": "stock",
+    "event_sets": {
+      "earnings": {
+        "event_days": {
+          "n": 65,
+          "hit_rate": 0.4923,
+          "wilson95": [
+            0.3746,
+            0.6108
+          ],
+          "binomial_p_vs_0.5": 1.0,
+          "coverage": 0.2462,
+          "brier": 0.2611,
+          "mean_abs_surprise_z": 3.077,
+          "median_abs_surprise_z": 2.625,
+          "mean_abs_ret_pct": 3.881,
+          "shock_share_pct": 49.2,
+          "always_up_rate": 0.492
+        },
+        "other_days": {
+          "n": 4032,
+          "hit_rate": 0.5136,
+          "wilson95": [
+            0.4982,
+            0.529
+          ],
+          "binomial_p_vs_0.5": 0.086042,
+          "coverage": 0.7803,
+          "brier": 0.2522,
+          "mean_abs_surprise_z": 0.842,
+          "median_abs_surprise_z": 0.636,
+          "mean_abs_ret_pct": 1.198,
+          "shock_share_pct": 3.4,
+          "always_up_rate": 0.53
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 1.0,
+          "hit_diff_event_minus_other": {
+            "difference": -0.0213,
+            "ci95": [
+              -0.1151,
+              0.0591
+            ],
+            "p_two_sided": 0.4615
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": -0.5341,
+            "ci95": [
+              -0.6833,
+              -0.3919
+            ],
+            "p_two_sided": 0.0
+          },
+          "abs_surprise_mannwhitney_p": 0.0,
+          "abs_return_mannwhitney_p": 0.0
+        },
+        "path_1to7_issued_day_before": {
+          "n": 455,
+          "hit_rate": 0.5275,
+          "coverage": 0.3758
+        },
+        "consensus_aligned_with_event_move_pct": 12.3,
+        "post_event_continuation": {
+          "1d": {
+            "n": 65,
+            "mean_pct": 0.571,
+            "share_positive": 0.6,
+            "t": 2.78,
+            "p": 0.0072
+          },
+          "3d": {
+            "n": 65,
+            "mean_pct": 0.157,
+            "share_positive": 0.585,
+            "t": 0.38,
+            "p": 0.7068
+          },
+          "7d": {
+            "n": 65,
+            "mean_pct": 0.275,
+            "share_positive": 0.585,
+            "t": 0.47,
+            "p": 0.639
+          }
+        }
+      }
+    }
+  },
+  "msft": {
+    "dataset": "MSFT (deployed s02 dataset)",
+    "asset_type": "stock",
+    "event_sets": {
+      "earnings": {
+        "event_days": {
+          "n": 65,
+          "hit_rate": 0.4615,
+          "wilson95": [
+            0.3459,
+            0.5815
+          ],
+          "binomial_p_vs_0.5": 0.620145,
+          "coverage": 0.2615,
+          "brier": 0.2577,
+          "mean_abs_surprise_z": 3.412,
+          "median_abs_surprise_z": 2.775,
+          "mean_abs_ret_pct": 3.904,
+          "shock_share_pct": 53.8,
+          "always_up_rate": 0.6
+        },
+        "other_days": {
+          "n": 4032,
+          "hit_rate": 0.5186,
+          "wilson95": [
+            0.5032,
+            0.534
+          ],
+          "binomial_p_vs_0.5": 0.018938,
+          "coverage": 0.7919,
+          "brier": 0.2524,
+          "mean_abs_surprise_z": 0.824,
+          "median_abs_surprise_z": 0.635,
+          "mean_abs_ret_pct": 1.096,
+          "shock_share_pct": 3.2,
+          "always_up_rate": 0.521
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 0.620145,
+          "hit_diff_event_minus_other": {
+            "difference": -0.0571,
+            "ci95": [
+              -0.1658,
+              0.1017
+            ],
+            "p_two_sided": 0.625
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": -0.5304,
+            "ci95": [
+              -0.6202,
+              -0.4279
+            ],
+            "p_two_sided": 0.0
+          },
+          "abs_surprise_mannwhitney_p": 0.0,
+          "abs_return_mannwhitney_p": 0.0
+        },
+        "path_1to7_issued_day_before": {
+          "n": 455,
+          "hit_rate": 0.4923,
+          "coverage": 0.4022
+        },
+        "consensus_aligned_with_event_move_pct": 16.9,
+        "post_event_continuation": {
+          "1d": {
+            "n": 65,
+            "mean_pct": 0.38,
+            "share_positive": 0.6,
+            "t": 1.77,
+            "p": 0.0807
+          },
+          "3d": {
+            "n": 65,
+            "mean_pct": 0.861,
+            "share_positive": 0.585,
+            "t": 2.62,
+            "p": 0.011
+          },
+          "7d": {
+            "n": 65,
+            "mean_pct": 0.533,
+            "share_positive": 0.538,
+            "t": 1.02,
+            "p": 0.3128
+          }
+        }
+      }
+    }
+  },
+  "tsla": {
+    "dataset": "TSLA (deployed s03 dataset)",
+    "asset_type": "stock",
+    "event_sets": {
+      "earnings": {
+        "event_days": {
+          "n": 63,
+          "hit_rate": 0.5238,
+          "wilson95": [
+            0.4027,
+            0.6422
+          ],
+          "binomial_p_vs_0.5": 0.801306,
+          "coverage": 0.2698,
+          "brier": 0.258,
+          "mean_abs_surprise_z": 2.793,
+          "median_abs_surprise_z": 2.605,
+          "mean_abs_ret_pct": 7.545,
+          "shock_share_pct": 54.0,
+          "always_up_rate": 0.508
+        },
+        "other_days": {
+          "n": 3912,
+          "hit_rate": 0.4951,
+          "wilson95": [
+            0.4795,
+            0.5108
+          ],
+          "binomial_p_vs_0.5": 0.554148,
+          "coverage": 0.786,
+          "brier": 0.2544,
+          "mean_abs_surprise_z": 0.844,
+          "median_abs_surprise_z": 0.626,
+          "mean_abs_ret_pct": 2.426,
+          "shock_share_pct": 3.5,
+          "always_up_rate": 0.517
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 0.801306,
+          "hit_diff_event_minus_other": {
+            "difference": 0.0287,
+            "ci95": [
+              -0.1032,
+              0.1444
+            ],
+            "p_two_sided": 0.8405
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": -0.5162,
+            "ci95": [
+              -0.6253,
+              -0.3992
+            ],
+            "p_two_sided": 0.0
+          },
+          "abs_surprise_mannwhitney_p": 0.0,
+          "abs_return_mannwhitney_p": 0.0
+        },
+        "path_1to7_issued_day_before": {
+          "n": 441,
+          "hit_rate": 0.517,
+          "coverage": 0.4739
+        },
+        "consensus_aligned_with_event_move_pct": 6.3,
+        "post_event_continuation": {
+          "1d": {
+            "n": 63,
+            "mean_pct": 0.666,
+            "share_positive": 0.46,
+            "t": 1.51,
+            "p": 0.1373
+          },
+          "3d": {
+            "n": 63,
+            "mean_pct": 1.02,
+            "share_positive": 0.46,
+            "t": 0.92,
+            "p": 0.3592
+          },
+          "7d": {
+            "n": 63,
+            "mean_pct": 1.787,
+            "share_positive": 0.476,
+            "t": 1.52,
+            "p": 0.134
+          }
+        }
+      }
+    }
+  },
+  "nvda": {
+    "dataset": "NVDA (deployed s04 dataset)",
+    "asset_type": "stock",
+    "event_sets": {
+      "earnings": {
+        "event_days": {
+          "n": 65,
+          "hit_rate": 0.6,
+          "wilson95": [
+            0.4786,
+            0.7103
+          ],
+          "binomial_p_vs_0.5": 0.136032,
+          "coverage": 0.2462,
+          "brier": 0.2356,
+          "mean_abs_surprise_z": 3.347,
+          "median_abs_surprise_z": 2.206,
+          "mean_abs_ret_pct": 6.394,
+          "shock_share_pct": 47.7,
+          "always_up_rate": 0.6
+        },
+        "other_days": {
+          "n": 4032,
+          "hit_rate": 0.5047,
+          "wilson95": [
+            0.4893,
+            0.5201
+          ],
+          "binomial_p_vs_0.5": 0.560104,
+          "coverage": 0.7793,
+          "brier": 0.2545,
+          "mean_abs_surprise_z": 0.85,
+          "median_abs_surprise_z": 0.645,
+          "mean_abs_ret_pct": 1.934,
+          "shock_share_pct": 2.7,
+          "always_up_rate": 0.528
+        },
+        "tests": {
+          "hit_binomial_p_vs_0.5": 0.136032,
+          "hit_diff_event_minus_other": {
+            "difference": 0.0953,
+            "ci95": [
+              0.0144,
+              0.1931
+            ],
+            "p_two_sided": 0.022
+          },
+          "coverage_diff_event_minus_other": {
+            "difference": -0.5331,
+            "ci95": [
+              -0.6562,
+              -0.4103
+            ],
+            "p_two_sided": 0.0
+          },
+          "abs_surprise_mannwhitney_p": 0.0,
+          "abs_return_mannwhitney_p": 0.0
+        },
+        "path_1to7_issued_day_before": {
+          "n": 453,
+          "hit_rate": 0.4437,
+          "coverage": 0.4194
+        },
+        "consensus_aligned_with_event_move_pct": 16.9,
+        "post_event_continuation": {
+          "1d": {
+            "n": 65,
+            "mean_pct": 0.095,
+            "share_positive": 0.462,
+            "t": 0.21,
+            "p": 0.8309
+          },
+          "3d": {
+            "n": 65,
+            "mean_pct": 0.722,
+            "share_positive": 0.569,
+            "t": 1.1,
+            "p": 0.2749
+          },
+          "7d": {
+            "n": 64,
+            "mean_pct": 1.103,
+            "share_positive": 0.594,
+            "t": 1.27,
+            "p": 0.2104
+          }
+        }
+      }
+    }
+  }
+}

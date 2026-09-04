@@ -1,0 +1,47 @@
+{
+  "stocks": 50,
+  "total_h1_forecasts": 204129,
+  "median_h1_hit": 0.5089,
+  "iqr_h1_hit": [
+    0.5057,
+    0.5171
+  ],
+  "median_h1_always_up": 0.5232,
+  "pooled_h1_pt": {
+    "n": 204129,
+    "p_hat": 0.5107,
+    "p_star_independence": 0.5075,
+    "statistic": 3.08,
+    "p_one_sided_skill": 0.001
+  },
+  "share_stocks_pt_above_1.645": 0.08,
+  "share_stocks_pt_below_-1.645": 0.04,
+  "mean_pt": 0.261,
+  "sd_pt": 0.914,
+  "ks_pt_vs_standard_normal_p": 0.0099,
+  "share_stocks_brier_worse_than_coin": 0.98,
+  "share_stocks_brier_significantly_worse_5pct": 0.88,
+  "median_h7_hit": 0.5253,
+  "median_h7_always_up": 0.5585,
+  "share_stocks_always_up_beats_model_h7": 0.98,
+  "median_hit_calm": 0.5117,
+  "median_hit_shock": 0.4928,
+  "median_pre_event_hit": 0.4928,
+  "median_consensus_aligned_pct": 12.1,
+  "median_consensus_latency": 4.5,
+  "median_continuation_7d_pct": -0.18,
+  "share_stocks_positive_continuation_7d": 0.32,
+  "stocks_with_earnings_dates": 48,
+  "median_earnings_coverage": 0.283,
+  "median_other_coverage": 0.786,
+  "median_earnings_abs_surprise": 2.856,
+  "median_other_abs_surprise": 0.844,
+  "median_earnings_shock_share_pct": 43.8,
+  "share_stocks_earnings_coverage_below_other": 1.0,
+  "median_earnings_hit": 0.487,
+  "median_up_shock_category_share_pct": {
+    "earnings": 19.3,
+    "market-wide": 25.4,
+    "idiosyncratic": 56.1
+  }
+}
