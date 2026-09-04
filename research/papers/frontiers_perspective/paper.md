@@ -10,9 +10,9 @@
 
 ## 1. The empirical fact that motivates the program
 
-Price‑pattern models — indicator ensembles, nearest‑neighbour analogs, small classifiers — assume that the variables governing the next several sessions are functions of the price path. A point‑in‑time audit of a deployed seven‑session analog forecaster on eight instruments (Kim 2026) finds: directional accuracy of 46–53% that never passes the Pesaran–Timmermann test; Brier scores worse than a constant ½; nominal‑80% bands that cover 78–82% of outcomes in calm periods but 25% on earnings sessions and 0% the day before a |*z*|≥2.5 shock; and, after a shock, drift of +3% over seven sessions in Bitcoin and +2.3% after earnings increases in single stocks, while the model's consensus needs 4–6 sessions to agree. Sessions with |*z*|≥2.5 are 3–5% of the sample and carry 28–37% of return variance. A simple bound follows: for any price‑conditioned predictor, accuracy on jump‑dominant news days equals the news‑sign base rate, so the average cannot exceed (1−π)*A*_calm + π/2 — the coin when calm skill is nil, ≈0.60–0.69 even with 60–70% calm skill.
+Price‑pattern models — indicator ensembles, nearest‑neighbour analogs, small classifiers — assume that the variables governing the next several sessions are functions of the price path. A point‑in‑time audit of a deployed seven‑session analog forecaster on eight instruments (Kim, 2026) finds: directional accuracy of 46–53% that never passes the Pesaran–Timmermann test; Brier scores worse than a constant ½; nominal‑80% bands that cover 78–82% of outcomes in calm periods but 25% on earnings sessions and 0% the day before a |*z*|≥2.5 shock; and, after a shock, drift of +3% over seven sessions in Bitcoin and +2.3% after earnings increases in single stocks, while the model's consensus needs 4–6 sessions to agree. Sessions with |*z*|≥2.5 are 3–5% of the sample and carry 28–37% of return variance. A simple bound follows: for any price‑conditioned predictor, accuracy on jump‑dominant news days equals the news‑sign base rate, so the average cannot exceed (1−π)*A*_calm + π/2 — the coin when calm skill is nil, ≈0.60–0.69 even with 60–70% calm skill.
 
-Three facts point past finance and into behaviour. First, the model's error has a *sign*: it fades moves that continue, because its analogs come from calm regimes in which large moves revert. Second, the continuation is produced by people arriving late — post‑announcement drift (Bernard & Thomas 1989; Chan 2003), under‑reaction (Hong, Lim & Stein 2000; Frazzini 2006), attention‑induced trading (Barber, Huang, Odean & Schwarz 2022). Third, the arrival channel is changing: the 2026‑08‑19 rally followed a White House event amplified on social platforms; executive posts move cryptocurrency prices (Ante 2023); investor social networks shape disagreement and herding (Cookson & Niessner 2020; Pedersen 2022); narratives spread epidemically (Shiller 2017).
+Three facts point past finance and into behaviour. First, the model's error has a *sign*: it fades moves that continue, because its analogs come from calm regimes in which large moves revert. Second, the continuation is produced by people arriving late — post‑announcement drift (Bernard & Thomas, 1989; Chan, 2003), under‑reaction (Frazzini, 2006; Hong et al., 2000), attention‑induced trading (Barber et al., 2022). Third, the arrival channel is changing: the 2026‑08‑19 rally followed a White House event amplified on social platforms; executive posts move cryptocurrency prices (Ante, 2023); investor social networks shape disagreement and herding (Cookson & Niessner, 2020; Pedersen, 2022); narratives spread epidemically (Shiller, 2017).
 
 ## 2. The missing state variable, written down
 
@@ -20,7 +20,7 @@ Write the session return as *r*_t = μ(*x*_{t−1}) + σ(*x*_{t−1})ε_t + *J*_
 
 ## 3. What neuroscience already tells us about *K*
 
-Each component has a neural literature. Reward‑prediction‑error signalling in dopaminergic circuits (Schultz, Dayan & Montague 1997) is the update mechanism a surprise engages. Anticipatory nucleus‑accumbens activity precedes risk‑seeking errors and anterior‑insula activity precedes risk‑averse errors (Kuhnen & Knutson 2005); anticipatory activity predicts financial choices (Knutson & Bossaerts 2007); expected reward and risk are coded separately in subcortical structures (Preuschoff, Bossaerts & Quartz 2006). Social influence is not a metaphor: herd information changes striatal valuation signals during financial decisions (Burke, Tobler, Schultz & Baddeley 2010), conformity is driven by a reinforcement‑learning error signal (Klucharev et al. 2009), and others' opinions shift reward‑related valuation (Campbell‑Meiklejohn et al. 2010). Professional traders show autonomic arousal during volatility (Lo & Repin 2002). Frydman & Camerer (2016) review how such measurements have disciplined behavioural‑finance models. What is missing is the bridge from these individual‑level findings to the population kernel *K* that a forecaster needs.
+Each component has a neural literature. Reward‑prediction‑error signalling in dopaminergic circuits (Schultz et al., 1997) is the update mechanism a surprise engages. Anticipatory nucleus‑accumbens activity precedes risk‑seeking errors and anterior‑insula activity precedes risk‑averse errors (Kuhnen & Knutson, 2005); anticipatory activity predicts financial choices (Knutson & Bossaerts, 2007); expected reward and risk are coded separately in subcortical structures (Preuschoff et al., 2006). Social influence is not a metaphor: herd information changes striatal valuation signals during financial decisions (Burke et al., 2010), conformity is driven by a reinforcement‑learning error signal (Klucharev et al., 2009), and others' opinions shift reward‑related valuation (Campbell‑Meiklejohn et al. 2010). Professional traders show autonomic arousal during volatility (Lo & Repin, 2002). Frydman and Camerer (2016) review how such measurements have disciplined behavioural‑finance models. What is missing is the bridge from these individual‑level findings to the population kernel *K* that a forecaster needs.
 
 ## 4. A measurement program
 
@@ -32,7 +32,7 @@ Each component has a neural literature. Reward‑prediction‑error signalling i
 
 **4.4 Forced versus discretionary flow.** Liquidation cascades are observable in order‑book and derivatives funding data and have a mechanical kernel; discretionary reaction does not. The two must be separated before any behavioural interpretation, using exchange data for the former and survey/laboratory data for the latter.
 
-**4.5 Longitudinal panels.** If forecasters and their users learn from published errors, *K* is non‑stationary (Lo 2004). Repeated measurement is required; a deployed product with public forecasts is, unusually, a natural panel.
+**4.5 Longitudinal panels.** If forecasters and their users learn from published errors, *K* is non‑stationary (Lo, 2004). Repeated measurement is required; a deployed product with public forecasts is, unusually, a natural panel.
 
 ## 5. Putting *K* back into the model
 
@@ -50,27 +50,27 @@ Measuring social contagion in markets touches manipulation. Studies should be pr
 
 ## References
 
-Ante, L. (2023). How Elon Musk's Twitter activity moves cryptocurrency markets. *Technological Forecasting and Social Change*, 186, 122112.
-Bacry, E., Mastromatteo, I., & Muzy, J.‑F. (2015). Hawkes processes in finance. *Market Microstructure and Liquidity*, 1(1), 1550005.
-Barber, B. M., Huang, X., Odean, T., & Schwarz, C. (2022). Attention‑induced trading and returns: evidence from Robinhood users. *Journal of Finance*, 77(6), 3141–3190.
+Ante, L. (2023). How Elon Musk's Twitter activity moves cryptocurrency markets. *Technological Forecasting and Social Change*, *186*, 122112.
+Bacry, E., Mastromatteo, I., & Muzy, J.‑F. (2015). Hawkes processes in finance. *Market Microstructure and Liquidity*, *1*(1), 1550005.
+Barber, B. M., Huang, X., Odean, T., & Schwarz, C. (2022). Attention‑induced trading and returns: Evidence from Robinhood users. *Journal of Finance*, *77*(6), 3141–3190.
 Bernard, V. L., & Thomas, J. K. (1989). Post‑earnings‑announcement drift. *Journal of Accounting Research*, 27 (Suppl.), 1–36.
-Burke, C. J., Tobler, P. N., Schultz, W., & Baddeley, M. (2010). Striatal BOLD response reflects the impact of herd information on financial decisions. *Frontiers in Human Neuroscience*, 4, 48.
-Campbell‑Meiklejohn, D. K., Bach, D. R., Roepstorff, A., Dolan, R. J., & Frith, C. D. (2010). How the opinion of others affects our valuation of objects. *Current Biology*, 20(13), 1165–1170.
-Chan, W. S. (2003). Stock price reaction to news and no‑news. *Journal of Financial Economics*, 70(2), 223–260.
-Cookson, J. A., & Niessner, M. (2020). Why don't we agree? Evidence from a social network of investors. *Journal of Finance*, 75(1), 173–228.
-Frazzini, A. (2006). The disposition effect and underreaction to news. *Journal of Finance*, 61(4), 2017–2046.
-Frydman, C., & Camerer, C. F. (2016). The psychology and neuroscience of financial decision making. *Trends in Cognitive Sciences*, 20(9), 661–675.
-Hawkes, A. G. (1971). Spectra of some self‑exciting and mutually exciting point processes. *Biometrika*, 58(1), 83–90.
-Hong, H., Lim, T., & Stein, J. C. (2000). Bad news travels slowly. *Journal of Finance*, 55(1), 265–295.
-Hong, H., & Stein, J. C. (1999). A unified theory of underreaction, momentum trading, and overreaction. *Journal of Finance*, 54(6), 2143–2184.
-Kim, K. (2026). When the news arrives: calibration failure of a pattern‑based seven‑session forecast around exogenous information shocks. Working paper.
-Klucharev, V., Hytönen, K., Rijpkema, M., Smidts, A., & Fernández, G. (2009). Reinforcement learning signal predicts social conformity. *Neuron*, 61(1), 140–151.
-Knutson, B., & Bossaerts, P. (2007). Neural antecedents of financial decisions. *Journal of Neuroscience*, 27(31), 8174–8177.
-Kuhnen, C. M., & Knutson, B. (2005). The neural basis of financial risk taking. *Neuron*, 47(5), 763–770.
-Lo, A. W. (2004). The Adaptive Markets Hypothesis. *Journal of Portfolio Management*, 30(5), 15–29.
-Lo, A. W., & Repin, D. V. (2002). The psychophysiology of real‑time financial risk processing. *Journal of Cognitive Neuroscience*, 14(3), 323–339.
+Burke, C. J., Tobler, P. N., Schultz, W., & Baddeley, M. (2010). Striatal BOLD response reflects the impact of herd information on financial decisions. *Frontiers in Human Neuroscience*, *4*, 48.
+Campbell‑Meiklejohn, D. K., Bach, D. R., Roepstorff, A., Dolan, R. J., & Frith, C. D. (2010). How the opinion of others affects our valuation of objects. *Current Biology*, *20*(13), 1165–1170.
+Chan, W. S. (2003). Stock price reaction to news and no‑news. *Journal of Financial Economics*, *70*(2), 223–260.
+Cookson, J. A., & Niessner, M. (2020). Why don't we agree? Evidence from a social network of investors. *Journal of Finance*, *75*(1), 173–228.
+Frazzini, A. (2006). The disposition effect and underreaction to news. *Journal of Finance*, *61*(4), 2017–2046.
+Frydman, C., & Camerer, C. F. (2016). The psychology and neuroscience of financial decision making. *Trends in Cognitive Sciences*, *20*(9), 661–675.
+Hawkes, A. G. (1971). Spectra of some self‑exciting and mutually exciting point processes. *Biometrika*, *58*(1), 83–90.
+Hong, H., & Stein, J. C. (1999). A unified theory of underreaction, momentum trading, and overreaction. *Journal of Finance*, *54*(6), 2143–2184.
+Hong, H., Lim, T., & Stein, J. C. (2000). Bad news travels slowly. *Journal of Finance*, *55*(1), 265–295.
+Kim, K., Kim, K., & Ahn, D. (2026). *When the news arrives: Calibration failure of a pattern-based seven-session forecast around exogenous information shocks* [Working paper]. Zenodo. https://doi.org/10.5281/zenodo.22308637
+Klucharev, V., Hytönen, K., Rijpkema, M., Smidts, A., & Fernández, G. (2009). Reinforcement learning signal predicts social conformity. *Neuron*, *61*(1), 140–151.
+Knutson, B., & Bossaerts, P. (2007). Neural antecedents of financial decisions. *Journal of Neuroscience*, *27*(31), 8174–8177.
+Kuhnen, C. M., & Knutson, B. (2005). The neural basis of financial risk taking. *Neuron*, *47*(5), 763–770.
+Lo, A. W., & Repin, D. V. (2002). The psychophysiology of real‑time financial risk processing. *Journal of Cognitive Neuroscience*, *14*(3), 323–339.
+Lo, A. W. (2004). The Adaptive Markets Hypothesis. *Journal of Portfolio Management*, *30*(5), 15–29.
 Merton, R. C. (1976). Option pricing when underlying stock returns are discontinuous. *Journal of Financial Economics*, 3(1–2), 125–144.
-Pedersen, L. H. (2022). Game on: social networks and markets. *Journal of Financial Economics*, 146(3), 1097–1119.
-Preuschoff, K., Bossaerts, P., & Quartz, S. R. (2006). Neural differentiation of expected reward and risk in human subcortical structures. *Neuron*, 51(3), 381–390.
-Schultz, W., Dayan, P., & Montague, P. R. (1997). A neural substrate of prediction and reward. *Science*, 275(5306), 1593–1599.
-Shiller, R. J. (2017). Narrative economics. *American Economic Review*, 107(4), 967–1004.
+Pedersen, L. H. (2022). Game on: Social networks and markets. *Journal of Financial Economics*, *146*(3), 1097–1119.
+Preuschoff, K., Bossaerts, P., & Quartz, S. R. (2006). Neural differentiation of expected reward and risk in human subcortical structures. *Neuron*, *51*(3), 381–390.
+Schultz, W., Dayan, P., & Montague, P. R. (1997). A neural substrate of prediction and reward. *Science*, *275*(5306), 1593–1599.
+Shiller, R. J. (2017). Narrative economics. *American Economic Review*, *107*(4), 967–1004.

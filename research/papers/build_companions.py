@@ -10,7 +10,7 @@ import pypandoc
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
-from to_latex import sanitize  # noqa: E402
+from to_latex import HEADER, polish, prepare, sanitize  # noqa: E402
 
 META = {
     "frl_short": ("Confidently wrong on the news: a live Bitcoin forecaster around information shocks", "Finance Research Letters — short article"),
@@ -26,13 +26,14 @@ def build(folder: str) -> None:
     title, venue = META[folder]
     lines = src.read_text().splitlines()
     body = "\n".join(l for l in lines[1:] if not l.startswith("**Target:") and not l.startswith("*Kibaek Kim, Kiok Kim"))
-    body = sanitize(body)
+    body = sanitize(prepare(body))
     tex = pypandoc.convert_text(
         body, "latex", format="markdown+tex_math_dollars+pipe_tables",
         extra_args=["--standalone", "--wrap=none", "--shift-heading-level-by=-1", "-V", "geometry:margin=1in", "-V", "fontsize=11pt",
                     "-V", "documentclass=article", "-M", f"title={title}", "-M", "author=Kibaek Kim, Kiok Kim, Danielle Ahn", "-M", f"date={venue} — draft 2026-09-04",
-                    "-V", "colorlinks=true", "-V", "header-includes=\\usepackage{booktabs}\\usepackage{longtable}\\usepackage{graphicx}"],
+                    "-V", "colorlinks=true", "-V", f"header-includes={HEADER}", "--columns=60"],
     )
+    tex = polish(tex)
     out = HERE / folder / "paper.tex"
     out.write_text("% Compile with xelatex or lualatex (Unicode source)\n" + tex)
     print(out, f"{out.stat().st_size/1e3:.0f} KB")

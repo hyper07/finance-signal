@@ -237,3 +237,5 @@ research/paper.tex
 research/papers/*/paper.tex
 
 .DS_Store
+research/arxiv/
+research/arxiv_submission.tar.gz

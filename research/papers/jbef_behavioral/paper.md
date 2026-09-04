@@ -10,7 +10,7 @@
 
 ## 1. Introduction
 
-Behavioral finance has documented that prices under‑react to information and drift for days or weeks — after earnings (Bernard & Thomas 1989), after headlines (Chan 2003), more slowly for firms with less coverage (Hong, Lim & Stein 2000), and in ways tied to investor psychology (Frazzini 2006; Barberis, Shleifer & Vishny 1998; Daniel, Hirshleifer & Subrahmanyam 1998; Hong & Stein 1999) and attention (Hirshleifer, Lim & Teoh 2009; Da, Engelberg & Gao 2011; Barber, Huang, Odean & Schwarz 2022). A newer literature shows that social platforms are now a primary channel of both information and herding (Cookson & Niessner 2020; Pedersen 2022; Ante 2023; Shiller 2017).
+Behavioral finance has documented that prices under‑react to information and drift for days or weeks — after earnings (Bernard & Thomas, 1989), after headlines (Chan, 2003), more slowly for firms with less coverage (Hong et al., 2000), and in ways tied to investor psychology (Barberis et al., 1998; Daniel et al., 1998; Frazzini, 2006; Hong & Stein, 1999) and attention (Barber et al., 2022; Da et al., 2011; Hirshleifer et al., 2009). A newer literature shows that social platforms are now a primary channel of both information and herding (Ante, 2023; Cookson & Niessner, 2020; Pedersen, 2022; Shiller, 2017).
 
 This paper adds a third party to the picture: a *machine*. Retail investors increasingly act on algorithmic forecasts; the one studied here publishes, each session, a seven‑session exposure schedule and a Buy/Sell/Hold consensus for a crypto pair, an index pair and hundreds of stocks. Because its live signals are frozen and its code is available, we can ask three behavioral questions with unusual precision: (1) how do prices move after information shocks, by asset type and by cause; (2) how long does a pattern‑based model take to "notice", relative to the drift; and (3) how should a person act on a multi‑day schedule — and does it matter? The forecast‑accuracy audit itself (the model has no directional skill and is contrarian into shocks) is reported in the companion paper; here we take it as given and study behavior.
 
@@ -25,7 +25,7 @@ A **shock** is a session with |*z_T*| = |*r_T*|/σ̂₂₀(*T*−1) ≥ 2.5. **C
 **Table 1. Post‑shock continuation by asset type (sign‑adjusted, %).**
 
 | instrument | type | shocks | 1 session | 3 sessions | 7 sessions (*t*) | shocks clustered ≤3 sessions |
-|---|---|---|---|---|---|---|
+|----------|------|------|-------|--------|------------|---------|
 | BTC/USD | crypto | 98 | +0.13 | +1.22 | **+2.98 (3.06)** | 21% |
 | BITO | crypto | 48 | +0.07 | +1.15 | +1.61 (1.0) | 31% |
 | SPY | index | 98 | −0.28 | −0.22 | −0.52 (−1.5) | 26% |
@@ -35,12 +35,12 @@ A **shock** is a session with |*z_T*| = |*r_T*|/σ̂₂₀(*T*−1) ≥ 2.5. **C
 | TSLA | stock | 171 | −0.24 | −0.01 | +0.52 (0.6) | 17% |
 | NVDA | stock | 141 | +0.11 | +0.80 | +0.96 (1.3) | 9% |
 
-Three types, three behaviors (Fig. 1). Crypto shocks continue and cluster — the momentum‑after‑news of an asset whose information arrives unscheduled, through political and social channels, and whose leverage produces liquidation cascades (the 2026‑08‑19 rally carried the largest short liquidation in Bitcoin's history). Index shocks — two‑thirds of them downward — revert, consistent with the mean‑reverting, negatively skewed dynamics of a diversified portfolio whose macro news is scheduled and largely priced. Single stocks are heterogeneous, and Table 2 shows why: the behavior depends on the *cause*. The contrast with crypto is one of *speed*, not *sensitivity* — shock sessions carry the same share of variance in stocks as in crypto and earnings sessions move a stock 3–4× its normal range — but a mega‑cap has absorbed the news by the close, while Bitcoin absorbs it over a week: quantifiable versus argued‑out information, deep versus thin arbitrage capital (Hong, Lim & Stein 2000), leverage‑driven liquidation cascades, scheduled versus unscheduled arrival.
+Three types, three behaviors (Fig. 1). Crypto shocks continue and cluster — the momentum‑after‑news of an asset whose information arrives unscheduled, through political and social channels, and whose leverage produces liquidation cascades (the 2026‑08‑19 rally carried the largest short liquidation in Bitcoin's history). Index shocks — two‑thirds of them downward — revert, consistent with the mean‑reverting, negatively skewed dynamics of a diversified portfolio whose macro news is scheduled and largely priced. Single stocks are heterogeneous, and Table 2 shows why: the behavior depends on the *cause*. The contrast with crypto is one of *speed*, not *sensitivity* — shock sessions carry the same share of variance in stocks as in crypto and earnings sessions move a stock 3–4× its normal range — but a mega‑cap has absorbed the news by the close, while Bitcoin absorbs it over a week: quantifiable versus argued‑out information, deep versus thin arbitrage capital (Hong et al., 2000), leverage‑driven liquidation cascades, scheduled versus unscheduled arrival.
 
 **Table 2. Single‑stock significant increases by cause (346 events, four core stocks; across the 50‑stock cross‑section the median stock has 19% earnings, 25% market‑wide and 56% idiosyncratic increases).**
 
 | cause | *n* | share | mean move | continuation 1 / 3 / 7 sessions (%) | *t* (7) |
-|---|---|---|---|---|---|
+|----------------------------------------|----|-----|-----|---------------------|----------------|
 | earnings reaction | 78 | 23% | +8.7% | +0.72 / +1.94 / **+2.26** | 2.68 (*p*=0.009) |
 | idiosyncratic news (analyst target, product, management, order, settlement) | 166 | 48% | +6.0% | +0.24 / +0.15 / +1.10 | 1.56 |
 | market‑wide day | 99 | 29% | +6.2% | −0.65 / +0.05 / +0.58 | 0.83 |
@@ -54,7 +54,7 @@ If people react late, the practical question is whether acting one, two or three
 **Table 3a. Return from entering *k* sessions after a shock and holding to session 7, sign‑adjusted, % (share positive), in‑sample.**
 
 | event set | enter day 0 | day 1 | day 2 | day 3 | day 5 |
-|---|---|---|---|---|---|
+|------------------------------------|-----------|-----------|-----------|-----------|-----------|
 | BTC, all 98 shocks | +2.98 (62%) | +2.79 (64%) | +1.95 (61%) | +1.69 (59%) | +0.50 (49%) |
 | BTC, 55 up-shocks | +3.83 (65%) | +3.26 (69%) | +2.04 (62%) | +1.75 (60%) | +0.60 (49%) |
 | BITO, 46 shocks | +1.61 (54%) | +1.69 (61%) | +1.50 (59%) | +0.60 (50%) | -0.20 (52%) |
@@ -67,7 +67,7 @@ If people react late, the practical question is whether acting one, two or three
 **Table 3b. Walk‑forward, cost‑adjusted rule (side chosen from prior events; ≥20 events; |t|>1 to trade).**
 
 | group | enter day | OOS events / traded | side chosen | net per event, 5 bp (hit, t) | net per event, 25 bp (hit, t) | since 2025, 5 bp | always-continuation, 5 bp (hit, t) |
-|---|---|---|---|---|---|---|---|
+|---------------------------------------|-----|-----------|------------------|---------------------|---------------------|--------------|---------------------|
 | BTC | 0 | 77 / 77 | continuation | **+2.51%** (61%, t 2.32) | +2.11% (60%, t 1.95) | 2.207% (n 30) | +2.51% (61%, t 2.32) |
 | BTC | 1 | 77 / 77 | continuation | **+2.33%** (64%, t 2.5) | +1.93% (61%, t 2.07) | 2.359% (n 30) | +2.33% (64%, t 2.5) |
 | BTC | 2 | 77 / 77 | continuation | **+1.34%** (60%, t 1.64) | +0.94% (56%, t 1.15) | 1.424% (n 30) | +1.34% (60%, t 1.64) |
@@ -88,7 +88,7 @@ Only Bitcoin supports acting late, and only by one session: +2.5% and +2.3% net 
 **Table 3. Model alignment and latency around shocks.**
 
 | instrument | consensus aligned at *T*−1 | consensus latency (median sessions) | 3‑day signal latency | never aligned within 15 sessions |
-|---|---|---|---|---|
+|-------------------------|------------------|-------------|-------|-----------------|
 | BTC/USD | 6% | 6 | 3 | 24 of 98 |
 | BITO | 10% | 5 | 2 | 2 of 48 |
 | SPY | 12% | 2 | 3 | 59 of 98 |
@@ -104,7 +104,7 @@ The product publishes, each session, a seven‑row exposure schedule ("if you ta
 **Table 4. Annualised return % / Sharpe (full sample) and total return % / Sharpe (2026).**
 
 | instrument | hold | act daily | act weekly | act once, hold |
-|---|---|---|---|---|
+|------------------|------------|------------|------------|------------|
 | BITO (2022‑03→) | **+15.8 / .55** | +5.5 / .37 | −1.1 / .17 | −23.4 / −.32 |
 | BITO 2026 | −13 / −.29 | **+64 / 2.47** | +39 / 1.92 | +21 / 1.08 |
 | BTC/USD (2021‑04→) | +5.5 / .37 | −0.4 / .18 | +7.8 / .40 | **+17.4 / .60** |
@@ -115,7 +115,7 @@ The product publishes, each session, a seven‑row exposure schedule ("if you ta
 | TSLA | **+39.1 / .86** | +30.4 / .83 | +21.3 / .79 | +36.9 / .94 |
 | NVDA | +50.5 / 1.12 | +38.7 / 1.13 | +19.0 / .88 | +36.6 / 1.08 |
 
-No cadence dominates (Fig. 2). Holding wins seven of eight full samples; acting once‑and‑hold wins BTC; acting daily wins BITO and SPXL in 2026, a year whose drawdowns paid the inverse leg — a regime effect, not forecast skill. The robust finding is about the schedule itself: the committed weekly path and daily re‑forecasting disagree by ≥25 exposure points on 66–75% of sessions (mean absolute gap 0.30–0.50 of full exposure), so "doing nothing after day one" is a materially different strategy from acting daily, and neither is reliably better. Acting daily costs 60–140 units of turnover a year; on the 3× leveraged pair every forecast‑driven cadence lost 8–16% a year against +31% for holding, because a −100% target converts volatility drag into a structural loss. From the user's side, the behavioral risk is not choosing the wrong cadence; it is believing that any cadence extracts information the schedule does not contain. A portfolio corollary follows the same type logic. The classic 60/40 stock–bond policy with rebalancing — selling bonds to buy stocks after a fall and the reverse after a rise — is a contrarian (concave) rule (Perold & Sharpe 1988) that harvests exactly the index reversal of Table 1: on SPY/TLT 2016–26 it cut volatility from 17.51% to 11.13% and the drawdown from -34% to -28%, though in a decade when bonds lost money it added no return (9.29% vs 11.09% for a drifting 60/40). Applied to Bitcoin the same rule adds return through the rebalancing bonus of a 58%-volatility asset (13.11% vs 9.98%), but buying the dip in the week after a crypto down-shock loses (8.82%): the contrarian policy is right where shocks revert and wrong where they continue, for the same behavioral reason the forecaster is.
+No cadence dominates (Fig. 2). Holding wins seven of eight full samples; acting once‑and‑hold wins BTC; acting daily wins BITO and SPXL in 2026, a year whose drawdowns paid the inverse leg — a regime effect, not forecast skill. The robust finding is about the schedule itself: the committed weekly path and daily re‑forecasting disagree by ≥25 exposure points on 66–75% of sessions (mean absolute gap 0.30–0.50 of full exposure), so "doing nothing after day one" is a materially different strategy from acting daily, and neither is reliably better. Acting daily costs 60–140 units of turnover a year; on the 3× leveraged pair every forecast‑driven cadence lost 8–16% a year against +31% for holding, because a −100% target converts volatility drag into a structural loss. From the user's side, the behavioral risk is not choosing the wrong cadence; it is believing that any cadence extracts information the schedule does not contain. A portfolio corollary follows the same type logic. The classic 60/40 stock–bond policy with rebalancing — selling bonds to buy stocks after a fall and the reverse after a rise — is a contrarian (concave) rule (Perold & Sharpe, 1988) that harvests exactly the index reversal of Table 1: on SPY/TLT 2016–26 it cut volatility from 17.51% to 11.13% and the drawdown from -34% to -28%, though in a decade when bonds lost money it added no return (9.29% vs 11.09% for a drifting 60/40). Applied to Bitcoin the same rule adds return through the rebalancing bonus of a 58%-volatility asset (13.11% vs 9.98%), but buying the dip in the week after a crypto down-shock loses (8.82%): the contrarian policy is right where shocks revert and wrong where they continue, for the same behavioral reason the forecaster is.
 
 ## 6. Interpretation: the missing state variable is a human one
 
@@ -123,7 +123,7 @@ Write *r_t* = μ(*x*_{t−1}) + σ(*x*_{t−1})ε_t + Σ_k ξ_k *K*(t − τ_k; 
 
 ## 7. Research agenda: news, social media and the neuroscience of collective reaction
 
-The kernel is produced by people, increasingly through social platforms: *post → attention → arousal → herding → order flow → price*. Each link has an empirical and a neural literature — attention capture and attention‑induced trading (Da, Engelberg & Gao 2011; Barber et al. 2022); disagreement and herding on investor networks (Cookson & Niessner 2020; Pedersen 2022); narratives (Shiller 2017); collective mood (Bollen, Mao & Zeng 2011; Ranco et al. 2015); reward‑prediction‑error signalling (Schultz, Dayan & Montague 1997); anticipatory neural activity before risky financial choices (Kuhnen & Knutson 2005; Knutson & Bossaerts 2007); striatal valuation shifted by herd information (Burke, Tobler, Schultz & Baddeley 2010); conformity as a reinforcement‑learning signal (Klucharev et al. 2009); others' opinions re‑weighting value (Campbell‑Meiklejohn et al. 2010); trader arousal in volatility (Lo & Repin 2002); see Frydman & Camerer (2016) for the bridge to models. We propose: (a) extend the event catalogue into a labelled corpus by source (executive, political, regulator, analyst, wire), channel (social post vs newswire), reach and sentiment; (b) estimate *K* by source × channel, testing whether social‑media‑originated shocks show faster onset, larger short‑horizon continuation and stronger clustering; (c) laboratory reaction‑time and arousal (pupil, skin conductance; fMRI subsample) studies with matched headlines with and without social cues, whose individual kernels mix into *K*; (d) separate forced flow (liquidations, observable in exchange data) from discretionary reaction; (e) longitudinal panels, since kernels learned by users of published forecasts are non‑stationary (Lo 2004). Such work should be pre‑registered and privacy‑preserving.
+The kernel is produced by people, increasingly through social platforms: *post → attention → arousal → herding → order flow → price*. Each link has an empirical and a neural literature — attention capture and attention‑induced trading (Barber et al., 2022; Da et al., 2011); disagreement and herding on investor networks (Cookson & Niessner, 2020; Pedersen, 2022); narratives (Shiller, 2017); collective mood (Bollen et al., 2011; Ranco et al., 2015); reward‑prediction‑error signalling (Schultz et al., 1997); anticipatory neural activity before risky financial choices (Knutson & Bossaerts, 2007; Kuhnen & Knutson, 2005); striatal valuation shifted by herd information (Burke et al., 2010); conformity as a reinforcement‑learning signal (Klucharev et al., 2009); others' opinions re‑weighting value (Campbell‑Meiklejohn et al. 2010); trader arousal in volatility (Lo & Repin, 2002); see Frydman and Camerer (2016) for the bridge to models. We propose: (a) extend the event catalogue into a labelled corpus by source (executive, political, regulator, analyst, wire), channel (social post vs newswire), reach and sentiment; (b) estimate *K* by source × channel, testing whether social‑media‑originated shocks show faster onset, larger short‑horizon continuation and stronger clustering; (c) laboratory reaction‑time and arousal (pupil, skin conductance; fMRI subsample) studies with matched headlines with and without social cues, whose individual kernels mix into *K*; (d) separate forced flow (liquidations, observable in exchange data) from discretionary reaction; (e) longitudinal panels, since kernels learned by users of published forecasts are non‑stationary (Lo, 2004). Such work should be pre‑registered and privacy‑preserving.
 
 ## 8. Conclusion
 
@@ -135,29 +135,29 @@ After information arrives, prices behave in type‑specific ways that people hav
 
 ## References
 
-Ante, L. (2023). How Elon Musk's Twitter activity moves cryptocurrency markets. *Technological Forecasting and Social Change*, 186, 122112.
-Barber, B. M., Huang, X., Odean, T., & Schwarz, C. (2022). Attention‑induced trading and returns: evidence from Robinhood users. *Journal of Finance*, 77(6), 3141–3190.
-Barberis, N., Shleifer, A., & Vishny, R. (1998). A model of investor sentiment. *Journal of Financial Economics*, 49(3), 307–343.
-Bernard, V. L., & Thomas, J. K. (1989). Post‑earnings‑announcement drift: delayed price response or risk premium? *Journal of Accounting Research*, 27 (Suppl.), 1–36.
-Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. *Journal of Computational Science*, 2(1), 1–8.
-Burke, C. J., Tobler, P. N., Schultz, W., & Baddeley, M. (2010). Striatal BOLD response reflects the impact of herd information on financial decisions. *Frontiers in Human Neuroscience*, 4, 48.
-Campbell‑Meiklejohn, D. K., Bach, D. R., Roepstorff, A., Dolan, R. J., & Frith, C. D. (2010). How the opinion of others affects our valuation of objects. *Current Biology*, 20(13), 1165–1170.
-Chan, W. S. (2003). Stock price reaction to news and no‑news: drift and reversal after headlines. *Journal of Financial Economics*, 70(2), 223–260.
-Cookson, J. A., & Niessner, M. (2020). Why don't we agree? Evidence from a social network of investors. *Journal of Finance*, 75(1), 173–228.
-Da, Z., Engelberg, J., & Gao, P. (2011). In search of attention. *Journal of Finance*, 66(5), 1461–1499.
-Daniel, K., Hirshleifer, D., & Subrahmanyam, A. (1998). Investor psychology and security market under‑ and overreactions. *Journal of Finance*, 53(6), 1839–1885.
-Frazzini, A. (2006). The disposition effect and underreaction to news. *Journal of Finance*, 61(4), 2017–2046.
-Frydman, C., & Camerer, C. F. (2016). The psychology and neuroscience of financial decision making. *Trends in Cognitive Sciences*, 20(9), 661–675.
-Hirshleifer, D., Lim, S. S., & Teoh, S. H. (2009). Driven to distraction: extraneous events and underreaction to earnings news. *Journal of Finance*, 64(5), 2289–2325.
-Hong, H., Lim, T., & Stein, J. C. (2000). Bad news travels slowly. *Journal of Finance*, 55(1), 265–295.
-Hong, H., & Stein, J. C. (1999). A unified theory of underreaction, momentum trading, and overreaction in asset markets. *Journal of Finance*, 54(6), 2143–2184.
-Klucharev, V., Hytönen, K., Rijpkema, M., Smidts, A., & Fernández, G. (2009). Reinforcement learning signal predicts social conformity. *Neuron*, 61(1), 140–151.
-Knutson, B., & Bossaerts, P. (2007). Neural antecedents of financial decisions. *Journal of Neuroscience*, 27(31), 8174–8177.
-Kuhnen, C. M., & Knutson, B. (2005). The neural basis of financial risk taking. *Neuron*, 47(5), 763–770.
-Lo, A. W. (2004). The Adaptive Markets Hypothesis. *Journal of Portfolio Management*, 30(5), 15–29.
-Lo, A. W., & Repin, D. V. (2002). The psychophysiology of real‑time financial risk processing. *Journal of Cognitive Neuroscience*, 14(3), 323–339.
-Perold, A. F., & Sharpe, W. F. (1988). Dynamic strategies for asset allocation. *Financial Analysts Journal*, 44(1), 16–27.
-Pedersen, L. H. (2022). Game on: social networks and markets. *Journal of Financial Economics*, 146(3), 1097–1119.
-Ranco, G., Aleksovski, D., Caldarelli, G., Grčar, M., & Mozetič, I. (2015). The effects of Twitter sentiment on stock price returns. *PLoS ONE*, 10(9), e0138441.
-Schultz, W., Dayan, P., & Montague, P. R. (1997). A neural substrate of prediction and reward. *Science*, 275(5306), 1593–1599.
-Shiller, R. J. (2017). Narrative economics. *American Economic Review*, 107(4), 967–1004.
+Ante, L. (2023). How Elon Musk's Twitter activity moves cryptocurrency markets. *Technological Forecasting and Social Change*, *186*, 122112.
+Barber, B. M., Huang, X., Odean, T., & Schwarz, C. (2022). Attention‑induced trading and returns: Evidence from Robinhood users. *Journal of Finance*, *77*(6), 3141–3190.
+Barberis, N., Shleifer, A., & Vishny, R. (1998). A model of investor sentiment. *Journal of Financial Economics*, *49*(3), 307–343.
+Bernard, V. L., & Thomas, J. K. (1989). Post‑earnings‑announcement drift: Delayed price response or risk premium? *Journal of Accounting Research*, 27 (Suppl.), 1–36.
+Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. *Journal of Computational Science*, *2*(1), 1–8.
+Burke, C. J., Tobler, P. N., Schultz, W., & Baddeley, M. (2010). Striatal BOLD response reflects the impact of herd information on financial decisions. *Frontiers in Human Neuroscience*, *4*, 48.
+Campbell‑Meiklejohn, D. K., Bach, D. R., Roepstorff, A., Dolan, R. J., & Frith, C. D. (2010). How the opinion of others affects our valuation of objects. *Current Biology*, *20*(13), 1165–1170.
+Chan, W. S. (2003). Stock price reaction to news and no‑news: Drift and reversal after headlines. *Journal of Financial Economics*, *70*(2), 223–260.
+Cookson, J. A., & Niessner, M. (2020). Why don't we agree? Evidence from a social network of investors. *Journal of Finance*, *75*(1), 173–228.
+Da, Z., Engelberg, J., & Gao, P. (2011). In search of attention. *Journal of Finance*, *66*(5), 1461–1499.
+Daniel, K., Hirshleifer, D., & Subrahmanyam, A. (1998). Investor psychology and security market under‑ and overreactions. *Journal of Finance*, *53*(6), 1839–1885.
+Frazzini, A. (2006). The disposition effect and underreaction to news. *Journal of Finance*, *61*(4), 2017–2046.
+Frydman, C., & Camerer, C. F. (2016). The psychology and neuroscience of financial decision making. *Trends in Cognitive Sciences*, *20*(9), 661–675.
+Hirshleifer, D., Lim, S. S., & Teoh, S. H. (2009). Driven to distraction: Extraneous events and underreaction to earnings news. *Journal of Finance*, *64*(5), 2289–2325.
+Hong, H., & Stein, J. C. (1999). A unified theory of underreaction, momentum trading, and overreaction in asset markets. *Journal of Finance*, *54*(6), 2143–2184.
+Hong, H., Lim, T., & Stein, J. C. (2000). Bad news travels slowly. *Journal of Finance*, *55*(1), 265–295.
+Klucharev, V., Hytönen, K., Rijpkema, M., Smidts, A., & Fernández, G. (2009). Reinforcement learning signal predicts social conformity. *Neuron*, *61*(1), 140–151.
+Knutson, B., & Bossaerts, P. (2007). Neural antecedents of financial decisions. *Journal of Neuroscience*, *27*(31), 8174–8177.
+Kuhnen, C. M., & Knutson, B. (2005). The neural basis of financial risk taking. *Neuron*, *47*(5), 763–770.
+Lo, A. W., & Repin, D. V. (2002). The psychophysiology of real‑time financial risk processing. *Journal of Cognitive Neuroscience*, *14*(3), 323–339.
+Lo, A. W. (2004). The Adaptive Markets Hypothesis. *Journal of Portfolio Management*, *30*(5), 15–29.
+Pedersen, L. H. (2022). Game on: Social networks and markets. *Journal of Financial Economics*, *146*(3), 1097–1119.
+Perold, A. F., & Sharpe, W. F. (1988). Dynamic strategies for asset allocation. *Financial Analysts Journal*, *44*(1), 16–27.
+Ranco, G., Aleksovski, D., Caldarelli, G., Grčar, M., & Mozetič, I. (2015). The effects of Twitter sentiment on stock price returns. *PLoS ONE*, *10*(9), e0138441.
+Schultz, W., Dayan, P., & Montague, P. R. (1997). A neural substrate of prediction and reward. *Science*, *275*(5306), 1593–1599.
+Shiller, R. J. (2017). Narrative economics. *American Economic Review*, *107*(4), 967–1004.

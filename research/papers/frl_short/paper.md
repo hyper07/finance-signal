@@ -10,7 +10,7 @@
 
 ## 1. Introduction
 
-Retail "AI signal" products publish multi‑day directional forecasts for cryptocurrencies, typically built from technical indicators and nearest‑neighbour analogs of the price path. Their implicit premise — that the state variables governing the next week are functions of past prices — fails by construction when information arrives exogenously, and the human response to that information is not in the state space either. Evidence on technical rules is that apparent skill disappears once data snooping is charged (Brock, Lakonishok & LeBaron 1992; Sullivan, Timmermann & White 1999), and Bitcoin is known to be inefficient but news‑sensitive (Urquhart 2016; Liu & Tsyvinski 2021). What has been missing is an audit of a *deployed* product, on its own frozen live signals, conditioned on exogenous events. This letter provides one and quantifies the gap it reveals.
+Retail "AI signal" products publish multi‑day directional forecasts for cryptocurrencies, typically built from technical indicators and nearest‑neighbour analogs of the price path. Their implicit premise — that the state variables governing the next week are functions of past prices — fails by construction when information arrives exogenously, and the human response to that information is not in the state space either. Evidence on technical rules is that apparent skill disappears once data snooping is charged (Brock et al., 1992; Sullivan et al., 1999), and Bitcoin is known to be inefficient but news‑sensitive (Liu & Tsyvinski, 2021; Urquhart, 2016). What has been missing is an audit of a *deployed* product, on its own frozen live signals, conditioned on exogenous events. This letter provides one and quantifies the gap it reveals.
 
 ## 2. Data and method
 
@@ -23,7 +23,7 @@ For every origin *t* we call the production `build_forecast` on the frame trunca
 **Table 1. Calibration and sequential effectiveness (all origins).**
 
 | | BITO *h*=1 | BITO *h*=7 | BTC *h*=1 | BTC *h*=7 |
-|---|---|---|---|---|
+|-----------------------------------|---------------|---------------|---------------|---------------|
 | origins | 1,125 | 1,119 | 1,973 | 1,967 |
 | directional accuracy (95% CI) | 0.506 (.48–.54) | 0.479 (.45–.51) | 0.488 (.47–.51) | 0.467 (.45–.49) |
 | always‑up base rate | 0.487 | 0.519 | 0.495 | 0.510 |
@@ -65,9 +65,9 @@ A live Bitcoin forecaster is interval‑calibrated but directionally uninformati
 
 ## References
 
-Brock, W., Lakonishok, J., & LeBaron, B. (1992). Simple technical trading rules and the stochastic properties of stock returns. *Journal of Finance*, 47(5), 1731–1764.
-Chan, W. S. (2003). Stock price reaction to news and no‑news: drift and reversal after headlines. *Journal of Financial Economics*, 70(2), 223–260.
-Liu, Y., & Tsyvinski, A. (2021). Risks and returns of cryptocurrency. *Review of Financial Studies*, 34(6), 2689–2727.
-Pesaran, M. H., & Timmermann, A. (1992). A simple nonparametric test of predictive performance. *Journal of Business & Economic Statistics*, 10(4), 461–465.
-Sullivan, R., Timmermann, A., & White, H. (1999). Data‑snooping, technical trading rule performance, and the bootstrap. *Journal of Finance*, 54(5), 1647–1691.
-Urquhart, A. (2016). The inefficiency of Bitcoin. *Economics Letters*, 148, 80–82.
+Brock, W., Lakonishok, J., & LeBaron, B. (1992). Simple technical trading rules and the stochastic properties of stock returns. *Journal of Finance*, *47*(5), 1731–1764.
+Chan, W. S. (2003). Stock price reaction to news and no‑news: Drift and reversal after headlines. *Journal of Financial Economics*, *70*(2), 223–260.
+Liu, Y., & Tsyvinski, A. (2021). Risks and returns of cryptocurrency. *Review of Financial Studies*, *34*(6), 2689–2727.
+Pesaran, M. H., & Timmermann, A. (1992). A simple nonparametric test of predictive performance. *Journal of Business & Economic Statistics*, *10*(4), 461–465.
+Sullivan, R., Timmermann, A., & White, H. (1999). Data‑snooping, technical trading rule performance, and the bootstrap. *Journal of Finance*, *54*(5), 1647–1691.
+Urquhart, A. (2016). The inefficiency of Bitcoin. *Economics Letters*, *148*, 80–82.

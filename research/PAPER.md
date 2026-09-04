@@ -30,7 +30,7 @@ Three features distinguish the design from a typical backtest report:
 
 ### 1.1 Related work
 
-*Technical rules and data snooping.* Brock, Lakonishok and LeBaron (1992) found apparent predictive power in moving-average and trading-range rules; Sullivan, Timmermann and White (1999) showed that once the full universe of rules examined is accounted for, the best rule's performance is consistent with chance, and Bailey, Borwein, López de Prado and Zhu (2014) formalized the same problem as backtest overfitting. Section 4.2 is a small-scale instance: a 50-origin evaluation that displays seven horizons prints 60%+ on one of them 14% of the time. *Analog forecasting* descends from Lorenz's (1969) atmospheric analogues and Farmer and Sidorowich's (1987) local prediction of chaotic series; in finance, return predictability of any kind is fragile out of sample (Welch and Goyal 2008; Timmermann 2018). *Forecast evaluation* supplies our criteria: proper scoring rules (Brier 1950; Gneiting and Raftery 2007), comparative accuracy tests (Diebold and Mariano 1995; Newey and West 1987), the directional test of Pesaran and Timmermann (1992), the variance ratio of Lo and MacKinlay (1988) and false-discovery control (Benjamini and Hochberg 1995). *News and returns.* Tetlock (2007) linked media content to price pressure; Chan (2003) documented drift after news and reversal after no-news moves; Bernard and Thomas (1989) the post-earnings-announcement drift that Section 5.5 reproduces in miniature; Hong, Lim and Stein (2000) and Frazzini (2006) tie slow diffusion and under-reaction to investor behavior; Hirshleifer, Lim and Teoh (2009) and Da, Engelberg and Gao (2011) show that attention constraints shape reaction speed. Cryptocurrency inefficiency and news sensitivity are documented by Urquhart (2016), Corbet, Lucey, Urquhart and Yarovaya (2019) and Liu and Tsyvinski (2021); the behavioral models of Barberis, Shleifer and Vishny (1998), Daniel, Hirshleifer and Subrahmanyam (1998) and Hong and Stein (1999) supply the under-/over-reaction vocabulary we use.
+*Technical rules and data snooping.* Brock et al. (1992) found apparent predictive power in moving-average and trading-range rules; Sullivan et al. (1999) showed that once the full universe of rules examined is accounted for, the best rule's performance is consistent with chance, and Bailey et al. (2014) formalized the same problem as backtest overfitting. Section 4.2 is a small-scale instance: a 50-origin evaluation that displays seven horizons prints 60%+ on one of them 14% of the time. *Analog forecasting* descends from Lorenz's (1969) atmospheric analogues and Farmer and Sidorowich's (1987) local prediction of chaotic series; in finance, return predictability of any kind is fragile out of sample (Timmermann, 2018; Welch & Goyal, 2008). *Forecast evaluation* supplies our criteria: proper scoring rules (Brier, 1950; Gneiting & Raftery, 2007), comparative accuracy tests (Diebold & Mariano, 1995; Newey & West, 1987), the directional test of Pesaran and Timmermann (1992), the variance ratio of Lo and MacKinlay (1988) and false-discovery control (Benjamini & Hochberg, 1995). *News and returns.* Tetlock (2007) linked media content to price pressure; Chan (2003) documented drift after news and reversal after no-news moves; Bernard and Thomas (1989) the post-earnings-announcement drift that Section 5.5 reproduces in miniature; Hong et al. (2000) and Frazzini (2006) tie slow diffusion and under-reaction to investor behavior; Hirshleifer et al. (2009) and Da et al. (2011) show that attention constraints shape reaction speed. Cryptocurrency inefficiency and news sensitivity are documented by Urquhart (2016), Corbet et al. (2019) and Liu and Tsyvinski (2021); the behavioral models of Barberis et al. (1998), Daniel et al. (1998) and Hong and Stein (1999) supply the under-/over-reaction vocabulary we use.
 
 **Contributions.** Relative to this literature the paper contributes (i) an audit protocol for a *deployed* retail forecasting product with immutable live signals — exhaustive, point-in-time, on the production code; (ii) conditioning on exogenous events defined three ways (headline spikes, return shocks, public calendars) and the *sign* of the failure this reveals: a pattern model that is contrarian into news-driven moves that continue; (iii) formal sequential effectiveness tests and elementary propositions that explain why the sign is what it is; (iv) evidence that the same engine fails in three different ways on crypto, an equity index and single stocks, with a type-specific architecture derived from measured fingerprints; and (v) a simulation of how a user should act on a multi-day schedule, showing that no cadence dominates. Results are mostly negative for the forecaster and positive for the behavioral hypothesis, the combination that motivates Section 8.
 
@@ -41,7 +41,7 @@ Three features distinguish the design from a typical backtest report:
 ### 2.1 Price data
 
 | Series | Source | Rows | Span | Notes |
-|---|---|---|---|---|
+|----------------------------------------|---------------------------------------|-----------------------|-----------------------|----------------------------------------|
 | BITO, BITI (adjusted daily OHLC) | Alpaca Market Data, SIP feed | 1,220 | 2021-10-19 → 2026-08-28 | Long/inverse ETF pair used by the deployed `b04_prediction_us_coin` dataset |
 | BTC/USD (daily) | Alpaca crypto | 2,068 | 2021-01-01 → 2026-08-30 | 24/7 calendar days |
 | SPXL, SPXS, SPY, QQQ, TLT, GLD (adjusted daily) | Alpaca, SIP | 2,679 each (SPXS 2,346) | 2016-01-04 → 2026-08-28 | deployed `b01_prediction_us_snp` pair; index/bond/commodity comparators |
@@ -81,7 +81,7 @@ For each origin position $t$ (from the 60th row to the penultimate row) we call 
 For origin $t$ and horizon $h$:
 
 - **Direction hit** $H_{t,h}=\mathbf 1\{\hat p_{t,h}\ge 0.5\}=\mathbf 1\{R_{t,h}>0\}$ (the evaluator's convention).
-- **Brier score** $(\hat p_{t,h}-\mathbf 1\{R_{t,h}>0\})^2$ (Brier 1950), a strictly proper score for the probability.
+- **Brier score** $(\hat p_{t,h}-\mathbf 1\{R_{t,h}>0\})^2$ (Brier, 1950), a strictly proper score for the probability.
 - **Interval coverage** $\mathbf 1\{\hat q_{10}\le R_{t,h}\le \hat q_{90}\}$, nominal 0.80.
 - **Standardized surprise** $s_{t,h}=(R_{t,h}-\hat q_{50})\big/\big((\hat q_{90}-\hat q_{10})/2.5631\big)$, which expresses the realized outcome in units of the forecast's own dispersion (for a Gaussian band the 10–90 width is $2\times1.2816\sigma$). $|s|>1.28$ means "outside the band".
 - **Base rate** $\bar u_h=\text{mean}\,\mathbf 1\{R_{t,h}>0\}$, so that accuracy can be compared with "always up".
@@ -116,7 +116,7 @@ All event definitions (Section 3.3), scoring rules (3.2), horizons, the shock th
 **Table 1. Rolling-origin calibration by horizon, all origins.** (Fig. 3)
 
 | | BITO — hit | 95% CI | base $\bar u$ | Brier | cover. | | BTC — hit | 95% CI | base $\bar u$ | Brier | cover. |
-|---|---|---|---|---|---|---|---|---|---|---|---|
+|----|-----|---------|----|-----|------|----|-----|---------|----|-----|------|
 | $h=1$ | 0.506 | .477–.535 | .487 | .254 | .777 | | 0.488 | .466–.510 | .495 | .255 | .784 |
 | $h=2$ | 0.471 | .443–.501 | .496 | .260 | .787 | | 0.500 | .478–.522 | .512 | .257 | .788 |
 | $h=3$ | 0.460 | .431–.489 | .510 | .264 | .795 | | 0.489 | .467–.511 | .519 | .259 | .794 |
@@ -148,7 +148,7 @@ The 3-day published signal itself (2026, 133 active Long/Short days) has a next-
 **Table 2. Effectiveness in series, all origins.** PT = Pesaran–Timmermann statistic (all origins / mean over non-overlapping subsequences [min, max]); NW $t$ = HAC $t$ of mean Brier excess over 0.25; $\Lambda_n$ in nats; Kelly in basis points of log wealth per session.
 
 | $h$ | BITO PT all | PT non-overlap | Brier−0.25 (NW $t$) | $\Lambda_n$ | Kelly bps | BTC PT all | PT non-overlap | Brier−0.25 (NW $t$) | $\Lambda_n$ | Kelly bps |
-|---|---|---|---|---|---|---|---|---|---|---|
+|----|-----|--------------------|--------------|-----|-----|-----|--------------------|--------------|-----|-----|
 | 1 | +0.13 | +0.13 | +0.0040 (1.72) | −9.3 | −82 | −1.09 | −1.09 | +0.0050 (3.27) | −20.3 | −103 |
 | 2 | −1.98 | −1.42 [−1.46, −1.38] | +0.0096 (3.81) | −22.2 | −198 | +0.01 | −0.01 [−0.39, +0.38] | +0.0072 (3.67) | −29.6 | −150 |
 | 3 | −2.65 | −1.54 [−2.25, −1.09] | +0.0136 (4.50) | −31.7 | −282 | −1.12 | −0.63 [−1.68, +0.27] | +0.0089 (3.93) | −36.3 | −184 |
@@ -162,7 +162,7 @@ No horizon, on either instrument, reaches PT $>1.645$ on the full sequence, and 
 **Table 3. $h=1$ effectiveness by regime.**
 
 | subset | BITO $n$ | PT | Brier NW $t$ | Kelly bps | BTC $n$ | PT | Brier NW $t$ | Kelly bps |
-|---|---|---|---|---|---|---|---|---|
+|----------------------------|-----|-----|-----|-----|-----|-----|-----|-----|
 | calm sessions | 1,077 | +0.47 | 1.25 | −61 | 1,875 | −0.54 | 2.75 | −88 |
 | shock sessions ($\lvert z\rvert\ge2.5$) | 48 | −1.71 | 2.25 | −572 | 98 | **−2.49** | 2.69 | −390 |
 | quiet news days | 612 | −0.24 | 0.62 | −39 | 847 | −0.03 | 2.43 | −105 |
@@ -176,7 +176,7 @@ Table 13 applies Benjamini–Hochberg control to every $p$-value reported in the
 **Table 13. Benjamini–Hochberg survivors at $q\le0.05$ by family (within-family / pooled across all 228 tests).**
 
 | family | tests | survive within | survive pooled | reading |
-|---|---|---|---|---|
+|-----------------------------|-----|-------|----------------|----------------------------------------|
 | A direction vs ½ (binomial) | 56 | 36 | 35 | 34 above ½ (index/stock drift, below base rate), 2 below ½ (crypto) |
 | B Pesaran–Timmermann skill | 56 | **0** | **0** | no directional skill anywhere |
 | C Brier worse than coin (HAC) | 56 | 22 | 21 | confident miscalibration |
@@ -258,7 +258,7 @@ The deployed service applies one indicator-voter engine and one analog forecaste
 **Table 9. Deployed forecaster by instrument.** PT = Pesaran–Timmermann at $h=1$; "shock" = target span contains a $|z|\ge2.5$ day; pre-event = forecast issued at $T-1$; latency = median sessions until the consensus agrees with the shock direction.
 
 | instrument | type | origins | $h$=1 hit / always-up | PT | $h$=7 hit / always-up | shock hit / calm hit (Δ) | pre-event $h$=1 hit ($n$) | consensus aligned | latency |
-|---|---|---|---|---|---|---|---|---|---|
+|----------|------|-------|-----------|-----|-----------|------------------|----------|---------|-------|
 | BTC/USD | crypto | 1,973 | .488 / .495 | −1.09 | .467 / .510 | **.460 / .489** (−.03) | **.367** (98) | 6% | 6 |
 | BITO | crypto | 1,125 | .506 / .487 | +0.13 | .479 / .519 | **.359 / .501** (−.14) | **.375** (48) | 10% | 5 |
 | SPXL | index | 2,584 | .527 / .548 | −0.90 | .594 / .615 | **.337 / .599** (−.26) | .385 (96) | 10% | **2** |
@@ -273,7 +273,7 @@ Three regularities. (i) **On every instrument the "always up" rule beats the for
 **Table 10. Asset-type fingerprints** (2016 → 2026; BTC and stocks from 2016 for comparability). Continuation = sign-adjusted return after a $|z|\ge2.5$ shock; "own-news spike" uses the type's own headline profile (crypto words/tags; broad-market tags + macro words; the ticker's own tag).
 
 | instrument | type | ann. vol % | excess kurtosis | shocks / yr | shock up-share | lag-1 autocorr | VR(5) | cont. 3d % | cont. 7d % ($t$) | shocks clustered ≤3d | $\lvert r\rvert$ spike ÷ quiet | shock share: spike vs quiet days |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|----------|---------|----|--------|------|--------|--------|-----|-----|------------|---------|-------|-------------|
 | BTC/USD | crypto | 57.5 | 4.0 | 17.5 | 57% | −.041 | .97 | +1.24 | **+2.98 (3.1)** | 21% | 1.20 | 11.6% vs 4.1% |
 | BITO | crypto | 54.4 | 3.6 | 10.3 | 54% | −.041 | .94 | +1.38 | +1.71 (1.0) | 31% | 1.17 | 8.8% vs 3.3% |
 | SPY | index | 17.5 | **12.7** | 9.2 | **34%** | −.119 | .86 | −0.22 | −0.52 (−1.5) | 26% | 0.95 | 6.9% vs 3.6% |
@@ -289,7 +289,7 @@ Three regularities. (i) **On every instrument the "always up" rule beats the for
 
 ![Figure 9a. Return-process fingerprints by asset type.](output/figures/fig9a_return_process_by_type.png)
 
-The fingerprints are not variations on one theme. *Crypto* is a near-random walk (VR 0.94–0.97) with comparatively light tails, symmetric shocks, strong clustering and **positive post-shock continuation** — the behavioral drift of Section 6 — driven by policy/headline news that is not on a calendar. *The index* has the heaviest tails (kurtosis 12–13), **two-thirds of its shocks are downward**, it mean-reverts over a week (VR 0.82–0.88, lag-1 autocorrelation −0.10 to −0.12) and **reverses after shocks**; its own-news spikes carry no excess volatility (ratio 0.95), because macro news is largely scheduled and partly priced. *Single stocks* sit between: idiosyncratic own-news jumps (an own-ticker headline spike raises $|r|$ by 1.5–1.9× and **triples to quadruples the shock probability**), heterogeneous continuation (AAPL/MSFT revert, TSLA/NVDA continue), weaker clustering.  The contrast between the types is one of *speed*, not *sensitivity*: shock sessions carry the same share of return variance in stocks (30–37%) as in crypto (34–35%), earnings sessions move a stock 3–4× its normal range, and every catalogued stock increase is an information event — but a stock has absorbed the news by the close of the session, whereas Bitcoin absorbs it over a week. Four structural reasons: earnings and macro releases are *quantifiable* (analysts recompute fair value within hours) while a policy statement about a crypto bill is *argued out* over days on social platforms; the fifty stocks studied are the most heavily covered and arbitraged securities in the world, and news travels slowly only where coverage is thin (Hong, Lim & Stein 2000); crypto leverage produces liquidation cascades that mechanically extend a move; and crypto news is unscheduled and clusters, whereas earnings and FOMC dates are known and pre-positioned. A voter set tuned to any one of these regimes is mis-specified for the other two: the contrarian analog behaviour that is catastrophic on clustered crypto shocks is roughly right on index reversals (hence the 2-session latency) and irrelevant on earnings jumps.
+The fingerprints are not variations on one theme. *Crypto* is a near-random walk (VR 0.94–0.97) with comparatively light tails, symmetric shocks, strong clustering and **positive post-shock continuation** — the behavioral drift of Section 6 — driven by policy/headline news that is not on a calendar. *The index* has the heaviest tails (kurtosis 12–13), **two-thirds of its shocks are downward**, it mean-reverts over a week (VR 0.82–0.88, lag-1 autocorrelation −0.10 to −0.12) and **reverses after shocks**; its own-news spikes carry no excess volatility (ratio 0.95), because macro news is largely scheduled and partly priced. *Single stocks* sit between: idiosyncratic own-news jumps (an own-ticker headline spike raises $|r|$ by 1.5–1.9× and **triples to quadruples the shock probability**), heterogeneous continuation (AAPL/MSFT revert, TSLA/NVDA continue), weaker clustering.  The contrast between the types is one of *speed*, not *sensitivity*: shock sessions carry the same share of return variance in stocks (30–37%) as in crypto (34–35%), earnings sessions move a stock 3–4× its normal range, and every catalogued stock increase is an information event — but a stock has absorbed the news by the close of the session, whereas Bitcoin absorbs it over a week. Four structural reasons: earnings and macro releases are *quantifiable* (analysts recompute fair value within hours) while a policy statement about a crypto bill is *argued out* over days on social platforms; the fifty stocks studied are the most heavily covered and arbitraged securities in the world, and news travels slowly only where coverage is thin (Hong et al., 2000); crypto leverage produces liquidation cascades that mechanically extend a move; and crypto news is unscheduled and clusters, whereas earnings and FOMC dates are known and pre-positioned. A voter set tuned to any one of these regimes is mis-specified for the other two: the contrarian analog behaviour that is catastrophic on clustered crypto shocks is roughly right on index reversals (hence the 2-session latency) and irrelevant on earnings jumps.
 
 
 ![Figure 9b. News response and forecaster behaviour by asset type.](output/figures/fig9b_news_response_by_type.png)
@@ -304,7 +304,7 @@ Headline counts are a proxy; return shocks are partly circular. Public calendars
 **Table 12. Next-session forecasts issued the day before a scheduled event vs all other days.**
 
 | instrument | event | $n$ | hit event / other | up-rate event / other | coverage event / other | mean $\lvert s\rvert$ event / other (MWU $p$) | mean $\lvert r\rvert$ % | shock share | consensus aligned | continuation 1d / 3d / 7d (%) |
-|---|---|---|---|---|---|---|---|---|---|---|
+|----------|--------|----|----------------------------------------|---------|-------------|-------------------|-----------|-----------|---------|--------------------------------|
 | SPY | FOMC | 83 | **0.398 / 0.530** (Δ −0.13, CI −0.20…−0.02, $p$=0.016) | .45 / .56 | 0.675 / 0.771 | 1.09 / 0.87 (0.10) | 0.93 / 0.72 | 8.4% / 3.6% | 17% | 0.0 / 0.0 / 0.0 |
 | SPXL | FOMC | 83 | 0.458 / 0.530 | .43 / .55 | 0.687 / 0.772 | 1.08 / 0.87 (0.19) | 2.78 / 2.13 | 8.4% / 3.6% | 18% | 0.0 / 0.1 / 0.1 |
 | SPY | payrolls | 123 | 0.569 / 0.523 | .63 / .55 | 0.675 / 0.773 | **1.08 / 0.87 (0.001)** | 0.88 / 0.71 | 4.9% / 3.7% | 27% | 0.1 / 0.0 / 0.2 |
@@ -321,22 +321,22 @@ Three type-specific findings, none of which involves a return- or headline-defin
 
 ### 5.6 What moved the stocks: a catalogue of significant increases
 
-To see what the single-stock shocks *are*, every $|z|\ge2.5$ increase of the four stocks (346 sessions, 2010 → 2026-09) was classified by a fixed rule — earnings reaction session (or the one after) → market-wide (SPY or QQQ $|z|\ge2$ the same day, same sign) → idiosyncratic — and joined with the ticker-tagged headlines of the Alpaca/Benzinga archive where it covers (2024-02 →, 52 events) and, for the 23 largest earlier idiosyncratic moves, with attributions verified against contemporaneous coverage (CNBC, Bloomberg, CNN Money, TechCrunch, Forbes, GeekWire, Fortune; `research/manual_attributions.json`). Two Microsoft events (2010-09-13, 2011-01-06) rest on the event date only and are marked †. The full catalogue is `research/STOCK_EVENTS.md` / `output/stock_events_catalogue.csv`.
+To see what the single-stock shocks *are*, every $|z|\ge2.5$ increase of the four stocks (346 sessions, 2010 → 2026-09) was classified by a fixed rule — earnings reaction session (or the one after) → market-wide (SPY or QQQ $|z|\ge2$ the same day, same sign) → idiosyncratic — and joined with the ticker-tagged headlines of the Alpaca/Benzinga archive where it covers (2024-02 →, 52 events) and, for the 23 largest earlier idiosyncratic moves, with attributions verified against contemporaneous coverage (CNBC, Bloomberg, CNN Money, TechCrunch, Forbes, GeekWire, Fortune; `research/manual_attributions.json`). Two Microsoft events (2010-09-13, 2011-01-06) rest on the event date only and are marked *. The full catalogue is `research/STOCK_EVENTS.md` / `output/stock_events_catalogue.csv`.
 
 **Table 14. Significant single-stock increases by category ($n$ = 346).** Pre-event metrics are for the forecast issued the day before; continuation is the further move after the event close.
 
 | category | $n$ | share | mean move % | pre-event $h$=1 coverage | mean $\lvert s\rvert$ | consensus aligned | latency (median) | continuation 1d / 3d / 7d % ($t$) |
-|---|---|---|---|---|---|---|---|---|
+|------------------|----|-----|----|---------|-------|---------|--------|----------------------------------------|
 | earnings reaction | 78 | 22.5% | 8.7 | 0.00 | 5.42 | 15.4% | 5.0 | +0.72 / +1.94 / **+2.26** (2.68, $p$=0.0089) |
 | idiosyncratic news | 166 | 48.0% | 6.03 | 0.00 | 3.36 | 24.1% | 4.5 | +0.24 / +0.15 / +1.10 (1.56) |
 | market-wide day | 99 | 28.6% | 6.19 | 0.00 | 3.02 | 24.2% | 4.5 | -0.65 / +0.05 / +0.58 (0.83) |
 
 (Three further "earnings+1" sessions are omitted.) By stock: TSLA's increases are mostly idiosyncratic (66 of 95), NVDA's are the most earnings-driven (24 of 79), AAPL and MSFT split roughly a third each between company news and market-wide days.
 
-**Table 15. The three largest increases per stock and what moved them.** Band = the day-before P10/P90 in %; ✓ = consensus already aligned; † = attribution inferred from the event date only.
+**Table 15. The three largest increases per stock and what moved them.** Band = the day-before P10/P90 in %; "aligned" = consensus already agreed with the coming move at T−1; an asterisk marks an attribution inferred from the event date only.
 
 | stock | date | +% | $z$ | category | what happened | P(up), band | consensus | +1d / +3d / +7d % |
-|---|---|---|---|---|---|---|---|---|
+|-----|----------|-----|----|-------------|----------------------------------------|------------------|-------------|--------------------|
 | AAPL | 2017-02-01 | +6.1 | 11.9 | earnings | earnings report | 0.48, [-0.5, +0.7] | Hold | -0.2 / +1.2 / +3.1 |
 | AAPL | 2014-04-24 | +8.2 | 9.5 | earnings | earnings report | 0.45, [-1.3, +1.2] | Hold | +0.7 / +4.3 / +5.8 |
 | AAPL | 2016-07-27 | +6.5 | 7.5 | earnings | earnings report | 0.50, [-1.2, +0.8] | Hold | +1.4 / +3.0 / +5.0 |
@@ -347,7 +347,7 @@ To see what the single-stock shocks *are*, every $|z|\ge2.5$ increase of the fou
 | NVDA | 2017-05-10 | +17.8 | 11.8 | earnings | earnings report | 0.55, [-1.8, +2.8] | Hold | +4.3 / +10.7 / +12.2 |
 | NVDA | 2023-05-25 | +24.4 | 11.2 | earnings | earnings report | 0.55, [-2.1, +3.0] | Hold | +2.5 / -0.4 / +1.8 |
 | TSLA | 2011-03-31 | +17.0 | 10.2 | idiosyncratic | Morgan Stanley (Adam Jonas) upgraded Tesla to Overweight with a $70 target, calling it 'America | 0.50, [-2.0, +2.3] | Hold | -3.9 / -3.8 / -8.9 |
-| TSLA | 2021-10-25 | +12.7 | 9.2 | idiosyncratic | Hertz ordered 100,000 Teslas (~$4bn); market value passed $1 trillion | 0.58, [-2.3, +2.4] | Buy ✓ | -0.6 / +5.1 / +18.4 |
+| TSLA | 2021-10-25 | +12.7 | 9.2 | idiosyncratic | Hertz ordered 100,000 Teslas (~$4bn); market value passed $1 trillion | 0.58, [-2.3, +2.4] | Buy (aligned) | -0.6 / +5.1 / +18.4 |
 | TSLA | 2019-10-24 | +17.7 | 8.5 | earnings | earnings report | 0.53, [-2.9, +2.7] | Hold | +9.5 / +5.5 / +5.9 |
 
 Three observations. First, **every catalogued increase is an information event** — an earnings print, a policy or market-wide day, an analyst target, a product or management announcement, a large order, a legal settlement — and none is a pattern in the prior price path; this is the single-stock version of Proposition 1. Second, the deployed forecaster issued bands of roughly ±2–4% into moves of +12% to +30% in every category, with the consensus aligned on 15–24% of events (better than crypto's 6–10%, because the cash-mode engine is Long most of the time, not because it saw the news). Third, the categories behave differently *after* the event, which matters for the type-specific design of Section 8.3: earnings increases keep drifting (+2.3% over seven sessions, $t$=2.7), reproducing post-earnings-announcement drift; idiosyncratic-news increases drift weakly (+1.1%, $t$=1.6); market-wide increases give back part of the move the next day (−0.65%) and then flatten. A stock model should therefore carry an earnings calendar with a drift term, treat market-wide days as index exposure, and treat other company news as a jump without follow-through — three regimes, not one voter set.
@@ -359,7 +359,7 @@ To test whether four stocks are representative, the protocol was run on 46 furth
 **Table 17. The deployed forecaster across 50 stocks (medians unless stated).**
 
 | metric | value |
-|---|---|
+|----------------------------------------|----------------------------------------|
 | $h$=1 directional accuracy (IQR) | 0.509 (0.506–0.517); always-up 0.523 |
 | pooled Pesaran–Timmermann, $h$=1 (204,129 forecasts) | **3.08** ($p$=0.001): $\hat P$ = 0.5107 vs 0.5075 under independence |
 | per-stock PT: mean / SD; share > 1.645 / < −1.645 | 0.26 / 0.91; 8% / 4% (KS vs $N(0,1)$ $p$=0.0099) |
@@ -384,14 +384,14 @@ The cross-section sharpens the four-stock picture in one respect and confirms it
 **Table 7. Sign-adjusted continuation after the shock close (position opened at $C_T$ in the shock direction).** (Fig. 6)
 
 | $k$ sessions | BITO mean % (share > 0) | BTC mean % (share > 0) | BTC $t$ ($p$) |
-|---|---|---|---|
+|--------|-----------|-----------|------------|
 | 1 | +0.07 (56%) | +0.13 (49%) | 0.34 (0.73) |
 | 2 | +0.34 (54%) | +0.95 (58%) | 2.18 (0.032) |
 | 3 | +1.15 (56%) | +1.22 (58%) | 2.20 (0.030) |
 | 5 | +2.00 (60%) | +2.45 (61%) | 2.91 (0.005) |
 | 7 | +1.61 (54%) | **+2.98 (62%)** | **3.06 (0.003)** |
 
-For BTC (98 events) the drift is monotone and significant from two sessions onward: a trader who simply follows the news-day move earns ~3% over the following week, with 62% of events positive. Split by sign, up-shocks continue +3.8% at seven sessions and down-shocks −1.9% (BTC); for BITO up-shocks continue +3.4% while down-shocks revert slightly (+0.4%, $n=22$). This is the post-announcement drift / under-reaction pattern of the behavioral-finance literature (Chan 2003; Barberis, Shleifer & Vishny 1998; Hong & Stein 1999), reproduced in a 24/7 asset with a small-sample caveat.
+For BTC (98 events) the drift is monotone and significant from two sessions onward: a trader who simply follows the news-day move earns ~3% over the following week, with 62% of events positive. Split by sign, up-shocks continue +3.8% at seven sessions and down-shocks −1.9% (BTC); for BITO up-shocks continue +3.4% while down-shocks revert slightly (+0.4%, $n=22$). This is the post-announcement drift / under-reaction pattern of the behavioral-finance literature (Barberis et al., 1998; Chan, 2003; Hong & Stein, 1999), reproduced in a 24/7 asset with a small-sample caveat.
 
 
 ![Figure 6. Post-shock continuation with 95% CI.](output/figures/fig6_post_shock_continuation.png)
@@ -403,7 +403,7 @@ If people react late, the practical question for a user is whether acting one, t
 **Table 19. Return from entering *k* sessions after a shock and holding to session 7, sign-adjusted, % (share of events positive), in-sample.**
 
 | event set | enter day 0 | day 1 | day 2 | day 3 | day 5 |
-|---|---|---|---|---|---|
+|------------------------------------|-----------|-----------|-----------|-----------|-----------|
 | BTC, all 98 shocks | +2.98 (62%) | +2.79 (64%) | +1.95 (61%) | +1.69 (59%) | +0.50 (49%) |
 | BTC, 55 up-shocks | +3.83 (65%) | +3.26 (69%) | +2.04 (62%) | +1.75 (60%) | +0.60 (49%) |
 | BITO, 46 shocks | +1.61 (54%) | +1.69 (61%) | +1.50 (59%) | +0.60 (50%) | -0.20 (52%) |
@@ -416,7 +416,7 @@ If people react late, the practical question for a user is whether acting one, t
 **Table 20. Walk-forward, cost-adjusted rule: enter at the close of session *k*, exit at session 7; side chosen from prior events only.**
 
 | group | enter day | OOS events / traded | side chosen | net per event, 5 bp (hit, t) | net per event, 25 bp (hit, t) | since 2025, 5 bp | always-continuation, 5 bp (hit, t) |
-|---|---|---|---|---|---|---|---|
+|---------------------------------------|-----|-----------|------------------|---------------------|---------------------|--------------|---------------------|
 | BTC | 0 | 77 / 77 | continuation | **+2.51%** (61%, t 2.32) | +2.11% (60%, t 1.95) | 2.207% (n 30) | +2.51% (61%, t 2.32) |
 | BTC | 1 | 77 / 77 | continuation | **+2.33%** (64%, t 2.5) | +1.93% (61%, t 2.07) | 2.359% (n 30) | +2.33% (64%, t 2.5) |
 | BTC | 2 | 77 / 77 | continuation | **+1.34%** (60%, t 1.64) | +0.94% (56%, t 1.15) | 1.424% (n 30) | +1.34% (60%, t 1.64) |
@@ -446,7 +446,7 @@ On 2026-08-19 President Trump hosted crypto executives and the SEC/CFTC chairs a
 **Table 8. Deployed BITO forecast issued 2026-08-18 (close 8.73), 3-day signal Short, consensus Hold (2 Buy / 3 Sell), next-session tactical target −100% (fully in the inverse ETF BITI).** (Fig. 1, 2)
 
 | $h$ | session | $\hat p$ | P10 % | P50 % | P90 % | realized % | covered | $s$ |
-|---|---|---|---|---|---|---|---|---|
+|----|-------|----|------|-----|-----|--------|-------|----|
 | 1 | Aug 19 | 0.55 | −1.81 | +0.32 | +2.06 | **+5.96** | no | 3.7 |
 | 2 | Aug 20 | 0.53 | −2.06 | +0.17 | +2.80 | **+12.37** | no | 6.4 |
 | 3 | Aug 21 | 0.58 | −2.22 | +0.70 | +3.82 | **+19.24** | no | 7.9 |
@@ -470,7 +470,7 @@ The payload is a seven-session exposure schedule, so a user can act on it in sev
 **Table 11. Policy performance: annualised return % / Sharpe / max drawdown % (full sample) and total return % / Sharpe / max drawdown % (2026 live period).**
 
 | instrument | period | hold | act daily | act weekly | act once, hold | 3-day signal |
-|---|---|---|---|---|---|---|
+|----------|---------------------|------------------|------------------|------------------|------------------|------------------|
 | BITO | full (2022-03→), ann. | **+15.8 / .55 / −68** | +5.5 / .37 / −49 | −1.1 / .17 / −53 | −23.4 / −.32 / −67 | +4.7 / .37 / −56 |
 | BITO | 2026, total | −13 / −.29 / −41 | **+64 / 2.47 / −21** | +39 / 1.92 / −13 | +21 / 1.08 / −21 | +75 / 2.66 / −21 |
 | BTC/USD | full (2021-04→), ann. | +5.5 / .37 / −77 | −0.4 / .18 / −75 | +7.8 / .40 / −47 | **+17.4 / .60 / −57** | +3.3 / .30 / −74 |
@@ -496,7 +496,7 @@ If the failure is the absence of an event state variable, then adding one — ev
 **Table 18. Event-conditional gate vs deployed model on gated forecasts (all origins; walk-forward estimation).**
 
 | instrument | gate | forecasts | Winkler model → gated | improvement [95% CI of difference] | coverage | Brier |
-|---|---|---|---|---|---|---|
+|-----------------|--------|---------|---------------|------------------------------------|-----------|----------------------------------------|
 | BTC/USD | shock | 686 | 0.2954 → 0.2630 | **+11.0%** [-0.0985, +0.0274] | 0.71 → 0.76 | 0.2575 → 0.2531 |
 | BTC/USD | headline | 663 | 0.2116 → 0.1888 | **+10.8%** [-0.0744, +0.0244] | 0.73 → 0.75 | 0.2641 → 0.2470 |
 | BITO | shock | 333 | 0.3648 → 0.3395 | **+7.0%** [-0.1349, +0.0840] | 0.65 → 0.77 | 0.2579 → 0.2475 |
@@ -550,11 +550,11 @@ which equals $0.111$ at $c=2.5$ and $0.013$ at $c=3.5$. Hence observed coverage 
 
 **Why an analog forecaster fails here.** Write the return as
 $$r_t=\mu(x_{t-1})+\sigma(x_{t-1})\,\varepsilon_t+J_t,\qquad J_t=\sum_{k:\tau_k\le t}\xi_k\,K(t-\tau_k;\theta),$$
-where $\tau_k$ are news arrival times, $\xi_k$ the impact sizes, and $K(\cdot;\theta)$ a *response kernel* describing how the population of traders digests the news over the following sessions (Merton 1976 for the jump; the kernel is the behavioral addition). A nearest-neighbour method estimates the conditional law of $r$ given $x_{t-1}$ only. Since $x_{t-1}$ carries no information about $\tau_k$ or $\xi_k$, the forecast at $T-1$ cannot see the jump, and — more damagingly — since the kernel $K$ is not in the state, the forecast at $T$, $T+1$ sees a large positive $r_T$ and, from calm analogs, predicts partial reversal, which is exactly the opposite of the drift in Table 7. Shocks also cluster — 10 of 48 (BITO) and 21 of 98 (BTC) shock days follow another shock within three sessions (Aug 19, 20, 21 were consecutive z-shocks; 2026-02-05/06; 2024-08-05/08) — suggesting self-excitation (Hawkes 1971; Bacry, Mastromatteo & Muzy 2015) in both news arrival and human response.
+where $\tau_k$ are news arrival times, $\xi_k$ the impact sizes, and $K(\cdot;\theta)$ a *response kernel* describing how the population of traders digests the news over the following sessions (Merton 1976 for the jump; the kernel is the behavioral addition). A nearest-neighbour method estimates the conditional law of $r$ given $x_{t-1}$ only. Since $x_{t-1}$ carries no information about $\tau_k$ or $\xi_k$, the forecast at $T-1$ cannot see the jump, and — more damagingly — since the kernel $K$ is not in the state, the forecast at $T$, $T+1$ sees a large positive $r_T$ and, from calm analogs, predicts partial reversal, which is exactly the opposite of the drift in Table 7. Shocks also cluster — 10 of 48 (BITO) and 21 of 98 (BTC) shock days follow another shock within three sessions (Aug 19, 20, 21 were consecutive z-shocks; 2026-02-05/06; 2024-08-05/08) — suggesting self-excitation (Bacry et al., 2015; Hawkes, 1971) in both news arrival and human response.
 
 **Type-specific failure modes.** Section 5.4 shows the shared engine fails in three different ways: on crypto it is contrarian into clustered, continuing news shocks (anti-skill); on the index its directional accuracy is base-rate inflation and it collapses on the predominantly downward, heavy-tailed shocks (−26 points) even though its contrarian bias is directionally right afterwards (fast re-alignment); on single stocks the trend filter degenerates to "always Long" and shocks are idiosyncratic earnings/product news on which the analog pool carries no information either way. One set of indicators, one selection window, one vote threshold and one analog feature vector cannot be simultaneously well specified for a 24/7 momentum-prone asset, a mean-reverting negatively skewed index and a cross-section of idiosyncratic jump processes.
 
-**A portfolio corollary.** The same taxonomy explains why the index, which has no earnings of its own, is the instrument on which long-horizon investing has been stable: an index of five hundred idiosyncratic information streams cancels exactly the risk this paper shows to be unforecastable, leaving scheduled macro news, shocks that revert (Table 8) and the equity premium behind the always-up base rate of Table 9. It also classifies the classic 60/40 stock–bond policy with rebalancing — selling bonds to buy stocks after a fall and the reverse after a rise — which is a *concave*, contrarian rule in the taxonomy of Perold and Sharpe (1988): it profits when markets oscillate and pays for its insurance when they trend, with a rebalancing bonus of order half the variance removed (Bernstein & Wilkinson 1997; Hallerbach 2014). On this archive it behaves as the type results predict (Appendix E, Table 21, Fig. 14): on SPY/TLT over 2016–2026 a rebalanced 60/40 cut volatility from 17.5% to 11% and the maximum drawdown from −34% to −27% without adding return or Sharpe, because long Treasuries lost money and fell with stocks in 2022; on BTC/TLT the rebalancing bonus of a 58%-volatility asset added return, while buying the dip in the week after a crypto down-shock lost — the continuation of Section 6.1 once more. Constant-mix rebalancing is thus the index type's natural policy and the wrong reflex inside the first week after a crypto shock; we report it as an illustration, not as an asset-allocation result, which would require longer samples, a standard bond proxy and tests of Sharpe differences.
+**A portfolio corollary.** The same taxonomy explains why the index, which has no earnings of its own, is the instrument on which long-horizon investing has been stable: an index of five hundred idiosyncratic information streams cancels exactly the risk this paper shows to be unforecastable, leaving scheduled macro news, shocks that revert (Table 8) and the equity premium behind the always-up base rate of Table 9. It also classifies the classic 60/40 stock–bond policy with rebalancing — selling bonds to buy stocks after a fall and the reverse after a rise — which is a *concave*, contrarian rule in the taxonomy of Perold and Sharpe (1988): it profits when markets oscillate and pays for its insurance when they trend, with a rebalancing bonus of order half the variance removed (Bernstein & Wilkinson, 1997; Hallerbach, 2014). On this archive it behaves as the type results predict (Appendix E, Table 21, Fig. 14): on SPY/TLT over 2016–2026 a rebalanced 60/40 cut volatility from 17.5% to 11% and the maximum drawdown from −34% to −27% without adding return or Sharpe, because long Treasuries lost money and fell with stocks in 2022 (the SPY–TLT daily-return correlation was −0.4 in 2016–2020 and positive in every year from 2022, Appendix E); on BTC/TLT the rebalancing bonus of a 58%-volatility asset added return, while buying the dip in the week after a crypto down-shock lost — the continuation of Section 6.1 once more. Constant-mix rebalancing is thus the index type's natural policy and the wrong reflex inside the first week after a crypto shock; we report it as an illustration, not as an asset-allocation result, which would require longer samples, a standard bond proxy and tests of Sharpe differences.
 
 **Recommendations for the deployed product** (no code was changed in this study): separate model families per asset type (Section 8.3); score with proper rules (Brier, pinball/CRPS) rather than directional accuracy; flag forecasts as *not applicable* when $\nu_t\ge 2$ or $|s_{t-1}|\ge2.5$ rather than emitting confident bands; reconcile the schedule target and the vote consensus into a single recommendation; label crypto-flagged ETF datasets with trading sessions rather than calendar days.
 
@@ -567,7 +567,7 @@ Table 16 puts the ceiling-and-floor argument of Proposition 4 to the data. On ev
 **Table 16. The predictability gap by instrument ($h$=1).** Shock = target session with $|z|\ge2.5$; ceiling = $(1-\pi)A_{\text{calm}}+\pi/2$ evaluated at hypothetical calm skill of 60% / 70%.
 
 | instrument | type | shock sessions $\pi$ | variance on shock sessions | $\lvert r\rvert$ on shock sessions | hit calm | hit shock | hit all | always-up | headline-spike sessions | ceiling at 60% / 70% calm skill |
-|---|---|---|---|---|---|---|---|---|---|---|
+|----------|------|--------|--------|--------|-----|-----|-----|---------|--------------|-----------|
 | BTC-USD | crypto | 5.0% | **35.4%** | 17.8% | 0.494 | 0.367 | 0.488 | 0.495 | 10.1% | 0.59 / 0.69 |
 | BITO | crypto | 4.3% | **34.4%** | 15.3% | 0.512 | 0.375 | 0.506 | 0.487 | 5.3% | 0.60 / 0.69 |
 | SPXL | index | 3.7% | **28.5%** | 13.2% | 0.533 | 0.385 | 0.527 | 0.548 | 4.5% | 0.60 / 0.69 |
@@ -590,14 +590,14 @@ The central empirical fact of this paper is that the errors of a pattern-based f
 1. *State augmentation.* Add to $x_t$ an observable news-intensity process $\nu_t$ and the last standardized surprise $s_{t-1}$; estimate the conditional law of $r$ given $(x_{t-1},\nu_{t-1},s_{t-1})$ and test whether the Table 7 drift becomes predictable out of sample (purged, embargoed walk-forward as in López de Prado 2018).
 2. *Kernel identification.* Estimate $K(\cdot;\theta)$ non-parametrically from the cross-section of shocks (a deconvolution/Volterra problem); test parametric forms — exponential decay (single-speed reaction), gamma (delayed peak, consistent with gradual information diffusion, Hong & Stein 1999), and mixtures (fast algorithmic + slow discretionary populations).
 3. *Self-excitation.* Fit marked Hawkes processes to shock arrivals with headline marks; compare branching ratios in calm and policy-heavy regimes.
-4. *Regime gating.* Hidden-Markov or change-point gating (Hamilton 1989) that switches from the analog forecaster to an abstention or a drift model when the posterior probability of the "news regime" exceeds a threshold; evaluate with CRPS, not accuracy.
+4. *Regime gating.* Hidden-Markov or change-point gating (Hamilton, 1989) that switches from the analog forecaster to an abstention or a drift model when the posterior probability of the "news regime" exceeds a threshold; evaluate with CRPS, not accuracy.
 
-**8.2 Neuroscience program.** The kernel $K$ aggregates individual reaction functions whose neural substrate is already partly mapped: dopaminergic reward-prediction-error signalling (Schultz, Dayan & Montague 1997), anticipatory nucleus-accumbens activity before risk-seeking errors and anterior-insula activity before risk-averse errors (Kuhnen & Knutson 2005), subcortical coding of expected reward and risk (Preuschoff, Bossaerts & Quartz 2006), and autonomic arousal in professional traders during volatility (Lo & Repin 2002); Frydman & Camerer (2016) review how such measurements discipline behavioral-finance models. Three measurements would identify $K$: (a) *reaction-time distributions* to salient financial headlines, by expertise, from behavioral tasks with EEG/fMRI in a subsample — their population mixture is a first-order estimate of $K$; (b) the separation of *forced* flow (liquidation cascades such as the \$1.42 bn of short covering on 2026-08-19, observable in order-book and funding data) from *discretionary* flow (survey and laboratory), since the two have different kernels; (c) *longitudinal panels*, because if forecasters and their users learn from published errors the kernel is non-stationary (Lo 2004).
+**8.2 Neuroscience program.** The kernel $K$ aggregates individual reaction functions whose neural substrate is already partly mapped: dopaminergic reward-prediction-error signalling (Schultz et al., 1997), anticipatory nucleus-accumbens activity before risk-seeking errors and anterior-insula activity before risk-averse errors (Kuhnen & Knutson, 2005), subcortical coding of expected reward and risk (Preuschoff et al., 2006), and autonomic arousal in professional traders during volatility (Lo & Repin, 2002); Frydman and Camerer (2016) review how such measurements discipline behavioral-finance models. Three measurements would identify $K$: (a) *reaction-time distributions* to salient financial headlines, by expertise, from behavioral tasks with EEG/fMRI in a subsample — their population mixture is a first-order estimate of $K$; (b) the separation of *forced* flow (liquidation cascades such as the \$1.42 bn of short covering on 2026-08-19, observable in order-book and funding data) from *discretionary* flow (survey and laboratory), since the two have different kernels; (c) *longitudinal panels*, because if forecasters and their users learn from published errors the kernel is non-stationary (Lo, 2004).
 
 **8.3 A type-specific architecture.** The fingerprints of Table 10 translate directly into different state variables, event calendars and validation targets; a shared "voter" pool cannot express them.
 
 | | crypto (BTC, BITO) | index (SPXL/SPXS, SPY) | single stocks |
-|---|---|---|---|
+|----------------------|----------------------------------------|----------------------------------------|----------------------------------------|
 | dominant shock source | unscheduled policy/headline news; liquidation cascades | scheduled macro (FOMC, CPI, payrolls, expiries); heavy left tail | own-ticker news: earnings, guidance, product; 3–4× shock odds on own-headline spikes |
 | post-shock dynamics | continuation +1.2–3.0% (3–7 sessions), clustering 21–31% | reversal −0.5–1.4%, VR 0.82–0.88 | heterogeneous; revert (AAPL/MSFT) or continue (TSLA/NVDA) |
 | state variables to add | headline intensity $\nu_t$, last surprise $s_{t-1}$, funding/liquidation flow, post-shock age | event-calendar dummies, VIX level/term structure, skew, drawdown state | earnings-date proximity (embargo), sector-ETF residual return, beta-adjusted momentum, split state |
@@ -608,7 +608,7 @@ The central empirical fact of this paper is that the errors of a pattern-based f
 The common element is not the voter set but the *evaluation contract*: every type is scored against its own base rate with a proper rule, on calm and shock sessions separately, before anything is published.
 
 
-**8.4 News, social media and the neuroscience of collective reaction.** The 2026-08-19 rally, the documented effect of Elon Musk's posts on cryptocurrency prices (Ante 2023) and presidential posts on Truth Social all point to a transmission chain that runs *post → attention → arousal → herding → order flow → price*, increasingly through social platforms rather than newswires. Each link has an empirical literature: attention capture and attention-induced trading (Da, Engelberg & Gao 2011; Barber, Huang, Odean & Schwarz 2022), disagreement and herding on investor social networks (Cookson & Niessner 2020; Pedersen 2022), epidemic spread of narratives (Shiller 2017), and measurable collective mood (Bollen, Mao & Zeng 2011; Ranco et al. 2015). The neuroscience of social influence supplies mechanisms: herd information alters striatal valuation signals in financial choices (Burke, Tobler, Schultz & Baddeley 2010), conformity is driven by a reinforcement-learning error signal (Klucharev et al. 2009), others' opinions shift reward-related valuation (Campbell-Meiklejohn et al. 2010), and anticipatory neural activity predicts financial decisions (Knutson & Bossaerts 2007). A concrete program: (a) extend the event catalogue of Tables 14–15 into a labelled corpus with *source* (executive, political, regulator, analyst, wire), *channel* (social post vs newswire), reach and sentiment; (b) estimate the response kernel $K$ by source × channel — the hypothesis is that social-media-originated shocks have faster onset, larger short-horizon continuation and stronger clustering than newswire shocks; (c) in the laboratory, reaction-time and choice tasks with social cues (a post with visible engagement) against matched neutral headlines, recording arousal (pupil, skin conductance) and, in a subsample, fMRI, to obtain individual kernels whose mixture is $K$; (d) integrate the result into the forecaster as a social-intensity state variable $\nu^{\text{SNS}}_t$ and a post-shock drift term, and *train on labelled information events rather than on price patterns* — learning the behaviour, not the noise. Such measurement of social contagion in markets should be pre-registered and privacy-preserving.
+**8.4 News, social media and the neuroscience of collective reaction.** The 2026-08-19 rally, the documented effect of Elon Musk's posts on cryptocurrency prices (Ante, 2023) and presidential posts on Truth Social all point to a transmission chain that runs *post → attention → arousal → herding → order flow → price*, increasingly through social platforms rather than newswires. Each link has an empirical literature: attention capture and attention-induced trading (Barber et al., 2022; Da et al., 2011), disagreement and herding on investor social networks (Cookson & Niessner, 2020; Pedersen, 2022), epidemic spread of narratives (Shiller, 2017), and measurable collective mood (Bollen et al., 2011; Ranco et al., 2015). The neuroscience of social influence supplies mechanisms: herd information alters striatal valuation signals in financial choices (Burke et al., 2010), conformity is driven by a reinforcement-learning error signal (Klucharev et al., 2009), others' opinions shift reward-related valuation (Campbell-Meiklejohn et al., 2010), and anticipatory neural activity predicts financial decisions (Knutson & Bossaerts, 2007). A concrete program: (a) extend the event catalogue of Tables 14–15 into a labelled corpus with *source* (executive, political, regulator, analyst, wire), *channel* (social post vs newswire), reach and sentiment; (b) estimate the response kernel $K$ by source × channel — the hypothesis is that social-media-originated shocks have faster onset, larger short-horizon continuation and stronger clustering than newswire shocks; (c) in the laboratory, reaction-time and choice tasks with social cues (a post with visible engagement) against matched neutral headlines, recording arousal (pupil, skin conductance) and, in a subsample, fMRI, to obtain individual kernels whose mixture is $K$; (d) integrate the result into the forecaster as a social-intensity state variable $\nu^{\text{SNS}}_t$ and a post-shock drift term, and *train on labelled information events rather than on price patterns* — learning the behaviour, not the noise. Such measurement of social contagion in markets should be pre-registered and privacy-preserving.
 
 The practical goal is not to predict the news — that is impossible from prices — but to know, the moment news lands, **how the crowd will finish reacting**, and to have the model say "I do not know" until then. Doing so would turn today's silent 0%-coverage failures into flagged, quantifiable regimes, and would let the drift documented in Table 7 be modelled rather than merely lost.
 
@@ -622,63 +622,63 @@ Evaluated exhaustively and point-in-time, a deployed seven-session analog foreca
 
 ## References
 
-- Bailey, D. H., Borwein, J. M., López de Prado, M., & Zhu, Q. J. (2014). Pseudo-mathematics and financial charlatanism: the effects of backtest overfitting on out-of-sample performance. *Notices of the AMS*, 61(5), 458–471.
-- Benjamini, Y., & Hochberg, Y. (1995). Controlling the false discovery rate: a practical and powerful approach to multiple testing. *Journal of the Royal Statistical Society B*, 57(1), 289–300.
-- Bernard, V. L., & Thomas, J. K. (1989). Post-earnings-announcement drift: delayed price response or risk premium? *Journal of Accounting Research*, 27 (Suppl.), 1–36.
-- Brock, W., Lakonishok, J., & LeBaron, B. (1992). Simple technical trading rules and the stochastic properties of stock returns. *Journal of Finance*, 47(5), 1731–1764.
-- Corbet, S., Lucey, B., Urquhart, A., & Yarovaya, L. (2019). Cryptocurrencies as a financial asset: a systematic analysis. *International Review of Financial Analysis*, 62, 182–199.
-- Da, Z., Engelberg, J., & Gao, P. (2011). In search of attention. *Journal of Finance*, 66(5), 1461–1499.
-- Farmer, J. D., & Sidorowich, J. J. (1987). Predicting chaotic time series. *Physical Review Letters*, 59(8), 845–848.
-- Frazzini, A. (2006). The disposition effect and underreaction to news. *Journal of Finance*, 61(4), 2017–2046.
-- Hirshleifer, D., Lim, S. S., & Teoh, S. H. (2009). Driven to distraction: extraneous events and underreaction to earnings news. *Journal of Finance*, 64(5), 2289–2325.
-- Hong, H., Lim, T., & Stein, J. C. (2000). Bad news travels slowly: size, analyst coverage, and the profitability of momentum strategies. *Journal of Finance*, 55(1), 265–295.
-- Liu, Y., & Tsyvinski, A. (2021). Risks and returns of cryptocurrency. *Review of Financial Studies*, 34(6), 2689–2727.
-- Lo, A. W., & MacKinlay, A. C. (1988). Stock market prices do not follow random walks: evidence from a simple specification test. *Review of Financial Studies*, 1(1), 41–66.
-- Lorenz, E. N. (1969). Atmospheric predictability as revealed by naturally occurring analogues. *Journal of the Atmospheric Sciences*, 26(4), 636–646.
-- Newey, W. K., & West, K. D. (1987). A simple, positive semi-definite, heteroskedasticity and autocorrelation consistent covariance matrix. *Econometrica*, 55(3), 703–708.
-- Sullivan, R., Timmermann, A., & White, H. (1999). Data-snooping, technical trading rule performance, and the bootstrap. *Journal of Finance*, 54(5), 1647–1691.
-- Timmermann, A. (2018). Forecasting methods in finance. *Annual Review of Financial Economics*, 10, 449–479.
-- Urquhart, A. (2016). The inefficiency of Bitcoin. *Economics Letters*, 148, 80–82.
-- Welch, I., & Goyal, A. (2008). A comprehensive look at the empirical performance of equity premium prediction. *Review of Financial Studies*, 21(4), 1455–1508.
-- Ante, L. (2023). How Elon Musk's Twitter activity moves cryptocurrency markets. *Technological Forecasting and Social Change*, 186, 122112.
-- Barber, B. M., Huang, X., Odean, T., & Schwarz, C. (2022). Attention-induced trading and returns: evidence from Robinhood users. *Journal of Finance*, 77(6), 3141–3190.
-- Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. *Journal of Computational Science*, 2(1), 1–8.
-- Burke, C. J., Tobler, P. N., Schultz, W., & Baddeley, M. (2010). Striatal BOLD response reflects the impact of herd information on financial decisions. *Frontiers in Human Neuroscience*, 4, 48.
-- Campbell-Meiklejohn, D. K., Bach, D. R., Roepstorff, A., Dolan, R. J., & Frith, C. D. (2010). How the opinion of others affects our valuation of objects. *Current Biology*, 20(13), 1165–1170.
-- Cookson, J. A., & Niessner, M. (2020). Why don't we agree? Evidence from a social network of investors. *Journal of Finance*, 75(1), 173–228.
-- Klucharev, V., Hytönen, K., Rijpkema, M., Smidts, A., & Fernández, G. (2009). Reinforcement learning signal predicts social conformity. *Neuron*, 61(1), 140–151.
-- Knutson, B., & Bossaerts, P. (2007). Neural antecedents of financial decisions. *Journal of Neuroscience*, 27(31), 8174–8177.
-- Pedersen, L. H. (2022). Game on: social networks and markets. *Journal of Financial Economics*, 146(3), 1097–1119.
-- Ranco, G., Aleksovski, D., Caldarelli, G., Grčar, M., & Mozetič, I. (2015). The effects of Twitter sentiment on stock price returns. *PLoS ONE*, 10(9), e0138441.
-- Shiller, R. J. (2017). Narrative economics. *American Economic Review*, 107(4), 967–1004.
-- Bernstein, W. J., & Wilkinson, D. (1997). Diversification, rebalancing, and the geometric mean frontier. Working paper (SSRN 53503).
-- Hallerbach, W. G. (2014). Disentangling rebalancing return. *Journal of Asset Management*, 15(5), 301–316.
-- Perold, A. F., & Sharpe, W. F. (1988). Dynamic strategies for asset allocation. *Financial Analysts Journal*, 44(1), 16–27.
-- Bacry, E., Mastromatteo, I., & Muzy, J.-F. (2015). Hawkes processes in finance. *Market Microstructure and Liquidity*, 1(1), 1550005.
-- Barberis, N., Shleifer, A., & Vishny, R. (1998). A model of investor sentiment. *Journal of Financial Economics*, 49(3), 307–343.
-- Brier, G. W. (1950). Verification of forecasts expressed in terms of probability. *Monthly Weather Review*, 78(1), 1–3.
-- Chan, W. S. (2003). Stock price reaction to news and no-news: drift and reversal after headlines. *Journal of Financial Economics*, 70(2), 223–260.
-- Daniel, K., Hirshleifer, D., & Subrahmanyam, A. (1998). Investor psychology and security market under- and overreactions. *Journal of Finance*, 53(6), 1839–1885.
-- Frydman, C., & Camerer, C. F. (2016). The psychology and neuroscience of financial decision making. *Trends in Cognitive Sciences*, 20(9), 661–675.
-- Gneiting, T., & Raftery, A. E. (2007). Strictly proper scoring rules, prediction, and estimation. *Journal of the American Statistical Association*, 102(477), 359–378.
-- Hamilton, J. D. (1989). A new approach to the economic analysis of nonstationary time series and the business cycle. *Econometrica*, 57(2), 357–384.
-- Hawkes, A. G. (1971). Spectra of some self-exciting and mutually exciting point processes. *Biometrika*, 58(1), 83–90.
-- Hong, H., & Stein, J. C. (1999). A unified theory of underreaction, momentum trading, and overreaction in asset markets. *Journal of Finance*, 54(6), 2143–2184.
-- Kuhnen, C. M., & Knutson, B. (2005). The neural basis of financial risk taking. *Neuron*, 47(5), 763–770.
-- Lo, A. W. (2004). The Adaptive Markets Hypothesis. *Journal of Portfolio Management*, 30(5), 15–29.
-- Lo, A. W., & Repin, D. V. (2002). The psychophysiology of real-time financial risk processing. *Journal of Cognitive Neuroscience*, 14(3), 323–339.
-- López de Prado, M. (2018). *Advances in Financial Machine Learning*. Wiley.
-- Pesaran, M. H., & Timmermann, A. (1992). A simple nonparametric test of predictive performance. *Journal of Business & Economic Statistics*, 10(4), 461–465.
-- Diebold, F. X., & Mariano, R. S. (1995). Comparing predictive accuracy. *Journal of Business & Economic Statistics*, 13(3), 253–263.
-- Kelly, J. L. (1956). A new interpretation of information rate. *Bell System Technical Journal*, 35(4), 917–926.
+- Ante, L. (2023). How Elon Musk's Twitter activity moves cryptocurrency markets. *Technological Forecasting and Social Change*, *186*, 122112.
+- Bacry, E., Mastromatteo, I., & Muzy, J.-F. (2015). Hawkes processes in finance. *Market Microstructure and Liquidity*, *1*(1), 1550005.
+- Bailey, D. H., Borwein, J. M., López de Prado, M., & Zhu, Q. J. (2014). Pseudo-mathematics and financial charlatanism: The effects of backtest overfitting on out-of-sample performance. *Notices of the AMS*, *61*(5), 458–471.
+- Barber, B. M., Huang, X., Odean, T., & Schwarz, C. (2022). Attention-induced trading and returns: Evidence from Robinhood users. *Journal of Finance*, *77*(6), 3141–3190.
+- Barberis, N., Shleifer, A., & Vishny, R. (1998). A model of investor sentiment. *Journal of Financial Economics*, *49*(3), 307–343.
+- Benjamini, Y., & Hochberg, Y. (1995). Controlling the false discovery rate: A practical and powerful approach to multiple testing. *Journal of the Royal Statistical Society B*, *57*(1), 289–300.
+- Bernard, V. L., & Thomas, J. K. (1989). Post-earnings-announcement drift: Delayed price response or risk premium? *Journal of Accounting Research*, 27 (Suppl.), 1–36.
+- Bernstein, W. J., & Wilkinson, D. (1997). *Diversification, rebalancing, and the geometric mean frontier* [Working paper]. SSRN. https://ssrn.com/abstract=53503
+- Bloomberg. (2026, August 20). *Bitcoin surges, Coinbase and Circle stocks extend gains on Trump support*. https://www.bloomberg.com/news/articles/2026-08-20/crypto-stocks-set-to-extend-gains-on-trump-push-dollar-slump
+- Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. *Journal of Computational Science*, *2*(1), 1–8.
+- Brier, G. W. (1950). Verification of forecasts expressed in terms of probability. *Monthly Weather Review*, *78*(1), 1–3.
+- Brock, W., Lakonishok, J., & LeBaron, B. (1992). Simple technical trading rules and the stochastic properties of stock returns. *Journal of Finance*, *47*(5), 1731–1764.
+- Burke, C. J., Tobler, P. N., Schultz, W., & Baddeley, M. (2010). Striatal BOLD response reflects the impact of herd information on financial decisions. *Frontiers in Human Neuroscience*, *4*, 48.
+- Campbell-Meiklejohn, D. K., Bach, D. R., Roepstorff, A., Dolan, R. J., & Frith, C. D. (2010). How the opinion of others affects our valuation of objects. *Current Biology*, *20*(13), 1165–1170.
+- Chan, W. S. (2003). Stock price reaction to news and no-news: Drift and reversal after headlines. *Journal of Financial Economics*, *70*(2), 223–260.
+- CNBC. (2026, August 20). *Bitcoin surges 12% in two days as Trump, crypto execs lead last ditch effort for Clarity Act*. https://www.cnbc.com/2026/08/20/bitcoin-surges-as-trump-crypto-execs-lead-final-push-for-clarity-act.html
+- Cookson, J. A., & Niessner, M. (2020). Why don't we agree? Evidence from a social network of investors. *Journal of Finance*, *75*(1), 173–228.
+- Corbet, S., Lucey, B., Urquhart, A., & Yarovaya, L. (2019). Cryptocurrencies as a financial asset: A systematic analysis. *International Review of Financial Analysis*, *62*, 182–199.
+- Da, Z., Engelberg, J., & Gao, P. (2011). In search of attention. *Journal of Finance*, *66*(5), 1461–1499.
+- Daniel, K., Hirshleifer, D., & Subrahmanyam, A. (1998). Investor psychology and security market under- and overreactions. *Journal of Finance*, *53*(6), 1839–1885.
+- Diebold, F. X., & Mariano, R. S. (1995). Comparing predictive accuracy. *Journal of Business & Economic Statistics*, *13*(3), 253–263.
+- Farmer, J. D., & Sidorowich, J. J. (1987). Predicting chaotic time series. *Physical Review Letters*, *59*(8), 845–848.
+- Frazzini, A. (2006). The disposition effect and underreaction to news. *Journal of Finance*, *61*(4), 2017–2046.
+- Frydman, C., & Camerer, C. F. (2016). The psychology and neuroscience of financial decision making. *Trends in Cognitive Sciences*, *20*(9), 661–675.
+- Gneiting, T., & Raftery, A. E. (2007). Strictly proper scoring rules, prediction, and estimation. *Journal of the American Statistical Association*, *102*(477), 359–378.
+- Hallerbach, W. G. (2014). Disentangling rebalancing return. *Journal of Asset Management*, *15*(5), 301–316.
+- Hamilton, J. D. (1989). A new approach to the economic analysis of nonstationary time series and the business cycle. *Econometrica*, *57*(2), 357–384.
+- Hawkes, A. G. (1971). Spectra of some self-exciting and mutually exciting point processes. *Biometrika*, *58*(1), 83–90.
+- Hirshleifer, D., Lim, S. S., & Teoh, S. H. (2009). Driven to distraction: Extraneous events and underreaction to earnings news. *Journal of Finance*, *64*(5), 2289–2325.
+- Hong, H., & Stein, J. C. (1999). A unified theory of underreaction, momentum trading, and overreaction in asset markets. *Journal of Finance*, *54*(6), 2143–2184.
+- Hong, H., Lim, T., & Stein, J. C. (2000). Bad news travels slowly: Size, analyst coverage, and the profitability of momentum strategies. *Journal of Finance*, *55*(1), 265–295.
+- Kelly, J. L. (1956). A new interpretation of information rate. *Bell System Technical Journal*, *35*(4), 917–926.
+- Klucharev, V., Hytönen, K., Rijpkema, M., Smidts, A., & Fernández, G. (2009). Reinforcement learning signal predicts social conformity. *Neuron*, *61*(1), 140–151.
+- Knutson, B., & Bossaerts, P. (2007). Neural antecedents of financial decisions. *Journal of Neuroscience*, *27*(31), 8174–8177.
+- Kuhnen, C. M., & Knutson, B. (2005). The neural basis of financial risk taking. *Neuron*, *47*(5), 763–770.
+- Liu, Y., & Tsyvinski, A. (2021). Risks and returns of cryptocurrency. *Review of Financial Studies*, *34*(6), 2689–2727.
+- Lo, A. W., & MacKinlay, A. C. (1988). Stock market prices do not follow random walks: Evidence from a simple specification test. *Review of Financial Studies*, *1*(1), 41–66.
+- Lo, A. W., & Repin, D. V. (2002). The psychophysiology of real-time financial risk processing. *Journal of Cognitive Neuroscience*, *14*(3), 323–339.
+- Lo, A. W. (2004). The Adaptive Markets Hypothesis. *Journal of Portfolio Management*, *30*(5), 15–29.
+- Lorenz, E. N. (1969). Atmospheric predictability as revealed by naturally occurring analogues. *Journal of the Atmospheric Sciences*, *26*(4), 636–646.
+- López de Prado, M. (2018). *Advances in financial machine learning*. Wiley.
 - Merton, R. C. (1976). Option pricing when underlying stock returns are discontinuous. *Journal of Financial Economics*, 3(1–2), 125–144.
-- Preuschoff, K., Bossaerts, P., & Quartz, S. R. (2006). Neural differentiation of expected reward and risk in human subcortical structures. *Neuron*, 51(3), 381–390.
-- Schultz, W., Dayan, P., & Montague, P. R. (1997). A neural substrate of prediction and reward. *Science*, 275(5306), 1593–1599.
-- Tetlock, P. C. (2007). Giving content to investor sentiment: the role of media in the stock market. *Journal of Finance*, 62(3), 1139–1168.
-- Wilson, E. B. (1927). Probable inference, the law of succession, and statistical inference. *Journal of the American Statistical Association*, 22(158), 209–212.
-- News sources for the case study: CNBC (2026-08-20) "Bitcoin surges 12% in two days as Trump, crypto execs lead last ditch effort for Clarity Act"; Forbes (2026-08-20) "Bitcoin soars above \$70,000 after Trump calls for passage of Clarity Act at White House crypto event"; Bloomberg (2026-08-20) "Bitcoin surges, Coinbase and Circle stocks extend gains on Trump support".
-
----
+- Newey, W. K., & West, K. D. (1987). A simple, positive semi-definite, heteroskedasticity and autocorrelation consistent covariance matrix. *Econometrica*, *55*(3), 703–708.
+- Pedersen, L. H. (2022). Game on: Social networks and markets. *Journal of Financial Economics*, *146*(3), 1097–1119.
+- Perold, A. F., & Sharpe, W. F. (1988). Dynamic strategies for asset allocation. *Financial Analysts Journal*, *44*(1), 16–27.
+- Pesaran, M. H., & Timmermann, A. (1992). A simple nonparametric test of predictive performance. *Journal of Business & Economic Statistics*, *10*(4), 461–465.
+- Preuschoff, K., Bossaerts, P., & Quartz, S. R. (2006). Neural differentiation of expected reward and risk in human subcortical structures. *Neuron*, *51*(3), 381–390.
+- Ranco, G., Aleksovski, D., Caldarelli, G., Grčar, M., & Mozetič, I. (2015). The effects of Twitter sentiment on stock price returns. *PLoS ONE*, *10*(9), e0138441.
+- Ray, S. (2026, August 20). Bitcoin soars above $70,000 after Trump calls for passage of Clarity Act at White House crypto event. *Forbes*. https://www.forbes.com/sites/siladityaray/2026/08/20/bitcoin-soars-above-70000-after-trump-calls-for-passage-of-clarity-act-at-white-house-crypto-event/
+- Schultz, W., Dayan, P., & Montague, P. R. (1997). A neural substrate of prediction and reward. *Science*, *275*(5306), 1593–1599.
+- Shiller, R. J. (2017). Narrative economics. *American Economic Review*, *107*(4), 967–1004.
+- Sullivan, R., Timmermann, A., & White, H. (1999). Data-snooping, technical trading rule performance, and the bootstrap. *Journal of Finance*, *54*(5), 1647–1691.
+- Tetlock, P. C. (2007). Giving content to investor sentiment: The role of media in the stock market. *Journal of Finance*, *62*(3), 1139–1168.
+- Timmermann, A. (2018). Forecasting methods in finance. *Annual Review of Financial Economics*, *10*, 449–479.
+- Urquhart, A. (2016). The inefficiency of Bitcoin. *Economics Letters*, *148*, 80–82.
+- Welch, I., & Goyal, A. (2008). A comprehensive look at the empirical performance of equity premium prediction. *Review of Financial Studies*, *21*(4), 1455–1508.
+- Wilson, E. B. (1927). Probable inference, the law of succession, and statistical inference. *Journal of the American Statistical Association*, *22*(158), 209–212.
 
 ## Appendix A. Reproduction
 
@@ -716,14 +716,41 @@ Data deposit: Zenodo DOI 10.5281/zenodo.22308637 (derived outputs, published sig
 
 ## Appendix C. Output files
 
-`research/output/`: `forecasts_{bito,btc}.csv` (one row per origin×horizon with forecast, realized outcome, scores and event flags), `origins_*.csv`, `days_*.csv`, `events_*.csv` (per-shock table incl. continuation and latency), `summary_*.json`, `robustness.json`, `news_events.json`, `effectiveness.json`, `asset_types.{csv,json}`, `action_policies.json`, `policy_nav_*.csv`, `scheduled_events.json`, `earnings_dates.csv`, `multiplicity.{csv,json}`, `stock_events_catalogue.{csv,json}`, `stock_events_by_category.json` (report: `research/STOCK_EVENTS.md`), `predictability_gap.{csv,json}`, `universe_cross_section.{csv,json}`, `gate_experiment.json`, `gate_experiment_universe.json`, `entry_delay.csv`, `entry_rule_backtest.json`, `rebalancing.json`, `dashboard_as_displayed_2026.csv`, `reproduction_fidelity.json`, `figures/fig1–fig11.png` (Fig. 9 is split into 9a return process and 9b news response; Fig. 12 cross-section; Fig. 13 gate effects).
+All files are written to `research/output/`:
+
+- `forecasts_{bito,btc}.csv` — one row per origin×horizon with forecast, realized outcome, scores and event flags
+- `origins_*.csv`
+- `days_*.csv`
+- `events_*.csv` — per-shock table incl. continuation and latency
+- `summary_*.json`
+- `robustness.json`
+- `news_events.json`
+- `effectiveness.json`
+- `asset_types.{csv,json}`
+- `action_policies.json`
+- `policy_nav_*.csv`
+- `scheduled_events.json`
+- `earnings_dates.csv`
+- `multiplicity.{csv,json}`
+- `stock_events_catalogue.{csv,json}`
+- `stock_events_by_category.json` — report: `research/STOCK_EVENTS.md`
+- `predictability_gap.{csv,json}`
+- `universe_cross_section.{csv,json}`
+- `gate_experiment.json`
+- `gate_experiment_universe.json`
+- `entry_delay.csv`
+- `entry_rule_backtest.json`
+- `rebalancing.json`
+- `dashboard_as_displayed_2026.csv`
+- `reproduction_fidelity.json`
+- `figures/fig1–fig11.png` — Fig. 9 is split into 9a return process and 9b news response; Fig. 12 cross-section; Fig. 13 gate effects
 
 ## Appendix D. Robustness: unfrozen engine
 
 Because pre-2026 signals are the deployed algorithm's own walk-forward output rather than archived forecasts, we repeated the full protocol on frames in which *no* published signal is frozen (the engine regenerates every day, including 2026). Conclusions are unchanged.
 
 | | BITO frozen | BITO unfrozen | SPXL frozen | SPXL unfrozen |
-|---|---|---|---|---|
+|-----------------------------------|-----------|-----------|-----------|-----------|
 | $h$=1 / $h$=7 hit | .506 / .479 | .511 / .481 | .527 / .594 | .526 / .590 |
 | shock-window / calm hit | .359 / .501 | .362 / .502 | .337 / .599 | .334 / .598 |
 | pre-event $h$=1 hit | .375 | .396 | .385 | .385 |
@@ -732,12 +759,12 @@ Because pre-2026 signals are the deployed algorithm's own walk-forward output ra
 
 ## Appendix E. Portfolio policies (supplementary illustration)
 
-Adjusted daily closes, 5 bp per unit turnover. SPY/TLT 2016-01 → 2026-08; BTC/TLT 2021-01 → 2026-08. "Band ±5 pp" rebalances to 60/40 whenever the stock weight drifts more than five points (sell bonds after falls, sell stocks after rises); "shock tilt" adds a 70/30 tilt for seven sessions after a $|z|\ge2.5$ down session. One decade, one bond proxy and no test of Sharpe differences: an illustration of the type argument, not an asset-allocation result.
+Adjusted daily closes, 5 bp per unit turnover. SPY/TLT 2016-01 → 2026-08; BTC/TLT 2021-01 → 2026-08. "Band ±5 pp" rebalances to 60/40 whenever the stock weight drifts more than five points (sell bonds after falls, sell stocks after rises); "shock tilt" adds a 70/30 tilt for seven sessions after a $|z|\ge2.5$ down session. TLT is the iShares 20+ Year Treasury Bond ETF, so the pair is the classic stock–bond hedge, and the rebalancing rules trade against the last move: they sell the leg that rose and buy the leg that fell, never a fixed split held passively (that is the buy-and-hold row, reported as the baseline). The hedge itself was not stable over the sample. The daily-return correlation between SPY and TLT was −0.37 to −0.46 in 2016–2020, −0.14 in 2021 and +0.06 to +0.33 in every year from 2022 to 2026; on SPY's worst 5% of sessions TLT rose 69% of the time over the full sample but only 45% in 2022, when both legs fell. Rebalancing can harvest the oscillation between two assets; it cannot restore a hedge that has stopped hedging, which is why the rebalanced portfolios below cut volatility without adding return on SPY/TLT. One decade, one bond proxy and no test of Sharpe differences: an illustration of the type argument, not an asset-allocation result.
 
 **Table 21. 60/40 policies.**
 
 | pair | policy | CAGR % | vol % | Sharpe | max DD % | worst year | rebalances |
-|---|---|---|---|---|---|---|---|
+|-------|----------------------------------------|----|----|------|-----|------------|----------|
 | SPY/TLT | 100% SPY | 15.2 | 17.5 | 0.90 | -33.8 | 2022: -18.2% | 0 |
 | SPY/TLT | 100% TLT | -0.8 | 14.7 | 0.02 | -48.4 | 2022: -31.2% | 0 |
 | SPY/TLT | 60/40 buy-and-hold (drift) | 11.1 | 12.4 | 0.91 | -26.4 | 2022: -21.6% | 0 |
