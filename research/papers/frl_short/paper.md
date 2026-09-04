@@ -2,7 +2,7 @@
 
 **Target: *Finance Research Letters* (short article, ≈2,500 words, 2 tables, 1 figure).** Companion to the full working paper *When the News Arrives* (arXiv, q‑fin.ST). This letter reports only the cryptocurrency results; the full paper and its code are cited for the index and single‑stock extensions.
 
-*Kibaek Kim*
+*Kibaek Kim, Kiok Kim, Danielle Ahn — dotori.ai*
 
 **Abstract.** We audit a deployed seven‑session historical‑analog forecaster that has published immutable daily signals for a Bitcoin ETF pair (BITO/BITI) since January 2026, regenerating every point‑in‑time forecast it could have issued on 1,125 (BITO) and 1,973 (BTC/USD) origins with the production code. Interval calibration is good in calm conditions (78–82% coverage of nominal‑80% bands) but directional accuracy is 46–51% at every horizon and never passes the Pesaran–Timmermann test, and the Brier score is significantly worse than a constant ½ forecast. Conditioning on information arrivals reverses the sign of what little the model does: the day before a |z|≥2.5 shock its next‑session accuracy is 37% (BTC, *p*=0.011), on headline‑spike days 39% (*p*=0.04), and its bands cover none of the shock outcomes. Prices then drift a further 3.0% in the shock direction over seven sessions (*t*=3.06) while the model's consensus takes a median of six sessions to agree. The 2026‑08‑19 White House crypto summit (+21% in three sessions), on which the model recommended a fully inverse position, is the textbook case. Five percent of sessions carry 35% of return variance and are unpredictable in sign from prices: this bounds any price‑conditioned forecaster near the coin, and explains why advertised 60–70% accuracies are ceilings rather than averages.
 
@@ -61,7 +61,7 @@ A live Bitcoin forecaster is interval‑calibrated but directionally uninformati
 
 **Figure 1.** Point‑in‑time forecast issued 2026‑08‑18 (P10–P90 band, median) against realized BITO and BTC closes; the dash‑dot line marks the Aug 19 summit. *(research/output/figures/fig1_august_fan_chart.png)*
 
-**Data and code.** Derived data, event catalogues, forecast scores and figures are deposited at Zenodo (DOI [10.5281/zenodo.22308637](https://doi.org/10.5281/zenodo.22308637), CC BY 4.0). Raw price bars (Alpaca Market Data) and news items (Benzinga via Alpaca) are licensed and not redistributed; SHA-256 hashes and the exact retrieval commands are included in the deposit, and all inputs regenerate from the code at https://github.com/hyper07/finance-signal (`research/`). **Conflict of interest.** The author operates the service whose forecasts are evaluated; rules were fixed before scoring and the model was not changed during the study.
+**Data and code.** Derived data, event catalogues, forecast scores and figures are deposited at Zenodo (DOI [10.5281/zenodo.22308637](https://doi.org/10.5281/zenodo.22308637), CC BY 4.0). Raw price bars (Alpaca Market Data) and news items (Benzinga via Alpaca) are licensed and not redistributed; SHA-256 hashes and the exact retrieval commands are included in the deposit, and all inputs regenerate from the code at https://github.com/hyper07/finance-signal (`research/`). **Conflict of interest.** The authors operate the service whose forecasts are evaluated; rules were fixed before scoring and the model was not changed during the study.
 
 ## References
 

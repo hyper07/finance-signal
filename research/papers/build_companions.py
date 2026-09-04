@@ -25,12 +25,12 @@ def build(folder: str) -> None:
         print("missing", src); return
     title, venue = META[folder]
     lines = src.read_text().splitlines()
-    body = "\n".join(l for l in lines[1:] if not l.startswith("**Target:"))
+    body = "\n".join(l for l in lines[1:] if not l.startswith("**Target:") and not l.startswith("*Kibaek Kim, Kiok Kim"))
     body = sanitize(body)
     tex = pypandoc.convert_text(
         body, "latex", format="markdown+tex_math_dollars+pipe_tables",
         extra_args=["--standalone", "--wrap=none", "--shift-heading-level-by=-1", "-V", "geometry:margin=1in", "-V", "fontsize=11pt",
-                    "-V", "documentclass=article", "-M", f"title={title}", "-M", "author=Kibaek Kim", "-M", f"date={venue} — draft 2026-09-04",
+                    "-V", "documentclass=article", "-M", f"title={title}", "-M", "author=Kibaek Kim, Kiok Kim, Danielle Ahn", "-M", f"date={venue} — draft 2026-09-04",
                     "-V", "colorlinks=true", "-V", "header-includes=\\usepackage{booktabs}\\usepackage{longtable}\\usepackage{graphicx}"],
     )
     out = HERE / folder / "paper.tex"

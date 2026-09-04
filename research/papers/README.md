@@ -1,5 +1,7 @@
 # Submission package
 
+**Authors:** Kibaek Kim, Kiok Kim, Danielle Ahn (dotori.ai). Kibaek Kim is corresponding author. The author list matches the data deposit (Zenodo 10.5281/zenodo.22308637).
+
 Four manuscripts derived from one study, each aimed at a different venue. They share
 code, data and the deposit manifest (`../DATA_DEPOSIT.md`); they do **not** share
 text beyond the method summary, and no two are under review at the same venue.

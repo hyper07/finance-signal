@@ -38,14 +38,14 @@ def main() -> None:
     title = lines[0].lstrip("# ").strip()
     body = "\n".join(lines[1:])
     body = re.sub(r"^\*\*Working paper[^\n]*\n", "", body, flags=re.M)
-    body = re.sub(r"^\*Author: Kibaek Kim\.\*[^\n]*\n", "", body, flags=re.M)
+    body = re.sub(r"^\*Kibaek Kim, Kiok Kim, Danielle Ahn[^\n]*\*\n", "", body, flags=re.M)
     body = body.replace("<<MULTIPLICITY_METHODS_END>>", "")
     body = sanitize(body)
     tex = pypandoc.convert_text(
         body, "latex", format="markdown+tex_math_dollars+pipe_tables",
         extra_args=["--standalone", "--wrap=none", "--shift-heading-level-by=-1", "-V", "geometry:margin=1in", "-V", "fontsize=11pt",
                     "-V", "documentclass=article", "-V", "papersize=a4",
-                    "-M", f"title={title}", "-M", "author=Kibaek Kim", "-M", "date=Working paper, draft v0.3 (2026-09-04)",
+                    "-M", f"title={title}", "-M", "author=Kibaek Kim, Kiok Kim, Danielle Ahn", "-M", "date=Working paper, draft v1.0 (2026-09-04)",
                     "-V", "colorlinks=true", "-V", "header-includes=\\usepackage{booktabs}\\usepackage{longtable}\\usepackage{graphicx}\\graphicspath{{./}}"],
     )
     tex = "% Compile with: xelatex paper.tex   (or lualatex; Unicode source)\n" + tex

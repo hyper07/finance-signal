@@ -2,7 +2,7 @@
 
 **Target: *Frontiers in Behavioral Neuroscience* (Perspective) or *Frontiers in Neuroscience — Decision Neuroscience* (Perspective, ≈3,000 words, 1 figure).** Companion to *When the News Arrives* (arXiv, q‑fin.ST), which supplies the empirical motivation; this piece argues the research program.
 
-*Kibaek Kim*
+*Kibaek Kim, Kiok Kim, Danielle Ahn — dotori.ai*
 
 **Abstract.** Machine‑learning forecasters that condition on the past price path are widely deployed in retail finance. Auditing one such deployed model across cryptocurrency, an equity index and fifty single stocks shows a consistent structure: interval calibration is adequate in calm periods, directional skill is absent, and both collapse on the 3–5% of sessions when exogenous information arrives — sessions that carry roughly a third of all price variance and on which prices then drift for days in the direction of the news. The failure is not a modelling detail; it is the absence, from the model's state space, of the process that produces the move: human reaction to information, increasingly transmitted and amplified through social media. We propose a neuroeconomic program to measure that process — a population *response kernel* — through reaction‑time and arousal studies with social cues, the separation of forced from discretionary flow, and longitudinal panels, and we show how the resulting kernel can be placed inside forecasting models as a state variable and a post‑shock drift term. Predicting the news is impossible from prices; predicting how the crowd finishes reacting is a measurable neuroscience question.
 
@@ -46,7 +46,7 @@ Measuring social contagion in markets touches manipulation. Studies should be pr
 
 **Data availability.** The audit's derived data, event catalogues and scores are deposited at Zenodo (DOI [10.5281/zenodo.22308637](https://doi.org/10.5281/zenodo.22308637), CC BY 4.0); licensed raw inputs are described by hash and retrieval command in the deposit.
 
-**Conflict of interest.** The author operates the forecasting service audited in the companion paper.
+**Conflict of interest.** The authors operate the forecasting service audited in the companion paper.
 
 ## References
 

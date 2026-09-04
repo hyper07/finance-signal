@@ -80,8 +80,9 @@ research/         analysis pipeline, paper, guide, manuscripts
 
 ## Citing
 
-> Kim, K. (2026). *When the News Arrives: Calibration Failure of a Pattern-Based
-> Seven-Session Forecast Around Exogenous Information Shocks.* Working paper.
+> Kim, K., Kim, K., & Ahn, D. (2026). *When the News Arrives: Calibration Failure
+> of a Pattern-Based Seven-Session Forecast Around Exogenous Information Shocks.*
+> Working paper.
 > Data: Zenodo, https://doi.org/10.5281/zenodo.22308637
 
 ## Licence

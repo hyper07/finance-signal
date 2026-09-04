@@ -2,7 +2,9 @@
 
 **Working paper — draft v1.0 (2026-09-04).** Target: applied mathematics / quantitative finance venue (e.g. *Quantitative Finance*, *Journal of Forecasting*, *Applied Mathematical Finance*, or *Frontiers in Applied Mathematics and Statistics*).
 
-*Author: Kibaek Kim.* Code and data pipeline: `research/` in the `signal` repository (see Appendix A).
+*Kibaek Kim, Kiok Kim, Danielle Ahn — dotori.ai*
+
+Code and data pipeline: `research/` in the `signal` repository (see Appendix A).
 
 ---
 
@@ -752,4 +754,4 @@ Adjusted daily closes, 5 bp per unit turnover. SPY/TLT 2016-01 → 2026-08; BTC/
 
 ## Conflict of interest and disclosure
 
-The author operates the signal.dotori.ai service whose forecasts are evaluated here. The study was designed after the 2026-08-19 event; all rules were fixed before scoring (Section 3.6); no change was made to the deployed model during the study; and the code, data manifest (`research/DATA_DEPOSIT.md`) and outputs are released so that the evaluation can be repeated by third parties.
+The authors operate the signal.dotori.ai service whose forecasts are evaluated here. The study was designed after the 2026-08-19 event; all rules were fixed before scoring (Section 3.6); no change was made to the deployed model during the study; and the code, data manifest (`research/DATA_DEPOSIT.md`) and outputs are released so that the evaluation can be repeated by third parties.
