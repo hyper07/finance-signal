@@ -27,6 +27,10 @@ TEXT_MAP = {
     "−": "-", "½": r"$\tfrac12$", "·": r"\textperiodcentered{}", "≠": r"$\ne$",
     "†": r"$\dagger$", "✓": r"$\checkmark$", "÷": r"$\div$", "α": r"$\alpha$", "β": r"$\beta$", "μ": r"$\mu$", "ε": r"$\varepsilon$", "τ": r"$\tau$", "ξ": r"$\xi$", "π": r"$\pi$", "θ": r"$\theta$", "χ": r"$\chi$", "λ": r"$\lambda$", "∈": r"$\in$", "∑": r"$\sum$", "√": r"$\surd$", "∞": r"$\infty$",
 }
+# pandoc drops $...$ when a digit follows the closing dollar ("0.49$\\to$0.68"), so
+# math-mode replacements go in as raw LaTeX (raw_attribute extension)
+TEXT_MAP = {k: (f"`{v}`{{=latex}}" if v.startswith("$") else v) for k, v in TEXT_MAP.items()}
+
 MATH_SPLIT = re.compile(r"(\$\$.*?\$\$|\$[^$\n]+?\$)", re.S)
 
 
@@ -44,6 +48,7 @@ HEADER = (
     "\\RecustomVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\\footnotesize,breaklines=true,breakanywhere=true}"
     "\\usepackage[htt]{hyphenat}"                      # allow hyphenation inside \\texttt
     "\\usepackage{pdflscape}"                          # wide tables rotate to a landscape page
+    "\\usepackage{caption}\\captionsetup[figure]{labelformat=empty}"   # captions already say "Figure N."
     "\\sloppy\\setlength{\\emergencystretch}{3em}"    # prefer loose lines to margin overflow
     "\\setlength{\\tabcolsep}{4pt}"
 )

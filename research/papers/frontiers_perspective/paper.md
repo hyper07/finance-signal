@@ -53,7 +53,7 @@ Measuring social contagion in markets touches manipulation. Studies should be pr
 Ante, L. (2023). How Elon Musk's Twitter activity moves cryptocurrency markets. *Technological Forecasting and Social Change*, *186*, 122112.
 Bacry, E., Mastromatteo, I., & Muzy, J.‑F. (2015). Hawkes processes in finance. *Market Microstructure and Liquidity*, *1*(1), 1550005.
 Barber, B. M., Huang, X., Odean, T., & Schwarz, C. (2022). Attention‑induced trading and returns: Evidence from Robinhood users. *Journal of Finance*, *77*(6), 3141–3190.
-Bernard, V. L., & Thomas, J. K. (1989). Post‑earnings‑announcement drift. *Journal of Accounting Research*, 27 (Suppl.), 1–36.
+Bernard, V. L., & Thomas, J. K. (1989). Post‑earnings‑announcement drift. *Journal of Accounting Research*, *27*(Suppl.), 1–36.
 Burke, C. J., Tobler, P. N., Schultz, W., & Baddeley, M. (2010). Striatal BOLD response reflects the impact of herd information on financial decisions. *Frontiers in Human Neuroscience*, *4*, 48.
 Campbell‑Meiklejohn, D. K., Bach, D. R., Roepstorff, A., Dolan, R. J., & Frith, C. D. (2010). How the opinion of others affects our valuation of objects. *Current Biology*, *20*(13), 1165–1170.
 Chan, W. S. (2003). Stock price reaction to news and no‑news. *Journal of Financial Economics*, *70*(2), 223–260.
@@ -69,7 +69,7 @@ Knutson, B., & Bossaerts, P. (2007). Neural antecedents of financial decisions. 
 Kuhnen, C. M., & Knutson, B. (2005). The neural basis of financial risk taking. *Neuron*, *47*(5), 763–770.
 Lo, A. W., & Repin, D. V. (2002). The psychophysiology of real‑time financial risk processing. *Journal of Cognitive Neuroscience*, *14*(3), 323–339.
 Lo, A. W. (2004). The Adaptive Markets Hypothesis. *Journal of Portfolio Management*, *30*(5), 15–29.
-Merton, R. C. (1976). Option pricing when underlying stock returns are discontinuous. *Journal of Financial Economics*, 3(1–2), 125–144.
+Merton, R. C. (1976). Option pricing when underlying stock returns are discontinuous. *Journal of Financial Economics*, *3*(1–2), 125–144.
 Pedersen, L. H. (2022). Game on: Social networks and markets. *Journal of Financial Economics*, *146*(3), 1097–1119.
 Preuschoff, K., Bossaerts, P., & Quartz, S. R. (2006). Neural differentiation of expected reward and risk in human subcortical structures. *Neuron*, *51*(3), 381–390.
 Schultz, W., Dayan, P., & Montague, P. R. (1997). A neural substrate of prediction and reward. *Science*, *275*(5306), 1593–1599.

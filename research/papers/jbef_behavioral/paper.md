@@ -138,7 +138,7 @@ After information arrives, prices behave in type‑specific ways that people hav
 Ante, L. (2023). How Elon Musk's Twitter activity moves cryptocurrency markets. *Technological Forecasting and Social Change*, *186*, 122112.
 Barber, B. M., Huang, X., Odean, T., & Schwarz, C. (2022). Attention‑induced trading and returns: Evidence from Robinhood users. *Journal of Finance*, *77*(6), 3141–3190.
 Barberis, N., Shleifer, A., & Vishny, R. (1998). A model of investor sentiment. *Journal of Financial Economics*, *49*(3), 307–343.
-Bernard, V. L., & Thomas, J. K. (1989). Post‑earnings‑announcement drift: Delayed price response or risk premium? *Journal of Accounting Research*, 27 (Suppl.), 1–36.
+Bernard, V. L., & Thomas, J. K. (1989). Post‑earnings‑announcement drift: Delayed price response or risk premium? *Journal of Accounting Research*, *27*(Suppl.), 1–36.
 Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. *Journal of Computational Science*, *2*(1), 1–8.
 Burke, C. J., Tobler, P. N., Schultz, W., & Baddeley, M. (2010). Striatal BOLD response reflects the impact of herd information on financial decisions. *Frontiers in Human Neuroscience*, *4*, 48.
 Campbell‑Meiklejohn, D. K., Bach, D. R., Roepstorff, A., Dolan, R. J., & Frith, C. D. (2010). How the opinion of others affects our valuation of objects. *Current Biology*, *20*(13), 1165–1170.

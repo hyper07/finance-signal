@@ -346,7 +346,7 @@ To see what the single-stock shocks *are*, every $|z|\ge2.5$ increase of the fou
 | NVDA | 2016-11-11 | +29.8 | 14.1 | earnings | earnings report | 0.57, [-2.0, +2.1] | Hold | -4.9 / +4.2 / +6.5 |
 | NVDA | 2017-05-10 | +17.8 | 11.8 | earnings | earnings report | 0.55, [-1.8, +2.8] | Hold | +4.3 / +10.7 / +12.2 |
 | NVDA | 2023-05-25 | +24.4 | 11.2 | earnings | earnings report | 0.55, [-2.1, +3.0] | Hold | +2.5 / -0.4 / +1.8 |
-| TSLA | 2011-03-31 | +17.0 | 10.2 | idiosyncratic | Morgan Stanley (Adam Jonas) upgraded Tesla to Overweight with a $70 target, calling it 'America | 0.50, [-2.0, +2.3] | Hold | -3.9 / -3.8 / -8.9 |
+| TSLA | 2011-03-31 | +17.0 | 10.2 | idiosyncratic | Morgan Stanley (Adam Jonas) upgraded Tesla to Overweight with a $70 target, calling it 'America's fourth automaker' | 0.50, [-2.0, +2.3] | Hold | -3.9 / -3.8 / -8.9 |
 | TSLA | 2021-10-25 | +12.7 | 9.2 | idiosyncratic | Hertz ordered 100,000 Teslas (~$4bn); market value passed $1 trillion | 0.58, [-2.3, +2.4] | Buy (aligned) | -0.6 / +5.1 / +18.4 |
 | TSLA | 2019-10-24 | +17.7 | 8.5 | earnings | earnings report | 0.53, [-2.9, +2.7] | Hold | +9.5 / +5.5 / +5.9 |
 
@@ -628,7 +628,7 @@ Evaluated exhaustively and point-in-time, a deployed seven-session analog foreca
 - Barber, B. M., Huang, X., Odean, T., & Schwarz, C. (2022). Attention-induced trading and returns: Evidence from Robinhood users. *Journal of Finance*, *77*(6), 3141–3190.
 - Barberis, N., Shleifer, A., & Vishny, R. (1998). A model of investor sentiment. *Journal of Financial Economics*, *49*(3), 307–343.
 - Benjamini, Y., & Hochberg, Y. (1995). Controlling the false discovery rate: A practical and powerful approach to multiple testing. *Journal of the Royal Statistical Society B*, *57*(1), 289–300.
-- Bernard, V. L., & Thomas, J. K. (1989). Post-earnings-announcement drift: Delayed price response or risk premium? *Journal of Accounting Research*, 27 (Suppl.), 1–36.
+- Bernard, V. L., & Thomas, J. K. (1989). Post-earnings-announcement drift: Delayed price response or risk premium? *Journal of Accounting Research*, *27*(Suppl.), 1–36.
 - Bernstein, W. J., & Wilkinson, D. (1997). *Diversification, rebalancing, and the geometric mean frontier* [Working paper]. SSRN. https://ssrn.com/abstract=53503
 - Bloomberg. (2026, August 20). *Bitcoin surges, Coinbase and Circle stocks extend gains on Trump support*. https://www.bloomberg.com/news/articles/2026-08-20/crypto-stocks-set-to-extend-gains-on-trump-push-dollar-slump
 - Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. *Journal of Computational Science*, *2*(1), 1–8.
@@ -663,7 +663,7 @@ Evaluated exhaustively and point-in-time, a deployed seven-session analog foreca
 - Lo, A. W. (2004). The Adaptive Markets Hypothesis. *Journal of Portfolio Management*, *30*(5), 15–29.
 - Lorenz, E. N. (1969). Atmospheric predictability as revealed by naturally occurring analogues. *Journal of the Atmospheric Sciences*, *26*(4), 636–646.
 - López de Prado, M. (2018). *Advances in financial machine learning*. Wiley.
-- Merton, R. C. (1976). Option pricing when underlying stock returns are discontinuous. *Journal of Financial Economics*, 3(1–2), 125–144.
+- Merton, R. C. (1976). Option pricing when underlying stock returns are discontinuous. *Journal of Financial Economics*, *3*(1–2), 125–144.
 - Newey, W. K., & West, K. D. (1987). A simple, positive semi-definite, heteroskedasticity and autocorrelation consistent covariance matrix. *Econometrica*, *55*(3), 703–708.
 - Pedersen, L. H. (2022). Game on: Social networks and markets. *Journal of Financial Economics*, *146*(3), 1097–1119.
 - Perold, A. F., & Sharpe, W. F. (1988). Dynamic strategies for asset allocation. *Financial Analysts Journal*, *44*(1), 16–27.
