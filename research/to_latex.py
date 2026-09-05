@@ -29,6 +29,7 @@ TEXT_MAP = {
 }
 # pandoc drops $...$ when a digit follows the closing dollar ("0.49$\\to$0.68"), so
 # math-mode replacements go in as raw LaTeX (raw_attribute extension)
+TEXT_MAP.update({"č": r"\v{c}", "ć": r"\'{c}", "š": r"\v{s}", "ž": r"\v{z}", "ř": r"\v{r}", "ě": r"\v{e}", "ő": r"\H{o}", "ł": r"\l{}"})   # accents outside T1-safe set
 TEXT_MAP = {k: (f"`{v}`{{=latex}}" if v.startswith("$") else v) for k, v in TEXT_MAP.items()}
 
 MATH_SPLIT = re.compile(r"(\$\$.*?\$\$|\$[^$\n]+?\$)", re.S)
