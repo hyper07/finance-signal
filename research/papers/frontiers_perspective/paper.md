@@ -63,7 +63,7 @@ Frydman, C., & Camerer, C. F. (2016). The psychology and neuroscience of financi
 Hawkes, A. G. (1971). Spectra of some self‑exciting and mutually exciting point processes. *Biometrika*, *58*(1), 83–90.
 Hong, H., & Stein, J. C. (1999). A unified theory of underreaction, momentum trading, and overreaction. *Journal of Finance*, *54*(6), 2143–2184.
 Hong, H., Lim, T., & Stein, J. C. (2000). Bad news travels slowly. *Journal of Finance*, *55*(1), 265–295.
-Kim, K., Kim, K., & Ahn, D. (2026). *When the news arrives: Calibration failure of a pattern-based seven-session forecast around exogenous information shocks* [Working paper]. Zenodo. https://doi.org/10.5281/zenodo.22308637
+Kim, K., Kim, K., & Ahn, D. (2026). *When the news arrives: Calibration failure of a deployed price-pattern forecaster around information shocks in crypto, index and single-stock markets* [Working paper]. Zenodo. https://doi.org/10.5281/zenodo.22308637
 Klucharev, V., Hytönen, K., Rijpkema, M., Smidts, A., & Fernández, G. (2009). Reinforcement learning signal predicts social conformity. *Neuron*, *61*(1), 140–151.
 Knutson, B., & Bossaerts, P. (2007). Neural antecedents of financial decisions. *Journal of Neuroscience*, *27*(31), 8174–8177.
 Kuhnen, C. M., & Knutson, B. (2005). The neural basis of financial risk taking. *Neuron*, *47*(5), 763–770.
