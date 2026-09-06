@@ -30,8 +30,8 @@ OUT = HERE / "output"
 NEWS_START = pd.Timestamp("2024-02-01")
 CRYPTO_SYMS = {"BTCUSD", "BITO", "IBIT", "BITI", "MSTR", "COIN", "ETHUSD", "GBTC", "FBTC", "MARA", "RIOT"}
 CRYPTO_WORDS = re.compile(r"bitcoin|crypto|btc|stablecoin|digital asset|ether", re.I)
-DECLINE_WORDS = re.compile(r"plunge|crash|drop|sell-?off|tumble|liquidat|outflow|dip|bloodbath|slump|fall|nosedive|wipe|rout|freefall|low", re.I)
-GENERIC = re.compile(r"^stock market today|what's moving markets|futures", re.I)
+DECLINE_WORDS = re.compile(r"plunge|crash|drop|sell ?-?off|tumble|liquidat|outflow|dip|bloodbath|slump|fall|nosedive|wipe|rout|freefall|low|escalat|tariff|yields jump|worst", re.I)
+GENERIC = re.compile(r"^stock market today", re.I)   # pre-market futures notes; end-of-day wraps are explanatory
 COMMENTARY = re.compile(r"schiff|kiyosaki|saylor|scorecard|which asset|brilliant|remember|only \d+ etfs|foresees|crushes|says|asks|polymarket|narrative|target", re.I)
 
 
