@@ -1,0 +1,58 @@
+{
+ "h=1": {
+  "n": 1973,
+  "model_coverage": 0.784,
+  "naive_coverage": 0.817,
+  "model_coverage_calm": 0.825,
+  "naive_coverage_calm": 0.86,
+  "model_coverage_shock_window": 0.0,
+  "naive_coverage_shock_window": 0.0,
+  "model_coverage_headline_spike_target": 0.684,
+  "model_width_pct": 6.4,
+  "naive_width_pct": 6.89,
+  "winkler_model": 10.675,
+  "winkler_naive": 10.586,
+  "misses_below_share": 0.482,
+  "share_of_misses_on_shock_windows": 0.23,
+  "share_of_days_that_are_shock_windows": 0.05
+ },
+ "h=3": {
+  "n": 1971,
+  "model_coverage": 0.795,
+  "naive_coverage": 0.814,
+  "model_coverage_calm": 0.877,
+  "naive_coverage_calm": 0.903,
+  "model_coverage_shock_window": 0.259,
+  "naive_coverage_shock_window": 0.24,
+  "model_coverage_headline_spike_target": 0.653,
+  "model_width_pct": 11.98,
+  "naive_width_pct": 11.94,
+  "winkler_model": 18.58,
+  "winkler_naive": 18.258,
+  "misses_below_share": 0.486,
+  "share_of_misses_on_shock_windows": 0.481,
+  "share_of_days_that_are_shock_windows": 0.133
+ },
+ "h=7": {
+  "n": 1967,
+  "model_coverage": 0.79,
+  "naive_coverage": 0.783,
+  "model_coverage_calm": 0.894,
+  "naive_coverage_calm": 0.914,
+  "model_coverage_shock_window": 0.517,
+  "naive_coverage_shock_window": 0.44,
+  "model_coverage_headline_spike_target": 0.663,
+  "model_width_pct": 19.68,
+  "naive_width_pct": 18.23,
+  "winkler_model": 30.945,
+  "winkler_naive": 29.367,
+  "misses_below_share": 0.499,
+  "share_of_misses_on_shock_windows": 0.634,
+  "share_of_days_that_are_shock_windows": 0.276
+ },
+ "h=1 miss clustering": {
+  "misses": 427,
+  "share_in_runs_of_2_or_more": 0.478,
+  "expected_if_independent": 0.386
+ }
+}
