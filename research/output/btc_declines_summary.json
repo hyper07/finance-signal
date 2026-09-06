@@ -1,0 +1,40 @@
+{
+ "lead_lag": {
+  "P(down-shock) all days": 0.0212,
+  "P(down-shock | SPY <= -1.5% previous session)": 0.0382,
+  "n SPY<=-1.5% days": 131,
+  "P(down-shock) since 2024-02": 0.0202,
+  "P(down-shock | headline ratio >= 2 day before)": 0.0316,
+  "n spike-days": 95,
+  "share of down-shocks with SPY <= -1.5% same/last session": 0.419,
+  "mean P(up) issued the day before": 0.49,
+  "share with day-before consensus Sell": 0.093,
+  "share with day-before 3-day signal Short": 0.047,
+  "share covered by day-before 10-90 band": 0.0,
+  "mean post 3d %": -0.3,
+  "mean post 7d %": -1.9
+ },
+ "by_factor": [
+  {
+   "factor": "crypto",
+   "n": 12,
+   "mean_ret": -7.88,
+   "mean_spy": -0.15,
+   "post7": -1.34
+  },
+  {
+   "factor": "macro",
+   "n": 17,
+   "mean_ret": -6.88,
+   "mean_spy": -2.12,
+   "post7": -1.29
+  },
+  {
+   "factor": "mixed",
+   "n": 14,
+   "mean_ret": -7.83,
+   "mean_spy": -1.28,
+   "post7": -3.11
+  }
+ ]
+}

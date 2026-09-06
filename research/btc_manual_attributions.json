@@ -1,0 +1,217 @@
+{
+ "2021-04-18": {
+  "cause": "Weekend flash crash: reports of a Xinjiang coal-mine power outage cutting hash rate and a rumour of U.S. Treasury money-laundering charges; about $10bn of leveraged longs liquidated",
+  "type": "crypto",
+  "confidence": "high"
+ },
+ "2021-05-12": {
+  "cause": "Elon Musk announced Tesla would stop accepting Bitcoin over energy use (evening); hot April CPI print the same day",
+  "type": "mixed",
+  "confidence": "high"
+ },
+ "2021-05-19": {
+  "cause": "China's three financial-industry associations banned institutions from offering crypto services (18 May); cascade to ~$30k with ~$8bn liquidations",
+  "type": "crypto",
+  "confidence": "high"
+ },
+ "2021-09-07": {
+  "cause": "El Salvador's Bitcoin Law took effect; flash crash with exchange outages and ~$3.5bn liquidations",
+  "type": "crypto",
+  "confidence": "high"
+ },
+ "2021-09-20": {
+  "cause": "Evergrande default fears drove a global risk-off day",
+  "type": "macro",
+  "confidence": "high"
+ },
+ "2021-11-26": {
+  "cause": "Omicron variant news; global risk-off (Black Friday sell-off)",
+  "type": "macro",
+  "confidence": "high"
+ },
+ "2022-01-21": {
+  "cause": "Fed-tightening fears and a Nasdaq correction; Russia's central bank proposed a crypto ban (20 Jan); ~$1bn liquidations",
+  "type": "mixed",
+  "confidence": "medium"
+ },
+ "2022-04-06": {
+  "cause": "FOMC minutes signalled rapid balance-sheet runoff after hawkish Brainard remarks (5 Apr)",
+  "type": "macro",
+  "confidence": "medium"
+ },
+ "2022-04-11": {
+  "cause": "Surging Treasury yields ahead of the March CPI print; broad risk-off",
+  "type": "macro",
+  "confidence": "medium"
+ },
+ "2022-05-05": {
+  "cause": "Day after the 50 bp FOMC hike; worst equity session since 2020",
+  "type": "macro",
+  "confidence": "high"
+ },
+ "2022-05-09": {
+  "cause": "TerraUSD lost its peg (7-9 May) and LUNA collapsed; coincided with a 3% equity sell-off",
+  "type": "mixed",
+  "confidence": "high"
+ },
+ "2022-06-13": {
+  "cause": "Celsius froze withdrawals (12 June) with Three Arrows Capital in distress; hot May CPI (10 June) put a 75 bp hike in play",
+  "type": "mixed",
+  "confidence": "high"
+ },
+ "2022-08-19": {
+  "cause": "Liquidation cascade (~$550m) on a strong dollar and hawkish Fed commentary; no single crypto catalyst",
+  "type": "mixed",
+  "confidence": "medium"
+ },
+ "2022-09-13": {
+  "cause": "Hot August CPI print; S&P 500 down 4.3%",
+  "type": "macro",
+  "confidence": "high"
+ },
+ "2022-11-08": {
+  "cause": "FTX liquidity crisis: FTT collapse and Binance's non-binding offer to acquire FTX",
+  "type": "crypto",
+  "confidence": "high"
+ },
+ "2022-11-09": {
+  "cause": "Binance walked away; FTX insolvent; Bitcoin fell to ~$15.6k",
+  "type": "crypto",
+  "confidence": "high"
+ },
+ "2022-12-16": {
+  "cause": "Binance withdrawal and proof-of-reserves concerns (auditor Mazars paused crypto work) in a post-FOMC risk-off",
+  "type": "mixed",
+  "confidence": "medium"
+ },
+ "2023-03-09": {
+  "cause": "Silvergate wind-down (8 Mar) and the Silicon Valley Bank run; crypto-bank contagion",
+  "type": "mixed",
+  "confidence": "high"
+ },
+ "2023-04-19": {
+  "cause": "No single catalyst identified; hawkish Fed remarks and a stronger dollar with ~$200m liquidations",
+  "type": "mixed",
+  "confidence": "low"
+ },
+ "2023-06-05": {
+  "cause": "SEC sued Binance (5 June), followed by Coinbase (6 June)",
+  "type": "crypto",
+  "confidence": "high"
+ },
+ "2023-07-14": {
+  "cause": "Reversal after the Ripple-ruling rally (13 July); no single catalyst",
+  "type": "crypto",
+  "confidence": "low"
+ },
+ "2023-08-17": {
+  "cause": "WSJ report that SpaceX wrote down its Bitcoin; Evergrande bankruptcy filing and rising yields; ~$1bn liquidations",
+  "type": "mixed",
+  "confidence": "high"
+ },
+ "2023-12-11": {
+  "cause": "Leveraged-long flush (~$500m) after the rally to $44k; no single catalyst",
+  "type": "crypto",
+  "confidence": "medium"
+ },
+ "2024-01-12": {
+  "cause": "Day after the spot-ETF launch: 'sell the news' and the start of GBTC outflows",
+  "type": "crypto",
+  "confidence": "high"
+ },
+ "2024-06-11": {
+  "cause": "ETF outflows ahead of the CPI/FOMC day",
+  "type": "macro",
+  "confidence": "medium"
+ },
+ "2024-06-24": {
+  "cause": "Mt. Gox announced creditor repayments; German government wallet sales",
+  "type": "crypto",
+  "confidence": "high"
+ },
+ "2024-07-04": {
+  "cause": "German government Bitcoin sales and the start of Mt. Gox distributions",
+  "type": "crypto",
+  "confidence": "high"
+ },
+ "2024-08-02": {
+  "cause": "Weak July payrolls; recession fears",
+  "type": "macro",
+  "confidence": "high"
+ },
+ "2024-08-05": {
+  "cause": "Yen carry-trade unwind ('Black Monday'); Jump Trading selling reports",
+  "type": "macro",
+  "confidence": "high"
+ },
+ "2024-12-18": {
+  "cause": "Hawkish FOMC cut (fewer 2025 cuts in the dot plot); S&P 500 down 3%",
+  "type": "macro",
+  "confidence": "high"
+ },
+ "2025-02-24": {
+  "cause": "Trump confirmed Canada/Mexico tariffs would proceed; aftermath of the $1.5bn Bybit hack (21 Feb)",
+  "type": "mixed",
+  "confidence": "medium"
+ },
+ "2025-02-26": {
+  "cause": "Record spot-ETF outflows (~$1bn on 25 Feb) and tariff worries; break below $84k",
+  "type": "mixed",
+  "confidence": "high"
+ },
+ "2025-03-03": {
+  "cause": "Tariffs on Canada/Mexico confirmed for 4 March, reversing the strategic-reserve rally of 2 March",
+  "type": "macro",
+  "confidence": "high"
+ },
+ "2025-04-06": {
+  "cause": "Weekend after the 'Liberation Day' tariffs (2 Apr); global sell-off",
+  "type": "macro",
+  "confidence": "high"
+ },
+ "2025-08-14": {
+  "cause": "Hot July PPI pared rate-cut odds a day after the all-time high",
+  "type": "macro",
+  "confidence": "medium"
+ },
+ "2025-10-10": {
+  "cause": "Trump announced an additional 100% tariff on China; largest liquidation event on record (~$19bn)",
+  "type": "macro",
+  "confidence": "high"
+ },
+ "2025-11-04": {
+  "cause": "Break below $100k on ETF outflows and risk-off; ~$1.3bn liquidations",
+  "type": "mixed",
+  "confidence": "medium"
+ },
+ "2025-09-25": {
+  "cause": "Strong U.S. data lifted the dollar and Treasury yields and pared rate-cut odds; stocks and Bitcoin fell together (archive headlines)",
+  "type": "macro",
+  "confidence": "medium"
+ },
+ "2026-01-20": {
+  "cause": "Trump escalated tariff threats over Greenland; global sell-off with Treasury yields at five-month highs (archive headlines; the threat was dropped on 21 Jan and markets rebounded)",
+  "type": "macro",
+  "confidence": "high"
+ },
+ "2026-01-29": {
+  "cause": "Day after the Fed paused rate cuts: Microsoft's worst session since 2020 and a gold/oil short squeeze; Bitcoin fell 5% (archive headlines)",
+  "type": "mixed",
+  "confidence": "medium"
+ },
+ "2026-01-31": {
+  "cause": "Weekend continuation of the 29 Jan drop; the archive shows only scrutiny of Strategy's (MSTR) preferred-dividend funding; no single catalyst",
+  "type": "crypto",
+  "confidence": "low"
+ },
+ "2026-02-05": {
+  "cause": "Cross-asset deleveraging: software stocks in freefall on AI-disruption fears, a violent gold and silver sell-off, Bitcoin to 16-month lows erasing the post-election rally (archive headlines)",
+  "type": "macro",
+  "confidence": "high"
+ },
+ "2026-06-02": {
+  "cause": "Break below $70,000 with $480m spot-ETF outflows (Monday) and $500m more the next day, amid U.S. strikes on Iran and rising rate-hike bets (archive headlines)",
+  "type": "mixed",
+  "confidence": "medium"
+ }
+}
