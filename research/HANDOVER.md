@@ -37,8 +37,30 @@ Markets.* One paper, not split — this was decided after weighing a two-paper s
 | Overleaf package | `research/overleaf_project.zip` — upload as a new project, compiler pdfLaTeX |
 | Reports | `research/BTC_DECLINES.md`, `SWING_LEGS.md`, `STOCK_EVENTS.md`, `IMPLEMENTATION_GUIDE.md` |
 | Derived data | `research/output/` (604 MB; the large per-instrument CSVs are gitignored, they live on Zenodo) |
-| Licensed raw inputs | `data/alpaca/{news.jsonl,underlying_daily.csv,crypto_daily.csv}` (gitignored — **never commit**) |
+| Licensed raw inputs | `data/alpaca/` — 20 MB, gitignored, **never commit** |
 | Data deposit | Zenodo [10.5281/zenodo.22308637](https://doi.org/10.5281/zenodo.22308637), CC BY 4.0 |
+
+### What was copied, and what was deliberately left behind
+
+The private `signal` repository is 5.6 GB. Only 625 MB of it is this study; the rest
+belongs to other work. Verified on 2026-09-06 by running all 17 analysis scripts here
+— every one passes.
+
+| Copied here | Size | Why |
+|---|---|---|
+| `research/output/` | 605 MB | every derived frame, including the cached `detailed_*.pkl` engine frames, so all downstream analysis reruns without the engine |
+| `data/alpaca/` daily bars, news, sector and theme series | 20 MB | the only raw inputs the research code opens |
+
+| Left behind | Size | Why |
+|---|---|---|
+| `alpha-agent/data/` | 2.1 GB | a different project (`allstocks_daily.csv` alone is 1.2 GB); nothing in this study reads it |
+| `data/alpaca/optbars_*.csv`, `contracts_*.csv`, `underlying_minute.csv` | 476 MB | options and minute bars, used by the options-backtest strand, not by this paper |
+| `model/validation_output/` | 689 MB | supervised7 training checkpoints belonging to the engine |
+| `backups/` | 170 MB | database dumps |
+
+If the rotation feature is ever restored to full production fidelity (Limitation 1 —
+offline reproduction sets it neutral, giving 76% unfrozen signal agreement), the
+sector and theme series it needs are already here.
 
 **The forecasting engine is not in this repository.** `model/` holds an interface
 specification and stubs that raise `NotImplementedError`. Anything that *regenerates*
