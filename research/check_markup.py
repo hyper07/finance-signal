@@ -27,25 +27,30 @@ def report(kind, where, text):
     print(f"[{kind}] {where}: {text[:160]}")
 
 
-md = (HERE / "PAPER.md").read_text()
-in_code = False
-for n, para in enumerate(md.split("\n\n")):
-    if para.count("```") % 2 == 1:
-        in_code = not in_code
-        continue
-    if in_code or para.lstrip().startswith(("|", "```")):
-        continue
-    plain = CODE.sub("", MATH.sub("", para))
-    if para.count("$") % 2 == 1:
-        report("odd $", f"paragraph {n}", para)
-    if plain.count("**") % 2 == 1:
-        report("odd **", f"paragraph {n}", para)
-    singles = re.sub(r"\*\*", "", plain)
-    if len(re.findall(r"(?<![\w*])\*(?!\s)|(?<!\s)\*(?![\w*])", singles)) % 2 == 1:
-        report("odd *", f"paragraph {n}", para)
-    for m in re.finditer(r"\*\*(.+?)\*\*", plain, flags=re.S):
-        if len(m.group(1)) > 160 and not m.group(1).startswith("Table"):
-            report("long bold", f"paragraph {n}", m.group(1))
+SOURCES = [HERE / "PAPER.md"] + sorted((HERE / "papers").glob("*/paper.md"))
+for src in SOURCES:
+    md = src.read_text(); where = src.relative_to(HERE)
+    in_code = False
+    for n, para in enumerate(md.split("\n\n")):
+        if para.count("```") % 2 == 1:
+            in_code = not in_code
+            continue
+        if in_code or para.lstrip().startswith(("|", "```")):
+            continue
+        plain = CODE.sub("", MATH.sub("", para))
+        if para.count("$") % 2 == 1:
+            report("odd $", f"{where} paragraph {n}", para)
+        if plain.count("**") % 2 == 1:
+            report("odd **", f"{where} paragraph {n}", para)
+        singles = re.sub(r"\*\*", "", plain)
+        if len(re.findall(r"(?<![\w*])\*(?!\s)|(?<!\s)\*(?![\w*])", singles)) % 2 == 1:
+            report("odd *", f"{where} paragraph {n}", para)
+        # formulas written as text: a subscript underscore outside math and code
+        if re.search(r"[A-Za-zα-ωΑ-Ω\*]_[\{A-Za-z0-9]", plain):
+            report("pseudo-math", f"{where} paragraph {n}", para)
+        for m in re.finditer(r"\*\*(.+?)\*\*", plain, flags=re.S):
+            if len(m.group(1)) > 160 and not m.group(1).startswith("Table"):
+                report("long bold", f"{where} paragraph {n}", m.group(1))
 
 tex_path = HERE / "paper.tex"
 if tex_path.exists():
