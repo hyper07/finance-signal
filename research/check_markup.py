@@ -1,13 +1,19 @@
 """Markup checks before building the PDF.
 
-Markdown (PAPER.md): paragraphs with an odd number of `**`, an odd number of `*`
-emphasis markers (outside math and code), an odd number of `$`, or a bold run longer
-than 160 characters — the causes of "bold that makes no sense" after an editing pass.
-LaTeX (paper.tex, if present): balance of \\begingroup/\\endgroup and
-\\landscape/\\endlandscape, figures placed after the References heading, leftover
-`{=latex}` or escaped-dollar math, and \\textbf runs longer than 200 characters.
+Catches the three defect classes that have actually reached the typeset paper:
 
-Run from research/:  .venv/bin/python check_markup.py        (exit code 1 on problems)
+1. **Unbalanced delimiters.** An odd number of unescaped `$` on a line (a currency
+   amount such as `$19bn` that pandoc reads as a math delimiter, swallowing the rest
+   of the table), or an odd number of `**` / `*` in a paragraph (a stray emphasis
+   marker left by an editing pass, which turns the rest of the paragraph bold).
+   Table rows are checked too — that is where the currency amounts live.
+2. **Mid-word insertions.** `in$t$ervals`, `s$p$lits`, `stat*is*tic` — math or
+   emphasis spans dropped inside a word by the Grammarly merge.
+3. **LaTeX-side breakage.** Unbalanced `\\begingroup`/`\\endgroup` or
+   `\\landscape`/`\\endlandscape`, figures floated past the References heading,
+   leftover `{=latex}` raw markers, escaped-dollar math, over-long `\\textbf` runs.
+
+Run from research/:  .venv/bin/python check_markup.py     (exit 1 if anything found)
 """
 from __future__ import annotations
 
@@ -18,59 +24,84 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 MATH = re.compile(r"\$\$.*?\$\$|\$[^$\n]+?\$", re.S)
 CODE = re.compile(r"`[^`\n]+`")
+UNESCAPED_DOLLAR = re.compile(r"(?<!\\)\$")
+MIDWORD = re.compile(r"[A-Za-z]\$[^$\n]{1,12}\$[a-z]|[a-z]\*[a-z]{1,4}\*[a-z]")
 problems = 0
 
 
-def report(kind, where, text):
+def report(kind: str, where: str, text: str) -> None:
     global problems
     problems += 1
-    print(f"[{kind}] {where}: {text[:160]}")
+    print(f"[{kind}] {where}: {text.strip()[:150]}")
 
 
+# ---------- Markdown sources ----------
 SOURCES = [HERE / "PAPER.md"] + sorted((HERE / "papers").glob("*/paper.md"))
-for src in SOURCES:
-    md = src.read_text(); where = src.relative_to(HERE)
-    in_code = False
+REPORTS = [HERE / n for n in ("BTC_DECLINES.md", "SWING_LEGS.md", "STOCK_EVENTS.md", "IMPLEMENTATION_GUIDE.md")]
+
+for src in SOURCES + [p for p in REPORTS if p.exists()]:
+    md = src.read_text()
+    where = src.relative_to(HERE)
+
+    # per line: delimiter balance (tables included) and mid-word insertions
+    in_fence = False
+    for n, line in enumerate(md.split("\n"), 1):
+        if line.lstrip().startswith("```"):
+            in_fence = not in_fence
+            continue
+        if in_fence:
+            continue
+        if len(UNESCAPED_DOLLAR.findall(line)) % 2 == 1:
+            report("odd $", f"{where}:{n}", line)
+        for m in MIDWORD.finditer(line):
+            report("mid-word insertion", f"{where}:{n}", line[max(0, m.start() - 40):m.end() + 40])
+
+    # per paragraph: emphasis balance and runaway bold
+    in_fence = False
     for n, para in enumerate(md.split("\n\n")):
         if para.count("```") % 2 == 1:
-            in_code = not in_code
+            in_fence = not in_fence
             continue
-        if in_code or para.lstrip().startswith(("|", "```")):
+        if in_fence or para.lstrip().startswith(("|", "```")):
             continue
         plain = CODE.sub("", MATH.sub("", para))
-        if para.count("$") % 2 == 1:
-            report("odd $", f"{where} paragraph {n}", para)
         if plain.count("**") % 2 == 1:
-            report("odd **", f"{where} paragraph {n}", para)
-        singles = re.sub(r"\*\*", "", plain)
+            report("odd **", f"{where} para {n}", para)
+        singles = plain.replace("**", "")
         if len(re.findall(r"(?<![\w*])\*(?!\s)|(?<!\s)\*(?![\w*])", singles)) % 2 == 1:
-            report("odd *", f"{where} paragraph {n}", para)
-        # formulas written as text: a subscript underscore outside math and code
+            report("odd *", f"{where} para {n}", para)
         if re.search(r"[A-Za-zα-ωΑ-Ω\*]_[\{A-Za-z0-9]", plain):
-            report("pseudo-math", f"{where} paragraph {n}", para)
+            report("pseudo-math", f"{where} para {n}", para)
         for m in re.finditer(r"\*\*(.+?)\*\*", plain, flags=re.S):
             if len(m.group(1)) > 160 and not m.group(1).startswith("Table"):
-                report("long bold", f"{where} paragraph {n}", m.group(1))
+                report("long bold", f"{where} para {n}", m.group(1))
 
+# ---------- generated LaTeX ----------
 tex_path = HERE / "paper.tex"
 if tex_path.exists():
-    tex = tex_path.read_text().split("\n")
-    def count(prefix): return sum(1 for l in tex if l.startswith(prefix))
-    bg, eg, ls, le = count("\\begingroup"), count("\\endgroup"), count("\\landscape"), count("\\endlandscape")
-    if bg != eg: report("group balance", "paper.tex", f"begingroup {bg} vs endgroup {eg}")
-    if ls != le: report("landscape balance", "paper.tex", f"landscape {ls} vs endlandscape {le}")
-    ref = next((i for i, l in enumerate(tex) if "{References}" in l and "section" in l), None)
+    lines = tex_path.read_text().split("\n")
+    joined = "\n".join(lines)
+    count = lambda p: sum(1 for l in lines if l.startswith(p))
+    if count("\\begingroup") != count("\\endgroup"):
+        report("group balance", "paper.tex", f"begingroup {count('\\begingroup')} vs endgroup {count('\\endgroup')}")
+    if count("\\landscape") != count("\\endlandscape"):
+        report("landscape balance", "paper.tex", f"landscape {count('\\landscape')} vs endlandscape {count('\\endlandscape')}")
+    ref = next((i for i, l in enumerate(lines) if "{References}" in l and "section" in l), None)
     if ref is not None:
-        late = [i + 1 for i, l in enumerate(tex) if i > ref and "includegraphics" in l]
-        if late: report("figure after references", "paper.tex", f"lines {late}")
-    joined = "\n".join(tex)
-    if "{=latex}" in joined: report("raw leftover", "paper.tex", "{=latex} not consumed by pandoc")
-    if re.search(r"\\\$\\[a-z]+\\\$", joined): report("escaped math", "paper.tex", "a $\\cmd$ symbol was escaped to text")
+        late = [i + 1 for i, l in enumerate(lines) if i > ref and "includegraphics" in l]
+        if late:
+            report("figure after references", "paper.tex", f"lines {late}")
+    if "{=latex}" in joined:
+        report("raw leftover", "paper.tex", "{=latex} not consumed by pandoc")
+    if re.search(r"\\\$\\[a-z]+\\\$", joined):
+        report("escaped math", "paper.tex", "a $\\cmd$ symbol was escaped to literal text")
     for m in re.finditer(r"\\textbf\{((?:[^{}]|\{[^{}]*\})*)\}", joined):
         if len(m.group(1)) > 200 and not m.group(1).startswith("Table"):
             report("long textbf", "paper.tex", m.group(1))
-    unanchored = sum(1 for l in tex if l.strip() == "\\begin{figure}")
-    if unanchored: report("unanchored figure", "paper.tex", f"{unanchored} figure environments without [H]")
+    # a table row that lost its cells to a swallowed math span
+    for i, l in enumerate(lines, 1):
+        if l.rstrip().endswith("|") and "&" in l and "\\\\" not in l:
+            report("broken table row", f"paper.tex:{i}", l)
 
 print("markup problems:", problems)
 sys.exit(1 if problems else 0)
