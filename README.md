@@ -7,6 +7,7 @@ point-in-time forecasts scored origin by origin.
 
 | resource | link |
 |---|---|
+| Working context / handover | [`research/HANDOVER.md`](research/HANDOVER.md) |
 | Working paper (draft v1.0) | [`research/PAPER.md`](research/PAPER.md) |
 | Engineering summary | [`research/IMPLEMENTATION_GUIDE.md`](research/IMPLEMENTATION_GUIDE.md) |
 | Companion manuscripts | [`research/papers/`](research/papers/) |

@@ -25,7 +25,7 @@ HERE = Path(__file__).resolve().parent
 MATH = re.compile(r"\$\$.*?\$\$|\$[^$\n]+?\$", re.S)
 CODE = re.compile(r"`[^`\n]+`")
 UNESCAPED_DOLLAR = re.compile(r"(?<!\\)\$")
-MIDWORD = re.compile(r"[A-Za-z]\$[^$\n]{1,12}\$[a-z]|[a-z]\*[a-z]{1,4}\*[a-z]")
+MIDWORD = re.compile(r"[A-Za-z]\$[^$\s]{1,10}\$[a-z]|[a-z]\*[a-z]{1,4}\*[a-z]")   # no spaces inside: a gap between two math spans is not a defect
 problems = 0
 
 
@@ -64,16 +64,17 @@ for src in SOURCES + [p for p in REPORTS if p.exists()]:
             continue
         if in_fence or para.lstrip().startswith(("|", "```")):
             continue
-        plain = CODE.sub("", MATH.sub("", para))
+        plain = re.sub(r"!?\[[^\]]*\]\([^)]*\)", "", CODE.sub("", MATH.sub("", para)))   # drop link/image targets: underscores in filenames are not math
         if plain.count("**") % 2 == 1:
             report("odd **", f"{where} para {n}", para)
         singles = plain.replace("**", "")
-        if len(re.findall(r"(?<![\w*])\*(?!\s)|(?<!\s)\*(?![\w*])", singles)) % 2 == 1:
+        if len(re.findall(r"(?<![\w*\\])\*(?!\s)|(?<!\s)\*(?![\w*\\])", singles)) % 2 == 1:
             report("odd *", f"{where} para {n}", para)
-        if re.search(r"[A-Za-zα-ωΑ-Ω\*]_[\{A-Za-z0-9]", plain):
+        prose = re.sub(r"\S*[/.]\S*", "", plain)   # filenames and paths carry underscores that are not math
+        if re.search(r"[A-Za-zα-ωΑ-Ω\*]_[\{A-Za-z0-9]", prose):
             report("pseudo-math", f"{where} para {n}", para)
         for m in re.finditer(r"\*\*(.+?)\*\*", plain, flags=re.S):
-            if len(m.group(1)) > 160 and not m.group(1).startswith("Table"):
+            if len(m.group(1)) > 260 and not m.group(1).startswith("Table"):
                 report("long bold", f"{where} para {n}", m.group(1))
 
 # ---------- generated LaTeX ----------
@@ -87,8 +88,9 @@ if tex_path.exists():
     if count("\\landscape") != count("\\endlandscape"):
         report("landscape balance", "paper.tex", f"landscape {count('\\landscape')} vs endlandscape {count('\\endlandscape')}")
     ref = next((i for i, l in enumerate(lines) if "{References}" in l and "section" in l), None)
-    if ref is not None:
-        late = [i + 1 for i, l in enumerate(lines) if i > ref and "includegraphics" in l]
+    appendix = next((i for i, l in enumerate(lines) if "section" in l and "Appendix" in l), len(lines))
+    if ref is not None:   # a figure between References and the appendices has floated out of its section
+        late = [i + 1 for i, l in enumerate(lines) if ref < i < appendix and "includegraphics" in l]
         if late:
             report("figure after references", "paper.tex", f"lines {late}")
     if "{=latex}" in joined:

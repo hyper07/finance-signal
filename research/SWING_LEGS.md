@@ -30,8 +30,8 @@ Three regularities hold across types. First, most of a prolonged move is the gri
 | 2021-11-08 → 2022-01-22 (down) | 75 | -48.1% | 2 (31%) | -6.3% | 0.55 | 0.74 | -36.7% | Fed pivot to tightening (taper doubled, QT signalled), Omicron, Kazakhstan hash-rate hit, Russia ban proposal (high) |
 | 2021-05-08 → 2021-06-08 (down) | 31 | -43.3% | 2 (51%) | +0.0% | 0.61 | 0.59 | -30.2% | Tesla stopped Bitcoin payments; China banned institutional services and mining (high) |
 | 2026-01-14 → 2026-02-05 (down) | 22 | -35.3% | 4 (73%) | -1.8% | 0.51 | 0.35 | -20.4% | Greenland tariff scare (20 Jan), Fed pause (28-29 Jan), cross-asset deleveraging with the software and metals rout (5 Feb) — archive headlines (medium) |
-| 2025-10-06 → 2025-11-22 (down) | 47 | -32.1% | 2 (32%) | -1.9% | 0.61 | 0.79 | -22.4% | 10 Oct tariff shock and record $19bn liquidation; ETF outflows and the break below $100k (4 Nov) — archive headlines (medium) |
-| 2024-09-06 → 2024-12-17 (up) | 102 | +96.7% | 3 (35%) | +12.2% | 0.52 | 0.89 | +69.9% | Fed cutting cycle began (18 Sep); Trump's election win (5 Nov) priced as pro-crypto; $100k reached 5 Dec (high) |
+| 2025-10-06 → 2025-11-22 (down) | 47 | -32.1% | 2 (32%) | -1.9% | 0.61 | 0.79 | -22.4% | 10 Oct tariff shock and record \$19bn liquidation; ETF outflows and the break below \$100k (4 Nov) — archive headlines (medium) |
+| 2024-09-06 → 2024-12-17 (up) | 102 | +96.7% | 3 (35%) | +12.2% | 0.52 | 0.89 | +69.9% | Fed cutting cycle began (18 Sep); Trump's election win (5 Nov) priced as pro-crypto; \$100k reached 5 Dec (high) |
 | 2023-09-11 → 2024-01-08 (up) | 119 | +86.8% | 5 (50%) | +6.6% | 0.43 | 0.85 | +55.3% | Spot-ETF anticipation after Grayscale's court win (29 Aug) through approval on 10 Jan 2024 (high) |
 | 2024-01-22 → 2024-03-13 (up) | 51 | +85.1% | 3 (36%) | +6.7% | 0.51 | 1.00 | +80.6% | Spot-ETF inflows after launch drove a new all-time high in March ahead of the halving (high) |
 
