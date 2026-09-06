@@ -24,7 +24,8 @@ HERE = Path(__file__).resolve().parent
 P = HERE / "PAPER.md"
 s = P.read_text()
 if "### 5.8 What moved Bitcoin" in s:
-    raise SystemExit("PAPER.md already contains the new sections; nothing to do.")
+    print("PAPER.md already contains the new sections; nothing to do.")
+    raise SystemExit(0)
 
 J = lambda f: json.load(open(HERE / "output" / f))
 band = J("band_vs_naive.json"); fan = J("btc_declines_fan_stats.json"); dsum = J("btc_declines_summary.json")

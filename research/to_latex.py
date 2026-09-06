@@ -50,13 +50,17 @@ HEADER = (
     "\\usepackage[htt]{hyphenat}"                      # allow hyphenation inside \\texttt
     "\\usepackage{pdflscape}"                          # wide tables rotate to a landscape page
     "\\usepackage{caption}\\captionsetup[figure]{labelformat=empty}"   # captions already say "Figure N."
+    "\\usepackage{float}"                              # [H] placement: figures stay where the text puts them
     "\\sloppy\\setlength{\\emergencystretch}{3em}"    # prefer loose lines to margin overflow
     "\\setlength{\\tabcolsep}{4pt}"
 )
 
 
 def polish(tex: str) -> str:
-    """Post-process pandoc output (hook for fixes that need the LaTeX, not the Markdown)."""
+    """Post-process pandoc output (fixes that need the LaTeX, not the Markdown)."""
+    # pandoc emits unanchored floats; with twenty figures they drift to the end of the
+    # document (after the references). Anchor each one where its caption sits.
+    tex = tex.replace("\\begin{figure}\n", "\\begin{figure}[H]\n")
     return tex
 
 

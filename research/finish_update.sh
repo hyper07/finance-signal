@@ -6,10 +6,12 @@ cd "$(dirname "$0")/.."
 PY="$PWD/.venv/bin/python"      # absolute: step 1 runs inside research/
 
 echo "== 1. integrate the new sections into PAPER.md (idempotent) =="
-(cd research && $PY integrate_findings.py)
+(cd research && $PY integrate_findings.py) || echo "(integration step skipped)"
 
 echo "== 2. regenerate LaTeX (main paper; companions unchanged) =="
 $PY research/to_latex.py
+echo "== 2b. markup checks (odd emphasis markers, group balance, figure placement) =="
+(cd research && $PY check_markup.py) || echo "!! markup problems listed above — fix PAPER.md, then rerun"
 
 echo "== 3. arXiv and Overleaf packages: flatten figure paths, copy the five new figures =="
 $PY - <<'EOF'
@@ -44,6 +46,6 @@ Path('research/arxiv/abstract.txt').write_text(re.sub(r'\*([^*]+)\*', r'\1', a) 
 echo "== 5. public repository sync =="
 DST=/Users/kibaek/Documents/Github/finance-signal-public/research
 cp research/PAPER.md $DST/PAPER.md && cp research/papers/ijf_full/paper.md $DST/papers/ijf_full/paper.md
-cp research/integrate_findings.py research/finish_update.sh $DST/
+cp research/integrate_findings.py research/finish_update.sh research/check_markup.py research/to_latex.py $DST/
 (cd /Users/kibaek/Documents/Github/finance-signal-public && git add -A && git -c user.name="Kibaek Kim" -c user.email="kibaek.kim2018@gmail.com" commit -q -m "Paper: band vs volatility formula (§4.1), Bitcoin decreases (§5.8), legs and horizons (§6.6-6.7), regime layer (§8.3)" && git log --oneline -1)
 echo "done. Remaining by hand: republish the web page (see notes), push the public repo."
