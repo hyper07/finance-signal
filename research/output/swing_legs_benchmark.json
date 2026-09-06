@@ -1,0 +1,197 @@
+{
+ "thresholds": {
+  "BTC": {
+   "annual_vol": 0.564,
+   "reversal": 0.141,
+   "min_leg": 0.188
+  },
+  "SPY": {
+   "annual_vol": 0.175,
+   "reversal": 0.05,
+   "min_leg": 0.067
+  },
+  "TLT": {
+   "annual_vol": 0.147,
+   "reversal": 0.05,
+   "min_leg": 0.067
+  },
+  "AAPL": {
+   "annual_vol": 0.281,
+   "reversal": 0.07,
+   "min_leg": 0.094
+  },
+  "MSFT": {
+   "annual_vol": 0.261,
+   "reversal": 0.065,
+   "min_leg": 0.087
+  },
+  "TSLA": {
+   "annual_vol": 0.574,
+   "reversal": 0.143,
+   "min_leg": 0.191
+  },
+  "NVDA": {
+   "annual_vol": 0.455,
+   "reversal": 0.114,
+   "min_leg": 0.152
+  }
+ },
+ "benchmark": {
+  "BTC": {
+   "from": "2021-04-05",
+   "MA100": {
+    "cagr_pct": 23.8,
+    "max_drawdown_pct": -37.8,
+    "time_in_market": 0.48
+   },
+   "MA200": {
+    "cagr_pct": 18.4,
+    "max_drawdown_pct": -35.9,
+    "time_in_market": 0.49
+   },
+   "model exposure": {
+    "cagr_pct": 6.0,
+    "max_drawdown_pct": -72.5,
+    "time_in_market": 0.78
+   },
+   "buy and hold": {
+    "cagr_pct": 5.8,
+    "max_drawdown_pct": -76.7,
+    "time_in_market": 1.0
+   }
+  },
+  "SPY": {
+   "from": "2016-05-18",
+   "MA100": {
+    "cagr_pct": 11.4,
+    "max_drawdown_pct": -17.7,
+    "time_in_market": 0.8
+   },
+   "MA200": {
+    "cagr_pct": 11.7,
+    "max_drawdown_pct": -19.8,
+    "time_in_market": 0.8
+   },
+   "model exposure": {
+    "cagr_pct": 14.3,
+    "max_drawdown_pct": -29.0,
+    "time_in_market": 0.95
+   },
+   "buy and hold": {
+    "cagr_pct": 15.6,
+    "max_drawdown_pct": -33.8,
+    "time_in_market": 1.0
+   }
+  },
+  "TLT": {
+   "from": "2016-12-29",
+   "MA100": {
+    "cagr_pct": -1.6,
+    "max_drawdown_pct": -37.8,
+    "time_in_market": 0.48
+   },
+   "MA200": {
+    "cagr_pct": -2.4,
+    "max_drawdown_pct": -45.5,
+    "time_in_market": 0.48
+   },
+   "buy and hold": {
+    "cagr_pct": -0.9,
+    "max_drawdown_pct": -48.4,
+    "time_in_market": 1.0
+   }
+  },
+  "AAPL": {
+   "from": "2010-05-19",
+   "MA100": {
+    "cagr_pct": 16.3,
+    "max_drawdown_pct": -29.7,
+    "time_in_market": 0.72
+   },
+   "MA200": {
+    "cagr_pct": 19.5,
+    "max_drawdown_pct": -35.3,
+    "time_in_market": 0.76
+   },
+   "model exposure": {
+    "cagr_pct": 24.7,
+    "max_drawdown_pct": -40.8,
+    "time_in_market": 0.94
+   },
+   "buy and hold": {
+    "cagr_pct": 26.0,
+    "max_drawdown_pct": -43.8,
+    "time_in_market": 1.0
+   }
+  },
+  "MSFT": {
+   "from": "2010-05-19",
+   "MA100": {
+    "cagr_pct": 7.7,
+    "max_drawdown_pct": -36.6,
+    "time_in_market": 0.7
+   },
+   "MA200": {
+    "cagr_pct": 12.5,
+    "max_drawdown_pct": -40.2,
+    "time_in_market": 0.76
+   },
+   "model exposure": {
+    "cagr_pct": 19.5,
+    "max_drawdown_pct": -39.9,
+    "time_in_market": 0.91
+   },
+   "buy and hold": {
+    "cagr_pct": 21.3,
+    "max_drawdown_pct": -37.1,
+    "time_in_market": 1.0
+   }
+  },
+  "TSLA": {
+   "from": "2010-11-10",
+   "MA100": {
+    "cagr_pct": 14.2,
+    "max_drawdown_pct": -67.7,
+    "time_in_market": 0.59
+   },
+   "MA200": {
+    "cagr_pct": 15.7,
+    "max_drawdown_pct": -71.2,
+    "time_in_market": 0.61
+   },
+   "model exposure": {
+    "cagr_pct": 38.5,
+    "max_drawdown_pct": -60.6,
+    "time_in_market": 0.87
+   },
+   "buy and hold": {
+    "cagr_pct": 40.6,
+    "max_drawdown_pct": -73.6,
+    "time_in_market": 1.0
+   }
+  },
+  "NVDA": {
+   "from": "2010-05-19",
+   "MA100": {
+    "cagr_pct": 30.8,
+    "max_drawdown_pct": -66.3,
+    "time_in_market": 0.72
+   },
+   "MA200": {
+    "cagr_pct": 46.2,
+    "max_drawdown_pct": -54.2,
+    "time_in_market": 0.75
+   },
+   "model exposure": {
+    "cagr_pct": 52.8,
+    "max_drawdown_pct": -58.8,
+    "time_in_market": 0.92
+   },
+   "buy and hold": {
+    "cagr_pct": 50.6,
+    "max_drawdown_pct": -66.3,
+    "time_in_market": 1.0
+   }
+  }
+ }
+}
