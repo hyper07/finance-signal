@@ -1,9 +1,60 @@
-# finance-signal — audit code for a deployed Bitcoin forecaster
+# finance-signal — what a deployed Bitcoin forecaster did when the news arrived
 
-Exploratory audit of a **deployed** seven-session market forecaster around
-information-intensive and large-return observations. The publication-ready
-scope is currently limited to next-session BTC/USD and BITO results. Broader
-index and single-stock analyses remain working material.
+We operate a live "AI market signal" service. This repository is our own audit
+of it: **1,973 BTC/USD and 1,125 BITO next-session forecasts**, scored
+point-in-time against what actually happened, with the failures shown rather
+than averaged away.
+
+## The picture
+
+Twelve of the largest Bitcoin declines on record. In every panel the shaded
+area is the P10–P90 band the model published at the close *before* the drop,
+the dashed line is its median, and the black line is what happened.
+
+![Seven-session forecast issued before each of twelve major Bitcoin declines, versus the realized path](research/output/figures/fig15_btc_declines_fan.png)
+
+- Mean probability of an increase at the origin: **0.49**. Consensus was *Sell*
+  in **2 of 12**.
+- The realized next-session close fell **below P10 in 12 of 12**.
+- By session 7 the realized path was back inside the band in **5 of 12**.
+
+The twelve were chosen ex post by decline size, so this is an illustration of
+where the forecast distribution fails, not an independent test. Panel labels are
+descriptive context, not a causal news classification.
+
+## The numbers
+
+| | BTC/USD | BITO |
+|---|---:|---:|
+| Forecast origins | 1,973 | 1,125 |
+| Directional accuracy, all origins | **48.8%** | **50.6%** |
+| Nominal-80% interval coverage, all origins | 78.4% | 77.7% |
+| Directional accuracy on headline-count spike days | 38.9% (n=95) | 52.9% (n=34) |
+| Directional accuracy on large realized moves (\|z\| ≥ 2.5) | **36.7%** (n=98) | **37.5%** (n=48) |
+| Interval coverage on large realized moves | **0.0%** | **0.0%** |
+
+![Directional accuracy and interval coverage by condition](research/output/figures/fig_prefinding_conditionals.png)
+
+Read across a row: the intervals are calibrated on average and the direction is
+a coin flip on average. Condition on the sessions that matter and both collapse.
+The large-move coverage of zero is partly mechanical — a 2.5-volatility move is
+being compared with an interval about 1.3 volatilities wide — and is reported
+as a conditional diagnostic, not a discovery.
+
+## The case that started it
+
+On 18 August 2026, the evening before a White House crypto-policy meeting, the
+model's next-session median for BTC was −0.05% with a P90 of +1.15%. BTC rose
+**7.15%** the next session and **21.10%** over three. The deployed consensus at
+the origin was *Sell*.
+
+![Point-in-time forecasts issued at the 18 August 2026 close and the realized paths](research/output/figures/fig_prefinding_august_case.png)
+
+One event proves nothing on its own; it is why we ran the systematic audit
+above. The conclusions we are willing to draw are narrow and are listed in
+[Preliminary findings](#preliminary-findings).
+
+## Where to go next
 
 | resource | link |
 |---|---|
