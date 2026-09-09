@@ -37,18 +37,44 @@
       "hit_diff_spike_minus_quiet": {
         "difference": 0.0294,
         "ci95": [
-          -0.2255,
-          0.219
+          -0.1381,
+          0.2285
         ],
-        "p_two_sided": 0.9505
+        "p_two_sided": 0.750062,
+        "method": "group-preserving circular moving-block bootstrap (block=7)",
+        "n_event": 34,
+        "n_comparison": 612,
+        "event_mean": 0.5294,
+        "event_mean_ci95": [
+          0.3684,
+          0.7222
+        ],
+        "comparison_mean": 0.5,
+        "comparison_mean_ci95": [
+          0.4637,
+          0.5374
+        ]
       },
       "coverage_diff_spike_minus_quiet": {
         "difference": -0.0997,
         "ci95": [
-          -0.2271,
-          0.0131
+          -0.2729,
+          0.074
         ],
-        "p_two_sided": 0.077
+        "p_two_sided": 0.230942,
+        "method": "group-preserving circular moving-block bootstrap (block=7)",
+        "n_event": 34,
+        "n_comparison": 612,
+        "event_mean": 0.6765,
+        "event_mean_ci95": [
+          0.5,
+          0.8478
+        ],
+        "comparison_mean": 0.7761,
+        "comparison_mean_ci95": [
+          0.745,
+          0.8078
+        ]
       },
       "abs_surprise_mannwhitney_p": 0.00486,
       "abs_return_mannwhitney_p": 0.05711,
@@ -179,18 +205,44 @@
       "hit_diff_spike_minus_quiet": {
         "difference": -0.1099,
         "ci95": [
-          -0.1986,
-          0.0048
+          -0.2164,
+          0.0028
         ],
-        "p_two_sided": 0.064
+        "p_two_sided": 0.049238,
+        "method": "group-preserving circular moving-block bootstrap (block=7)",
+        "n_event": 95,
+        "n_comparison": 847,
+        "event_mean": 0.3895,
+        "event_mean_ci95": [
+          0.2917,
+          0.5
+        ],
+        "comparison_mean": 0.4994,
+        "comparison_mean_ci95": [
+          0.4692,
+          0.5297
+        ]
       },
       "coverage_diff_spike_minus_quiet": {
         "difference": -0.0986,
         "ci95": [
-          -0.2202,
-          0.0114
+          -0.2052,
+          0.0061
         ],
-        "p_two_sided": 0.0815
+        "p_two_sided": 0.067983,
+        "method": "group-preserving circular moving-block bootstrap (block=7)",
+        "n_event": 95,
+        "n_comparison": 847,
+        "event_mean": 0.6842,
+        "event_mean_ci95": [
+          0.5833,
+          0.7826
+        ],
+        "comparison_mean": 0.7828,
+        "comparison_mean_ci95": [
+          0.7532,
+          0.8125
+        ]
       },
       "abs_surprise_mannwhitney_p": 0.02256,
       "abs_return_mannwhitney_p": 0.1135,

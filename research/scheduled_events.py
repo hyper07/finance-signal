@@ -28,7 +28,7 @@ from scipy import stats
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import OUTPUT_DIR  # noqa: E402
-from event_study import DATASETS, block_bootstrap_diff, hit_summary  # noqa: E402
+from event_study import DATASETS, block_bootstrap_group_diff, hit_summary  # noqa: E402
 
 FOMC_DECISION_DAYS = [
     # 2016-2019
@@ -108,8 +108,12 @@ def evaluate(key: str, event_sets: dict[str, np.ndarray]) -> dict:
                            "always_up_rate": round(float(other["actual_up"].mean()), 3)},
             "tests": {
                 "hit_binomial_p_vs_0.5": hit_summary(ev["hit"])["binomial_p_vs_0.5"],
-                "hit_diff_event_minus_other": block_bootstrap_diff(ev["hit"].to_numpy(float), other["hit"].to_numpy(float)),
-                "coverage_diff_event_minus_other": block_bootstrap_diff(ev["covered"].to_numpy(float), other["covered"].to_numpy(float)),
+                "hit_diff_event_minus_other": block_bootstrap_group_diff(
+                    h1["hit"].to_numpy(float), is_event.to_numpy(bool)
+                ),
+                "coverage_diff_event_minus_other": block_bootstrap_group_diff(
+                    h1["covered"].to_numpy(float), is_event.to_numpy(bool)
+                ),
                 "abs_surprise_mannwhitney_p": round(float(stats.mannwhitneyu(ev["surprise_z"].abs(), other["surprise_z"].abs(), alternative="greater").pvalue), 5),
                 "abs_return_mannwhitney_p": round(float(stats.mannwhitneyu(ev["realized"].abs(), other["realized"].abs(), alternative="greater").pvalue), 5),
             },

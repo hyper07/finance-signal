@@ -19,13 +19,18 @@ from scipy import stats
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import OUTPUT_DIR  # noqa: E402
-from event_study import NEWS_RATIO, block_bootstrap_diff, hit_summary  # noqa: E402
+from event_study import (  # noqa: E402
+    NEWS_RATIO,
+    block_bootstrap_group_diff,
+    hit_summary,
+)
 
 
 def news_spike_events(fc: pd.DataFrame, day: pd.DataFrame) -> dict:
     h1 = fc[(fc["horizon"] == 1) & fc["target_news_ratio"].notna()].copy()
-    spike = h1[h1["target_news_ratio"] >= NEWS_RATIO]
-    quiet = h1[h1["target_news_ratio"] < NEWS_RATIO]
+    is_spike = h1["target_news_ratio"].to_numpy(float) >= NEWS_RATIO
+    spike = h1[is_spike]
+    quiet = h1[~is_spike]
     out = {
         "rule": f"headline count >= {NEWS_RATIO} x trailing 30-day median (2024-02 onward)",
         "spike_days": int(len(spike)), "quiet_days": int(len(quiet)),
@@ -43,8 +48,12 @@ def news_spike_events(fc: pd.DataFrame, day: pd.DataFrame) -> dict:
                   "median_abs_surprise_z": round(float(quiet["surprise_z"].abs().median()), 3),
                   "mean_abs_realized_pct": round(float((quiet["realized"].abs() * 100).mean()), 3),
                   "share_abs_z_ge_2.5": round(float((quiet["target_abs_z"] >= 2.5).mean()), 4)},
-        "hit_diff_spike_minus_quiet": block_bootstrap_diff(spike["hit"].to_numpy(float), quiet["hit"].to_numpy(float)),
-        "coverage_diff_spike_minus_quiet": block_bootstrap_diff(spike["covered"].to_numpy(float), quiet["covered"].to_numpy(float)),
+        "hit_diff_spike_minus_quiet": block_bootstrap_group_diff(
+            h1["hit"].to_numpy(float), is_spike
+        ),
+        "coverage_diff_spike_minus_quiet": block_bootstrap_group_diff(
+            h1["covered"].to_numpy(float), is_spike
+        ),
         "abs_surprise_mannwhitney_p": round(float(stats.mannwhitneyu(spike["surprise_z"].abs(), quiet["surprise_z"].abs(), alternative="greater").pvalue), 5),
         "abs_return_mannwhitney_p": round(float(stats.mannwhitneyu(spike["realized"].abs(), quiet["realized"].abs(), alternative="greater").pvalue), 5),
     }

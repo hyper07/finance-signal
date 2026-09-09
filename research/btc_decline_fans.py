@@ -2,7 +2,8 @@
 decline, against the realized path (BTC/USD, % from the origin close). Twelve
 panels: the ten largest single-session declines with a forecast on record and the
 two largest liquidation events of the headline-archive period. Same conventions as
-Figure 1 (fig1_august_fan_chart.png)."""
+Figure 1 (fig1_august_fan_chart.png). Written as PNG (full paper) and as a vector
+PDF (Figure 3 of the arXiv preprint, set on a landscape page)."""
 from __future__ import annotations
 
 import json
@@ -29,7 +30,8 @@ EVENTS = [  # first shock session -> short label
     ("2025-10-10", "100% China tariffs announced"), ("2026-02-05", "Cross-asset deleveraging"),
 ]
 plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.right": False, "axes.edgecolor": AXIS,
-                     "axes.labelcolor": INK2, "xtick.color": INK2, "ytick.color": INK2, "text.color": INK})
+                     "axes.labelcolor": INK2, "xtick.color": INK2, "ytick.color": INK2, "text.color": INK,
+                     "pdf.fonttype": 42})                     # embed TrueType, not Type 3, in the vector export
 
 
 def main() -> None:
@@ -57,10 +59,12 @@ def main() -> None:
         ax.set_title(f"{day} · {label}", fontsize=9, color=INK, loc="left", pad=4)
         ax.text(0.03, 0.04, f"P(up) {float(e['pre_h1_prob_up']):.2f}\nconsensus {e['pre_consensus']}", transform=ax.transAxes, fontsize=7.5, color=INK2, va="bottom", linespacing=1.3)
         ax.text(7.15, real[-1], f"{real[-1]:+.0f}%", fontsize=7.5, color=INK, va="center")
-        ax.set_xlim(-3.4, 8.4); ax.set_ylim(-32, 16); ax.set_xticks([-3, 0, 1, 3, 5, 7])
+        ax.set_xlim(-3.4, 8.4); ax.set_ylim(-32, 22); ax.set_xticks([-3, 0, 1, 3, 5, 7])
         ax.tick_params(length=0)
         stats.append({"event": day, "label": label, "origin": str(origin.date()), "prob_up_h1": round(float(e["pre_h1_prob_up"]), 3), "consensus": e["pre_consensus"],
-                      "p10_h1_pct": round(p10[1], 2), "realized_h1_pct": round(real[1], 2), "realized_h7_pct": round(real[-1], 2), "p10_h7_pct": round(p10[-1], 2),
+                      "p10_h1_pct": round(p10[1], 2), "p50_h1_pct": round(p50[1], 2), "p90_h1_pct": round(p90[1], 2),
+                      "realized_h1_pct": round(real[1], 2), "realized_h7_pct": round(real[-1], 2),
+                      "p10_h7_pct": round(p10[-1], 2), "p50_h7_pct": round(p50[-1], 2), "p90_h7_pct": round(p90[-1], 2),
                       "inside_band_h1": bool(p10[1] <= real[1] <= p90[1]), "inside_band_h7": bool(p10[-1] <= real[-1] <= p90[-1])})
     fig.supxlabel("sessions after the origin (0 = the close before the shock; 1 = the shock session)", fontsize=8.5, color=INK2, y=0.012)
     for ax in axes[:, 0]: ax.set_ylabel("% from origin close", fontsize=8)
@@ -73,6 +77,7 @@ def main() -> None:
     fig.suptitle("Seven-session forecast issued the session before each major Bitcoin decline, versus what happened (BTC/USD)", fontsize=11, color=INK, y=0.995, x=0.5, ha="center")
     fig.tight_layout(rect=(0, 0.025, 1, 0.955))
     fig.savefig(FIG / "fig15_btc_declines_fan.png", dpi=160, facecolor="#fcfcfb")
+    fig.savefig(FIG / "fig15_btc_declines_fan.pdf", facecolor="#fcfcfb")
     (OUT / "btc_declines_fan_stats.json").write_text(json.dumps(stats, indent=1))
     df = pd.DataFrame(stats)
     print(df[["event", "origin", "prob_up_h1", "consensus", "realized_h1_pct", "p10_h1_pct", "realized_h7_pct", "inside_band_h1", "inside_band_h7"]].to_string(index=False))

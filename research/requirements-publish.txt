@@ -1,0 +1,4 @@
+-r requirements.txt
+pypandoc_binary==1.17
+pypdf==6.17.0
+python-docx==1.2.0

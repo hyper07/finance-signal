@@ -222,25 +222,176 @@ def hit_summary(hits: pd.Series) -> dict:
     }
 
 
-def block_bootstrap_diff(a: np.ndarray, b: np.ndarray, block: int = 7,
-                         draws: int = 4000, seed: int = 11) -> dict:
-    """Bootstrap CI for mean(a) - mean(b) with moving blocks (overlapping horizons)."""
-    rng = np.random.default_rng(seed)
+def _moving_block_indices(n: int, block: int, rng: np.random.Generator) -> np.ndarray:
+    """Sample circular moving blocks while preserving local row order."""
+    if n < 1:
+        raise ValueError("cannot resample an empty array")
+    width = min(max(int(block), 1), n)
+    starts = rng.integers(0, n, int(np.ceil(n / width)))
+    return ((starts[:, None] + np.arange(width)[None, :]) % n).ravel()[:n]
 
-    def resample(x: np.ndarray) -> np.ndarray:
-        if len(x) <= block:
-            return x[rng.integers(0, len(x), len(x))]
-        starts = rng.integers(0, len(x) - block + 1, int(np.ceil(len(x) / block)))
-        idx = (starts[:, None] + np.arange(block)[None, :]).ravel()[: len(x)]
-        return x[idx]
 
-    diffs = np.array([resample(a).mean() - resample(b).mean() for _ in range(draws)])
+def _bootstrap_result(observed: float, estimates: list[float],
+                      null_estimates: list[float], method: str) -> dict:
+    boot = np.asarray(estimates, dtype=float)
+    null = np.asarray(null_estimates, dtype=float)
+    if len(boot) == 0 or len(null) == 0:
+        raise ValueError("bootstrap produced no valid resamples")
+    p_value = (np.count_nonzero(np.abs(null) >= abs(observed) - 1e-15) + 1) / (len(null) + 1)
     return {
-        "difference": round(float(a.mean() - b.mean()), 4),
-        "ci95": [round(float(np.quantile(diffs, 0.025)), 4),
-                 round(float(np.quantile(diffs, 0.975)), 4)],
-        "p_two_sided": round(float(2 * min((diffs <= 0).mean(), (diffs >= 0).mean())), 4),
+        "difference": round(float(observed), 4),
+        "ci95": [
+            round(float(np.quantile(boot, 0.025)), 4),
+            round(float(np.quantile(boot, 0.975)), 4),
+        ],
+        "p_two_sided": round(float(min(p_value, 1.0)), 6),
+        "method": method,
     }
+
+
+def block_bootstrap_diff(a: np.ndarray, b: np.ndarray, block: int = 7,
+                         draws: int = 4000, seed: int = 11,
+                         paired: bool = False) -> dict:
+    """Moving-block CI and null-centered test for ``mean(a) - mean(b)``.
+
+    Set ``paired=True`` when both losses were evaluated on the same forecasts.
+    Common block indices are then sampled from the paired difference. For
+    independent samples, each ordered series is resampled separately.
+    """
+    a = np.asarray(a, dtype=float)
+    b = np.asarray(b, dtype=float)
+    if paired:
+        if len(a) != len(b):
+            raise ValueError("paired samples must have equal lengths")
+        valid = np.isfinite(a) & np.isfinite(b)
+        diff = a[valid] - b[valid]
+        if len(diff) == 0:
+            raise ValueError("paired samples contain no finite observations")
+        observed = float(diff.mean())
+        centred = diff - observed
+        rng = np.random.default_rng(seed)
+        indices = [_moving_block_indices(len(diff), block, rng) for _ in range(draws)]
+        estimates = [float(diff[idx].mean()) for idx in indices]
+        null_estimates = [float(centred[idx].mean()) for idx in indices]
+        return _bootstrap_result(
+            observed, estimates, null_estimates,
+            f"paired circular moving-block bootstrap (block={min(block, len(diff))})",
+        )
+
+    a = a[np.isfinite(a)]
+    b = b[np.isfinite(b)]
+    if len(a) == 0 or len(b) == 0:
+        raise ValueError("samples must each contain a finite observation")
+    observed = float(a.mean() - b.mean())
+    centred_a = a - a.mean()
+    centred_b = b - b.mean()
+    rng = np.random.default_rng(seed)
+    estimates: list[float] = []
+    null_estimates: list[float] = []
+    for _ in range(draws):
+        ia = _moving_block_indices(len(a), block, rng)
+        ib = _moving_block_indices(len(b), block, rng)
+        estimates.append(float(a[ia].mean() - b[ib].mean()))
+        null_estimates.append(float(centred_a[ia].mean() - centred_b[ib].mean()))
+    return _bootstrap_result(
+        observed, estimates, null_estimates,
+        f"independent circular moving-block bootstrap (block={block})",
+    )
+
+
+def block_bootstrap_group_diff(values: np.ndarray, group: np.ndarray, block: int = 7,
+                               draws: int = 4000, seed: int = 11) -> dict:
+    """Bootstrap a conditional-mean difference without discarding time order.
+
+    ``group=True`` identifies the event observations. Blocks are sampled from
+    the complete ordered sequence so clustered events and adjacent quiet
+    observations remain together.
+    """
+    values = np.asarray(values, dtype=float)
+    group = np.asarray(group, dtype=bool)
+    if len(values) != len(group):
+        raise ValueError("values and group must have equal lengths")
+    valid = np.isfinite(values)
+    values = values[valid]
+    group = group[valid]
+    if not group.any() or group.all():
+        raise ValueError("both event and comparison observations are required")
+    event_mean = float(values[group].mean())
+    comparison_mean = float(values[~group].mean())
+    observed = event_mean - comparison_mean
+    pooled_mean = float(values.mean())
+    centred = values.copy()
+    centred[group] -= event_mean - pooled_mean
+    centred[~group] -= comparison_mean - pooled_mean
+
+    rng = np.random.default_rng(seed)
+    estimates: list[float] = []
+    null_estimates: list[float] = []
+    event_estimates: list[float] = []
+    comparison_estimates: list[float] = []
+    attempts = 0
+    while len(estimates) < draws and attempts < draws * 10:
+        attempts += 1
+        idx = _moving_block_indices(len(values), block, rng)
+        sampled_group = group[idx]
+        if not sampled_group.any() or sampled_group.all():
+            continue
+        sampled_event_mean = float(values[idx][sampled_group].mean())
+        sampled_comparison_mean = float(values[idx][~sampled_group].mean())
+        event_estimates.append(sampled_event_mean)
+        comparison_estimates.append(sampled_comparison_mean)
+        estimates.append(sampled_event_mean - sampled_comparison_mean)
+        null_estimates.append(float(centred[idx][sampled_group].mean()
+                                    - centred[idx][~sampled_group].mean()))
+    result = _bootstrap_result(
+        observed, estimates, null_estimates,
+        f"group-preserving circular moving-block bootstrap (block={block})",
+    )
+    result["n_event"] = int(group.sum())
+    result["n_comparison"] = int((~group).sum())
+    result["event_mean"] = round(event_mean, 4)
+    result["event_mean_ci95"] = [
+        round(float(np.quantile(event_estimates, 0.025)), 4),
+        round(float(np.quantile(event_estimates, 0.975)), 4),
+    ]
+    result["comparison_mean"] = round(comparison_mean, 4)
+    result["comparison_mean_ci95"] = [
+        round(float(np.quantile(comparison_estimates, 0.025)), 4),
+        round(float(np.quantile(comparison_estimates, 0.975)), 4),
+    ]
+    return result
+
+
+def block_bootstrap_mean(values: np.ndarray, block: int = 7, draws: int = 4000,
+                         seed: int = 11, null: float | None = None) -> dict:
+    """Moving-block interval for an ordered mean, with an optional null test."""
+    values = np.asarray(values, dtype=float)
+    values = values[np.isfinite(values)]
+    if len(values) == 0:
+        raise ValueError("values must contain a finite observation")
+    observed = float(values.mean())
+    centred = values - observed + (observed if null is None else null)
+    rng = np.random.default_rng(seed)
+    indices = [_moving_block_indices(len(values), block, rng) for _ in range(draws)]
+    estimates = np.asarray([values[idx].mean() for idx in indices], dtype=float)
+    out = {
+        "n": int(len(values)),
+        "mean": round(observed, 4),
+        "ci95": [
+            round(float(np.quantile(estimates, 0.025)), 4),
+            round(float(np.quantile(estimates, 0.975)), 4),
+        ],
+        "method": f"circular moving-block bootstrap (block={min(block, len(values))})",
+    }
+    if null is not None:
+        null_estimates = np.asarray([centred[idx].mean() for idx in indices], dtype=float)
+        p_value = (
+            np.count_nonzero(np.abs(null_estimates - null)
+                             >= abs(observed - null) - 1e-15) + 1
+        ) / (len(null_estimates) + 1)
+        out["null"] = null
+        out["p_two_sided"] = round(float(min(p_value, 1.0)), 6)
+    return out
 
 
 def score_table(fc: pd.DataFrame) -> pd.DataFrame:
@@ -358,10 +509,14 @@ def analyse(key: str, spec: dict, counts: pd.Series) -> dict:
                          "coverage": round(float(calm_w["covered"].mean()), 4),
                          "brier": round(float(calm_w["brier"].mean()), 4),
                          "mean_abs_surprise_z": round(float(calm_w["surprise_z"].abs().mean()), 4)},
-        "hit_rate_difference_shock_minus_calm": block_bootstrap_diff(
-            shock_w["hit"].to_numpy(float), calm_w["hit"].to_numpy(float)),
-        "coverage_difference_shock_minus_calm": block_bootstrap_diff(
-            shock_w["covered"].to_numpy(float), calm_w["covered"].to_numpy(float)),
+        "hit_rate_difference_shock_minus_calm": block_bootstrap_group_diff(
+            fc["hit"].to_numpy(float), fc["window_has_shock"].to_numpy(bool),
+            block=49,
+        ),
+        "coverage_difference_shock_minus_calm": block_bootstrap_group_diff(
+            fc["covered"].to_numpy(float), fc["window_has_shock"].to_numpy(bool),
+            block=49,
+        ),
     }
 
     # ---- 3. target-day |z| bins and news-intensity bins (h=1 session view) ----

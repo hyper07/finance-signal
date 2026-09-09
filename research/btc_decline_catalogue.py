@@ -2,17 +2,21 @@
 
 For every BTC/USD down-shock we record the same-session index and bond moves, the
 FOMC/payroll calendar, the Benzinga crypto headline count and spike ratio (archive
-coverage 2024-02 -> 2026-08), the most relevant headlines around the session, a
+coverage 2024-02 -> 2026-08), fingerprints of relevant archive records, a
 hand attribution for events before the archive (btc_manual_attributions.json,
 with a confidence flag), the deployed model's forecast issued the day before and
 the post-shock path. A factor label separates macro/systemic sessions from
 crypto-specific ones. A lead-lag check asks whether headline spikes or index
 drops the day before predicted the shock.
 
+Licensed headline text is used only in memory and is not written to public
+outputs.
+
 Outputs: output/btc_declines_catalogue.csv / .json, BTC_DECLINES.md
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -87,13 +91,19 @@ def main() -> None:
             factor = m["type"]
         else:
             factor = "macro" if (spy_last <= -1.5 or cal.strip()) else "crypto"
+        headline_hashes = [
+            hashlib.sha256(headline.encode("utf-8")).hexdigest()
+            for headline in heads[:4]
+        ]
         rows.append({
             "date": d.date(), "weekday": d.strftime("%a"), "ret_pct": round(r["ret"] * scale, 1), "z": round(r["z"], 1), "move3_pct": round(r["move3_pct"], 1),
             "spy_same_pct": None if pd.isna(spy_same) else round(spy_same, 2), "spy_last_pct": round(spy_last, 2), "tlt_last_pct": round(tlt_last, 2), "gld_last_pct": round(gld_last, 2),
             "calendar": cal.strip(), "news_count": None if pd.isna(r["news"]) else int(r["news"]), "news_ratio": None if pd.isna(r["news_ratio"]) else round(r["news_ratio"], 2),
             "news_ratio_prev": None if d - pd.Timedelta(1, unit="D") not in days.index or pd.isna(days.loc[d - pd.Timedelta(1, unit="D"), "news_ratio"]) else round(days.loc[d - pd.Timedelta(1, unit="D"), "news_ratio"], 2),
-            "factor": factor, "cause": m.get("cause", "see archive headlines"), "attribution": ("manual, " + m["confidence"] + " confidence") if m else ("archive headlines" if heads else "none (before headline archive)"),
-            "headlines": heads[:4],
+            "factor": factor,
+            "cause": m.get("cause", "licensed archive matches; causal attribution not verified"),
+            "attribution": ("manual, " + m["confidence"] + " confidence") if m else ("licensed archive metadata (text not redistributed)" if heads else "none (before headline archive)"),
+            "headline_sha256": headline_hashes,
             "pre_signal_3day": e.get("pre_signal_3day"), "pre_consensus": e.get("pre_consensus"), "pre_h1_prob_up": e.get("pre_h1_prob_up"),
             "pre_h1_band": None if pd.isna(e.get("pre_h1_p10_pct", np.nan)) else f"[{e['pre_h1_p10_pct']:+.1f}, {e['pre_h1_p90_pct']:+.1f}]",
             "pre_h1_covered": e.get("pre_h1_covered"), "pre_h1_surprise_z": e.get("pre_h1_surprise_z"),
@@ -132,13 +142,15 @@ def main() -> None:
     L += ["", "## Was there a leading signal?", ""] + [f"- {k}: {v}" for k, v in lead.items()] + ["",
           "## Catalogue", "", "| date | BTC % | z | 3d % | SPY % | calendar | factor | what happened | attribution | P(up), band day before | consensus | +1d / +3d / +7d % |", "|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for _, r in cat.iterrows():
-        what = r["cause"] if r["attribution"].startswith("manual") else (r["headlines"][0][:110] if r["headlines"] else r["cause"])
+        what = str(r["cause"]).replace("|", "/").replace("$", r"\$")
         pu = "" if pd.isna(r["pre_h1_prob_up"]) else f"{float(r['pre_h1_prob_up']):.2f}, {r['pre_h1_band']}"
         post = " / ".join("" if pd.isna(v) else f"{float(v):+.1f}" for v in (r["post_1d_pct"], r["post_3d_pct"], r["post_7d_pct"]))
         L.append(f"| {r['date']} ({r['weekday']}) | {r['ret_pct']:+.1f} | {r['z']} | {r['move3_pct']:+.1f} | {r['spy_last_pct']:+.2f} | {r['calendar']} | {r['factor']} | {what} | {r['attribution']} | {pu} | {r['pre_consensus'] or ''} | {post} |")
-    L += ["", "## Archive headlines per event (2024-02 onward)", ""]
-    for _, r in cat[cat["headlines"].map(len) > 0].iterrows():
-        L.append(f"**{r['date']}** ({r['ret_pct']:+.1f}%, SPY {r['spy_last_pct']:+.2f}%, headline ratio {r['news_ratio']}): " + " | ".join(h[:130] for h in r["headlines"][:3]))
+    L += ["", "## Licensed-archive records per event (2024-02 onward)", "",
+          "Headline text is not redistributed. Abbreviated SHA-256 fingerprints permit record matching by an authorised user.", ""]
+    for _, r in cat[cat["headline_sha256"].map(len) > 0].iterrows():
+        fingerprints = ", ".join(h[:12] for h in r["headline_sha256"][:3])
+        L.append(f"**{r['date']}** ({r['ret_pct']:+.1f}%, SPY {r['spy_last_pct']:+.2f}%, headline ratio {r['news_ratio']}): {len(r['headline_sha256'])} selected records; SHA-256 prefixes {fingerprints}")
         L.append("")
     (HERE / "BTC_DECLINES.md").write_text("\n".join(L) + "\n")
     print(by.to_string()); print(json.dumps(lead, indent=1))

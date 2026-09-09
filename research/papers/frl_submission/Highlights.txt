@@ -1,0 +1,7 @@
+Highlights
+
+• A deployed Bitcoin forecaster is directionally uninformative on average.
+• Large realized moves expose severe conditional interval failure.
+• Headline-count spikes increase standardized errors for BTC and BITO.
+• Directional degradation on spike days appears for BTC, not BITO.
+• Results motivate prospective study of news-driven investor behavior.

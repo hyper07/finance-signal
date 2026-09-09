@@ -13,11 +13,15 @@ and joined with (a) the ticker-tagged Benzinga headlines from the Alpaca archive
 attributions for earlier events looked up by hand (manual_attributions.json), and
 (c) the deployed forecaster's behaviour around the event from events_<key>.csv.
 
+Licensed headline text is used only in memory for classification. Public outputs
+contain counts and SHA-256 fingerprints, not the text itself.
+
 Outputs: stock_events_catalogue.csv / .json, STOCK_EVENTS.md (report),
 stock_events_by_category.json.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -140,18 +144,25 @@ def main() -> None:
                 category = "idiosyncratic"
             local = headlines_for(symbol, d, prev, news) if d >= NEWS_START else []
             man = manual.get(f"{symbol}:{d.date().isoformat()}")
+            headline_hashes = [
+                hashlib.sha256(headline.encode("utf-8")).hexdigest()
+                for headline in local[:6]
+            ]
             rows.append({
                 "symbol": symbol, "date": d.date().isoformat(), "direction": ev["direction"], "ret_pct": ev["ret_pct"], "z": ev["z"],
                 "spy_z_same_day": round(mz, 2) if np.isfinite(mz) else None, "qqq_z_same_day": round(qz, 2) if np.isfinite(qz) else None, "category": category,
                 "news_covered": bool(d >= NEWS_START), "headline_count": len(local),
-                "headlines": local[:6],
+                "headline_sha256": headline_hashes,
                 "attribution": (man["what"] if man
-                                else (("earnings report" + (f" — {local[0]}" if local and company_named(symbol, local[0]) else "")) if category.startswith("earnings")
-                                      else (local[0] if local and (company_named(symbol, local[0]) or category != "market-wide")
-                                            else ("market-wide move" + (f" — {local[0]}" if local else "") if category == "market-wide" else None)))),
+                                else ("earnings-window archive match" if category.startswith("earnings") and local
+                                      else ("earnings report" if category.startswith("earnings")
+                                            else ("market-wide move" if category == "market-wide"
+                                                  else ("ticker-tagged archive match; causal attribution unverified" if local else None))))),
                 "attribution_source": (man["source"] if man
-                                       else ("earnings calendar" + ("; Alpaca/Benzinga archive" if local else "") if category.startswith("earnings")
-                                             else ("Alpaca/Benzinga archive" if local else ("SPY/QQQ same-day z" if category == "market-wide" else None)))),
+                                       else ("earnings calendar; licensed archive metadata (text not redistributed)" if category.startswith("earnings") and local
+                                             else ("earnings calendar" if category.startswith("earnings")
+                                                   else ("licensed archive metadata (text not redistributed)" if local
+                                                         else ("SPY/QQQ same-day z" if category == "market-wide" else None))))),
                 "pre_h1_prob_up": ev["pre_h1_prob_up"], "pre_h1_band_pct": [ev["pre_h1_p10_pct"], ev["pre_h1_p50_pct"], ev["pre_h1_p90_pct"]],
                 "pre_h1_hit": int(ev["pre_h1_hit"]), "pre_h1_covered": int(ev["pre_h1_covered"]), "pre_h1_surprise_z": ev["pre_h1_surprise_z"],
                 "pre_path_coverage_1to7": ev["pre_path_coverage_1to7"], "pre_signal_3day": int(ev["pre_signal_3day"]),
@@ -205,13 +216,14 @@ def main() -> None:
         lines += [f"### {s}", "", "| date | +% | z | SPY z | category | what happened | source | model the day before: P(up), band %, covered | consensus | latency | +1d / +3d / +7d % |", "|---|---|---|---|---|---|---|---|---|---|---|"]
         for _, r in g.sort_values("z", ascending=False).head(12).iterrows():
             band = r["pre_h1_band_pct"]
-            what = (r["attribution"] or "—").replace("|", "/")
+            what = (r["attribution"] or "—").replace("|", "/").replace("$", r"\$")
             lines.append(f"| {r['date']} | +{r['ret_pct']:.1f} | {r['z']:.1f} | {'' if r['spy_z_same_day'] is None or pd.isna(r['spy_z_same_day']) else r['spy_z_same_day']} | {r['category']} | {what[:110]} | {r['attribution_source'] or '—'} | {r['pre_h1_prob_up']:.2f}, [{band[0]:+.1f}, {band[1]:+.1f}, {band[2]:+.1f}], {'yes' if r['pre_h1_covered'] else 'no'} | {r['pre_consensus']}{' (aligned)' if r['consensus_already_aligned'] else ''} | {'' if r['consensus_latency_sessions'] is None or pd.isna(r['consensus_latency_sessions']) else int(r['consensus_latency_sessions'])} | {r['post_1d_pct']:+.1f} / {r['post_3d_pct']:+.1f} / {'' if pd.isna(r['post_7d_pct']) else f'{r[chr(112)+chr(111)+chr(115)+chr(116)+chr(95)+chr(55)+chr(100)+chr(95)+chr(112)+chr(99)+chr(116)]:+.1f}'} |")
         lines.append("")
-    lines += ["## Increases with archive headlines (2024-02 → 2026-08)", ""]
+    lines += ["## Increases with licensed-archive coverage (2024-02 → 2026-08)", "",
+              "Headline text is not redistributed. Counts and abbreviated SHA-256 fingerprints permit record matching by an authorised user.", ""]
     for _, r in up[up["news_covered"]].sort_values(["symbol", "date"]).iterrows():
-        hl = "; ".join(h[:120] for h in r["headlines"][:3]) if r["headlines"] else "(no ticker-tagged headline in the archive window)"
-        lines.append(f"- **{r['symbol']} {r['date']}** +{r['ret_pct']:.1f}% (z {r['z']:.1f}, {r['category']}): {hl}")
+        fingerprints = ", ".join(h[:12] for h in r["headline_sha256"][:3]) or "none"
+        lines.append(f"- **{r['symbol']} {r['date']}** +{r['ret_pct']:.1f}% (z {r['z']:.1f}, {r['category']}): {r['headline_count']} matches; SHA-256 prefixes {fingerprints}")
     (HERE / "STOCK_EVENTS.md").write_text("\n".join(lines))
     print(json.dumps(by_cat["up_shocks"], indent=1))
     print("by symbol:", by_cat["up_shocks_by_symbol"])

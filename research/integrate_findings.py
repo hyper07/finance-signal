@@ -59,7 +59,9 @@ t24 = ["**Table 24. The ten largest single-session Bitcoin decreases and what mo
 for _, r in top.iterrows():
     t24.append(f"| {r.date} | {r.ret_pct:+.1f} | {r.spy_last_pct:+.1f} | {r.factor} | {str(r.cause).split(' (archive')[0][:95]} | {f(r.pre_h1_prob_up)}, {r.pre_consensus} | {f(r.post_7d_pct, '{:+.1f}')} |")
 fd = pd.DataFrame(fan)
-median_up_or_flat = int((fd.p10_h7_pct.notna()).sum()) - 2   # ten of twelve medians pointed up or flat
+if "p50_h1_pct" not in fd:
+    raise ValueError("btc_declines_fan_stats.json must include p50_h1_pct; rerun btc_decline_fans.py")
+median_up_or_flat = int((fd.p50_h1_pct >= 0).sum())
 sec58 = ("### 5.8 What moved Bitcoin: significant decreases and the forecast issued the day before\n\n"
          "Section 5.6 attributed the single-stock increases to their news. The same exercise for Bitcoin's decreases, the events the product's users fear most, uses the 43 BTC/USD sessions with $z\\le-2.5$, the same-session S&P 500 and Treasury moves, the FOMC and payroll calendar, the headline archive from 2024-02 and, before it, attributions from the public record with a confidence flag (`btc_manual_attributions.json`; three sessions have no identifiable catalyst and are marked as such). Table 23 groups the sessions by factor and Table 24 lists the ten largest; the full catalogue is `BTC_DECLINES.md`.\n\n"
          + "\n".join(t23) + "\n\n" + "\n".join(t24) + "\n\n"

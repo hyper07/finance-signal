@@ -1,8 +1,8 @@
 """Constructive out-of-sample test: does a type-specific gate improve the
 predictive distribution?
 
-Gates are causal (known at the origin close) and use the thresholds fixed in
-Section 3 before any scoring:
+Gates are observable at the origin close. This prevents look-ahead but does not
+make the gate variables or their relationships causal:
 
   calendar   the target session is a scheduled event: FOMC decision or payroll
              release (index), earnings reaction session (stocks); none for crypto
@@ -16,7 +16,7 @@ Variants scored on every (origin, horizon):
   gated        model, except climatology on gated forecasts
   gated+drift  gated, and on shock-gated forecasts the climatology quantiles are
                shifted by the trailing mean sign-adjusted post-shock continuation
-               (walk-forward, >= 10 prior shocks) -- the human-reaction kernel
+               (walk-forward, >= 10 prior shocks) -- a descriptive drift term
                estimated from the past only
 
 Scores: Brier (P(up)), 10-90 coverage, Winkler interval score (alpha = 0.2),
@@ -224,7 +224,9 @@ def run(key: str, spec: dict | None = None) -> dict:
                     entry[vname] = {k: round(v, 5) if isinstance(v, float) else v for k, v in scores(q10[sub], q50[sub], q90[sub], up[sub], y[sub]).items()}
                 we_ = winkler(variants["gated_event_conditional"][0], variants["gated_event_conditional"][2], y)
                 wm_ = winkler(m_q10, m_q90, y)
-                entry["winkler_event_conditional_minus_model"] = block_bootstrap_diff(we_[sub], wm_[sub])
+                entry["winkler_event_conditional_minus_model"] = block_bootstrap_diff(
+                    we_[sub], wm_[sub], paired=True
+                )
                 entry["winkler_improvement_pct"] = round(100 * (1 - entry["gated_event_conditional"]["winkler"] / entry["model"]["winkler"]), 2)
                 block["by_gate_type"][gname] = entry
         gm = wmask & gate
@@ -236,15 +238,27 @@ def run(key: str, spec: dict | None = None) -> dict:
         wm, wg, wd = winkler(m_q10, m_q90, y), winkler(variants["gated"][0], variants["gated"][2], y), winkler(variants["gated_drift"][0], variants["gated_drift"][2], y)
         bm, bg = (m_up - (y > 0)) ** 2, (variants["gated"][3] - (y > 0)) ** 2
         we = winkler(variants["gated_event_conditional"][0], variants["gated_event_conditional"][2], y)
-        block["winkler_gated_minus_model"] = block_bootstrap_diff(wg[wmask], wm[wmask])
-        block["winkler_event_conditional_minus_model"] = block_bootstrap_diff(we[wmask], wm[wmask])
+        block["winkler_gated_minus_model"] = block_bootstrap_diff(
+            wg[wmask], wm[wmask], paired=True
+        )
+        block["winkler_event_conditional_minus_model"] = block_bootstrap_diff(
+            we[wmask], wm[wmask], paired=True
+        )
         if gm.sum() > 20:
-            block["winkler_event_conditional_minus_model_gated_only"] = block_bootstrap_diff(we[gm], wm[gm])
+            block["winkler_event_conditional_minus_model_gated_only"] = block_bootstrap_diff(
+                we[gm], wm[gm], paired=True
+            )
             be = (variants["gated_event_conditional"][3] - (y > 0)) ** 2
-            block["brier_event_conditional_minus_model_gated_only"] = block_bootstrap_diff(be[gm], bm[gm])
+            block["brier_event_conditional_minus_model_gated_only"] = block_bootstrap_diff(
+                be[gm], bm[gm], paired=True
+            )
         block["winkler_event_conditional_improvement_pct"] = round(100 * (1 - block["variants"]["gated_event_conditional"]["winkler"] / block["variants"]["model"]["winkler"]), 2)
-        block["winkler_gated_drift_minus_model"] = block_bootstrap_diff(wd[wmask], wm[wmask])
-        block["brier_gated_minus_model"] = block_bootstrap_diff(bg[wmask], bm[wmask])
+        block["winkler_gated_drift_minus_model"] = block_bootstrap_diff(
+            wd[wmask], wm[wmask], paired=True
+        )
+        block["brier_gated_minus_model"] = block_bootstrap_diff(
+            bg[wmask], bm[wmask], paired=True
+        )
         block["winkler_improvement_pct"] = round(100 * (1 - block["variants"]["gated"]["winkler"] / block["variants"]["model"]["winkler"]), 2)
         block["winkler_drift_improvement_pct"] = round(100 * (1 - block["variants"]["gated_drift"]["winkler"] / block["variants"]["model"]["winkler"]), 2)
         block["brier_improvement_pct"] = round(100 * (1 - block["variants"]["gated"]["brier"] / block["variants"]["model"]["brier"]), 2)
@@ -275,8 +289,8 @@ def pooled_universe(keys: list[str], specs: dict) -> dict:
         out["pooled_full_sample"][g] = {
             "n_forecasts": int(len(wm)), "winkler_model": round(float(wm.mean()), 5), "winkler_event_conditional": round(float(we.mean()), 5),
             "winkler_improvement_pct": round(100 * (1 - we.mean() / wm.mean()), 2),
-            "winkler_diff_bootstrap": block_bootstrap_diff(we, wm),
-            "brier_model": round(float(bm.mean()), 5), "brier_event_conditional": round(float(be.mean()), 5), "brier_diff_bootstrap": block_bootstrap_diff(be, bm),
+            "winkler_diff_bootstrap": block_bootstrap_diff(we, wm, paired=True),
+            "brier_model": round(float(bm.mean()), 5), "brier_event_conditional": round(float(be.mean()), 5), "brier_diff_bootstrap": block_bootstrap_diff(be, bm, paired=True),
             "coverage_model": round(float(cm.mean()), 4), "coverage_event_conditional": round(float(ce.mean()), 4),
             "share_stocks_improved": round(float(np.mean([r.get(f"{g}_winkler_improvement_pct", np.nan) > 0 for r in per_stock if f"{g}_winkler_improvement_pct" in r])), 3),
         }

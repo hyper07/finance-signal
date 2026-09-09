@@ -1,0 +1,762 @@
+{
+  "btc": {
+    "label": "BTC/USD",
+    "all_origins": {
+      "n": 1973,
+      "directional_accuracy": {
+        "n": 1973,
+        "mean": 0.4881,
+        "ci95": [
+          0.4673,
+          0.5099
+        ],
+        "method": "circular moving-block bootstrap (block=7)",
+        "null": 0.5,
+        "p_two_sided": 0.27993
+      },
+      "interval_coverage": {
+        "n": 1973,
+        "mean": 0.7836,
+        "ci95": [
+          0.7638,
+          0.8018
+        ],
+        "method": "circular moving-block bootstrap (block=7)"
+      },
+      "mean_absolute_surprise": {
+        "n": 1973,
+        "mean": 0.8524,
+        "ci95": [
+          0.8099,
+          0.8963
+        ],
+        "method": "circular moving-block bootstrap (block=7)"
+      }
+    },
+    "headline_spike": {
+      "event_label": "headline-count ratio \u2265 2",
+      "comparison_label": "headline-count ratio < 2",
+      "event": {
+        "n": 95,
+        "directional_accuracy": {
+          "mean": 0.3895,
+          "ci95": [
+            0.2917,
+            0.5
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "interval_coverage": {
+          "mean": 0.6842,
+          "ci95": [
+            0.5833,
+            0.7826
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "mean_absolute_surprise": {
+          "mean": 1.1479,
+          "ci95": [
+            0.8854,
+            1.449
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        }
+      },
+      "comparison": {
+        "n": 847,
+        "directional_accuracy": {
+          "mean": 0.4994,
+          "ci95": [
+            0.4692,
+            0.5297
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "interval_coverage": {
+          "mean": 0.7828,
+          "ci95": [
+            0.7532,
+            0.8125
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "mean_absolute_surprise": {
+          "mean": 0.8436,
+          "ci95": [
+            0.7879,
+            0.9022
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        }
+      },
+      "event_minus_comparison": {
+        "directional_accuracy": {
+          "difference": -0.1099,
+          "ci95": [
+            -0.2164,
+            0.0028
+          ],
+          "p_two_sided": 0.049238,
+          "method": "group-preserving circular moving-block bootstrap (block=7)",
+          "n_event": 95,
+          "n_comparison": 847,
+          "event_mean": 0.3895,
+          "event_mean_ci95": [
+            0.2917,
+            0.5
+          ],
+          "comparison_mean": 0.4994,
+          "comparison_mean_ci95": [
+            0.4692,
+            0.5297
+          ]
+        },
+        "interval_coverage": {
+          "difference": -0.0986,
+          "ci95": [
+            -0.2052,
+            0.0061
+          ],
+          "p_two_sided": 0.067983,
+          "method": "group-preserving circular moving-block bootstrap (block=7)",
+          "n_event": 95,
+          "n_comparison": 847,
+          "event_mean": 0.6842,
+          "event_mean_ci95": [
+            0.5833,
+            0.7826
+          ],
+          "comparison_mean": 0.7828,
+          "comparison_mean_ci95": [
+            0.7532,
+            0.8125
+          ]
+        },
+        "absolute_surprise": {
+          "difference": 0.3042,
+          "ci95": [
+            0.0356,
+            0.6052
+          ],
+          "p_two_sided": 0.034491,
+          "method": "group-preserving circular moving-block bootstrap (block=7)",
+          "n_event": 95,
+          "n_comparison": 847,
+          "event_mean": 1.1479,
+          "event_mean_ci95": [
+            0.8854,
+            1.449
+          ],
+          "comparison_mean": 0.8436,
+          "comparison_mean_ci95": [
+            0.7879,
+            0.9022
+          ]
+        }
+      }
+    },
+    "large_realized_move": {
+      "event_label": "|z| \u2265 2.5",
+      "comparison_label": "|z| < 2.5",
+      "event": {
+        "n": 98,
+        "directional_accuracy": {
+          "mean": 0.3673,
+          "ci95": [
+            0.2791,
+            0.4615
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "interval_coverage": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "mean_absolute_surprise": {
+          "mean": 3.5925,
+          "ci95": [
+            3.3604,
+            3.8401
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        }
+      },
+      "comparison": {
+        "n": 1875,
+        "directional_accuracy": {
+          "mean": 0.4944,
+          "ci95": [
+            0.4731,
+            0.517
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "interval_coverage": {
+          "mean": 0.8245,
+          "ci95": [
+            0.8062,
+            0.8416
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "mean_absolute_surprise": {
+          "mean": 0.7091,
+          "ci95": [
+            0.6837,
+            0.7365
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        }
+      },
+      "event_minus_comparison": {
+        "directional_accuracy": {
+          "difference": -0.1271,
+          "ci95": [
+            -0.2197,
+            -0.0303
+          ],
+          "p_two_sided": 0.006748,
+          "method": "group-preserving circular moving-block bootstrap (block=7)",
+          "n_event": 98,
+          "n_comparison": 1875,
+          "event_mean": 0.3673,
+          "event_mean_ci95": [
+            0.2791,
+            0.4615
+          ],
+          "comparison_mean": 0.4944,
+          "comparison_mean_ci95": [
+            0.4731,
+            0.517
+          ]
+        },
+        "interval_coverage": {
+          "difference": -0.8245,
+          "ci95": [
+            -0.8416,
+            -0.8062
+          ],
+          "p_two_sided": 0.00025,
+          "method": "group-preserving circular moving-block bootstrap (block=7)",
+          "n_event": 98,
+          "n_comparison": 1875,
+          "event_mean": 0.0,
+          "event_mean_ci95": [
+            0.0,
+            0.0
+          ],
+          "comparison_mean": 0.8245,
+          "comparison_mean_ci95": [
+            0.8062,
+            0.8416
+          ]
+        },
+        "absolute_surprise": {
+          "difference": 2.8834,
+          "ci95": [
+            2.6532,
+            3.1287
+          ],
+          "p_two_sided": 0.00025,
+          "method": "group-preserving circular moving-block bootstrap (block=7)",
+          "n_event": 98,
+          "n_comparison": 1875,
+          "event_mean": 3.5925,
+          "event_mean_ci95": [
+            3.3604,
+            3.8401
+          ],
+          "comparison_mean": 0.7091,
+          "comparison_mean_ci95": [
+            0.6837,
+            0.7365
+          ]
+        }
+      }
+    },
+    "august_2026_case": {
+      "origin": "2026-08-18",
+      "signal_3day": 1,
+      "consensus": "Sell/confirmed",
+      "next_target_pct": 100.0,
+      "forecast": [
+        {
+          "h": 1,
+          "target_date": "2026-08-19",
+          "prob_up": 0.45,
+          "p10_pct": -1.61,
+          "p50_pct": -0.05,
+          "p90_pct": 1.15,
+          "realized_pct": 7.15,
+          "covered": 0,
+          "hit": 0,
+          "surprise_z": 6.7,
+          "vote": "Sell"
+        },
+        {
+          "h": 2,
+          "target_date": "2026-08-20",
+          "prob_up": 0.483,
+          "p10_pct": -2.67,
+          "p50_pct": -0.09,
+          "p90_pct": 2.34,
+          "realized_pct": 12.87,
+          "covered": 0,
+          "hit": 0,
+          "surprise_z": 6.64,
+          "vote": "Sell"
+        },
+        {
+          "h": 3,
+          "target_date": "2026-08-21",
+          "prob_up": 0.417,
+          "p10_pct": -3.22,
+          "p50_pct": -0.61,
+          "p90_pct": 2.61,
+          "realized_pct": 21.1,
+          "covered": 0,
+          "hit": 0,
+          "surprise_z": 9.54,
+          "vote": "Sell"
+        },
+        {
+          "h": 4,
+          "target_date": "2026-08-22",
+          "prob_up": 0.45,
+          "p10_pct": -3.61,
+          "p50_pct": -0.38,
+          "p90_pct": 2.08,
+          "realized_pct": 19.13,
+          "covered": 0,
+          "hit": 0,
+          "surprise_z": 8.78,
+          "vote": "Sell"
+        },
+        {
+          "h": 5,
+          "target_date": "2026-08-23",
+          "prob_up": 0.5,
+          "p10_pct": -3.75,
+          "p50_pct": -0.1,
+          "p90_pct": 2.79,
+          "realized_pct": 20.17,
+          "covered": 0,
+          "hit": 1,
+          "surprise_z": 7.94,
+          "vote": "Hold"
+        },
+        {
+          "h": 6,
+          "target_date": "2026-08-24",
+          "prob_up": 0.45,
+          "p10_pct": -4.04,
+          "p50_pct": -0.17,
+          "p90_pct": 2.8,
+          "realized_pct": 22.1,
+          "covered": 0,
+          "hit": 0,
+          "surprise_z": 8.35,
+          "vote": "Sell"
+        },
+        {
+          "h": 7,
+          "target_date": "2026-08-25",
+          "prob_up": 0.45,
+          "p10_pct": -4.66,
+          "p50_pct": -0.23,
+          "p90_pct": 3.96,
+          "realized_pct": 21.4,
+          "covered": 0,
+          "hit": 0,
+          "surprise_z": 6.43,
+          "vote": "Sell"
+        }
+      ]
+    }
+  },
+  "bito": {
+    "label": "BITO",
+    "all_origins": {
+      "n": 1125,
+      "directional_accuracy": {
+        "n": 1125,
+        "mean": 0.5058,
+        "ci95": [
+          0.4791,
+          0.5316
+        ],
+        "method": "circular moving-block bootstrap (block=7)",
+        "null": 0.5,
+        "p_two_sided": 0.658335
+      },
+      "interval_coverage": {
+        "n": 1125,
+        "mean": 0.7769,
+        "ci95": [
+          0.752,
+          0.8009
+        ],
+        "method": "circular moving-block bootstrap (block=7)"
+      },
+      "mean_absolute_surprise": {
+        "n": 1125,
+        "mean": 0.8891,
+        "ci95": [
+          0.8327,
+          0.9495
+        ],
+        "method": "circular moving-block bootstrap (block=7)"
+      }
+    },
+    "headline_spike": {
+      "event_label": "headline-count ratio \u2265 2",
+      "comparison_label": "headline-count ratio < 2",
+      "event": {
+        "n": 34,
+        "directional_accuracy": {
+          "mean": 0.5294,
+          "ci95": [
+            0.3684,
+            0.7222
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "interval_coverage": {
+          "mean": 0.6765,
+          "ci95": [
+            0.5,
+            0.8478
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "mean_absolute_surprise": {
+          "mean": 1.2703,
+          "ci95": [
+            0.9108,
+            1.6858
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        }
+      },
+      "comparison": {
+        "n": 612,
+        "directional_accuracy": {
+          "mean": 0.5,
+          "ci95": [
+            0.4637,
+            0.5374
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "interval_coverage": {
+          "mean": 0.7761,
+          "ci95": [
+            0.745,
+            0.8078
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "mean_absolute_surprise": {
+          "mean": 0.8683,
+          "ci95": [
+            0.8144,
+            0.9268
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        }
+      },
+      "event_minus_comparison": {
+        "directional_accuracy": {
+          "difference": 0.0294,
+          "ci95": [
+            -0.1381,
+            0.2285
+          ],
+          "p_two_sided": 0.750062,
+          "method": "group-preserving circular moving-block bootstrap (block=7)",
+          "n_event": 34,
+          "n_comparison": 612,
+          "event_mean": 0.5294,
+          "event_mean_ci95": [
+            0.3684,
+            0.7222
+          ],
+          "comparison_mean": 0.5,
+          "comparison_mean_ci95": [
+            0.4637,
+            0.5374
+          ]
+        },
+        "interval_coverage": {
+          "difference": -0.0997,
+          "ci95": [
+            -0.2729,
+            0.074
+          ],
+          "p_two_sided": 0.230942,
+          "method": "group-preserving circular moving-block bootstrap (block=7)",
+          "n_event": 34,
+          "n_comparison": 612,
+          "event_mean": 0.6765,
+          "event_mean_ci95": [
+            0.5,
+            0.8478
+          ],
+          "comparison_mean": 0.7761,
+          "comparison_mean_ci95": [
+            0.745,
+            0.8078
+          ]
+        },
+        "absolute_surprise": {
+          "difference": 0.402,
+          "ci95": [
+            0.0404,
+            0.8216
+          ],
+          "p_two_sided": 0.043239,
+          "method": "group-preserving circular moving-block bootstrap (block=7)",
+          "n_event": 34,
+          "n_comparison": 612,
+          "event_mean": 1.2703,
+          "event_mean_ci95": [
+            0.9108,
+            1.6858
+          ],
+          "comparison_mean": 0.8683,
+          "comparison_mean_ci95": [
+            0.8144,
+            0.9268
+          ]
+        }
+      }
+    },
+    "large_realized_move": {
+      "event_label": "|z| \u2265 2.5",
+      "comparison_label": "|z| < 2.5",
+      "event": {
+        "n": 48,
+        "directional_accuracy": {
+          "mean": 0.375,
+          "ci95": [
+            0.2333,
+            0.5122
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "interval_coverage": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "mean_absolute_surprise": {
+          "mean": 3.682,
+          "ci95": [
+            3.2818,
+            4.0966
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        }
+      },
+      "comparison": {
+        "n": 1077,
+        "directional_accuracy": {
+          "mean": 0.5116,
+          "ci95": [
+            0.4845,
+            0.5378
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "interval_coverage": {
+          "mean": 0.8115,
+          "ci95": [
+            0.7889,
+            0.8338
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        },
+        "mean_absolute_surprise": {
+          "mean": 0.7647,
+          "ci95": [
+            0.7296,
+            0.801
+          ],
+          "method": "group-preserving circular moving-block bootstrap (block=7)"
+        }
+      },
+      "event_minus_comparison": {
+        "directional_accuracy": {
+          "difference": -0.1366,
+          "ci95": [
+            -0.2764,
+            0.0015
+          ],
+          "p_two_sided": 0.054486,
+          "method": "group-preserving circular moving-block bootstrap (block=7)",
+          "n_event": 48,
+          "n_comparison": 1077,
+          "event_mean": 0.375,
+          "event_mean_ci95": [
+            0.2333,
+            0.5122
+          ],
+          "comparison_mean": 0.5116,
+          "comparison_mean_ci95": [
+            0.4845,
+            0.5378
+          ]
+        },
+        "interval_coverage": {
+          "difference": -0.8115,
+          "ci95": [
+            -0.8338,
+            -0.7889
+          ],
+          "p_two_sided": 0.00025,
+          "method": "group-preserving circular moving-block bootstrap (block=7)",
+          "n_event": 48,
+          "n_comparison": 1077,
+          "event_mean": 0.0,
+          "event_mean_ci95": [
+            0.0,
+            0.0
+          ],
+          "comparison_mean": 0.8115,
+          "comparison_mean_ci95": [
+            0.7889,
+            0.8338
+          ]
+        },
+        "absolute_surprise": {
+          "difference": 2.9173,
+          "ci95": [
+            2.5116,
+            3.3365
+          ],
+          "p_two_sided": 0.00025,
+          "method": "group-preserving circular moving-block bootstrap (block=7)",
+          "n_event": 48,
+          "n_comparison": 1077,
+          "event_mean": 3.682,
+          "event_mean_ci95": [
+            3.2818,
+            4.0966
+          ],
+          "comparison_mean": 0.7647,
+          "comparison_mean_ci95": [
+            0.7296,
+            0.801
+          ]
+        }
+      }
+    },
+    "august_2026_case": {
+      "origin": "2026-08-18",
+      "signal_3day": -1,
+      "consensus": "Hold/none",
+      "next_target_pct": -100.0,
+      "forecast": [
+        {
+          "h": 1,
+          "target_date": "2026-08-19",
+          "prob_up": 0.55,
+          "p10_pct": -1.81,
+          "p50_pct": 0.32,
+          "p90_pct": 2.06,
+          "realized_pct": 5.96,
+          "covered": 0,
+          "hit": 1,
+          "surprise_z": 3.73,
+          "vote": "Buy"
+        },
+        {
+          "h": 2,
+          "target_date": "2026-08-20",
+          "prob_up": 0.533,
+          "p10_pct": -2.06,
+          "p50_pct": 0.17,
+          "p90_pct": 2.8,
+          "realized_pct": 12.37,
+          "covered": 0,
+          "hit": 1,
+          "surprise_z": 6.43,
+          "vote": "Hold"
+        },
+        {
+          "h": 3,
+          "target_date": "2026-08-21",
+          "prob_up": 0.583,
+          "p10_pct": -2.22,
+          "p50_pct": 0.7,
+          "p90_pct": 3.82,
+          "realized_pct": 19.24,
+          "covered": 0,
+          "hit": 1,
+          "surprise_z": 7.87,
+          "vote": "Buy"
+        },
+        {
+          "h": 4,
+          "target_date": "2026-08-24",
+          "prob_up": 0.583,
+          "p10_pct": -5.76,
+          "p50_pct": 0.68,
+          "p90_pct": 3.34,
+          "realized_pct": 21.76,
+          "covered": 0,
+          "hit": 1,
+          "surprise_z": 5.94,
+          "vote": "Sell"
+        },
+        {
+          "h": 5,
+          "target_date": "2026-08-25",
+          "prob_up": 0.583,
+          "p10_pct": -8.3,
+          "p50_pct": 0.29,
+          "p90_pct": 4.44,
+          "realized_pct": 22.05,
+          "covered": 0,
+          "hit": 1,
+          "surprise_z": 4.38,
+          "vote": "Sell"
+        },
+        {
+          "h": 6,
+          "target_date": "2026-08-26",
+          "prob_up": 0.517,
+          "p10_pct": -9.49,
+          "p50_pct": 0.17,
+          "p90_pct": 4.91,
+          "realized_pct": 21.31,
+          "covered": 0,
+          "hit": 1,
+          "surprise_z": 3.76,
+          "vote": "Sell"
+        },
+        {
+          "h": 7,
+          "target_date": "2026-08-27",
+          "prob_up": 0.467,
+          "p10_pct": -10.76,
+          "p50_pct": -0.39,
+          "p90_pct": 4.24,
+          "realized_pct": 23.48,
+          "covered": 0,
+          "hit": 0,
+          "surprise_z": 4.08,
+          "vote": "Hold"
+        }
+      ]
+    }
+  }
+}
