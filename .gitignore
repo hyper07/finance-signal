@@ -235,6 +235,7 @@ research/deposit/*.zip
 # Build products
 research/paper.tex
 research/papers/*/paper.tex
+research/papers/frl_submission/private/
 
 .DS_Store
 research/arxiv/

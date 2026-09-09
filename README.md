@@ -1,26 +1,28 @@
-# finance-signal — research code for *When the News Arrives*
+# finance-signal — audit code for a deployed Bitcoin forecaster
 
-Reproducible audit of a **deployed** seven-session market forecaster around
-exogenous information shocks: cryptocurrency (BITO/BITI, BTC/USD), the S&P 500
-pair (SPXL/SPXS, SPY) and 50 S&P 500 single stocks — about 1.49 million
-point-in-time forecasts scored origin by origin.
+Exploratory audit of a **deployed** seven-session market forecaster around
+information-intensive and large-return observations. The publication-ready
+scope is currently limited to next-session BTC/USD and BITO results. Broader
+index and single-stock analyses remain working material.
 
 | resource | link |
 |---|---|
 | Working context / handover | [`research/HANDOVER.md`](research/HANDOVER.md) |
-| Working paper (draft v1.0) | [`research/PAPER.md`](research/PAPER.md) |
+| Finance Research Letters draft | [`research/papers/frl_submission/`](research/papers/frl_submission/) |
+| Preliminary arXiv paper | [`research/papers/arxiv_prefinding/paper.md`](research/papers/arxiv_prefinding/paper.md) |
+| Preliminary-paper results | [`research/output/arxiv_prefinding.json`](research/output/arxiv_prefinding.json) |
+| Full working paper (not submission-ready) | [`research/PAPER.md`](research/PAPER.md) |
 | Engineering summary | [`research/IMPLEMENTATION_GUIDE.md`](research/IMPLEMENTATION_GUIDE.md) |
 | Companion manuscripts | [`research/papers/`](research/papers/) |
-| Data deposit (derived outputs, CC BY 4.0) | [10.5281/zenodo.22308637](https://doi.org/10.5281/zenodo.22308637) |
-| Event catalogue (346 single-stock increases, attributed) | [`research/STOCK_EVENTS.md`](research/STOCK_EVENTS.md) |
+| Existing data deposit (must be updated before posting) | [10.5281/zenodo.22308637](https://doi.org/10.5281/zenodo.22308637) |
 
 ## What this repository is — and is not
 
-It **is** the complete analysis pipeline: rolling-origin scoring, the event
+It contains the analysis pipeline: rolling-origin scoring, the event
 studies (return shocks, headline spikes, FOMC/payroll/earnings calendars), the
 sequential effectiveness tests, false-discovery control, the predictability-gap
 computation, the gate experiment, the action-policy and entry-delay backtests,
-and every figure and table in the paper.
+and figure/table generation. Some broader-paper methods remain under revision.
 
 It is **not** the forecasting engine being audited. That model is proprietary and
 is not published here. In its place, [`model/INTERFACE.md`](model/INTERFACE.md)
@@ -31,44 +33,41 @@ the resulting scores are directly comparable to the paper's.
 
 ## Three ways to run it
 
-**1. Reproduce the published results (no engine, no licensed data).**
-Download `derived_outputs.zip` from the [Zenodo deposit](https://doi.org/10.5281/zenodo.22308637),
-unzip into `research/output/`, then run the analysis steps (3 onward) in
-[`research/README.md`](research/README.md). Every table and figure regenerates in
-a few minutes.
+**1. Reanalyse archived forecast scores (no engine).**
+The narrow preprint starts from `forecasts_btc.csv` and `forecasts_bito.csv`.
+Those rows can be rescored without the engine, but forecast generation itself
+cannot be reproduced independently. A rights-safe, updated data archive is
+required before public posting.
 
 **2. Audit your own forecaster.** Implement `run_simulation` and
 `build_forecast` per [`model/INTERFACE.md`](model/INTERFACE.md) and run the full
 pipeline from step 1.
 
-**3. Rebuild the inputs from scratch.** The licensed price and news data are not
-redistributed. `research/deposit/RAW_INPUTS_MANIFEST.md` in the Zenodo record
-gives the SHA-256 hash and the exact retrieval command for every raw file, so a
-fresh pull can be verified byte-for-byte before rerunning.
+**3. Rebuild licensed inputs.** Raw price bars and news text are not
+redistributed. The manifest records hashes and provenance, but the public
+repository does not currently contain a complete retrieval utility.
 
 ```bash
 uv venv .venv --python 3.12
-uv pip install --python .venv/bin/python -r research/requirements.txt
-.venv/bin/python research/event_study.py bito btc spxl spy      # etc.
+uv pip install --python .venv/bin/python -r research/requirements-publish.txt
+MPLCONFIGDIR=/tmp/mplconfig .venv/bin/python research/arxiv_prefinding.py
+.venv/bin/python research/build_arxiv_prefinding.py
+# Requires Tectonic on PATH:
+.venv/bin/python research/build_frl_submission.py
 ```
 
-## Headline findings
+## Preliminary findings
 
-- Directional accuracy is **46–53% at every horizon on every instrument** and
-  never passes the Pesaran–Timmermann test; pooled over 50 stocks the statistic
-  is 3.08 — a real but economically negligible 0.3-point dependence — while the
-  Brier score is worse than a constant ½ for 98% of stocks.
-- Nominal-80% intervals cover 78–82% of outcomes on calm sessions, **28% on
-  earnings sessions** and **0% the day before a large move**.
-- 3–5% of sessions carry **28–37% of return variance** and are unpredictable in
-  sign from prices, which caps any price-conditioned forecaster near the coin.
-- After shocks, prices behave by type: crypto **continues** (+3.0% over seven
-  sessions), the index **reverts**, single stocks split by cause. The model's
-  consensus needs 2–7 sessions to agree.
-- A causal, walk-forward **event-conditional gate** restores earnings-session
-  coverage from 0.49 to 0.68 across 50 stocks (interval score +15.5%) — while the
-  same rule *hurts* the other asset types, which is the paper's argument in
-  constructive form.
+- Next-session directional accuracy is **48.8% for BTC/USD** and **50.6% for
+  BITO**, with marginal nominal-80% coverage of 78.4% and 77.7%.
+- On outcome-defined large-move sessions, accuracy falls to **36.7%** and
+  **37.5%**, and all P10-P90 intervals miss. The coverage result is partly
+  mechanical and is reported only as a conditional diagnostic.
+- Headline-count spikes increase standardized forecast error for both assets.
+  Directional degradation appears for BTC but not BITO, so counts alone are not
+  a reliable news gate.
+- The paper does **not** measure human behavior. It motivates prospective work
+  on which news changes behavior and how those responses propagate into prices.
 
 ## Layout
 
@@ -76,27 +75,27 @@ uv pip install --python .venv/bin/python -r research/requirements.txt
 model/            interface specification and stubs (engine not published)
 research/         analysis pipeline, paper, guide, manuscripts
   output/         figures and small result files; the full set is on Zenodo
-  papers/         four manuscripts, cover letters, submission plan
+  papers/         preliminary preprint and legacy journal drafts
+tests/            regression tests for statistical helpers
 ```
 
 ## Citing
 
-> Kim, K., Kim, K., & Ahn, D. (2026). *When the News Arrives: Calibration Failure of a Deployed Price-Pattern Forecaster Around Information Shocks in Crypto, Index and Single-Stock Markets.*
-> Working paper.
-> Data: Zenodo, https://doi.org/10.5281/zenodo.22308637
+> Kim, K., Kim, K., & Ahn, D. (2026). *When information breaks the historical
+> pattern: Preliminary evidence from a deployed Bitcoin forecaster.* Preprint.
 
 ## Licence
 
 Code in this repository: **Apache License 2.0** (see [`LICENSE`](LICENSE)).
-The deposited data and the manuscripts: **CC BY 4.0**
-([10.5281/zenodo.22308637](https://doi.org/10.5281/zenodo.22308637)).
-The licensed market data and news text that the study consumes are neither
-redistributed nor covered by these licences.
+The licensed market data and news text consumed by the study are not covered by
+that licence and are not included in the current working tree. Public catalogue
+outputs retain counts and hashes rather than headline text. The existing Zenodo
+version and prior Git history require a separate rights review before release.
 
 ## Disclosure
 
-The authors operate the forecasting service audited here. All event definitions,
-scoring rules and thresholds were fixed before any forecast was scored; the
-deployed model was not changed during the study; and the code and data manifest
-are released so that the evaluation can be repeated by third parties. Nothing in
-this repository is investment advice.
+The authors operate the forecasting service audited here. The deployed model was
+not changed during the study. The analysis was organized after the August 2026
+case and was not preregistered. Archived score rows can be reanalysed by third
+parties, but the proprietary forecasts cannot be regenerated independently.
+Nothing in this repository is investment advice.
